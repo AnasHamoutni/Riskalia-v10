@@ -984,13 +984,35 @@ class ChatbotComponent {
 
   handlePhoneCall() {
     const phoneNumber = "+212-666-756991";
-    const message = `Appel téléphonique vers ${phoneNumber}`;
-    this.addMessage(message, "bot", "Appel téléphonique");
+
+    // Get language-specific text
+    const translations = {
+      fr: {
+        message: `Appel téléphonique vers ${phoneNumber}`,
+        title: "Appel téléphonique",
+        linkText: `📞 Appeler ${phoneNumber}`
+      },
+      en: {
+        message: `Phone call to ${phoneNumber}`,
+        title: "Phone Call",
+        linkText: `📞 Call ${phoneNumber}`
+      },
+      ar: {
+        message: `مكالمة هاتفية إلى ${phoneNumber}`,
+        title: "مكالمة هاتفية",
+        linkText: `📞 اتصل ${phoneNumber}`
+      }
+    };
+
+    const lang = this.currentLang || "fr";
+    const text = translations[lang] || translations.fr;
+
+    this.addMessage(text.message, "bot", text.title);
 
     // Create clickable phone link
     const phoneLink = document.createElement("a");
     phoneLink.href = `tel:${phoneNumber}`;
-    phoneLink.textContent = `📞 Appeler ${phoneNumber}`;
+    phoneLink.textContent = text.linkText;
     phoneLink.style.cssText = `
       display: inline-block;
       background: linear-gradient(135deg, #10b981 0%, #059669 100%);
@@ -1014,13 +1036,35 @@ class ChatbotComponent {
 
   handleEmail() {
     const email = "contact@riskalia.ma";
-    const message = `Envoi d'email vers ${email}`;
-    this.addMessage(message, "bot", "Envoi d'email");
+
+    // Get language-specific text
+    const translations = {
+      fr: {
+        message: `Envoi d'email vers ${email}`,
+        title: "Envoi d'email",
+        linkText: `📧 Envoyer un email`
+      },
+      en: {
+        message: `Send email to ${email}`,
+        title: "Send Email",
+        linkText: `📧 Send email`
+      },
+      ar: {
+        message: `إرسال بريد إلكتروني إلى ${email}`,
+        title: "إرسال بريد إلكتروني",
+        linkText: `📧 إرسال بريد إلكتروني`
+      }
+    };
+
+    const lang = this.currentLang || "fr";
+    const text = translations[lang] || translations.fr;
+
+    this.addMessage(text.message, "bot", text.title);
 
     // Create clickable email link
     const emailLink = document.createElement("a");
     emailLink.href = `mailto:${email}`;
-    emailLink.textContent = `📧 Envoyer un email`;
+    emailLink.textContent = text.linkText;
     emailLink.style.cssText = `
       display: inline-block;
       background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
@@ -1043,21 +1087,58 @@ class ChatbotComponent {
   }
 
   handleAppointment() {
-    const message =
-      "Pour prendre rendez-vous, veuillez nous contacter :\n\n📞 Tél: +212-666-756991\n📧 Email: contact@riskalia.ma\n\nNous vous proposerons un créneau adapté à vos disponibilités.";
-    this.addMessage(message, "bot", "Rendez-vous");
+    // Get language-specific text
+    const translations = {
+      fr: {
+        message: "Pour prendre rendez-vous, veuillez nous contacter :\n\n📞 Tél: +212-666-756991\n📧 Email: contact@riskalia.ma\n\nNous vous proposerons un créneau adapté à vos disponibilités.",
+        title: "Rendez-vous"
+      },
+      en: {
+        message: "To schedule an appointment, please contact us:\n\n📞 Phone: +212-666-756991\n📧 Email: contact@riskalia.ma\n\nWe will offer you a time slot that fits your availability.",
+        title: "Appointment"
+      },
+      ar: {
+        message: "لتحديد موعد، يرجى الاتصال بنا:\n\n📞 الهاتف: +212-666-756991\n📧 البريد الإلكتروني: contact@riskalia.ma\n\nسنقترح عليك موعدًا يناسب توفرك.",
+        title: "موعد"
+      }
+    };
+
+    const lang = this.currentLang || "fr";
+    const text = translations[lang] || translations.fr;
+
+    this.addMessage(text.message, "bot", text.title);
   }
 
   handleLocation() {
-    const message =
-      "Notre siège social :\n\n📍 16, Rue de Terves, 2ème Etage\nQuartier Mers Sultan, Casablanca\n\n🕒 Horaires d'ouverture :\nLundi - Vendredi : 9h00 - 18h00\nSamedi : 9h00 - 13h00";
-    this.addMessage(message, "bot", "Localisation");
+    // Get language-specific text
+    const translations = {
+      fr: {
+        message: "Notre siège social :\n\n📍 16, Rue de Terves, 2ème Etage\nQuartier Mers Sultan, Casablanca\n\n🕒 Horaires d'ouverture :\nLundi - Vendredi : 9h00 - 18h00\nSamedi : 9h00 - 13h00",
+        title: "Localisation",
+        linkText: "🗺️ Voir sur Google Maps"
+      },
+      en: {
+        message: "Our headquarters:\n\n📍 16 Rue de Terves, 2nd Floor\nMers Sultan District, Casablanca\n\n🕒 Opening hours:\nMonday - Friday: 9:00 AM - 6:00 PM\nSaturday: 9:00 AM - 1:00 PM",
+        title: "Location",
+        linkText: "🗺️ View on Google Maps"
+      },
+      ar: {
+        message: "مقرنا الرئيسي:\n\n📍 16 شارع تيرف، الطابق الثاني\nحي مرس سلطان، الدار البيضاء\n\n🕒 ساعات العمل:\nالاثنين - الجمعة: 9:00 صباحًا - 6:00 مساءً\nالسبت: 9:00 صباحًا - 1:00 مساءً",
+        title: "الموقع",
+        linkText: "🗺️ عرض على خرائط جوجل"
+      }
+    };
+
+    const lang = this.currentLang || "fr";
+    const text = translations[lang] || translations.fr;
+
+    this.addMessage(text.message, "bot", text.title);
 
     // Create Google Maps link
     const mapsLink = document.createElement("a");
     mapsLink.href = "https://maps.google.com/?q=16+Rue+de+Terves+Casablanca";
     mapsLink.target = "_blank";
-    mapsLink.textContent = "🗺️ Voir sur Google Maps";
+    mapsLink.textContent = text.linkText;
     mapsLink.style.cssText = `
       display: inline-block;
       background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
