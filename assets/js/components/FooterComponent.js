@@ -127,11 +127,8 @@ getFooterHTML() {
   }
 
   updateTranslations() {
-    // Apply translations if the translation system is available
-    if (typeof window.applyI18n === "function") {
-      window.applyI18n();
-    } else if (typeof window.t === "function") {
-      // Fallback translation update
+    // Always directly translate footer elements to ensure proper updates
+    if (typeof window.t === "function") {
       const elements = document.querySelectorAll(
         ".footer-component [data-i18n]"
       );
@@ -140,6 +137,7 @@ getFooterHTML() {
         if (key) {
           const text = window.t(key);
           if (text !== key) {
+            // Check if element has <br> tags and preserve them
             if (/<br\s*\/?>/i.test(el.innerHTML)) {
               el.innerHTML = text;
             } else {
