@@ -2390,7 +2390,14 @@ s4: {
       document.addEventListener("languageChanged", (e) => {
         if (e.detail && e.detail.language) {
           lang = e.detail.language;
+          window.lang = lang; // Update global lang variable
+          localStorage.setItem("riskalia_lang", lang);
           applyTexts();
+
+          // Update footer component if available
+          if (window.footerComponent && window.footerComponent.updateTranslations) {
+            window.footerComponent.updateTranslations();
+          }
         }
       });
 
@@ -2399,7 +2406,9 @@ s4: {
 
       function t(path) {
         const ns = String(path).split(".");
-        let cur = window.I18N?.[lang];
+        // Use window.lang to ensure we get the current language, not the closure value
+        const currentLang = window.lang || lang;
+        let cur = window.I18N?.[currentLang];
         for (const n of ns) {
           if (cur == null || !(n in cur)) return path;
           cur = cur[n];
@@ -2424,7 +2433,9 @@ s4: {
 
       /* Meta */
       function setMeta() {
-        const m = window.I18N?.[lang]?.meta;
+        // Use window.lang to ensure we get the current language
+        const currentLang = window.lang || lang;
+        const m = window.I18N?.[currentLang]?.meta;
         if (m?.title) document.title = m.title;
         if (m?.desc) {
           let md = document.querySelector('meta[name="description"]');
@@ -2462,8 +2473,20 @@ s4: {
 
       /* Apply translations & meta */
       function applyTexts() {
-        document.documentElement.lang = lang;
-        document.body.dir = lang === "ar" ? "rtl" : "ltr";
+        // Use window.lang to ensure we get the current language
+        const currentLang = window.lang || lang;
+        document.documentElement.lang = currentLang;
+        document.body.dir = currentLang === "ar" ? "rtl" : "ltr";
+
+        // Add/remove RTL class for additional styling control
+        if (currentLang === "ar") {
+          document.body.classList.add("rtl");
+          document.body.classList.remove("ltr");
+        } else {
+          document.body.classList.add("ltr");
+          document.body.classList.remove("rtl");
+        }
+
         $$("[data-i18n]").forEach((el) => (el.innerHTML = t(el.dataset.i18n)));
         applyI18nAttrs();
         // Active nav and language button state are now handled by NavigationComponent
@@ -2473,6 +2496,7 @@ s4: {
       // Make translation functions available globally for components
       window.applyI18n = applyTexts;
       window.t = t;
+      window.lang = lang;
 
       /* Navigation search utilities handled by NavigationComponent */
 
