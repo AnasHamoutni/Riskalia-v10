@@ -8135,14 +8135,73 @@ function setMeta() {
   }
 }
 
+/* Convert Western numerals to Arabic numerals */
+function toArabicNumerals(str) {
+  if (typeof str !== "string") return str;
+  const arabicNumerals = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
+  return str.replace(/[0-9]/g, (digit) => arabicNumerals[parseInt(digit)]);
+}
+
+/* Apply Arabic numerals to phone numbers and other numeric content */
+function applyArabicNumerals() {
+  if (lang !== "ar") return;
+
+  // Convert phone numbers (elements with dir="ltr" attribute typically contain phone numbers)
+  $$("[dir='ltr']").forEach((el) => {
+    // Only convert if element contains phone-like content (starts with + or contains dashes/spaces between numbers)
+    if (el.textContent && /[\+\d\-\s]/.test(el.textContent)) {
+      // Store original LTR content in data attribute for reverting
+      if (!el.dataset.originalContent) {
+        el.dataset.originalContent = el.textContent;
+      }
+      el.textContent = toArabicNumerals(el.dataset.originalContent);
+    }
+  });
+
+  // Also convert any data-i18n elements that might contain phone numbers
+  $$("[data-i18n*='phone'], [data-i18n*='tel']").forEach((el) => {
+    if (el.textContent && /\d/.test(el.textContent)) {
+      if (!el.dataset.originalContent) {
+        el.dataset.originalContent = el.textContent;
+      }
+      el.textContent = toArabicNumerals(el.dataset.originalContent);
+    }
+  });
+}
+
+/* Revert Arabic numerals back to Western numerals */
+function revertArabicNumerals() {
+  $$("[data-original-content]").forEach((el) => {
+    if (el.dataset.originalContent) {
+      el.textContent = el.dataset.originalContent;
+      delete el.dataset.originalContent;
+    }
+  });
+}
+
 /* Main apply */
 function applyTexts() {
   // Update global lang variable from localStorage
   lang = localStorage.getItem("riskalia_lang") || "fr";
   window.lang = lang;
 
+  // Set document language and text direction
   document.documentElement.lang = lang;
   document.body.dir = lang === "ar" ? "rtl" : "ltr";
+
+  // Add/remove RTL class for additional styling control
+  if (lang === "ar") {
+    document.body.classList.add("rtl");
+    document.body.classList.remove("ltr");
+  } else {
+    document.body.classList.add("ltr");
+    document.body.classList.remove("rtl");
+  }
+
+  // Revert any previous Arabic numerals before applying new translations
+  if (lang !== "ar") {
+    revertArabicNumerals();
+  }
 
   $$("[data-i18n]").forEach((el) => (el.innerHTML = t(el.dataset.i18n)));
   applyI18nAttrs();
@@ -8151,6 +8210,12 @@ function applyTexts() {
     b.classList.toggle("active", b.dataset.lang === lang)
   );
   setMeta();
+
+  // Apply Arabic numerals after translations are applied
+  if (lang === "ar") {
+    // Use setTimeout to ensure DOM has updated
+    setTimeout(() => applyArabicNumerals(), 50);
+  }
 }
 
 // Make functions globally available

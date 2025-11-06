@@ -1907,6 +1907,29 @@ class ChatbotComponent {
     this.currentNode = "root";
     this.navigationHistory = [];
 
+    // Apply translations to chatbot elements
+    if (typeof window.t === "function") {
+      // Update title
+      const title = document.querySelector(".chatbot-title");
+      if (title) title.textContent = window.t("chatbot.title");
+
+      // Update subtitle
+      const subtitle = document.querySelector(".chatbot-subtitle");
+      if (subtitle) subtitle.textContent = window.t("chatbot.subtitle");
+
+      // Update welcome message
+      const welcomeMsg = document.querySelector(".chatbot-welcome p[data-i18n]");
+      if (welcomeMsg) welcomeMsg.textContent = window.t("chatbot.welcome");
+
+      // Update "now" timestamp in welcome message
+      const welcomeTime = document.querySelector(".chatbot-welcome .chatbot-message-time");
+      if (welcomeTime) welcomeTime.textContent = window.t("chatbot.now");
+
+      // Update typing indicator text
+      const typingText = document.querySelector(".chatbot-typing-text");
+      if (typingText) typingText.textContent = window.t("chatbot.typing");
+    }
+
     // Initialize with root node for new language
     setTimeout(() => {
       const tree = this.decisionTree[this.currentLang];
@@ -1916,7 +1939,7 @@ class ChatbotComponent {
       }
     }, 100);
 
-    // Apply translations if available
+    // Apply global translations if available
     if (typeof window.applyTexts === "function") {
       window.applyTexts();
     }
