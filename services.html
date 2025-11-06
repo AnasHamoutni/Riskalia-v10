@@ -2253,7 +2253,9 @@
 
       function t(path) {
         const ns = path.split(".");
-        let cur = window.I18N?.[lang];
+        // Use window.lang to ensure we get the current language, not the closure value
+        const currentLang = window.lang || lang;
+        let cur = window.I18N?.[currentLang];
         for (const n of ns) {
           if (cur == null || !(n in cur)) return path;
           cur = cur[n];
@@ -2287,7 +2289,9 @@
       }
 
       function setMeta() {
-        const m = window.I18N?.[lang]?.meta;
+        // Use window.lang to ensure we get the current language
+        const currentLang = window.lang || lang;
+        const m = window.I18N?.[currentLang]?.meta;
         if (m?.title) document.title = m.title;
         if (m?.desc) {
           let md = document.querySelector('meta[name="description"]');
@@ -2301,11 +2305,13 @@
       }
 
       function applyDir() {
-        document.documentElement.lang = lang;
-        document.body.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+        // Use window.lang to ensure we get the current language
+        const currentLang = window.lang || lang;
+        document.documentElement.lang = currentLang;
+        document.body.setAttribute("dir", currentLang === "ar" ? "rtl" : "ltr");
 
         // Add/remove RTL class for additional styling control
-        if (lang === "ar") {
+        if (currentLang === "ar") {
           document.body.classList.add("rtl");
           document.body.classList.remove("ltr");
         } else {
@@ -2320,8 +2326,10 @@
       window.lang = lang;
 
       function syncLangButtons() {
+        // Use window.lang to ensure we get the current language
+        const currentLang = window.lang || lang;
         $$(".lang-btn").forEach((b) =>
-          b.classList.toggle("active", b.dataset.lang === lang)
+          b.classList.toggle("active", b.dataset.lang === currentLang)
         );
       }
 
@@ -2329,6 +2337,7 @@
         $$(".lang-btn").forEach((btn) => {
           btn.addEventListener("click", () => {
             lang = btn.dataset.lang;
+            window.lang = lang; // Update global lang variable
             localStorage.setItem("riskalia_lang", lang);
             applyDir();
             applyI18n();
