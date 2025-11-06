@@ -1907,41 +1907,73 @@ class ChatbotComponent {
     this.currentNode = "root";
     this.navigationHistory = [];
 
-    // Apply translations to chatbot elements
+    // Apply translations to chatbot elements if window.t is available
     if (typeof window.t === "function") {
-      // Update title
-      const title = document.querySelector(".chatbot-title");
-      if (title) title.textContent = window.t("chatbot.title");
+      try {
+        // Update title
+        const title = document.querySelector(".chatbot-title");
+        if (title) {
+          const titleText = window.t("chatbot.title");
+          if (titleText && !titleText.startsWith("chatbot.")) {
+            title.textContent = titleText;
+          }
+        }
 
-      // Update subtitle
-      const subtitle = document.querySelector(".chatbot-subtitle");
-      if (subtitle) subtitle.textContent = window.t("chatbot.subtitle");
+        // Update subtitle
+        const subtitle = document.querySelector(".chatbot-subtitle");
+        if (subtitle) {
+          const subtitleText = window.t("chatbot.subtitle");
+          if (subtitleText && !subtitleText.startsWith("chatbot.")) {
+            subtitle.textContent = subtitleText;
+          }
+        }
 
-      // Update welcome message
-      const welcomeMsg = document.querySelector(".chatbot-welcome p[data-i18n]");
-      if (welcomeMsg) welcomeMsg.textContent = window.t("chatbot.welcome");
+        // Update welcome message
+        const welcomeMsg = document.querySelector(".chatbot-welcome p[data-i18n]");
+        if (welcomeMsg) {
+          const welcomeText = window.t("chatbot.welcome");
+          if (welcomeText && !welcomeText.startsWith("chatbot.")) {
+            welcomeMsg.textContent = welcomeText;
+          }
+        }
 
-      // Update "now" timestamp in welcome message
-      const welcomeTime = document.querySelector(".chatbot-welcome .chatbot-message-time");
-      if (welcomeTime) welcomeTime.textContent = window.t("chatbot.now");
+        // Update "now" timestamp in welcome message
+        const welcomeTime = document.querySelector(".chatbot-welcome .chatbot-message-time");
+        if (welcomeTime) {
+          const nowText = window.t("chatbot.now");
+          if (nowText && !nowText.startsWith("chatbot.")) {
+            welcomeTime.textContent = nowText;
+          }
+        }
 
-      // Update typing indicator text
-      const typingText = document.querySelector(".chatbot-typing-text");
-      if (typingText) typingText.textContent = window.t("chatbot.typing");
+        // Update typing indicator text
+        const typingText = document.querySelector(".chatbot-typing-text");
+        if (typingText) {
+          const typingTextVal = window.t("chatbot.typing");
+          if (typingTextVal && !typingTextVal.startsWith("chatbot.")) {
+            typingText.textContent = typingTextVal;
+          }
+        }
+      } catch (error) {
+        console.warn("Chatbot translation update failed:", error);
+      }
     }
 
     // Initialize with root node for new language
     setTimeout(() => {
       const tree = this.decisionTree[this.currentLang];
-      const rootNode = tree.root;
-      if (rootNode) {
-        this.updateQuickActions(rootNode.actions);
+      if (tree && tree.root) {
+        this.updateQuickActions(tree.root.actions);
       }
     }, 100);
 
     // Apply global translations if available
     if (typeof window.applyTexts === "function") {
-      window.applyTexts();
+      try {
+        window.applyTexts();
+      } catch (error) {
+        console.warn("Global applyTexts failed:", error);
+      }
     }
   }
 
@@ -1973,9 +2005,18 @@ class ChatbotComponent {
   }
 }
 
-// Auto-initialize when DOM is ready
+// Auto-initialize when DOM is ready AND i18n is available
+function initChatbot() {
+  if (window.I18N && typeof window.t === "function") {
+    window.chatbotComponent = new ChatbotComponent();
+  } else {
+    // Retry after a short delay if i18n isn't ready yet
+    setTimeout(initChatbot, 100);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  window.chatbotComponent = new ChatbotComponent();
+  initChatbot();
 });
 
 // Export for manual use

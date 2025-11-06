@@ -1369,6 +1369,12 @@ document.addEventListener("DOMContentLoaded", () => {
         window.navigationComponent?.updateTranslations?.();
         window.footerComponent?.updateTranslations?.();
 
+        // Update chatbot if available
+        if (window.chatbotComponent) {
+          window.chatbotComponent.currentLang = e.detail.language;
+          window.chatbotComponent.updateLanguage();
+        }
+
         // Trigger global hook if defined
         window._onLangChanged?.();
       });
