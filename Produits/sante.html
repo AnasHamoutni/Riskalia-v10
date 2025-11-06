@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>
+      Riskalia — Santé (Particuliers)
+    </title>
+    <meta
+      name="description"
+      content="Assurance santé pour particuliers : soins courants, hospitalisation, maternité, dentaire & optique, télé-médecine, réseaux & tiers payant. Formules modulaires, délais de carence & prise en charge claire."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+  <!-- Fonts + global CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="../assets/css/components/navigation.css" />
+    <link rel="stylesheet" href="../assets/css/components/footer.css" />
+
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+
+  <style>
+      /* Tab panel display logic */
+      .tabpanel {
+        display: none;
+      }
+      .tabpanel.active {
+        display: block;
+      }
+
+      /* Sticky tabs */
+      @media (min-width: 768px) {
+        .tabs.sticky {
+          top: 66px;
+        }
+    }
+  </style>
+
+    <noscript
+      ><style>
+        .tabpanel {
+          display: block;
+        }
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style></noscript
+    >
+</head>
+<body class="spacious">
+    <!-- Navigation Container -->
+    <div id="navigation-container"></div>
+
+<!-- HERO -->
+    <section
+      class="hero hero--product min-h-[35vh] bg-cover bg-center bg-no-repeat flex items-center text-center py-12"
+      style="
+        background: linear-gradient(
+            rgba(0, 92, 115, 0.85),
+            rgba(0, 92, 115, 0.85)
+          ),
+          url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1600&q=70')
+            center/cover no-repeat;
+      "
+    >
+  <div class="container mx-auto">
+        <h1
+          class="text-white text-4xl md:text-5xl font-bold mb-4"
+          data-i18n="sante.title"
+        >
+          Santé (Particuliers)
+        </h1>
+        <p
+          class="text-white text-lg md:text-xl mb-6 max-w-4xl mx-auto"
+          data-i18n="sante.subtitle"
+        >
+          Soins courants • Hospitalisation & maternité • Dentaire & optique •
+          Télé-médecine • Réseaux & tiers payant • Formules adaptées au budget.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 mt-4">
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="sante.badges.0"
+            >Réseaux & tiers payant</span
+          >
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="sante.badges.1"
+            >Formules modulaires</span
+          >
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="sante.badges.2"
+            >Options dentaire/optique</span
+          >
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+    <section class="py-8 max-w-7xl mx-auto">
+      <div class="container mx-auto px-4 max-w-6xl">
+    <!-- Onglets -->
+        <nav
+          class="tabs  bg-white p-2 border border-gray-200 rounded-xl overflow-x-auto whitespace-nowrap shadow-lg mb-4"
+          role="tablist"
+          aria-label="Health tabs"
+        >
+          <button
+            class="tab active flex-shrink-0 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            style="background-color: rgba(0, 92, 115, 0.9)"
+            id="tab-over"
+            role="tab"
+            aria-selected="true"
+            data-tab="over"
+            data-i18n="sante.tabs.over"
+          >
+            Aperçu
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-cov"
+            role="tab"
+            aria-selected="false"
+            data-tab="cov"
+            data-i18n="sante.tabs.cov"
+          >
+            Garanties
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-opt"
+            role="tab"
+            aria-selected="false"
+            data-tab="opt"
+            data-i18n="sante.tabs.opt"
+          >
+            Options & réseaux
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-admin"
+            role="tab"
+            aria-selected="false"
+            data-tab="admin"
+            data-i18n="sante.tabs.admin"
+          >
+            Tarifs & souscription
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-claim"
+            role="tab"
+            aria-selected="false"
+            data-tab="claim"
+            data-i18n="sante.tabs.claim"
+          >
+            Sinistres
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-faq"
+            role="tab"
+            aria-selected="false"
+            data-tab="faq"
+            data-i18n="sante.tabs.faq"
+          >
+            FAQ
+          </button>
+    </nav>
+
+    <!-- Aperçu -->
+        <article
+          id="over"
+          class="tabpanel active bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-over"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="sante.over.t"
+          >
+            1. Aperçu
+          </h2>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2">
+              <p
+                class="text-gray-600 text-lg leading-relaxed mb-6"
+                data-i18n="sante.over.p"
+              >
+                Une assurance <strong>santé individuelle</strong> claire et
+                modulable : soins de ville, hospitalisation et maternité,
+                dentaire/optique, avec <em>réseaux & tiers payant</em> et
+                télé-médecine. Des niveaux de couverture adaptés à votre budget
+                et à votre situation familiale.
+              </p>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.over.li.0"
+                    >Formules progressives (Essentielle → Confort → Premium).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.over.li.1"
+                    >Accès réseau : paiement direct chez partenaires (selon plan).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.over.li.2"
+                    >Services digitaux : e-carte, appli, e-réclamations.</span
+                  >
+                </li>
+          </ul>
+        </div>
+            <div class="space-y-4">
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="text-lg font-semibold mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="sante.over.kpi.0"
+                >
+                  Délai de carence
+                </div>
+                <div class="text-gray-600 text-sm">0–3 mois (selon acte)</div>
+              </div>
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="text-lg font-semibold mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="sante.over.kpi.1"
+                >
+                  SLA remboursements
+                </div>
+                <div class="text-gray-600 text-sm">&lt; 5–7 jours</div>
+              </div>
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="text-lg font-semibold mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="sante.over.kpi.2"
+                >
+                  Famille
+                </div>
+                <div class="text-gray-600 text-sm">Conjoint & enfants éligibles</div>
+              </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Garanties -->
+        <article
+          id="cov"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-cov"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="sante.cov.t"
+          >
+            2. Garanties principales
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="sante.cov.c0.t"
+              >
+                Soins courants (ambulatoires)
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.cov.c0.li.0"
+                    >Médecins généralistes & spécialistes.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.cov.c0.li.1"
+                    >Analyses, imagerie, pharmacie.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.cov.c0.li.2"
+                    >Télé-médecine (selon plan).</span
+                  >
+                </li>
+          </ul>
+        </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="sante.cov.c1.t"
+              >
+                Hospitalisation & maternité
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.cov.c1.li.0"
+                    >Frais d'hospitalisation & chambre.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.cov.c1.li.1"
+                    >Actes chirurgicaux & anesthésie.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.cov.c1.li.2"
+                    >Maternité (plafonds & carences).</span
+                  >
+                </li>
+          </ul>
+        </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="sante.cov.c2.t"
+              >
+                Dentaire & optique
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.cov.c2.li.0"
+                    >Soins & prothèses dentaires.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.cov.c2.li.1"
+                    >Optique : verres, montures, lentilles.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.cov.c2.li.2"
+                    >Orthodontie (selon plan).</span
+                  >
+                </li>
+          </ul>
+      </div>
+    </article>
+
+    <!-- Options & Réseaux -->
+        <article
+          id="opt"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-opt"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="sante.opt.t"
+          >
+            3. Options & réseaux
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="sante.opt.c0.t"
+              >
+                Réseaux & tiers payant
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.opt.c0.li.0"
+                    >Cliniques, laboratoires & pharmacies partenaires.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.opt.c0.li.1"
+                    >E-carte & prise en charge directe.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.opt.c0.li.2"
+                    >Hors réseau possible (remboursement barémé).</span
+                  >
+                </li>
+          </ul>
+        </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="sante.opt.c1.t"
+              >
+                International & voyage
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.opt.c1.li.0"
+                    >Extensions temporaires hors pays.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.opt.c1.li.1"
+                    >Assistance médicale & rapatriement.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.opt.c1.li.2"
+                    >Coordination assurance voyage.</span
+                  >
+                </li>
+          </ul>
+        </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="sante.opt.c2.t"
+              >
+                Famille & prévention
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.opt.c2.li.0"
+                    >Conjoint & enfants, naissance/ajout simple.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.opt.c2.li.1"
+                    >Bilans de santé & vaccination.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.opt.c2.li.2"
+                    >Soutien santé mentale (EAP).</span
+                  >
+                </li>
+          </ul>
+    </article>
+
+    <!-- Tarifs & souscription -->
+        <article
+          id="admin"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-admin"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="sante.admin.t"
+          >
+            4. Tarifs & souscription
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="sante.admin.c0.t"
+              >
+                Comment est fixé le tarif ?
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.admin.c0.li.0"
+                    >Âge, situation familiale, zone de soins.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.admin.c0.li.1"
+                    >Niveau de garanties & franchises.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.admin.c0.li.2"
+                    >Options (dentaire/optique, maternité…).</span
+                  >
+                </li>
+          </ul>
+        </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="sante.admin.c1.t"
+              >
+                Souscription
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.admin.c1.li.0"
+                    >Questionnaire médical simplifié (selon plan).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.admin.c1.li.1"
+                    >Délais de carence éventuels.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.admin.c1.li.2"
+                    >Date d'effet & e-carte immédiate.</span
+                  >
+                </li>
+          </ul>
+        </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="sante.admin.c2.t"
+              >
+                Documents utiles
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.admin.c2.li.0"
+                    >Pièce d'identité & RIB (si prélèvement).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.admin.c2.li.1"
+                    >Justificatifs famille (si ayants droit).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.admin.c2.li.2"
+                    >Attestations pour employeur/visa si besoin.</span
+                  >
+                </li>
+          </ul>
+        </section>
+      </div>
+    </article>
+
+    <!-- Sinistres -->
+        <article
+          id="claim"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-claim"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="sante.claim.t"
+          >
+            5. Remboursements & prises en charge
+          </h2>
+          <details
+            class="rounded-xl p-6 border"
+            style="
+              background: linear-gradient(
+                135deg,
+                rgba(0, 92, 115, 0.1),
+                rgba(0, 92, 115, 0.05)
+              );
+              border-color: rgba(0, 92, 115, 0.2);
+            "
+          >
+            <summary
+              class="text-xl font-semibold cursor-pointer"
+              style="color: rgba(0, 92, 115, 0.9)"
+            >
+              🧭
+              <span data-i18n="sante.claim.sum">Notre approche</span>
+            </summary>
+            <div class="mt-4">
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.claim.li.0"
+                    >Réseau & tiers payant privilégiés.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.claim.li.1"
+                    >E-réclamations & suivi en ligne (5–7 j ouvrés).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="sante.claim.li.2"
+                    >Aide à la constitution du dossier si besoin.</span
+                  >
+                </li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <!-- FAQ -->
+        <article
+          id="faq"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-faq"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="sante.faq.t"
+          >
+            6. FAQ
+          </h2>
+          <div class="space-y-4">
+            <details
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <summary
+                class="text-lg font-semibold cursor-pointer"
+                style="color: rgba(0, 92, 115, 0.9)"
+              >
+                ❓
+                <span data-i18n="sante.faq.q0"
+                  >Les antécédents sont-ils couverts ?</span
+                >
+              </summary>
+              <div class="mt-4">
+                <p class="text-gray-600" data-i18n="sante.faq.a0">
+                  Selon la formule et l'assureur, des exclusions ou délais
+                  spécifiques peuvent s'appliquer. Nous vous guidons.
+                </p>
+              </div>
+      </details>
+            <details
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <summary
+                class="text-lg font-semibold cursor-pointer"
+                style="color: rgba(0, 92, 115, 0.9)"
+              >
+                ❓
+                <span data-i18n="sante.faq.q1"
+                  >Y a-t-il des délais de carence ?</span
+                >
+              </summary>
+              <div class="mt-4">
+                <p class="text-gray-600" data-i18n="sante.faq.a1">
+                  Oui, parfois (ex. maternité, dentaire). Ils sont précisés au
+                  contrat et varient selon le plan.
+                </p>
+              </div>
+      </details>
+            <details
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <summary
+                class="text-lg font-semibold cursor-pointer"
+                style="color: rgba(0, 92, 115, 0.9)"
+              >
+                ❓
+                <span data-i18n="sante.faq.q2"
+                  >Puis-je consulter hors réseau ?</span
+                >
+              </summary>
+              <div class="mt-4">
+                <p class="text-gray-600" data-i18n="sante.faq.a2">
+                  Oui, avec remboursement au barème prévu. Le réseau permet
+                  toutefois le tiers payant.
+                </p>
+              </div>
+      </details>
+          </div>
+    </article>
+
+    <!-- CTA -->
+        <article
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 mt-6 text-center"
+          style="
+            background: linear-gradient(
+              135deg,
+              rgba(0, 92, 115, 0.9),
+              rgba(0, 92, 115, 0.8)
+            );
+            border-color: rgba(0, 92, 115, 0.9);
+          "
+        >
+          <h3
+            class="text-2xl font-bold text-white mb-4"
+            data-i18n="sante.cta.t"
+          >
+            Obtenez votre couverture santé
+          </h3>
+          <p
+            class="text-white/90 text-lg mb-6"
+            data-i18n="sante.cta.p"
+          >
+            Nous comparons les offres et configurons la formule adaptée à vos
+            besoins.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              class="bg-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 shadow-lg"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="../contact.html"
+              data-i18n="sante.cta.quote"
+              >Obtenir un devis</a
+            >
+            <a
+              class="px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 shadow-lg"
+              style="
+                background-color: rgba(0, 92, 115, 1);
+                color: white;
+                border-color: rgba(0, 92, 115, 0.9);
+              "
+              href="../contact.html"
+              data-i18n="sante.cta.talk"
+              >Parler à un conseiller</a
+            >
+      </div>
+    </article>
+
+    <!-- Liens produits (précédent/suivant) -->
+        <article
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 mt-6 text-center"
+        >
+          <p class="text-gray-600">
+            <a
+              class="hover:underline"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="./retraite.html"
+              >←
+              <span data-i18n="sante.nav.prev"
+                >Retraite</span
+              ></a
+            >
+        &nbsp;|&nbsp;
+            <a
+              class="hover:underline"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="./alv.html"
+              ><span data-i18n="sante.nav.next"
+                >Accidents de la vie</span
+              >
+              →</a
+            >
+      </p>
+    </article>
+  </div>
+</section>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+<!-- FAQ SEO -->
+<script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Les antécédents sont-ils couverts ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Selon la formule et l'assureur, des exclusions ou délais spécifiques peuvent s'appliquer. Nous vous guidons."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Y a-t-il des délais de carence ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, parfois (ex. maternité, dentaire). Ils sont précisés au contrat et varient selon le plan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Puis-je consulter hors réseau ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, avec remboursement au barème prévu. Le réseau permet toutefois le tiers payant."
+            }
+          }
+        ]
+      }
+</script>
+
+<script>
+      /* ================== Tab Management ================== */
+      function bindTabs() {
+        const tabs = document.querySelectorAll(".tabs .tab");
+        const panels = document.querySelectorAll(".tabpanel");
+
+        function show(id, push = true) {
+          tabs.forEach((btn) => {
+            const act = btn.dataset.tab === id;
+            btn.classList.toggle("active", act);
+            btn.setAttribute("aria-selected", act ? "true" : "false");
+
+            // Update tab styling
+            if (act) {
+              btn.style.backgroundColor = "rgba(0, 92, 115, 0.9)";
+              btn.style.color = "white";
+              btn.classList.remove("bg-gray-100", "text-gray-700");
+              btn.classList.add("text-white");
+            } else {
+              btn.style.backgroundColor = "";
+              btn.style.color = "";
+              btn.classList.remove("text-white");
+              btn.classList.add("bg-gray-100", "text-gray-700");
+            }
+          });
+          panels.forEach((p) => p.classList.toggle("active", p.id === id));
+          if (push) history.replaceState(null, "", "#" + id);
+        }
+
+        tabs.forEach((btn) =>
+          btn.addEventListener("click", () => show(btn.dataset.tab))
+        );
+
+        function fromHash() {
+          const id = (location.hash || "#over").slice(1);
+          const known = ["over", "cov", "opt", "admin", "claim", "faq"];
+          show(known.includes(id) ? id : "over", false);
+        }
+
+        window.addEventListener("hashchange", fromHash);
+  fromHash();
+}
+
+      function initUI() {
+  bindTabs();
+}
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Use global translation functions from i18n.js
+        if (typeof window.applyTexts === "function") {
+          window.applyTexts();
+        }
+        initUI();
+      });
+</script>
+
+    <!-- Global I18N Script -->
+    <script src="../assets/js/i18n.js"></script>
+
+    <!-- Component Scripts -->
+    <script src="../assets/js/components/SearchComponent.js"></script>
+    <script src="../assets/js/components/NavigationComponent.js"></script>
+    <script src="../assets/js/components/FooterComponent.js"></script>
+  </body>
+</html>

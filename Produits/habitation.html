@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>
+      Riskalia — Biens (Habitation) — Multirisques habitation, RC vie privée &
+      assistance
+    </title>
+    <meta
+      name="description"
+      content="Assurance Habitation : incendie, vol, dégâts des eaux, bris de glace, responsabilité civile vie privée, objets de valeur, protection juridique, assistance & relogement."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <!-- Fonts + global CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="../assets/css/components/navigation.css" />
+    <link rel="stylesheet" href="../assets/css/components/footer.css" />
+
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+
+    <style>
+      /* Tab panel display logic */
+      .tabpanel {
+        display: none;
+      }
+      .tabpanel.active {
+        display: block;
+      }
+
+      /* Sticky tabs */
+      @media (min-width: 768px) {
+        .tabs.sticky {
+          top: 66px;
+        }
+      }
+    </style>
+
+    <noscript
+      ><style>
+        .tabpanel {
+          display: block;
+        }
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style></noscript
+    >
+  </head>
+  <body class="spacious">
+    <!-- Navigation Container -->
+    <div id="navigation-container"></div>
+
+    <!-- HERO -->
+    <section
+      class="hero hero--product min-h-[35vh] bg-cover bg-center bg-no-repeat flex items-center text-center py-12"
+      style="
+        background: linear-gradient(
+            rgba(0, 92, 115, 0.85),
+            rgba(0, 92, 115, 0.85)
+          ),
+          url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=70')
+            center/cover no-repeat;
+      "
+    >
+      <div class="container mx-auto">
+        <h1
+          class="text-white text-4xl md:text-5xl font-bold mb-4"
+          data-i18n="habitation.title"
+        >
+          Biens (Habitation)
+        </h1>
+        <p
+          class="text-white text-lg md:text-xl mb-6 max-w-4xl mx-auto"
+          data-i18n="habitation.subtitle"
+        >
+          Incendie • Vol • Dégâts des eaux • Bris de glace • RC vie privée •
+          Objets de valeur • Protection juridique • Assistance & relogement.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 mt-4">
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="habitation.badges.0"
+            >Multirisques habitation</span
+          >
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="habitation.badges.1"
+            >Responsabilité civile</span
+          >
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="habitation.badges.2"
+            >Assistance 24/7</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="py-8 max-w-7xl mx-auto">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <!-- Onglets -->
+        <nav
+          class="tabs top-16 z-30 bg-white p-2 border border-gray-200 rounded-xl overflow-x-auto whitespace-nowrap shadow-lg mb-4"
+          role="tablist"
+          aria-label="Habitation tabs"
+        >
+          <button
+            class="tab active flex-shrink-0 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            style="background-color: rgba(0, 92, 115, 0.9)"
+            id="tab-over"
+            role="tab"
+            aria-selected="true"
+            data-tab="over"
+            data-i18n="habitation.tabs.over"
+          >
+            Aperçu
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-cov"
+            role="tab"
+            aria-selected="false"
+            data-tab="cov"
+            data-i18n="habitation.tabs.cov"
+          >
+            Garanties
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-opt"
+            role="tab"
+            aria-selected="false"
+            data-tab="opt"
+            data-i18n="habitation.tabs.opt"
+          >
+            Options
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-risks"
+            role="tab"
+            aria-selected="false"
+            data-tab="risks"
+            data-i18n="habitation.tabs.risks"
+          >
+            Exclusions
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-claim"
+            role="tab"
+            aria-selected="false"
+            data-tab="claim"
+            data-i18n="habitation.tabs.claim"
+          >
+            Sinistres & assistance
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-faq"
+            role="tab"
+            aria-selected="false"
+            data-tab="faq"
+            data-i18n="habitation.tabs.faq"
+          >
+            FAQ
+          </button>
+        </nav>
+
+        <!-- Aperçu -->
+        <article
+          id="over"
+          class="tabpanel active bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-over"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="habitation.over.t"
+          >
+            1. Aperçu
+          </h2>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2">
+              <p
+                class="text-gray-600 text-lg leading-relaxed mb-6"
+                data-i18n="habitation.over.p"
+              >
+                L'assurance <strong>Habitation</strong> protège votre logement
+                (maison, appartement) et vos biens contre les sinistres du
+                quotidien tout en couvrant votre
+                <em>responsabilité civile vie privée</em>.
+              </p>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.over.li.0"
+                    >Incendie, vol, dégâts des eaux, événements
+                    climatiques.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.over.li.1"
+                    >RC : dommages causés à des tiers (vous, enfants,
+                    animaux).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.over.li.2"
+                    >Services : assistance, relogement temporaire,
+                    dépannage.</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-4">
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="text-lg font-semibold mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="habitation.over.kpi.0"
+                >
+                  Capital mobilier
+                </div>
+                <div class="text-gray-600 text-sm">à définir</div>
+              </div>
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="text-lg font-semibold mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="habitation.over.kpi.1"
+                >
+                  Franchise
+                </div>
+                <div class="text-gray-600 text-sm">selon formule</div>
+              </div>
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="text-lg font-semibold mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="habitation.over.kpi.2"
+                >
+                  Assistance
+                </div>
+                <div class="text-gray-600 text-sm">24/7</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Garanties -->
+        <article
+          id="cov"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-cov"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="habitation.cov.t"
+          >
+            2. Garanties principales
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="habitation.cov.c0.t"
+              >
+                Dommages au logement
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.cov.c0.li.0"
+                    >Incendie, explosion, fumées.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.cov.c0.li.1"
+                    >Dégâts des eaux & gel.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.cov.c0.li.2"
+                    >Événements climatiques (selon conditions).</span
+                  >
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="habitation.cov.c1.t"
+              >
+                Vol & vandalisme
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.cov.c1.li.0"
+                    >Effraction, agression, escalade (selon garanties).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.cov.c1.li.1"
+                    >Détérioration immobilière lors d'un vol.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.cov.c1.li.2"
+                    >Objets de valeur : limites spécifiques.</span
+                  >
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="habitation.cov.c2.t"
+              >
+                Responsabilité civile
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.cov.c2.li.0"
+                    >Vie privée (vous, enfants, animaux).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.cov.c2.li.1"
+                    >Recours des voisins & des tiers.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.cov.c2.li.2"
+                    >Défense & recours (juridique de base).</span
+                  >
+                </li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <!-- Options -->
+        <article
+          id="opt"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-opt"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="habitation.opt.t"
+          >
+            3. Options & extensions
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="habitation.opt.c0.t"
+              >
+                Objets précieux
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.opt.c0.li.0"
+                    >Bijoux, œuvres d'art : garanties dédiées.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.opt.c0.li.1"
+                    >Évaluation & preuves d'achat requises.</span
+                  >
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="habitation.opt.c1.t"
+              >
+                Bris de glace & électroménager
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.opt.c1.li.0"
+                    >Vitrages, vérandas, installations sanitaires.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.opt.c1.li.1"
+                    >Pannes électriques (selon option).</span
+                  >
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="habitation.opt.c2.t"
+              >
+                Protection juridique
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.opt.c2.li.0"
+                    >Litiges de voisinage et consommation.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.opt.c2.li.1"
+                    >Accompagnement et prise en charge des frais selon
+                    plafonds.</span
+                  >
+                </li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <!-- Exclusions -->
+        <article
+          id="risks"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-risks"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="habitation.risks.t"
+          >
+            4. Principales exclusions (exemples)
+          </h2>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span
+                class="text-teal-600 mr-3 mt-1"
+                style="color: rgba(0, 92, 115, 0.8)"
+                >✓</span
+              >
+              <span class="text-gray-700" data-i18n="habitation.risks.li.0"
+                >Usure, vétusté, défaut d'entretien.</span
+              >
+            </li>
+            <li class="flex items-start">
+              <span
+                class="text-teal-600 mr-3 mt-1"
+                style="color: rgba(0, 92, 115, 0.8)"
+                >✓</span
+              >
+              <span class="text-gray-700" data-i18n="habitation.risks.li.1"
+                >Biens professionnels non déclarés.</span
+              >
+            </li>
+            <li class="flex items-start">
+              <span
+                class="text-teal-600 mr-3 mt-1"
+                style="color: rgba(0, 92, 115, 0.8)"
+                >✓</span
+              >
+              <span class="text-gray-700" data-i18n="habitation.risks.li.2"
+                >Vol sans effraction caractérisée (selon contrat).</span
+              >
+            </li>
+            <li class="flex items-start">
+              <span
+                class="text-teal-600 mr-3 mt-1"
+                style="color: rgba(0, 92, 115, 0.8)"
+                >✓</span
+              >
+              <span class="text-gray-700" data-i18n="habitation.risks.li.3"
+                >Événements non assurables (guerre…).</span
+              >
+            </li>
+          </ul>
+          <p class="text-gray-600 mt-6" data-i18n="habitation.risks.note">
+            Les conditions, plafonds et franchises varient selon la formule
+            retenue et l'assureur. Le détail figure dans les notices
+            contractuelles.
+          </p>
+        </article>
+
+        <!-- Sinistres -->
+        <article
+          id="claim"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-claim"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="habitation.claim.t"
+          >
+            5. Sinistres & assistance
+          </h2>
+          <details
+            class="rounded-xl p-6 border"
+            style="
+              background: linear-gradient(
+                135deg,
+                rgba(0, 92, 115, 0.1),
+                rgba(0, 92, 115, 0.05)
+              );
+              border-color: rgba(0, 92, 115, 0.2);
+            "
+          >
+            <summary
+              class="text-xl font-semibold cursor-pointer"
+              style="color: rgba(0, 92, 115, 0.9)"
+            >
+              🧭
+              <span data-i18n="habitation.claim.sum"
+                >Que faire en cas de sinistre ?</span
+              >
+            </summary>
+            <div class="mt-4">
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.claim.li.0"
+                    >Sécurisez les lieux et contactez l'assistance 24/7.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.claim.li.1"
+                    >Déclarez sous 5 jours ouvrés (2 jours en cas de vol).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.claim.li.2"
+                    >Conservez devis/factures/photos pour l'expert.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="habitation.claim.li.3"
+                    >Relogement temporaire si logement inhabitable (selon
+                    garanties).</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+        <!-- FAQ -->
+        <article
+          id="faq"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-faq"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="habitation.faq.t"
+          >
+            6. FAQ
+          </h2>
+          <div class="space-y-4">
+            <details
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <summary
+                class="text-lg font-semibold cursor-pointer"
+                style="color: rgba(0, 92, 115, 0.9)"
+              >
+                ❓
+                <span data-i18n="habitation.faq.q0"
+                  >Quelle valeur d'indemnisation ?</span
+                >
+              </summary>
+              <div class="mt-4">
+                <p class="text-gray-600" data-i18n="habitation.faq.a0">
+                  Selon option : valeur à neuf, valeur agréée ou valeur d'usage
+                  avec coefficient de vétusté.
+                </p>
+              </div>
+            </details>
+            <details
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <summary
+                class="text-lg font-semibold cursor-pointer"
+                style="color: rgba(0, 92, 115, 0.9)"
+              >
+                ❓
+                <span data-i18n="habitation.faq.q1"
+                  >Les objets connectés sont-ils couverts ?</span
+                >
+              </summary>
+              <div class="mt-4">
+                <p class="text-gray-600" data-i18n="habitation.faq.a1">
+                  Oui, au titre du capital mobilier, avec plafonds par
+                  objet/ménage. Une facture peut être requise.
+                </p>
+              </div>
+            </details>
+            <details
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <summary
+                class="text-lg font-semibold cursor-pointer"
+                style="color: rgba(0, 92, 115, 0.9)"
+              >
+                ❓
+                <span data-i18n="habitation.faq.q2"
+                  >Puis-je assurer une résidence secondaire ?</span
+                >
+              </summary>
+              <div class="mt-4">
+                <p class="text-gray-600" data-i18n="habitation.faq.a2">
+                  Oui, via une garantie dédiée ou un contrat séparé selon
+                  l'assureur et l'usage (saisonnière, location…).
+                </p>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <!-- CTA -->
+        <article
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 mt-6 text-center"
+          style="
+            background: linear-gradient(
+              135deg,
+              rgba(0, 92, 115, 0.9),
+              rgba(0, 92, 115, 0.8)
+            );
+            border-color: rgba(0, 92, 115, 0.9);
+          "
+        >
+          <h3
+            class="text-2xl font-bold text-white mb-4"
+            data-i18n="habitation.cta.t"
+          >
+            Protégez votre foyer en toute simplicité
+          </h3>
+          <p class="text-white/90 text-lg mb-6" data-i18n="habitation.cta.p">
+            Nous calibrons ensemble capitaux, franchises et options selon votre
+            logement et votre budget.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              class="bg-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 shadow-lg"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="../contact.html"
+              data-i18n="habitation.cta.quote"
+              >Obtenir un devis</a
+            >
+            <a
+              class="px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 shadow-lg"
+              style="
+                background-color: rgba(0, 92, 115, 1);
+                color: white;
+                border-color: rgba(0, 92, 115, 0.9);
+              "
+              href="../contact.html"
+              data-i18n="habitation.cta.talk"
+              >Parler à un conseiller</a
+            >
+          </div>
+        </article>
+
+        <!-- Liens produits (précédent/suivant) -->
+        <article
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 mt-6 text-center"
+        >
+          <p class="text-gray-600">
+            <a
+              class="hover:underline"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="./alv.html"
+              >←
+              <span data-i18n="habitation.nav.prev"
+                >Accidents de la vie</span
+              ></a
+            >
+            &nbsp;|&nbsp;
+            <a
+              class="hover:underline"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="./vie.html"
+              ><span data-i18n="habitation.nav.next"
+                >Assurance-vie & placements</span
+              >
+              →</a
+            >
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- FAQ SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quelle valeur d'indemnisation ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Selon option : valeur à neuf, valeur agréée ou valeur d'usage avec coefficient de vétusté."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Les objets connectés sont-ils couverts ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, au titre du capital mobilier, avec plafonds par objet/ménage. Une facture peut être requise."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Puis-je assurer une résidence secondaire ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, via une garantie dédiée ou un contrat séparé selon l'assureur et l'usage (saisonnière, location…)."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script>
+      /* ================== Tab Management ================== */
+      function bindTabs() {
+        const tabs = document.querySelectorAll(".tabs .tab");
+        const panels = document.querySelectorAll(".tabpanel");
+
+        function show(id, push = true) {
+          tabs.forEach((btn) => {
+            const act = btn.dataset.tab === id;
+            btn.classList.toggle("active", act);
+            btn.setAttribute("aria-selected", act ? "true" : "false");
+
+            // Update tab styling
+            if (act) {
+              btn.style.backgroundColor = "rgba(0, 92, 115, 0.9)";
+              btn.style.color = "white";
+              btn.classList.remove("bg-gray-100", "text-gray-700");
+              btn.classList.add("text-white");
+            } else {
+              btn.style.backgroundColor = "";
+              btn.style.color = "";
+              btn.classList.remove("text-white");
+              btn.classList.add("bg-gray-100", "text-gray-700");
+            }
+          });
+          panels.forEach((p) => p.classList.toggle("active", p.id === id));
+          if (push) history.replaceState(null, "", "#" + id);
+        }
+
+        tabs.forEach((btn) =>
+          btn.addEventListener("click", () => show(btn.dataset.tab))
+        );
+
+        function fromHash() {
+          const id = (location.hash || "#over").slice(1);
+          const known = ["over", "cov", "opt", "risks", "claim", "faq"];
+          show(known.includes(id) ? id : "over", false);
+        }
+
+        window.addEventListener("hashchange", fromHash);
+        fromHash();
+      }
+
+      function initUI() {
+        bindTabs();
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Use global translation functions from i18n.js
+        if (typeof window.applyTexts === "function") {
+          window.applyTexts();
+        }
+        initUI();
+      });
+    </script>
+
+    <!-- Global I18N Script -->
+    <script src="../assets/js/i18n.js"></script>
+
+    <!-- Component Scripts -->
+    <script src="../assets/js/components/SearchComponent.js"></script>
+    <script src="../assets/js/components/NavigationComponent.js"></script>
+    <script src="../assets/js/components/FooterComponent.js"></script>
+  </body>
+</html>
+
+

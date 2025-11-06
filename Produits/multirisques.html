@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Riskalia — Multirisques Entreprise (Commercial Property & BI)</title>
+    <meta
+      name="description"
+      content="Assurance multirisques entreprise : biens, pertes d’exploitation (PDB), incendie, dégâts des eaux, vol, bris de machines, événements climatiques. Ingénierie de risque, évaluations & prévention."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <!-- Fonts + global CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="../assets/css/components/navigation.css" />
+    <link rel="stylesheet" href="../assets/css/components/footer.css" />
+
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+
+    <style>
+      /* Tab functionality */
+      .tabpanel {
+        display: none;
+      }
+      .tabpanel.active {
+        display: block;
+      }
+
+      /* Mobile confort */
+      @media (max-width: 600px) {
+        .sticky {
+          top: 66px;
+        }
+      }
+    </style>
+
+    <noscript
+      ><style>
+        .tabpanel {
+          display: block;
+        }
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style></noscript
+    >
+  </head>
+  <body class="spacious">
+    <!-- Navigation Container -->
+    <div id="navigation-container"></div>
+
+    <!-- HERO -->
+    <section
+      class="min-h-[35vh] bg-cover bg-center bg-no-repeat flex items-center text-center py-12"
+      style="
+        background: linear-gradient(
+            rgba(0, 92, 115, 0.85),
+            rgba(0, 92, 115, 0.85)
+          ),
+          url('https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=1600&q=70')
+            center/cover no-repeat;
+      "
+    >
+      <div class="container mx-auto px-4">
+        <h1
+          class="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-2"
+          data-i18n="multirisques.title"
+        >
+          Multirisques Entreprise
+        </h1>
+        <p
+          class="text-white/98 max-w-4xl mx-auto text-lg md:text-xl mb-4"
+          data-i18n="multirisques.subtitle"
+        >
+          Biens & Pertes d'exploitation • Incendie & dégâts des eaux • Vol &
+          bris de machines • Événements climatiques & CatNat • Ingénierie de
+          risque & prévention.
+        </p>
+        <div class="flex flex-wrap justify-center gap-2 mt-3">
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="multirisques.badges.0"
+            >Bâtiments, stocks, équipements</span
+          >
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="multirisques.badges.1"
+            >Pertes d'exploitation (PDB)</span
+          >
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="multirisques.badges.2"
+            >Prévention & conformité</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="py-8 max-w-7xl mx-auto">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <!-- Onglets -->
+        <nav
+          class="top-16 z-30 bg-white p-2 border border-gray-200 rounded-xl overflow-x-auto whitespace-nowrap shadow-lg mb-4"
+          role="tablist"
+          aria-label="Multirisques tabs"
+        >
+          <button
+            class="tab active flex-shrink-0 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer"
+            style="background-color: rgba(0, 92, 115, 0.9)"
+            id="tab-over"
+            role="tab"
+            aria-selected="true"
+            data-tab="over"
+            data-i18n="multirisques.tabs.over"
+          >
+            Aperçu
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 hover:bg-gray-200 cursor-pointer"
+            id="tab-cov"
+            role="tab"
+            aria-selected="false"
+            data-tab="cov"
+            data-i18n="multirisques.tabs.cov"
+          >
+            Couvertures
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 hover:bg-gray-200 cursor-pointer"
+            id="tab-opt"
+            role="tab"
+            aria-selected="false"
+            data-tab="opt"
+            data-i18n="multirisques.tabs.opt"
+          >
+            Options & prévention
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 hover:bg-gray-200 cursor-pointer"
+            id="tab-admin"
+            role="tab"
+            aria-selected="false"
+            data-tab="admin"
+            data-i18n="multirisques.tabs.admin"
+          >
+            Tarification & mise en place
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 hover:bg-gray-200 cursor-pointer"
+            id="tab-claim"
+            role="tab"
+            aria-selected="false"
+            data-tab="claim"
+            data-i18n="multirisques.tabs.claim"
+          >
+            Sinistres
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 hover:bg-gray-200 cursor-pointer"
+            id="tab-faq"
+            role="tab"
+            aria-selected="false"
+            data-tab="faq"
+            data-i18n="multirisques.tabs.faq"
+          >
+            FAQ
+          </button>
+        </nav>
+
+        <!-- Aperçu -->
+        <article
+          id="over"
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 tabpanel active"
+          role="tabpanel"
+          aria-labelledby="tab-over"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="multirisques.over.t"
+          >
+            1. Aperçu
+          </h2>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2">
+              <p
+                class="text-gray-600 text-lg leading-relaxed mb-6"
+                data-i18n="multirisques.over.p"
+              >
+                Le contrat
+                <strong class="text-gray-900">multirisques entreprise</strong>
+                protège vos bâtiments, contenus et responsabilités indirectes
+                via la
+                <strong class="text-gray-900">perte d'exploitation (PDB)</strong
+                >. Nous combinons placement compétitif,
+                <em style="color: rgba(0, 92, 115, 0.8)"
+                  >ingénierie de risque</em
+                >, et calibrage des franchises/limites pour équilibrer
+                protection et budget.
+              </p>
+              <ul class="space-y-3 pl-6">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.over.li.0"
+                  >
+                    Cartographie des sites & expositions (incendie, eau, vol,
+                    météo).
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.over.li.1"
+                  >
+                    Paramétrage PDB : marge brute, période d'indemnisation
+                    (12–24–36 mois).
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.over.li.2"
+                  >
+                    Prévention pragmatique : détection, compartimentage,
+                    maintenance.
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-4">
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="font-bold text-lg mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="multirisques.over.kpi.0"
+                >
+                  Capacité
+                </div>
+                <div
+                  class="text-gray-600 text-sm"
+                  data-i18n="multirisques.over.kpi_desc.0"
+                >
+                  Jusqu'à la capacité marché
+                </div>
+              </div>
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="font-bold text-lg mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="multirisques.over.kpi.1"
+                >
+                  Période BI
+                </div>
+                <div
+                  class="text-gray-600 text-sm"
+                  data-i18n="multirisques.over.kpi_desc.1"
+                >
+                  12–36 mois
+                </div>
+              </div>
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="font-bold text-lg mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="multirisques.over.kpi.2"
+                >
+                  Ingénierie
+                </div>
+                <div
+                  class="text-gray-600 text-sm"
+                  data-i18n="multirisques.over.kpi_desc.2"
+                >
+                  Visites & recommandations
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Couvertures -->
+        <article
+          id="cov"
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 tabpanel"
+          role="tabpanel"
+          aria-labelledby="tab-cov"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="multirisques.cov.t"
+          >
+            2. Couvertures principales
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="multirisques.cov.c0.t"
+              >
+                Biens
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.cov.c0.li.0"
+                  >
+                    Incendie, explosion, chute de foudre, fumées.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.cov.c0.li.1"
+                  >
+                    Dégâts des eaux, tempête/grêle/inondation, CatNat.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.cov.c0.li.2"
+                  >
+                    Vol, vandalisme, bris de glaces et enseignes.
+                  </span>
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="multirisques.cov.c1.t"
+              >
+                Pertes d'exploitation (PDB)
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.cov.c1.li.0"
+                  >
+                    Marge brute, frais supplémentaires d'exploitation.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.cov.c1.li.1"
+                  >
+                    Période d'indemnisation 12–36 mois.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.cov.c1.li.2"
+                  >
+                    Dommages de fournisseurs/clients clés (contingent BI).
+                  </span>
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="multirisques.cov.c2.t"
+              >
+                Machines & utilités
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.cov.c2.li.0"
+                  >
+                    Bris de machines & électroniques.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.cov.c2.li.1"
+                  >
+                    Pannes utilités (énergie, vapeur, froid) selon options.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.cov.c2.li.2"
+                  >
+                    Frais de remise en conformité (codes, normes).
+                  </span>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <!-- Options & prévention -->
+        <article
+          id="opt"
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 tabpanel"
+          role="tabpanel"
+          aria-labelledby="tab-opt"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="multirisques.opt.t"
+          >
+            3. Options & prévention
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="multirisques.opt.c0.t"
+              >
+                Climat & CatNat
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.opt.c0.li.0"
+                  >
+                    Extensions tempête, grêle, inondation, submersion.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.opt.c0.li.1"
+                  >
+                    Franchises différenciées par site & exposition.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.opt.c0.li.2"
+                  >
+                    Couvertures paramétriques météo (en option).
+                  </span>
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="multirisques.opt.c1.t"
+              >
+                Prévention & ingénierie
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.opt.c1.li.0"
+                  >
+                    Audits sites, thermographie, essais sprinkler.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.opt.c1.li.1"
+                  >
+                    Plan d'actions priorisé & suivi trimestriel.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.opt.c1.li.2"
+                  >
+                    Guides continuité d'activité (BCP) & scénarios.
+                  </span>
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="multirisques.opt.c2.t"
+              >
+                Paramètres de police
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.opt.c2.li.0"
+                  >
+                    Sommes assurées & indexation, valeur à neuf.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.opt.c2.li.1"
+                  >
+                    Sous-limites : marchandises réfrigérées, archives, données.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.opt.c2.li.2"
+                  >
+                    Clauses de coassurance & stop-loss selon profil.
+                  </span>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <!-- Tarification & mise en place -->
+        <article
+          id="admin"
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 tabpanel"
+          role="tabpanel"
+          aria-labelledby="tab-admin"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="multirisques.admin.t"
+          >
+            4. Tarification & mise en place
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="multirisques.admin.c0.t"
+              >
+                Données requises
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.admin.c0.li.0"
+                  >
+                    Liste des sites : adresse, activité, construction,
+                    protections.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.admin.c0.li.1"
+                  >
+                    Sommes assurées par rubrique (bâtiments, contenu, stocks).
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.admin.c0.li.2"
+                  >
+                    Marge brute & période BI souhaitée.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.admin.c0.li.3"
+                  >
+                    Sinistralité 5 ans (fréquence & sévérité).
+                  </span>
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="multirisques.admin.c1.t"
+              >
+                Processus
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.admin.c1.li.0"
+                  >
+                    Pré-audit & recommandation de limites/franchises.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.admin.c1.li.1"
+                  >
+                    Mise en concurrence & négociation des clauses clés.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.admin.c1.li.2"
+                  >
+                    Binders, attestations et calendrier prévention.
+                  </span>
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="multirisques.admin.c2.t"
+              >
+                Documents utiles
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.admin.c2.li.0"
+                  >
+                    Plans & schémas de procédés, nomenclature machines.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.admin.c2.li.1"
+                  >
+                    Rapports maintenance & conformité (sprinklers, élec.).
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.admin.c2.li.2"
+                  >
+                    Plan de continuité (BCP) & procédures d'urgence.
+                  </span>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <!-- Sinistres -->
+        <article
+          id="claim"
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 tabpanel"
+          role="tabpanel"
+          aria-labelledby="tab-claim"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="multirisques.claim.t"
+          >
+            5. Gestion des sinistres
+          </h2>
+          <details class="mt-1">
+            <summary
+              class="text-lg font-semibold cursor-pointer hover:text-gray-700 transition-colors duration-200"
+              style="color: rgba(0, 92, 115, 0.9)"
+            >
+              🧭 <span data-i18n="multirisques.claim.sum">Notre approche</span>
+            </summary>
+            <div class="mt-4">
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.claim.li.0"
+                  >
+                    Cellule d'urgence 24/7, mesures conservatoires & experts
+                    agréés.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.claim.li.1"
+                  >
+                    Estimation rapide BI & avances si prévu.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="multirisques.claim.li.2"
+                  >
+                    Reporting & retour d'expérience pour réduire la récidive.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+        <!-- FAQ -->
+        <article
+          id="faq"
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 tabpanel"
+          role="tabpanel"
+          aria-labelledby="tab-faq"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="multirisques.faq.t"
+          >
+            6. FAQ
+          </h2>
+          <details class="mt-1">
+            <summary
+              class="text-lg font-semibold cursor-pointer hover:text-gray-700 transition-colors duration-200"
+              style="color: rgba(0, 92, 115, 0.9)"
+            >
+              ❓
+              <span data-i18n="multirisques.faq.q0"
+                >Comment fixer la période d'indemnisation BI ?</span
+              >
+            </summary>
+            <div class="mt-4">
+              <p
+                class="text-gray-600 text-lg leading-relaxed"
+                data-i18n="multirisques.faq.a0"
+              >
+                Selon les cycles d'approvisionnement, de production et de
+                ventes. Beaucoup d'industries nécessitent 18–24 mois.
+              </p>
+            </div>
+          </details>
+          <details class="mt-4">
+            <summary
+              class="text-lg font-semibold cursor-pointer hover:text-gray-700 transition-colors duration-200"
+              style="color: rgba(0, 92, 115, 0.9)"
+            >
+              ❓
+              <span data-i18n="multirisques.faq.q1"
+                >Paramétriques climatiques ou garanties classiques ?</span
+              >
+            </summary>
+            <div class="mt-4">
+              <p
+                class="text-gray-600 text-lg leading-relaxed"
+                data-i18n="multirisques.faq.a1"
+              >
+                Les paramétriques déclenchent sur un indice (pluie, vent…). Ils
+                complètent utilement les garanties dommages/PDB pour réduire les
+                délais.
+              </p>
+            </div>
+          </details>
+          <details class="mt-4">
+            <summary
+              class="text-lg font-semibold cursor-pointer hover:text-gray-700 transition-colors duration-200"
+              style="color: rgba(0, 92, 115, 0.9)"
+            >
+              ❓
+              <span data-i18n="multirisques.faq.q2"
+                >Quelle valeur assurer (neuf, vétusté, valeur déclarée) ?</span
+              >
+            </summary>
+            <div class="mt-4">
+              <p
+                class="text-gray-600 text-lg leading-relaxed"
+                data-i18n="multirisques.faq.a2"
+              >
+                La valeur à neuf limite la sous-assurance mais peut coûter plus.
+                Nous calibrons au cas par cas avec des évaluations.
+              </p>
+            </div>
+          </details>
+        </article>
+
+        <!-- CTA -->
+        <article
+          class="rounded-xl shadow-lg border p-8 text-center mt-6"
+          style="
+            background: linear-gradient(
+              135deg,
+              rgba(0, 92, 115, 0.9),
+              rgba(0, 92, 115, 0.8)
+            );
+            border-color: rgba(0, 92, 115, 0.9);
+          "
+        >
+          <h3
+            class="text-2xl font-bold text-white mb-4"
+            data-i18n="multirisques.cta.t"
+          >
+            Sécurisons vos actifs et votre continuité
+          </h3>
+          <p class="text-white/90 text-lg mb-6" data-i18n="multirisques.cta.p">
+            Nous calibrons Biens & PDB, les options climat et un plan de
+            prévention pragmatique.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              class="bg-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 shadow-lg"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="../contact.html"
+              data-i18n="multirisques.cta.quote"
+              >Obtenir un devis</a
+            >
+            <a
+              class="px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg border"
+              style="
+                background-color: rgba(0, 92, 115, 1);
+                color: white;
+                border-color: rgba(0, 92, 115, 0.9);
+              "
+              href="../contact.html"
+              data-i18n="multirisques.cta.talk"
+              >Parler à un conseiller</a
+            >
+          </div>
+        </article>
+
+        <!-- Liens produits (précédent/suivant) -->
+        <article
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 text-center mt-4"
+        >
+          <p class="text-gray-600">
+            <a
+              class="font-medium transition-colors duration-200"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="./santecollective.html"
+              >←
+              <span data-i18n="multirisques.nav.prev"
+                >Santé collective & Prévoyance</span
+              ></a
+            >
+            <span class="mx-4 text-gray-400">|</span>
+            <a
+              class="font-medium transition-colors duration-200"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="./transport.html"
+              ><span data-i18n="multirisques.nav.next"
+                >Transport (marchandises)</span
+              >
+              →</a
+            >
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- FAQ SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Comment fixer la période d’indemnisation BI ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Selon les cycles d’approvisionnement, de production et de ventes. Beaucoup d’industries nécessitent 18–24 mois."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Paramétriques climatiques ou garanties classiques ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les paramétriques déclenchent sur un indice (pluie, vent…). Ils complètent utilement les garanties dommages/PDB pour réduire les délais."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle valeur assurer ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La valeur à neuf limite la sous-assurance mais peut coûter plus. Calibrage au cas par cas avec évaluations."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script>
+      /* ================== Page-specific JavaScript ================== */
+      function bindTabs() {
+        const tabs = document.querySelectorAll(".tab");
+        const panels = document.querySelectorAll(".tabpanel");
+        function show(id, push = true) {
+          tabs.forEach((btn) => {
+            const act = btn.dataset.tab === id;
+            if (act) {
+              btn.classList.remove("bg-gray-100", "text-gray-700");
+              btn.style.backgroundColor = "rgba(0, 92, 115, 0.9)";
+              btn.classList.add("text-white");
+            } else {
+              btn.style.backgroundColor = "";
+              btn.classList.remove("text-white");
+              btn.classList.add("bg-gray-100", "text-gray-700");
+            }
+            btn.classList.toggle("active", act);
+            btn.setAttribute("aria-selected", act ? "true" : "false");
+          });
+          panels.forEach((p) => p.classList.toggle("active", p.id === id));
+          if (push) history.replaceState(null, "", "#" + id);
+        }
+        tabs.forEach((btn) =>
+          btn.addEventListener("click", () => show(btn.dataset.tab))
+        );
+        function fromHash() {
+          const id = (location.hash || "#over").slice(1);
+          const known = ["over", "cov", "opt", "admin", "claim", "faq"];
+          show(known.includes(id) ? id : "over", false);
+        }
+        window.addEventListener("hashchange", fromHash);
+        fromHash();
+      }
+      function initUI() {
+        bindTabs();
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Use global translation functions from i18n.js
+        if (typeof window.applyTexts === "function") {
+          window.applyTexts();
+        }
+        initUI();
+      });
+    </script>
+
+    <!-- Global I18N Script -->
+    <script src="../assets/js/i18n.js"></script>
+
+    <!-- Component Scripts -->
+    <script src="../assets/js/components/SearchComponent.js"></script>
+    <script src="../assets/js/components/NavigationComponent.js"></script>
+    <script src="../assets/js/components/FooterComponent.js"></script>
+  </body>
+</html>

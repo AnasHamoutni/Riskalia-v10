@@ -1,0 +1,97 @@
+/* ===== MINIMAL NAVIGATION COMPONENT STYLES ===== */
+/* Only essential styles that can't be handled by Tailwind */
+
+/* Hamburger Menu Animation for SVG */
+.hamburger-icon path {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: 12px 12px;
+}
+
+.hamburger-icon.open .hamburger-top {
+  transform: rotate(45deg) translate(0px, 6px);
+}
+
+.hamburger-icon.open .hamburger-middle {
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+.hamburger-icon.open .hamburger-bottom {
+  transform: rotate(-45deg) translate(0px, -6px);
+}
+
+/* Active Navigation Link Indicator */
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--c3);
+  border-radius: 1px;
+}
+
+/* Ensure active link has relative positioning */
+.nav-link.active {
+  position: relative;
+}
+
+/* Prevent text wrapping in navigation links */
+.nav-link,
+.mobile-nav-link {
+  white-space: nowrap;
+}
+
+/* Ensure navigation container has enough space */
+@media (min-width: 1024px) {
+  nav {
+    min-width: max-content;
+  }
+}
+
+/* Mobile Menu Height Fix */
+.mobile-menu {
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+
+/* RTL Support */
+body[dir="rtl"] .lang-dropdown {
+  left: 0;
+  right: auto;
+}
+
+body[dir="rtl"] .search-input {
+  text-align: right;
+}
+
+/* Focus States for Accessibility */
+.nav-link:focus,
+.mobile-nav-link:focus,
+.lang-option:focus,
+.mobile-lang-option:focus {
+  outline: 2px solid var(--c3);
+  outline-offset: 2px;
+}
+
+/* Smooth Transitions */
+.hamburger-icon path {
+  transition: all 0.3s ease;
+}
+
+/* Mobile Search Animation */
+.mobile-search-container {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

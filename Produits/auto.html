@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>
+      RISKALIA Auto — Assurance automobile premium
+    </title>
+    <meta
+      name="description"
+      content="RISKALIA Auto : Tiers+, Dommage Collision et Tous Risques Premium. Rigoureux. Transparent. Réactif. Assistance 24/7, réseau agréé, suivi sinistres digitalisé."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Fonts + global CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="../assets/css/components/navigation.css" />
+    <link rel="stylesheet" href="../assets/css/components/footer.css" />
+
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+
+ <!-- === PREMIUM STYLING === -->
+    <style>
+      /* === Base Accent & Hero Colors === */
+      .rk-accent {
+        background: linear-gradient(to right, rgba(0,92,115,1), rgba(0,140,150,1));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .rk-bg-gradient {
+        background: linear-gradient(135deg, rgba(0,92,115,0.1), rgba(0,92,115,0.05));
+        border-color: rgba(0,92,115,0.2);
+      }
+
+      .rk-hero-overlay {
+        position: relative;
+        background: linear-gradient(rgba(0,92,115,0.82), rgba(0,92,115,0.82)),
+          url('https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=60') center/cover no-repeat;
+        overflow: hidden;
+      }
+
+      /* === Hero Light Sweep Animation === */
+      .rk-hero-overlay::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg,
+          rgba(255,255,255,0) 0%,
+          rgba(255,255,255,0.25) 50%,
+          rgba(255,255,255,0) 100%);
+        transform: translateX(-100%);
+        animation: heroShine 6s infinite linear;
+      }
+      @keyframes heroShine {
+        to { transform: translateX(100%); }
+      }
+
+      /* === Cards Hover + Elevation === */
+      article {
+        transition: all 0.4s ease;
+      }
+      article:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0,92,115,0.12);
+        border-color: rgba(0,92,115,0.35);
+      }
+      article:hover h3 {
+        color: rgba(0,92,115,1);
+      }
+
+      /* === Fade-in Animation for Sections === */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s ease forwards;
+      }
+      @keyframes fadeInUp {
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* === Smooth transition for CTA buttons === */
+      a:hover {
+        transition: all 0.3s ease;
+      }
+
+      /* === Optional pulse accent for icons === */
+      .icon-pulse {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .icon-pulse::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 0.75rem;
+        background: rgba(0,92,115,0.1);
+        animation: pulse-bg 2s infinite;
+      }
+      @keyframes pulse-bg {
+        0%, 100% { transform: scale(1); opacity: 0.8; }
+        50% { transform: scale(1.2); opacity: 0.4; }
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-50 text-gray-800">
+    <div id="navigation-container"></div>
+
+    <!-- HERO -->
+    <section class="hero hero--product min-h-[40vh] flex items-center text-center py-12 rk-hero-overlay">
+      <div class="container mx-auto px-4 relative z-10">
+        <h1
+          class="text-white text-4xl md:text-5xl font-bold mb-4"
+          data-i18n="auto.title"
+        >
+          RISKALIA Auto
+        </h1>
+        <p
+          class="text-white text-lg md:text-xl mb-6 max-w-4xl mx-auto"
+          data-i18n="auto.desc"
+        >
+          Rigoureux. Transparent. Réactif. Trois niveaux de couverture adaptés à votre véhicule et à votre usage.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 mt-2">
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="auto.bullets.0"
+            >Assistance 24/7 & réseau agréé</span
+          >
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="auto.bullets.1"
+            >Protection du conducteur &amp; du véhicule</span
+          >
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="auto.bullets.2"
+            >3 niveaux : Tiers+, Collision, Tous Risques Premium</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <main class="py-10">
+      <div class="container mx-auto px-4 max-w-7xl fade-in">
+        <!-- Intro -->
+        <section class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 mb-8">
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-2"
+            data-i18n="auto.intro.title"
+          >
+            Une couverture adaptée à votre véhicule et à votre usage
+          </h2>
+          <p class="text-gray-600" data-i18n="auto.intro.text">
+            Trois niveaux clairs : <span class="font-semibold">Tiers+</span> pour l’essentiel et le budget,
+            <span class="font-semibold">Dommage Collision</span> pour protéger votre véhicule en cas de choc avec tiers identifié,
+            et <span class="font-semibold">Tous Risques Premium</span> pour une protection étendue (tous accidents, valeur à neuf/majorée).
+          </p>
+        </section>
+
+        <!-- Product Cards -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-in">
+          <!-- Tiers+ -->
+          <article class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-shadow">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center rk-bg-gradient border icon-pulse">
+                <span class="text-xl text-[rgba(0,92,115,0.95)]">🛡️</span>
+              </div>
+              <h3
+                class="text-xl font-semibold text-gray-900"
+                data-i18n="auto.cards.tiers.title"
+              >
+                Tiers +
+              </h3>
+            </div>
+            <ul class="space-y-2 text-gray-700 list-disc list-inside">
+              <li data-i18n="auto.cards.tiers.coverage.0">Responsabilité Civile obligatoire</li>
+              <li data-i18n="auto.cards.tiers.coverage.1">Défense &amp; Recours</li>
+              <li data-i18n="auto.cards.tiers.coverage.2">Bris de glaces</li>
+              <li data-i18n="auto.cards.tiers.coverage.3">Incendie</li>
+              <li data-i18n="auto.cards.tiers.coverage.4">Option Vol</li>
+            </ul>
+            <hr class="my-4" />
+            <p
+              class="text-sm text-gray-600 mb-2"
+              data-i18n="auto.cards.tiers.services"
+            >
+              <strong>Services inclus :</strong> Assistance 24/7, réseau agréé, suivi sinistre digitalisé.
+            </p>
+            <p
+              class="text-sm text-gray-600"
+              data-i18n="auto.cards.tiers.eligibility"
+            >
+              <strong>Éligibilité :</strong> Tous véhicules particuliers • ≤ 20 ans • Usage privé ou pro léger.
+            </p>
+          </article>
+
+          <!-- Collision -->
+          <article class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-shadow">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center rk-bg-gradient border icon-pulse">
+                <span class="text-xl text-[rgba(0,92,115,0.95)]">🚗</span>
+              </div>
+              <h3
+                class="text-xl font-semibold text-gray-900"
+                data-i18n="auto.cards.collision.title"
+              >
+                Dommage Collision
+              </h3>
+            </div>
+            <ul class="space-y-2 text-gray-700 list-disc list-inside">
+              <li data-i18n="auto.cards.collision.coverage.0">Garanties Tiers +</li>
+              <li data-i18n="auto.cards.collision.coverage.1">Dommages au véhicule (collision avec tiers identifié)</li>
+              <li data-i18n="auto.cards.collision.coverage.2">Protection juridique</li>
+            </ul>
+            <hr class="my-4" />
+            <p
+              class="text-sm text-gray-600 mb-2"
+              data-i18n="auto.cards.collision.services"
+            >
+              <strong>Services inclus :</strong> Assistance renforcée (remorquage + dépannage sur site), véhicule de remplacement* (selon conditions), gestion prioritaire sinistre.
+            </p>
+            <p
+              class="text-sm text-gray-600"
+              data-i18n="auto.cards.collision.eligibility"
+            >
+              <strong>Éligibilité :</strong> Véhicules ≤ 15 ans • Bonus/malus conforme ACAPS • Souscription simple via courtier.
+            </p>
+          </article>
+
+          <!-- Premium -->
+          <article class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-shadow">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center rk-bg-gradient border icon-pulse">
+                <span class="text-xl text-[rgba(0,92,115,0.95)]">⭐</span>
+              </div>
+              <h3
+                class="text-xl font-semibold text-gray-900"
+                data-i18n="auto.cards.premium.title"
+              >
+                Tous Risques Premium
+              </h3>
+            </div>
+            <ul class="space-y-2 text-gray-700 list-disc list-inside">
+              <li data-i18n="auto.cards.premium.coverage.0">Garanties Dommage Collision +</li>
+              <li data-i18n="auto.cards.premium.coverage.1">Dommages tous accidents</li>
+              <li data-i18n="auto.cards.premium.coverage.2">Vol, incendie, bris de glaces, événements naturels</li>
+              <li data-i18n="auto.cards.premium.coverage.3">Valeur à neuf / majorée</li>
+              <li data-i18n="auto.cards.premium.coverage.4">Protection conducteur &amp; passagers</li>
+            </ul>
+            <hr class="my-4" />
+            <p
+              class="text-sm text-gray-600 mb-2"
+              data-i18n="auto.cards.premium.services"
+            >
+              <strong>Services inclus :</strong> Valeur à neuf/majorée jusqu'à 36 mois, véhicule de remplacement premium (selon options), indemnisation accélérée.
+            </p>
+            <p
+              class="text-sm text-gray-600"
+              data-i18n="auto.cards.premium.eligibility"
+            >
+              <strong>Éligibilité :</strong> Véhicules récents/haut de gamme • Financement LOA/LLD • Conducteurs expérimentés ou flotte dirigeant.
+            </p>
+          </article>
+        </section>
+
+        <!-- Value-add -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 fade-in">
+          <div class="rounded-2xl p-6 border rk-bg-gradient">
+            <h3
+              class="text-lg font-semibold mb-2 rk-accent"
+              data-i18n="auto.value.items.0.title"
+            >
+              Audit du profil conducteur &amp; usage véhicule
+            </h3>
+            <p class="text-gray-700" data-i18n="auto.value.items.0.text">
+              Identification des garanties pertinentes et réduction des coûts inutiles.
+            </p>
+          </div>
+          <div class="rounded-2xl p-6 border rk-bg-gradient">
+            <h3
+              class="text-lg font-semibold mb-2 rk-accent"
+              data-i18n="auto.value.items.1.title"
+            >
+              Gestion sinistres &amp; suivi digitalisé
+            </h3>
+            <p class="text-gray-700" data-i18n="auto.value.items.1.text">
+              Transparence, rapidité et traçabilité du règlement.
+            </p>
+          </div>
+          <div class="rounded-2xl p-6 border rk-bg-gradient">
+            <h3
+              class="text-lg font-semibold mb-2 rk-accent"
+              data-i18n="auto.value.items.2.title"
+            >
+              Conseil &amp; prévention du risque
+            </h3>
+            <p class="text-gray-700" data-i18n="auto.value.items.2.text">
+              Optimisation bonus/malus et accompagnement post-sinistre.
+            </p>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 mt-8 text-center fade-in"
+          style="background: linear-gradient(135deg, rgba(0,92,115,0.9), rgba(0,92,115,0.85)); border-color: rgba(0,92,115,0.9);">
+          <h3
+            class="text-2xl font-bold text-white mb-4"
+            data-i18n="auto.cta.title"
+          >
+            Obtenir une proposition personnalisée
+          </h3>
+          <p class="text-white/90 text-lg mb-6" data-i18n="auto.cta.text">
+            Nous calibrons votre niveau de couverture selon l’âge du véhicule, l’usage et votre historique conducteur.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              class="bg-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 shadow-lg"
+              style="color: rgba(0,92,115,0.95);"
+              href="../contact.html"
+              data-i18n="auto.cta.quote"
+              >Obtenir un devis</a
+            >
+            <a
+              class="px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 shadow-lg"
+              style="background-color: rgba(0,92,115,1); color: white; border-color: rgba(0,92,115,0.9);"
+              href="../contact.html"
+              data-i18n="auto.cta.talk"
+              >Parler à un conseiller</a
+            >
+          </div>
+        </section>
+
+        <!-- Slogan -->
+        <section class="text-center mt-8 fade-in">
+          <p
+            class="text-xl md:text-2xl font-bold text-gray-900"
+            data-i18n="auto.slogan"
+          >
+            RISKALIA Auto — <span class="rk-accent">Rigoureux.</span> <span class="rk-accent">Transparent.</span> <span class="rk-accent">Réactif.</span>
+          </p>
+        </section>
+
+        <!-- Navigation Links -->
+        <section class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 mt-6 text-center fade-in">
+          <p class="text-gray-600">
+            <a class="hover:underline rk-accent" href="./vie.html"
+              ><span data-i18n="auto.nav.prev">← Assurance-vie &amp; placements</span></a
+            >
+            &nbsp;|&nbsp;
+            <a class="hover:underline rk-accent" href="./retraite.html"
+              ><span data-i18n="auto.nav.next">Retraite →</span></a
+            >
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- SEO JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "RISKALIA Auto",
+      "provider": { "@type": "Organization", "name": "RISKALIA" },
+      "areaServed": "MA",
+      "brand": "RISKALIA",
+      "serviceType": "Assurance automobile",
+      "description": "Trois niveaux de couverture : Tiers+, Dommage Collision, Tous Risques Premium. Assistance 24/7, réseau agréé, suivi sinistres digitalisé.",
+      "offers": [
+        { "@type": "Offer", "name": "Tiers +", "description": "RC, Défense & Recours, Bris de glaces, Incendie, Vol", "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "Dommage Collision", "description": "Garanties Tiers +, Collision, Protection juridique", "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "Tous Risques Premium", "description": "Tous accidents, Vol, Incendie, Bris de glaces, Événements naturels, Valeur à neuf, Protection conducteur & passagers", "availability": "https://schema.org/InStock" }
+      ]
+    }
+    </script>
+
+    <!-- Global I18N Script -->
+    <script src="../assets/js/i18n.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        if (typeof window.applyTexts === "function") {
+          window.applyTexts();
+        }
+      });
+
+      document.addEventListener("languageChanged", () => {
+        if (typeof window.applyTexts === "function") {
+          window.applyTexts();
+        }
+      });
+    </script>
+
+    <!-- Component Scripts -->
+    <script src="../assets/js/components/SearchComponent.js"></script>
+    <script src="../assets/js/components/NavigationComponent.js"></script>
+    <script src="../assets/js/components/FooterComponent.js"></script>
+  </body>
+</html>

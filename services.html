@@ -1,0 +1,2545 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Riskalia — Services de Conseil en Gestion des Risques</title>
+    <meta
+      name="description"
+      content="Services de conseil spécialisés : gestion des risques, évaluation actuarielle des engagements sociaux, formation sur mesure. Cartographies vivantes, hypothèses auditées, ateliers pratiques pour dirigeants et équipes techniques."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/components/navigation.css" />
+    <link rel="stylesheet" href="assets/css/components/footer.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --c1: #005c73;
+        --c2: #00849b;
+        --c3: #00b0c8;
+        --cl: #fff;
+        --cm: #f6fafc;
+        --cd: #243238;
+        --radius: 18px;
+        --shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+        --border: 1px solid rgba(0, 93, 115, 0.18);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        overflow-x: hidden;
+      }
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--cd);
+        line-height: 1.7;
+        background: #fff;
+      }
+      body[dir="rtl"] {
+        direction: rtl;
+        font-family: "Tajawal", "Open Sans", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Montserrat", sans-serif;
+        color: var(--c1);
+      }
+      body[dir="rtl"] h1,
+      body[dir="rtl"] h2,
+      body[dir="rtl"] h3,
+      body[dir="rtl"] h4 {
+        font-family: "Tajawal", "Open Sans", sans-serif;
+        letter-spacing: 0;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      .container {
+        max-width: 1180px;
+        margin: auto;
+        padding: 0 18px;
+      }
+      .kicker {
+        color: #4e6a74;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 800;
+        margin-bottom: 6px;
+      }
+      .muted {
+        color: #5f7781;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 16px;
+        background: var(--c3);
+        color: #fff;
+        border-radius: 12px;
+        font-weight: 800;
+        border: 1px solid transparent;
+        transition: 0.25s;
+      }
+      .btn:hover {
+        background: var(--c2);
+        transform: translateY(-1px);
+      }
+      .btn.secondary {
+        background: #fff;
+        color: var(--c1);
+        border-color: #cfe1e6;
+      }
+      section {
+        padding: 30px 0;
+      }
+
+      /* ================== Header / Nav - Removed conflicting styles, using NavigationComponent instead ================== */
+
+      /* Navigation search styles removed - using NavigationComponent */
+
+      /* Navigation button styles removed - using NavigationComponent */
+
+      /* Navigation search suggestions removed - using NavigationComponent */
+
+      /* Navigation responsive styles removed - using NavigationComponent */
+      /* Brand and navigation menu styles removed - using NavigationComponent */
+      /* Mobile navigation styles removed - using NavigationComponent */
+      /* Dropdown styles removed - using NavigationComponent */
+      /* Mobile dropdown styles removed - using NavigationComponent */
+      /* HERO - Consulting style */
+      .hero {
+        min-height: 30vh;
+        background: linear-gradient(
+            135deg,
+            rgba(0, 92, 115, 0.82),
+            rgba(0, 132, 155, 0.88)
+          ),
+          url("https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=70")
+            center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding: 20px 0 40px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero .method {
+        margin-top: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 12px;
+        padding: 12px 16px;
+        color: #ecf9ff;
+        font-size: 0.95rem;
+        backdrop-filter: blur(4px);
+      }
+
+      /* Divider under hero */
+      .section-wave {
+        height: 48px;
+        margin-top: -48px;
+        background: url('data:image/svg+xml;utf8,<svg width="1440" height="48" viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg"><path d="M0,8 C240,48 480,0 720,20 C960,40 1200,12 1440,20 L1440,48 L0,48 Z" fill="%23f7fcfe"></svg>')
+          center/cover no-repeat;
+        position: relative;
+      }
+      .section-wave::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        height: 52px;
+        background: linear-gradient(
+          to bottom,
+          rgba(247, 252, 254, 1) 0%,
+          rgba(247, 252, 254, 0) 100%
+        );
+        pointer-events: none;
+      }
+
+      /* SMOOTH BACKGROUND */
+      .main-wrapper {
+        position: relative;
+        z-index: 0;
+        isolation: isolate;
+        background: radial-gradient(
+            1200px 500px at 70% -10%,
+            rgba(0, 176, 200, 0.08) 0%,
+            transparent 60%
+          ),
+          linear-gradient(180deg, #f7fcfe 0%, #ffffff 100%);
+      }
+      .main-wrapper::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("") center/cover no-repeat;
+        opacity: 0.12;
+        filter: saturate(110%) contrast(102%) blur(0.4px);
+        mix-blend-mode: normal;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .main-wrapper::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 68px;
+        background: linear-gradient(
+          to bottom,
+          #f7fcfe 0%,
+          rgba(247, 252, 254, 0.92) 35%,
+          rgba(247, 252, 254, 0) 100%
+        );
+        pointer-events: none;
+        z-index: 0;
+      }
+      .main-wrapper > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ===== CONSULTING TABS DESIGN ===== */
+      .consulting-tabs {
+        position: sticky;
+        top: 66px;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 176, 200, 0.08),
+          rgba(0, 92, 115, 0.05)
+        );
+        border: 1px solid rgba(0, 95, 115, 0.16);
+        border-radius: 20px;
+        backdrop-filter: saturate(115%) blur(8px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+        margin: 10px auto 18px;
+        max-width: 1100px;
+        z-index: 50;
+      }
+      .consulting-tabs .tab-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 8px;
+        padding: 12px;
+      }
+      @media (max-width: 900px) {
+        .consulting-tabs .tab-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .consulting-tabs .tab-container {
+          grid-template-columns: 1fr;
+        }
+        .consulting-tabs {
+          top: 62px;
+        }
+      }
+
+      .consulting-tab {
+        display: inline-block;
+        padding: 12px 16px;
+        border-radius: 16px;
+        font-weight: 800;
+        font-size: 0.9rem;
+        color: #0b4e5b;
+        text-align: center;
+        cursor: pointer;
+        border: 1px solid rgba(0, 95, 115, 0.14);
+        background: rgba(255, 255, 255, 0.92);
+        transition: 0.22s ease;
+        position: relative;
+      }
+      .consulting-tab:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      }
+      .consulting-tab.active {
+        background: linear-gradient(135deg, var(--c3), var(--c2));
+        color: #fff;
+        border-color: var(--c3);
+        box-shadow: 0 10px 26px rgba(0, 176, 200, 0.24);
+      }
+
+      /* ===== CONSULTING CONTENT CARDS ===== */
+      .consulting-panel {
+        display: none;
+      }
+      .consulting-panel.active {
+        display: block;
+      }
+
+      .consulting-card {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: saturate(110%) blur(4px);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+        transition: transform 0.24s ease, box-shadow 0.24s ease;
+        border: var(--border);
+        padding: 24px;
+        margin: 12px auto;
+        max-width: 1080px;
+      }
+      .consulting-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 44px rgba(0, 0, 0, 0.12);
+      }
+      .consulting-card h2 {
+        margin-bottom: 12px;
+        font-size: 1.5rem;
+        position: relative;
+        padding-bottom: 8px;
+      }
+      .consulting-card h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--c3), var(--c2));
+        border-radius: 2px;
+      }
+
+      /* Service grids */
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 18px;
+        margin: 20px 0;
+      }
+      @media (max-width: 700px) {
+        .service-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .service-item {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 176, 200, 0.04),
+          rgba(255, 255, 255, 0.96)
+        );
+        border: 1px solid rgba(0, 95, 115, 0.12);
+        border-radius: 16px;
+        padding: 20px;
+        transition: all 0.2s ease;
+      }
+      .service-item:hover {
+        background: #fff;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        transform: translateY(-2px);
+      }
+      .service-item h3 {
+        color: var(--c1);
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+      }
+      .service-item h4 {
+        color: var(--c2);
+        margin: 12px 0 6px;
+        font-size: 1rem;
+      }
+
+      .process-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin: 16px 0;
+      }
+      .process-step {
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid rgba(0, 95, 115, 0.15);
+        border-radius: 12px;
+        padding: 16px;
+        position: relative;
+        transition: all 0.2s ease;
+      }
+      .process-step:hover {
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+      }
+      .process-step::before {
+        content: attr(data-step);
+        position: absolute;
+        top: -10px;
+        left: 16px;
+        background: var(--c3);
+        color: white;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 0.8rem;
+      }
+
+      .highlight-section {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 176, 200, 0.06),
+          rgba(0, 92, 115, 0.03)
+        );
+        border: 1px solid rgba(0, 95, 115, 0.15);
+        border-radius: 16px;
+        padding: 20px;
+        margin: 16px 0;
+      }
+
+      .key-points {
+        list-style: none;
+        padding: 0;
+        margin: 12px 0;
+      }
+      .key-points li {
+        position: relative;
+        padding-left: 28px;
+        margin: 8px 0;
+        color: #586e77;
+        line-height: 1.6;
+      }
+      .key-points li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--c3);
+        font-weight: 800;
+        font-size: 1.1rem;
+      }
+
+      .deliverables-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 14px;
+        margin: 16px 0;
+      }
+      .deliverable-item {
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid rgba(0, 95, 115, 0.12);
+        border-radius: 12px;
+        padding: 16px;
+        text-align: center;
+      }
+      .deliverable-item h4 {
+        color: var(--c1);
+        margin-bottom: 8px;
+      }
+
+      /* Reveal */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          transition: none;
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* Footer */
+      footer {
+        background: var(--c1);
+        color: #fff;
+        padding: 40px 0;
+        margin-top: 0;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+      footer h4 {
+        color: #a8ecf4;
+        margin-bottom: 8px;
+      }
+
+      /* ====== RTL fixes ====== */
+      ul.card-list {
+        list-style-position: inside;
+        padding-inline-start: 0;
+      }
+      body[dir="rtl"] ul.card-list {
+        text-align: right;
+        list-style-position: inside;
+      }
+      ul.card-list li {
+        padding-inline-start: 1ch;
+        margin-block: 5px;
+      }
+
+      /* RTL navigation fixes removed - using NavigationComponent */
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Component Container -->
+    <div id="navigation-container"></div>
+
+    <!-- HERO -->
+    <section class="hero min-h-[30vh] py-12">
+      <div class="container">
+        <h1
+          class="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight mb-2 sm:mb-3 md:mb-4"
+          data-i18n="hero.title"
+        >
+          Services de Conseil Spécialisés
+        </h1>
+        <p
+          class="text-white/95 text-sm sm:text-base md:text-lg lg:text-xl font-light mb-2 sm:mb-3 md:mb-4 max-w-4xl mx-auto leading-relaxed"
+          data-i18n="hero.subtitle"
+        >
+          Gestion des risques, évaluation actuarielle des engagements sociaux et
+          formation sur mesure — des solutions claires, mesurables et orientées
+          mise en œuvre.
+        </p>
+        <div
+          class="method text-white/90 text-xs sm:text-sm md:text-base lg:text-lg mb-2 sm:mb-3 md:mb-4 max-w-4xl mx-auto leading-relaxed"
+          data-i18n="hero.method"
+        >
+          Cartographies vivantes, hypothèses auditées et ateliers pratiques pour
+          dirigeants et équipes techniques
+        </div>
+      </div>
+    </section>
+    <div class="section-wave" aria-hidden="true"></div>
+
+    <!-- MAIN WRAPPER -->
+    <div class="main-wrapper">
+      <!-- TABS -->
+      <nav class="consulting-tabs" aria-label="Services de conseil">
+        <div class="tab-container">
+          <button
+            class="consulting-tab active"
+            data-tab="overview"
+            data-i18n="tabs.overview"
+          >
+            Vue d'ensemble
+          </button>
+          <button
+            class="consulting-tab"
+            data-tab="risk-mgmt"
+            data-i18n="tabs.risk"
+          >
+            Gestion des risques
+          </button>
+          <button
+            class="consulting-tab"
+            data-tab="actuarial"
+            data-i18n="tabs.actuarial"
+          >
+            Engagements sociaux
+          </button>
+          <button
+            class="consulting-tab"
+            data-tab="training"
+            data-i18n="tabs.training"
+          >
+            Formation
+          </button>
+          <button
+            class="consulting-tab"
+            data-tab="approach"
+            data-i18n="tabs.approach"
+          >
+            Notre approche
+          </button>
+          <button
+            class="consulting-tab"
+            data-tab="value"
+            data-i18n="tabs.value"
+          >
+            Pourquoi nous
+          </button>
+        </div>
+      </nav>
+      <!-- PANELS -->
+      <div class="container">
+        <!-- OVERVIEW -->
+        <div class="consulting-panel active" id="overview">
+          <div class="consulting-card reveal">
+            <h2 data-i18n="overview.title">Vue d'ensemble de nos services</h2>
+            <p data-i18n="overview.intro">
+              Nos services de conseil sont conçus pour aider les dirigeants à
+              prendre des décisions éclairées rapidement…
+            </p>
+            <div class="service-grid">
+              <div class="service-item">
+                <h3 data-i18n="overview.services.risk.title">
+                  🎯 Conseil en Gestion des Risques
+                </h3>
+                <p data-i18n="overview.services.risk.desc">
+                  Cartographies vivantes, appétence clarifiée et tableaux…
+                </p>
+                <h4 data-i18n="overview.services.risk.deliverables">
+                  Livrables clés :
+                </h4>
+                <ul class="card-list">
+                  <li data-i18n="overview.services.risk.d1"></li>
+                  <li data-i18n="overview.services.risk.d2"></li>
+                  <li data-i18n="overview.services.risk.d3"></li>
+                  <li data-i18n="overview.services.risk.d4"></li>
+                </ul>
+              </div>
+              <div class="service-item">
+                <h3 data-i18n="overview.services.actuarial.title">
+                  📊 Évaluation des Engagements Sociaux
+                </h3>
+                <p data-i18n="overview.services.actuarial.desc"></p>
+                <h4 data-i18n="overview.services.actuarial.deliverables"></h4>
+                <ul class="card-list">
+                  <li data-i18n="overview.services.actuarial.d1"></li>
+                  <li data-i18n="overview.services.actuarial.d2"></li>
+                  <li data-i18n="overview.services.actuarial.d3"></li>
+                  <li data-i18n="overview.services.actuarial.d4"></li>
+                </ul>
+              </div>
+              <div class="service-item">
+                <h3 data-i18n="overview.services.training.title">
+                  🎓 Formation Sur Mesure
+                </h3>
+                <p data-i18n="overview.services.training.desc"></p>
+                <h4 data-i18n="overview.services.training.deliverables"></h4>
+                <ul class="card-list">
+                  <li data-i18n="overview.services.training.d1"></li>
+                  <li data-i18n="overview.services.training.d2"></li>
+                  <li data-i18n="overview.services.training.d3"></li>
+                  <li data-i18n="overview.services.training.d4"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RISK -->
+        <div class="consulting-panel" id="risk-mgmt">
+          <div class="consulting-card reveal">
+            <h2 data-i18n="risk.title">Conseil en Gestion des Risques</h2>
+            <p data-i18n="risk.intro"></p>
+            <h3 data-i18n="risk.methodology.title"></h3>
+            <div class="process-steps">
+              <div class="process-step" data-step="1">
+                <h4 data-i18n="risk.process.step1.title"></h4>
+                <p data-i18n="risk.process.step1.desc"></p>
+              </div>
+              <div class="process-step" data-step="2">
+                <h4 data-i18n="risk.process.step2.title"></h4>
+                <p data-i18n="risk.process.step2.desc"></p>
+              </div>
+              <div class="process-step" data-step="3">
+                <h4 data-i18n="risk.process.step3.title"></h4>
+                <p data-i18n="risk.process.step3.desc"></p>
+              </div>
+              <div class="process-step" data-step="4">
+                <h4 data-i18n="risk.process.step4.title"></h4>
+                <p data-i18n="risk.process.step4.desc"></p>
+              </div>
+            </div>
+            <h3 data-i18n="risk.services.title"></h3>
+            <div class="service-grid">
+              <div class="service-item">
+                <h4 data-i18n="risk.domains.strategic.title"></h4>
+                <ul class="card-list">
+                  <li data-i18n="risk.domains.strategic.l1"></li>
+                  <li data-i18n="risk.domains.strategic.l2"></li>
+                  <li data-i18n="risk.domains.strategic.l3"></li>
+                  <li data-i18n="risk.domains.strategic.l4"></li>
+                </ul>
+              </div>
+              <div class="service-item">
+                <h4 data-i18n="risk.domains.operational.title"></h4>
+                <ul class="card-list">
+                  <li data-i18n="risk.domains.operational.l1"></li>
+                  <li data-i18n="risk.domains.operational.l2"></li>
+                  <li data-i18n="risk.domains.operational.l3"></li>
+                  <li data-i18n="risk.domains.operational.l4"></li>
+                </ul>
+              </div>
+              <div class="service-item">
+                <h4 data-i18n="risk.domains.financial.title"></h4>
+                <ul class="card-list">
+                  <li data-i18n="risk.domains.financial.l1"></li>
+                  <li data-i18n="risk.domains.financial.l2"></li>
+                  <li data-i18n="risk.domains.financial.l3"></li>
+                  <li data-i18n="risk.domains.financial.l4"></li>
+                </ul>
+              </div>
+            </div>
+            <div class="deliverables-grid">
+              <div class="deliverable-item">
+                <h4 data-i18n="risk.deliverables.register"></h4>
+                <p data-i18n="risk.deliverables.registerDesc"></p>
+              </div>
+              <div class="deliverable-item">
+                <h4 data-i18n="risk.deliverables.appetite"></h4>
+                <p data-i18n="risk.deliverables.appetiteDesc"></p>
+              </div>
+              <div class="deliverable-item">
+                <h4 data-i18n="risk.deliverables.dashboard"></h4>
+                <p data-i18n="risk.deliverables.dashboardDesc"></p>
+              </div>
+              <div class="deliverable-item">
+                <h4 data-i18n="risk.deliverables.action"></h4>
+                <p data-i18n="risk.deliverables.actionDesc"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTUARIAL -->
+        <div class="consulting-panel" id="actuarial">
+          <div class="consulting-card reveal">
+            <h2 data-i18n="actuarial.title"></h2>
+            <p data-i18n="actuarial.intro"></p>
+            <h3 data-i18n="actuarial.expertise.title"></h3>
+            <div class="service-grid">
+              <div class="service-item">
+                <h4 data-i18n="actuarial.services.ifc.title"></h4>
+                <ul class="card-list">
+                  <li data-i18n="actuarial.services.ifc.l1"></li>
+                  <li data-i18n="actuarial.services.ifc.l2"></li>
+                  <li data-i18n="actuarial.services.ifc.l3"></li>
+                  <li data-i18n="actuarial.services.ifc.l4"></li>
+                </ul>
+              </div>
+              <div class="service-item">
+                <h4 data-i18n="actuarial.services.pension.title"></h4>
+                <ul class="card-list">
+                  <li data-i18n="actuarial.services.pension.l1"></li>
+                  <li data-i18n="actuarial.services.pension.l2"></li>
+                  <li data-i18n="actuarial.services.pension.l3"></li>
+                  <li data-i18n="actuarial.services.pension.l4"></li>
+                </ul>
+              </div>
+              <div class="service-item">
+                <h4 data-i18n="actuarial.services.benefits.title"></h4>
+                <ul class="card-list">
+                  <li data-i18n="actuarial.services.benefits.l1"></li>
+                  <li data-i18n="actuarial.services.benefits.l2"></li>
+                  <li data-i18n="actuarial.services.benefits.l3"></li>
+                  <li data-i18n="actuarial.services.benefits.l4"></li>
+                </ul>
+              </div>
+            </div>
+            <h3 data-i18n="actuarial.methodology.title"></h3>
+            <div class="process-steps">
+              <div class="process-step" data-step="1">
+                <h4 data-i18n="actuarial.process.step1.title"></h4>
+                <p data-i18n="actuarial.process.step1.desc"></p>
+              </div>
+              <div class="process-step" data-step="2">
+                <h4 data-i18n="actuarial.process.step2.title"></h4>
+                <p data-i18n="actuarial.process.step2.desc"></p>
+              </div>
+              <div class="process-step" data-step="3">
+                <h4 data-i18n="actuarial.process.step3.title"></h4>
+                <p data-i18n="actuarial.process.step3.desc"></p>
+              </div>
+              <div class="process-step" data-step="4">
+                <h4 data-i18n="actuarial.process.step4.title"></h4>
+                <p data-i18n="actuarial.process.step4.desc"></p>
+              </div>
+            </div>
+            <h3 data-i18n="actuarial.compliance.title"></h3>
+            <div class="service-grid">
+              <div class="service-item">
+                <h4 data-i18n="actuarial.standards.local.title"></h4>
+                <p data-i18n="actuarial.standards.local.desc"></p>
+              </div>
+              <div class="service-item">
+                <h4 data-i18n="actuarial.standards.ifrs.title"></h4>
+                <p data-i18n="actuarial.standards.ifrs.desc"></p>
+              </div>
+              <div class="service-item">
+                <h4 data-i18n="actuarial.standards.audit.title"></h4>
+                <p data-i18n="actuarial.standards.audit.desc"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRAINING -->
+        <div class="consulting-panel" id="training">
+          <div class="consulting-card reveal">
+            <h2 data-i18n="training.title"></h2>
+            <p data-i18n="training.intro"></p>
+            <div class="service-grid">
+              <div class="service-item">
+                <h4 data-i18n="training.programs.risk.title"></h4>
+                <h5 data-i18n="training.programs.risk.foundations"></h5>
+                <ul class="card-list">
+                  <li data-i18n="training.programs.risk.f1"></li>
+                  <li data-i18n="training.programs.risk.f2"></li>
+                  <li data-i18n="training.programs.risk.f3"></li>
+                </ul>
+                <h5 data-i18n="training.programs.risk.advanced"></h5>
+                <ul class="card-list">
+                  <li data-i18n="training.programs.risk.a1"></li>
+                  <li data-i18n="training.programs.risk.a2"></li>
+                  <li data-i18n="training.programs.risk.a3"></li>
+                </ul>
+              </div>
+              <div class="service-item">
+                <h4 data-i18n="training.programs.insurance.title"></h4>
+                <h5 data-i18n="training.programs.insurance.principles"></h5>
+                <ul class="card-list">
+                  <li data-i18n="training.programs.insurance.p1"></li>
+                  <li data-i18n="training.programs.insurance.p2"></li>
+                  <li data-i18n="training.programs.insurance.p3"></li>
+                </ul>
+                <h5 data-i18n="training.programs.insurance.reinsurance"></h5>
+                <ul class="card-list">
+                  <li data-i18n="training.programs.insurance.r1"></li>
+                  <li data-i18n="training.programs.insurance.r2"></li>
+                  <li data-i18n="training.programs.insurance.r3"></li>
+                </ul>
+              </div>
+              <div class="service-item">
+                <h4 data-i18n="training.programs.actuarial.title"></h4>
+                <h5 data-i18n="training.programs.actuarial.basics"></h5>
+                <ul class="card-list">
+                  <li data-i18n="training.programs.actuarial.b1"></li>
+                  <li data-i18n="training.programs.actuarial.b2"></li>
+                  <li data-i18n="training.programs.actuarial.b3"></li>
+                </ul>
+                <h5 data-i18n="training.programs.actuarial.modeling"></h5>
+                <ul class="card-list">
+                  <li data-i18n="training.programs.actuarial.m1"></li>
+                  <li data-i18n="training.programs.actuarial.m2"></li>
+                  <li data-i18n="training.programs.actuarial.m3"></li>
+                </ul>
+              </div>
+            </div>
+            <h3 data-i18n="training.methodology.title"></h3>
+            <div class="process-steps">
+              <div class="process-step" data-step="1">
+                <h4 data-i18n="training.pedagogy.step1.title"></h4>
+                <p data-i18n="training.pedagogy.step1.desc"></p>
+              </div>
+              <div class="process-step" data-step="2">
+                <h4 data-i18n="training.pedagogy.step2.title"></h4>
+                <p data-i18n="training.pedagogy.step2.desc"></p>
+              </div>
+              <div class="process-step" data-step="3">
+                <h4 data-i18n="training.pedagogy.step3.title"></h4>
+                <p data-i18n="training.pedagogy.step3.desc"></p>
+              </div>
+              <div class="process-step" data-step="4">
+                <h4 data-i18n="training.pedagogy.step4.title"></h4>
+                <p data-i18n="training.pedagogy.step4.desc"></p>
+              </div>
+            </div>
+            <div class="deliverables-grid">
+              <div class="deliverable-item">
+                <h4 data-i18n="training.deliverables.materials"></h4>
+                <p data-i18n="training.deliverables.materialsDesc"></p>
+              </div>
+              <div class="deliverable-item">
+                <h4 data-i18n="training.deliverables.assessments"></h4>
+                <p data-i18n="training.deliverables.assessmentsDesc"></p>
+              </div>
+              <div class="deliverable-item">
+                <h4 data-i18n="training.deliverables.toolkit"></h4>
+                <p data-i18n="training.deliverables.toolkitDesc"></p>
+              </div>
+              <div class="deliverable-item">
+                <h4 data-i18n="training.deliverables.support"></h4>
+                <p data-i18n="training.deliverables.supportDesc"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- APPROACH -->
+        <div class="consulting-panel" id="approach">
+          <div class="consulting-card reveal">
+            <h2 data-i18n="approach.title"></h2>
+            <p data-i18n="approach.intro"></p>
+            <div class="service-grid">
+              <div class="service-item">
+                <h4 data-i18n="approach.pillars.pragmatic.title"></h4>
+                <ul class="card-list">
+                  <li data-i18n="approach.pillars.pragmatic.l1"></li>
+                  <li data-i18n="approach.pillars.pragmatic.l2"></li>
+                  <li data-i18n="approach.pillars.pragmatic.l3"></li>
+                  <li data-i18n="approach.pillars.pragmatic.l4"></li>
+                </ul>
+              </div>
+              <div class="service-item">
+                <h4 data-i18n="approach.pillars.traceable.title"></h4>
+                <ul class="card-list">
+                  <li data-i18n="approach.pillars.traceable.l1"></li>
+                  <li data-i18n="approach.pillars.traceable.l2"></li>
+                  <li data-i18n="approach.pillars.traceable.l3"></li>
+                  <li data-i18n="approach.pillars.traceable.l4"></li>
+                </ul>
+              </div>
+              <div class="service-item">
+                <h4 data-i18n="approach.pillars.collaborative.title"></h4>
+                <ul class="card-list">
+                  <li data-i18n="approach.pillars.collaborative.l1"></li>
+                  <li data-i18n="approach.pillars.collaborative.l2"></li>
+                  <li data-i18n="approach.pillars.collaborative.l3"></li>
+                  <li data-i18n="approach.pillars.collaborative.l4"></li>
+                </ul>
+              </div>
+            </div>
+            <h3 data-i18n="approach.quality.title"></h3>
+            <div class="service-grid">
+              <div class="service-item">
+                <h4 data-i18n="approach.quality.expertise.title"></h4>
+                <p data-i18n="approach.quality.expertise.desc"></p>
+              </div>
+              <div class="service-item">
+                <h4 data-i18n="approach.quality.methodology.title"></h4>
+                <p data-i18n="approach.quality.methodology.desc"></p>
+              </div>
+              <div class="service-item">
+                <h4 data-i18n="approach.quality.support.title"></h4>
+                <p data-i18n="approach.quality.support.desc"></p>
+              </div>
+            </div>
+
+            <div class="process-steps">
+              <div class="process-step" data-step="1">
+                <h4 data-i18n="approach.process.step1.title"></h4>
+                <p data-i18n="approach.process.step1.desc"></p>
+              </div>
+              <div class="process-step" data-step="2">
+                <h4 data-i18n="approach.process.step2.title"></h4>
+                <p data-i18n="approach.process.step2.desc"></p>
+              </div>
+              <div class="process-step" data-step="3">
+                <h4 data-i18n="approach.process.step3.title"></h4>
+                <p data-i18n="approach.process.step3.desc"></p>
+              </div>
+              <div class="process-step" data-step="4">
+                <h4 data-i18n="approach.process.step4.title"></h4>
+                <p data-i18n="approach.process.step4.desc"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VALUE -->
+        <div class="consulting-panel" id="value">
+          <div class="consulting-card reveal">
+            <h2 data-i18n="value.title"></h2>
+            <p data-i18n="value.intro"></p>
+
+            <div class="service-grid">
+              <div class="service-item">
+                <h4 data-i18n="value.differentiators.expertise.title"></h4>
+                <ul class="card-list">
+                  <li data-i18n="value.differentiators.expertise.l1"></li>
+                  <li data-i18n="value.differentiators.expertise.l2"></li>
+                  <li data-i18n="value.differentiators.expertise.l3"></li>
+                  <li data-i18n="value.differentiators.expertise.l4"></li>
+                </ul>
+              </div>
+              <div class="service-item">
+                <h4 data-i18n="value.differentiators.pedagogy.title"></h4>
+                <ul class="card-list">
+                  <li data-i18n="value.differentiators.pedagogy.l1"></li>
+                  <li data-i18n="value.differentiators.pedagogy.l2"></li>
+                  <li data-i18n="value.differentiators.pedagogy.l3"></li>
+                  <li data-i18n="value.differentiators.pedagogy.l4"></li>
+                </ul>
+              </div>
+              <div class="service-item">
+                <h4 data-i18n="value.differentiators.innovation.title"></h4>
+                <ul class="card-list">
+                  <li data-i18n="value.differentiators.innovation.l1"></li>
+                  <li data-i18n="value.differentiators.innovation.l2"></li>
+                  <li data-i18n="value.differentiators.innovation.l3"></li>
+                  <li data-i18n="value.differentiators.innovation.l4"></li>
+                </ul>
+              </div>
+              <div class="service-item">
+                <h4 data-i18n="value.differentiators.results.title"></h4>
+                <ul class="card-list">
+                  <li data-i18n="value.differentiators.results.l1"></li>
+                  <li data-i18n="value.differentiators.results.l2"></li>
+                  <li data-i18n="value.differentiators.results.l3"></li>
+                  <li data-i18n="value.differentiators.results.l4"></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="highlight-section">
+              <h3 data-i18n="value.testimonials.title"></h3>
+              <div class="service-grid">
+                <div class="service-item">
+                  <p
+                    class="muted"
+                    style="font-style: italic"
+                    data-i18n="value.testimonials.t1"
+                  ></p>
+                  <p
+                    style="font-weight: 600; margin-top: 8px"
+                    data-i18n="value.testimonials.t1Author"
+                  ></p>
+                </div>
+                <div class="service-item">
+                  <p
+                    class="muted"
+                    style="font-style: italic"
+                    data-i18n="value.testimonials.t2"
+                  ></p>
+                  <p
+                    style="font-weight: 600; margin-top: 8px"
+                    data-i18n="value.testimonials.t2Author"
+                  ></p>
+                </div>
+                <div class="service-item">
+                  <p
+                    class="muted"
+                    style="font-style: italic"
+                    data-i18n="value.testimonials.t3"
+                  ></p>
+                  <p
+                    style="font-weight: 600; margin-top: 8px"
+                    data-i18n="value.testimonials.t3Author"
+                  ></p>
+                </div>
+              </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 24px">
+              <a class="btn" href="contact.html" data-i18n="cta.contact"
+                >Discutons de votre projet</a
+              >
+              <a
+                class="btn secondary"
+                href="contact.html"
+                style="margin-inline-start: 12px"
+                data-i18n="cta.quote"
+                >Demander un devis</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /PANELS -->
+    </div>
+    <!-- /.main-wrapper -->
+
+    <!-- Footer Component Container -->
+    <div id="footer-container"></div>
+
+    <!-- ===== SCRIPTS i18n + UI ===== -->
+
+    <script>
+      window.I18N = {
+        fr: {
+          meta: {
+            title: "Riskalia — Services de Conseil en Gestion des Risques",
+            desc: "Services de conseil spécialisés : gestion des risques, évaluation actuarielle des engagements sociaux, formation sur mesure. Cartographies vivantes, hypothèses auditées, ateliers pratiques pour dirigeants et équipes techniques.",
+          },
+          aria: {
+            nav: "Navigation principale",
+            submenu_solutions: "Sous-menu Solutions",
+            langswitch: "Sélecteur de langue",
+          },
+          ui: {
+            search: "🔎…",
+          },
+          nav: {
+            home: "Accueil",
+            solutions: "Solutions",
+            assurance: "Assurance",
+            re: "Réassurance",
+            climate: "Risques Climatiques",
+            services: "Services de Conseil",
+            esg: "ESG",
+            contact: "Contact",
+          },
+          hero: {
+            title: "Services de Conseil Spécialisés",
+            subtitle:
+              "Gestion des risques, évaluation actuarielle des engagements sociaux et formation sur mesure — des solutions claires, mesurables et orientées mise en œuvre.",
+            method:
+              "Cartographies vivantes, hypothèses auditées et ateliers pratiques pour dirigeants et équipes techniques",
+          },
+          tabs: {
+            overview: "Vue d'ensemble",
+            risk: "Gestion des risques",
+            actuarial: "Engagements sociaux",
+            training: "Formation",
+            approach: "Notre approche",
+            value: "Pourquoi nous",
+          },
+          overview: {
+            title: "Vue d'ensemble de nos services",
+            intro:
+              "Nos services de conseil sont conçus pour aider les dirigeants à prendre des décisions éclairées rapidement, avec des livrables concrets et une mise en œuvre pragmatique.",
+            services: {
+              risk: {
+                title: "🎯 Conseil en Gestion des Risques",
+                desc: "Cartographies vivantes, appétence au risque clarifiée et tableaux de bord actionnables.",
+                deliverables: "Livrables clés :",
+                d1: "Cartographie des risques priorisée (impact × probabilité)",
+                d2: "Définition de l’appétence et des tolérances",
+                d3: "Indicateurs et tableaux de bord (KRI/KPI)",
+                d4: "Plans d’actions avec responsables et échéances",
+              },
+              actuarial: {
+                title: "📊 Évaluation des Engagements Sociaux",
+                desc: "Mesure et pilotage des passifs sociaux selon les référentiels locaux et internationaux.",
+                deliverables: "Livrables clés :",
+                d1: "Rapport actuariel complet (méthodes, hypothèses, résultats)",
+                d2: "Scénarios de sensibilité et stress tests",
+                d3: "Recommandations de financement et de couverture",
+                d4: "Supports pour la communication financière",
+              },
+              training: {
+                title: "🎓 Formation Sur Mesure",
+                desc: "Programmes adaptés aux niveaux métier/technique avec cas pratiques sectoriels.",
+                deliverables: "Livrables clés :",
+                d1: "Parcours pédagogiques personnalisés",
+                d2: "Supports et exercices corrigés",
+                d3: "Certificats de complétion",
+                d4: "Coaching post-formation",
+              },
+            },
+          },
+          risk: {
+            title: "Conseil en Gestion des Risques",
+            intro:
+              "Nous structurons et dynamisons vos dispositifs de gestion des risques pour améliorer la résilience et la performance.",
+            methodology: { title: "Méthodologie" },
+            process: {
+              step1: {
+                title: "Diagnostic",
+                desc: "État des lieux, interviews, revue documentaire, identification des écarts.",
+              },
+              step2: {
+                title: "Cartographie",
+                desc: "Identification, évaluation et priorisation des risques clés.",
+              },
+              step3: {
+                title: "Cadre & Indicateurs",
+                desc: "Appétence, tolérances, KRI/KPI, gouvernance et rôles.",
+              },
+              step4: {
+                title: "Mise en œuvre",
+                desc: "Plans d’actions, suivi, tableaux de bord et amélioration continue.",
+              },
+            },
+            services: { title: "Domaines couverts" },
+            domains: {
+              strategic: {
+                title: "Stratégique",
+                l1: "Risque de marché et concurrence",
+                l2: "Transformation & changement",
+                l3: "Conformité & réputation",
+                l4: "Cyber et résilience",
+              },
+              operational: {
+                title: "Opérationnel",
+                l1: "Processus & contrôle interne",
+                l2: "Continuité d’activité",
+                l3: "Sécurité & sûreté",
+                l4: "Fournisseurs & tiers",
+              },
+              financial: {
+                title: "Financier",
+                l1: "Liquidité & crédit",
+                l2: "Taux & change",
+                l3: "Fraude & pertes inattendues",
+                l4: "Couverture assurantielle",
+              },
+            },
+            deliverables: {
+              register: "Registre des risques",
+              registerDesc:
+                "Base structurée des risques, propriétaires, niveaux, plans et statuts.",
+              appetite: "Cadre d’appétence",
+              appetiteDesc:
+                "Définition de l’appétence et des seuils/tolérances alignés à la stratégie.",
+              dashboard: "Tableaux de bord",
+              dashboardDesc:
+                "Indicateurs temps réel, alertes et reporting au comité des risques.",
+              action: "Plans d’actions",
+              actionDesc:
+                "Actions priorisées, responsables, délais, coûts et bénéfices attendus.",
+            },
+          },
+          actuarial: {
+            title: "Évaluation des Engagements Sociaux",
+            intro:
+              "Mesurer, expliquer et piloter les engagements sociaux avec transparence et rigueur actuarielle.",
+            expertise: { title: "Expertise" },
+            services: {
+              ifc: {
+                title: "Comptes & Consolidation",
+                l1: "Calcul des passifs sociaux pour les états financiers",
+                l2: "Justification des variations (bridge d’analyse)",
+                l3: "Notes annexes et disclosures",
+                l4: "Support audit et questions commissaires",
+              },
+              pension: {
+                title: "Régimes de retraite",
+                l1: "Indemnités de fin de carrière",
+                l2: "Régimes à prestations définies",
+                l3: "Régimes à cotisations définies (communication)",
+                l4: "Optimisation et fermeture de régimes",
+              },
+              benefits: {
+                title: "Avantages post/post-emploi",
+                l1: "Assurance santé & prévoyance",
+                l2: "Indemnités de départ",
+                l3: "Avantages à long terme",
+                l4: "Autres obligations spécifiques",
+              },
+            },
+            methodology: { title: "Méthodologie" },
+            process: {
+              step1: {
+                title: "Collecte & Data",
+                desc: "Constitution des fichiers salariés et historiques nécessaires.",
+              },
+              step2: {
+                title: "Hypothèses",
+                desc: "Construction et audit des hypothèses démographiques et financières.",
+              },
+              step3: {
+                title: "Calculs",
+                desc: "Modélisation actuarielle, scénarios alternatifs et sensibilité.",
+              },
+              step4: {
+                title: "Restitution",
+                desc: "Rapports, supports de gouvernance et assistance audit.",
+              },
+            },
+            compliance: { title: "Conformité & Référentiels" },
+            standards: {
+              local: {
+                title: "Normes locales",
+                desc: "Conformité aux exigences et pratiques nationales applicables.",
+              },
+              ifrs: {
+                title: "IFRS/IAS",
+                desc: "Traitement selon IAS 19 et disclosures requis au niveau groupe.",
+              },
+              audit: {
+                title: "Audit & Traçabilité",
+                desc: "Dossiers et pistes d’audit complets, reproductibles et sourçables.",
+              },
+            },
+          },
+          training: {
+            title: "Formations sur Mesure",
+            intro:
+              "Parcours modulaires du niveau fondations au niveau avancé, avec cas réels et ateliers.",
+            programs: {
+              risk: {
+                title: "Gestion des risques",
+                foundations: "Fondamentaux",
+                f1: "Principes, vocabulaire et cadre",
+                f2: "Cartographie et priorisation",
+                f3: "Indicateurs & reporting",
+                advanced: "Avancé",
+                a1: "Appétence, tolérances et limites",
+                a2: "KRIs, tableaux de bord et alertes",
+                a3: "Intégration au pilotage stratégique",
+              },
+              insurance: {
+                title: "Assurance & Réassurance",
+                principles: "Principes d’assurance",
+                p1: "Techniques d’assurance non-vie",
+                p2: "Souscription et tarif",
+                p3: "Sinistres et provisionnement",
+                reinsurance: "Réassurance",
+                r1: "Proportionnelle vs non proportionnelle",
+                r2: "Programmes & optimisation",
+                r3: "Clauses clés & pièges",
+              },
+              actuarial: {
+                title: "Actuariat",
+                basics: "Bases",
+                b1: "Mathématiques actuarielles",
+                b2: "Hypothèses & tables",
+                b3: "IAS 19 — principes",
+                modeling: "Modélisation",
+                m1: "Modèles de flux et discounting",
+                m2: "Sensibilités et scénarios",
+                m3: "Documentation & contrôles",
+              },
+            },
+            methodology: { title: "Pédagogie & Modalités" },
+            pedagogy: {
+              step1: {
+                title: "Diagnostic",
+                desc: "Évaluation des besoins et des prérequis des participants.",
+              },
+              step2: {
+                title: "Design",
+                desc: "Construction d’un programme sur mesure et cas sectoriels.",
+              },
+              step3: {
+                title: "Animation",
+                desc: "Ateliers interactifs et exercices corrigés.",
+              },
+              step4: {
+                title: "Suivi",
+                desc: "Restitution, évaluation et coaching post-formation.",
+              },
+            },
+            deliverables: {
+              materials: "Supports",
+              materialsDesc: "Slides, fiches mémo, exercices et corrigés.",
+              assessments: "Évaluations",
+              assessmentsDesc: "Quiz avant/après et attestation.",
+              toolkit: "Boîte à outils",
+              toolkitDesc: "Modèles, checklists et gabarits réutilisables.",
+              support: "Accompagnement",
+              supportDesc: "Q&A dédié et assistance post-formation.",
+            },
+          },
+          approach: {
+            title: "Notre approche",
+            intro:
+              "Pragmatique, traçable et collaborative : nous visons l’impact concret et durable.",
+            pillars: {
+              pragmatic: {
+                title: "Pragmatique",
+                l1: "Focus sur l’exécution et les résultats",
+                l2: "Livrables opérationnels",
+                l3: "Time-to-value rapide",
+                l4: "Priorisation par la valeur",
+              },
+              traceable: {
+                title: "Traçable",
+                l1: "Hypothèses sourcées et auditées",
+                l2: "Modèles documentés",
+                l3: "Reproductibilité des calculs",
+                l4: "Gouvernance claire",
+              },
+              collaborative: {
+                title: "Collaborative",
+                l1: "Co-construction avec vos équipes",
+                l2: "Transfert de compétences",
+                l3: "Coaching des responsables",
+                l4: "Partage des meilleures pratiques",
+              },
+            },
+            quality: {
+              title: "Qualité & Garantie",
+              expertise: {
+                title: "Expertise",
+                desc: "Consultants seniors, actuaires certifiés et spécialistes métiers.",
+              },
+              methodology: {
+                title: "Méthodologie",
+                desc: "Cadres éprouvés, contrôles qualité et revues croisées.",
+              },
+              support: {
+                title: "Soutien",
+                desc: "Assistance continue et disponibilité du pilotage.",
+              },
+            },
+            process: {
+              step1: {
+                title: "Cadrage",
+                desc: "Objectifs, périmètre, planning et gouvernance.",
+              },
+              step2: {
+                title: "Exécution",
+                desc: "Ateliers, analyses et prototypages rapides.",
+              },
+              step3: {
+                title: "Transfert",
+                desc: "Documentation, formation et passation.",
+              },
+              step4: {
+                title: "Amélioration",
+                desc: "Retours d’expérience et itérations ciblées.",
+              },
+            },
+          },
+          value: {
+            title: "Pourquoi nous",
+            intro:
+              "Différenciation par l’expertise, la pédagogie, l’innovation et les résultats.",
+            differentiators: {
+              expertise: {
+                title: "Expertise",
+                l1: "Expérience multi-secteurs",
+                l2: "Standards internationaux",
+                l3: "Références auditables",
+                l4: "Haute seniorité",
+              },
+              pedagogy: {
+                title: "Pédagogie",
+                l1: "Approche claire et structurée",
+                l2: "Cas réels et ateliers",
+                l3: "Supports actionnables",
+                l4: "Transfert de compétences",
+              },
+              innovation: {
+                title: "Innovation",
+                l1: "Outils et modèles modernes",
+                l2: "Automatisation du reporting",
+                l3: "Tableaux de bord dynamiques",
+                l4: "Veille réglementaire",
+              },
+              results: {
+                title: "Résultats",
+                l1: "Décisions plus rapides",
+                l2: "Réduction des risques clés",
+                l3: "Conformité sécurisée",
+                l4: "Création de valeur mesurable",
+              },
+            },
+            testimonials: {
+              title: "Ils nous font confiance",
+              t1: "Des livrables clairs et une exécution impeccable.",
+              t1Author: "Directeur des Risques, Banque",
+              t2: "L’équipe a su démystifier IAS 19 et nous outiller durablement.",
+              t2Author: "DRH, Groupe industriel",
+              t3: "Formations très concrètes, immédiatement applicables.",
+              t3Author: "Responsable Audit Interne, Assurance",
+            },
+          },
+          cta: {
+            contact: "Discutons de votre projet",
+            quote: "Demander un devis",
+          },
+          footer: {
+            col1: {
+              address:
+                "Cabinet de courtage & stratégies agréé ACAPS.<br/>Siège : 16, Rue de Terves, 2ème étage,<br/>Quartier Mers Sultan, Casablanca.",
+              notice:
+                "Intermédiaire d'assurance régi par la loi 17-99 portant code des assurances.<br/>Sous la décision n°COU5047.00000.0.C.2025.472.",
+            },
+            col2: { title: "Navigation" },
+            col3: { title: "Assurance Particuliers" },
+            col4: { title: "Assurance Entreprises" },
+            col5: {
+              title: "Contact",
+              tel1label: "Tél :",
+              tel1: "+212 666 756 991",
+              tel2label: "Tél :",
+              tel2: "+212 675 208 909",
+              emailLabel: "Email :",
+              email: "contact@riskalia.ma",
+            },
+            copyright:
+              "© " + new Date().getFullYear() + " Riskalia. Tous droits réservés.",
+          },
+        },
+
+        en: {
+          meta: {
+            title: "Riskalia — Advisory & Risk Management Services",
+            desc: "Specialized advisory: risk management, actuarial valuation of employee obligations, and tailored training. Living risk maps, audited assumptions, hands-on workshops for executives and technical teams.",
+          },
+          aria: {
+            nav: "Main navigation",
+            submenu_solutions: "Solutions submenu",
+            langswitch: "Language switcher",
+          },
+          ui: {
+            search: "🔎…",
+          },
+          nav: {
+            home: "Home",
+            solutions: "Solutions",
+            assurance: "Insurance",
+            re: "Reinsurance",
+            climate: "Climate Risks",
+            services: "Advisory Services",
+            esg: "ESG",
+            contact: "Contact",
+          },
+          hero: {
+            title: "Specialized Advisory Services",
+            subtitle:
+              "Risk management, actuarial valuation of employee benefits and custom training — clear, measurable, implementation-oriented solutions.",
+            method:
+              "Living risk maps, audited assumptions and practical workshops for leaders and teams",
+          },
+          tabs: {
+            overview: "Overview",
+            risk: "Risk Management",
+            actuarial: "Employee Obligations",
+            training: "Training",
+            approach: "Our Approach",
+            value: "Why Us",
+          },
+          overview: {
+            title: "Our Services at a Glance",
+            intro:
+              "We help decision-makers move fast with rigorous analysis and actionable deliverables.",
+            services: {
+              risk: {
+                title: "🎯 Risk Management Advisory",
+                desc: "Living risk maps, clarified risk appetite and actionable dashboards.",
+                deliverables: "Key deliverables:",
+                d1: "Prioritized risk map (impact × likelihood)",
+                d2: "Risk appetite & tolerances",
+                d3: "KRIs/KPIs and dashboards",
+                d4: "Action plans with owners & due dates",
+              },
+              actuarial: {
+                title: "📊 Employee Obligations Valuation",
+                desc: "Measure and steer employee liabilities under local and international standards.",
+                deliverables: "Key deliverables:",
+                d1: "Actuarial report (methods, assumptions, results)",
+                d2: "Sensitivity and stress scenarios",
+                d3: "Funding/hedging recommendations",
+                d4: "Financial communication support",
+              },
+              training: {
+                title: "🎓 Tailored Training",
+                desc: "Programs adapted to business/technical levels with sector case studies.",
+                deliverables: "Key deliverables:",
+                d1: "Custom learning paths",
+                d2: "Materials & graded exercises",
+                d3: "Certificates of completion",
+                d4: "Post-training coaching",
+              },
+            },
+          },
+          risk: {
+            title: "Risk Management Advisory",
+            intro:
+              "Design and energize your risk framework to improve resilience and performance.",
+            methodology: { title: "Methodology" },
+            process: {
+              step1: {
+                title: "Assessment",
+                desc: "Interviews, document review and gap analysis.",
+              },
+              step2: {
+                title: "Mapping",
+                desc: "Identification, assessment and prioritization of key risks.",
+              },
+              step3: {
+                title: "Framework & Metrics",
+                desc: "Appetite, tolerances, KRIs/KPIs, governance and roles.",
+              },
+              step4: {
+                title: "Implementation",
+                desc: "Action plans, monitoring, dashboards and continuous improvement.",
+              },
+            },
+            services: { title: "Coverage" },
+            domains: {
+              strategic: {
+                title: "Strategic",
+                l1: "Market & competition risk",
+                l2: "Transformation & change",
+                l3: "Compliance & reputation",
+                l4: "Cyber & resilience",
+              },
+              operational: {
+                title: "Operational",
+                l1: "Processes & internal control",
+                l2: "Business continuity",
+                l3: "Safety & security",
+                l4: "Vendors & third parties",
+              },
+              financial: {
+                title: "Financial",
+                l1: "Liquidity & credit",
+                l2: "Interest & FX",
+                l3: "Fraud & unexpected losses",
+                l4: "Insurance coverage",
+              },
+            },
+            deliverables: {
+              register: "Risk register",
+              registerDesc:
+                "Structured risk base with owners, levels, plans and statuses.",
+              appetite: "Risk appetite framework",
+              appetiteDesc: "Appetite and thresholds aligned with strategy.",
+              dashboard: "Dashboards",
+              dashboardDesc:
+                "Live indicators, alerts and risk committee reporting.",
+              action: "Action plans",
+              actionDesc:
+                "Prioritized actions with owners, timelines and benefits.",
+            },
+          },
+          actuarial: {
+            title: "Employee Obligations Valuation",
+            intro:
+              "Measure, explain and steer obligations with transparent actuarial rigor.",
+            expertise: { title: "Expertise" },
+            services: {
+              ifc: {
+                title: "Accounts & Consolidation",
+                l1: "Liability calculations for financial statements",
+                l2: "Movement analysis (bridge)",
+                l3: "Notes and disclosures",
+                l4: "Audit support",
+              },
+              pension: {
+                title: "Pension schemes",
+                l1: "End-of-service indemnities",
+                l2: "Defined benefit plans",
+                l3: "Defined contribution (communication)",
+                l4: "Plan optimization/closures",
+              },
+              benefits: {
+                title: "Benefits",
+                l1: "Health & life insurance",
+                l2: "Termination benefits",
+                l3: "Long-term benefits",
+                l4: "Other specific obligations",
+              },
+            },
+            methodology: { title: "Methodology" },
+            process: {
+              step1: { title: "Data", desc: "Employee data and historicals." },
+              step2: {
+                title: "Assumptions",
+                desc: "Demographic and financial assumptions set and reviewed.",
+              },
+              step3: {
+                title: "Calculations",
+                desc: "Actuarial modeling, alternates and sensitivities.",
+              },
+              step4: {
+                title: "Reporting",
+                desc: "Reports, governance packs and audit assistance.",
+              },
+            },
+            compliance: { title: "Compliance & Standards" },
+            standards: {
+              local: {
+                title: "Local standards",
+                desc: "Compliant with national requirements.",
+              },
+              ifrs: {
+                title: "IFRS/IAS",
+                desc: "IAS 19 treatment and group disclosures.",
+              },
+              audit: {
+                title: "Audit & Traceability",
+                desc: "Complete, reproducible audit trail.",
+              },
+            },
+          },
+          training: {
+            title: "Tailored Training",
+            intro:
+              "Modular paths from foundations to advanced, with real-life cases and workshops.",
+            programs: {
+              risk: {
+                title: "Risk Management",
+                foundations: "Foundations",
+                f1: "Principles, vocabulary and framework",
+                f2: "Mapping and prioritization",
+                f3: "Indicators & reporting",
+                advanced: "Advanced",
+                a1: "Appetite, tolerances and limits",
+                a2: "KRIs, dashboards and alerts",
+                a3: "Integration in performance management",
+              },
+              insurance: {
+                title: "Insurance & Reinsurance",
+                principles: "Insurance principles",
+                p1: "P&C techniques",
+                p2: "Underwriting & pricing",
+                p3: "Claims and reserving",
+                reinsurance: "Reinsurance",
+                r1: "Proportional vs non-proportional",
+                r2: "Programme design & optimization",
+                r3: "Key clauses & pitfalls",
+              },
+              actuarial: {
+                title: "Actuarial",
+                basics: "Basics",
+                b1: "Actuarial mathematics",
+                b2: "Assumptions & tables",
+                b3: "IAS 19 — overview",
+                modeling: "Modeling",
+                m1: "Cash-flow models & discounting",
+                m2: "Sensitivities & scenarios",
+                m3: "Documentation & controls",
+              },
+            },
+            methodology: { title: "Pedagogy & Delivery" },
+            pedagogy: {
+              step1: { title: "Assessment", desc: "Needs and prerequisites." },
+              step2: {
+                title: "Design",
+                desc: "Tailored program with sector cases.",
+              },
+              step3: {
+                title: "Delivery",
+                desc: "Interactive workshops and graded exercises.",
+              },
+              step4: {
+                title: "Follow-up",
+                desc: "Debrief, evaluation and coaching.",
+              },
+            },
+            deliverables: {
+              materials: "Materials",
+              materialsDesc: "Slides, cheat-sheets, exercises and answers.",
+              assessments: "Assessments",
+              assessmentsDesc: "Pre/post quizzes and certificate.",
+              toolkit: "Toolkit",
+              toolkitDesc: "Templates, checklists and reusable assets.",
+              support: "Support",
+              supportDesc: "Dedicated Q&A and post-training help.",
+            },
+          },
+          approach: {
+            title: "Our Approach",
+            intro:
+              "Pragmatic, traceable and collaborative — geared towards tangible impact.",
+            pillars: {
+              pragmatic: {
+                title: "Pragmatic",
+                l1: "Execution & outcomes first",
+                l2: "Operational deliverables",
+                l3: "Fast time-to-value",
+                l4: "Value-based prioritization",
+              },
+              traceable: {
+                title: "Traceable",
+                l1: "Sourced & audited assumptions",
+                l2: "Documented models",
+                l3: "Reproducible calculations",
+                l4: "Clear governance",
+              },
+              collaborative: {
+                title: "Collaborative",
+                l1: "Co-build with teams",
+                l2: "Knowledge transfer",
+                l3: "Coaching of owners",
+                l4: "Best-practice sharing",
+              },
+            },
+            quality: {
+              title: "Quality & Assurance",
+              expertise: {
+                title: "Expertise",
+                desc: "Senior consultants, certified actuaries and domain experts.",
+              },
+              methodology: {
+                title: "Methodology",
+                desc: "Proven frameworks, QA controls and peer reviews.",
+              },
+              support: {
+                title: "Support",
+                desc: "Ongoing assistance and leadership availability.",
+              },
+            },
+            process: {
+              step1: {
+                title: "Scoping",
+                desc: "Objectives, scope, plan and governance.",
+              },
+              step2: {
+                title: "Execution",
+                desc: "Workshops, analyses and rapid prototypes.",
+              },
+              step3: {
+                title: "Handover",
+                desc: "Documentation, training and transition.",
+              },
+              step4: {
+                title: "Improve",
+                desc: "Retrospective and targeted iterations.",
+              },
+            },
+          },
+          value: {
+            title: "Why Us",
+            intro:
+              "We stand out through expertise, pedagogy, innovation and results.",
+            differentiators: {
+              expertise: {
+                title: "Expertise",
+                l1: "Multi-industry experience",
+                l2: "International standards",
+                l3: "Auditable references",
+                l4: "High seniority",
+              },
+              pedagogy: {
+                title: "Pedagogy",
+                l1: "Clear, structured approach",
+                l2: "Real-world cases & workshops",
+                l3: "Actionable materials",
+                l4: "Knowledge transfer",
+              },
+              innovation: {
+                title: "Innovation",
+                l1: "Modern tools and models",
+                l2: "Reporting automation",
+                l3: "Dynamic dashboards",
+                l4: "Regulatory watch",
+              },
+              results: {
+                title: "Results",
+                l1: "Faster decisions",
+                l2: "Reduced key risks",
+                l3: "Secured compliance",
+                l4: "Measured value creation",
+              },
+            },
+            testimonials: {
+              title: "What clients say",
+              t1: "Clear deliverables and flawless execution.",
+              t1Author: "Chief Risk Officer, Bank",
+              t2: "They demystified IAS 19 and equipped us sustainably.",
+              t2Author: "HR Director, Industrial Group",
+              t3: "Very practical training, immediately applicable.",
+              t3Author: "Head of Internal Audit, Insurer",
+            },
+          },
+          cta: {
+            contact: "Let's talk about your project",
+            quote: "Request a quote",
+          },
+          footer: {
+            col1: {
+              address:
+                "Licensed insurance & strategy brokerage (ACAPS).<br/>Head office: 16 Rue de Terves, 2nd floor,<br/>Mers Sultan district, Casablanca.",
+              notice:
+                "Insurance intermediary governed by Law 17-99 on the Insurance Code.<br/>Under decision No. COU5047.00000.0.C.2025.472.",
+            },
+            col2: { title: "Navigation" },
+            col3: { title: "Individual Insurance" },
+            col4: { title: "Corporate Insurance" },
+            col5: {
+              title: "Contact",
+              tel1label: "Phone:",
+              tel1: "+212 666 756 991",
+              tel2label: "Phone:",
+              tel2: "+212 675 208 909",
+              emailLabel: "Email:",
+              email: "contact@riskalia.ma",
+            },
+            copyright:
+              "© " + new Date().getFullYear() + " Riskalia. All rights reserved.",
+          },
+        },
+
+        ar: {
+          meta: {
+            title: "ريسكاليا — خدمات استشارية لإدارة المخاطر",
+            desc: "خدمات استشارية متخصصة: إدارة المخاطر، تقييم التزامات الموظفين اكتوارياً، وتدريب مخصص. خرائط مخاطر حيّة، فرضيات مُدققة، وورش عمل عملية للإدارة والفرق الفنية.",
+          },
+          aria: {
+            nav: "التنقل الرئيسي",
+            submenu_solutions: "قائمة فرعية للحلول",
+            langswitch: "مبدّل اللغة",
+          },
+          ui: {
+            search: " …🔎",
+          },
+          nav: {
+            home: "الرئيسية",
+            solutions: "الحلول",
+            assurance: "التأمين",
+            re: "إعادة التأمين",
+            climate: "مخاطر المناخ",
+            services: "الخدمات الاستشارية",
+            esg: "الاستدامة",
+            contact: "اتصال",
+          },
+          hero: {
+            title: "خدمات استشارية متخصصة",
+            subtitle:
+              "إدارة المخاطر وتقييم التزامات الموظفين وتدريب مخصص — حلول واضحة وقابلة للقياس وتركّز على التنفيذ.",
+            method:
+              "خرائط مخاطر حيّة، فرضيات مُدققة، وورش عمل عملية للمديرين والفرق",
+          },
+          tabs: {
+            overview: "نظرة عامة",
+            risk: "إدارة المخاطر",
+            actuarial: "التزامات الموظفين",
+            training: "التدريب",
+            approach: "منهجيتنا",
+            value: "لماذا نحن",
+          },
+          overview: {
+            title: "نظرة عامة على خدماتنا",
+            intro:
+              "نساعد صانعي القرار على التحرك بسرعة من خلال تحليلات دقيقة ومخرجات عملية.",
+            services: {
+              risk: {
+                title: "🎯 استشارات إدارة المخاطر",
+                desc: "خرائط مخاطر حيّة، شهية المخاطر واضحة، ولوحات متابعة فعّالة.",
+                deliverables: "أهم المخرجات:",
+                d1: "خريطة مخاطر مُرتبة حسب الأولوية (الأثر × الاحتمال)",
+                d2: "شهية المخاطر والحدود المسموح بها",
+                d3: "مؤشرات KRI/KPI ولوحات متابعة",
+                d4: "خطط عمل مع مسؤولين ومهل زمنية",
+              },
+              actuarial: {
+                title: "📊 تقييم التزامات الموظفين اكتوارياً",
+                desc: "قياس وإدارة الالتزامات وفق المعايير المحلية والدولية.",
+                deliverables: "أهم المخرجات:",
+                d1: "تقرير اكتواري كامل (المنهجيات والفرضيات والنتائج)",
+                d2: "حساسيات وسيناريوهات ضغط",
+                d3: "توصيات التمويل والتحوّط",
+                d4: "دعم الإفصاح المالي",
+              },
+              training: {
+                title: "🎓 تدريب مخصص",
+                desc: "برامج ملائمة للمستويات الوظيفية والفنية مع دراسات حالة قطاعية.",
+                deliverables: "أهم المخرجات:",
+                d1: "مسارات تعلم مخصصة",
+                d2: "مواد وتمارين مع حلول",
+                d3: "شهادات إتمام",
+                d4: "متابعة بعد التدريب",
+              },
+            },
+          },
+          risk: {
+            title: "استشارات إدارة المخاطر",
+            intro: "تصميم وتفعيل إطار المخاطر لرفع المرونة والأداء.",
+            methodology: { title: "المنهجية" },
+            process: {
+              step1: {
+                title: "التشخيص",
+                desc: "مقابلات، مراجعة وثائق، وتحليل الفجوات.",
+              },
+              step2: {
+                title: "الخرائط",
+                desc: "تحديد وتقييم وترتيب المخاطر الأساسية.",
+              },
+              step3: {
+                title: "الإطار والمؤشرات",
+                desc: "شهية المخاطر، الحدود، KRI/KPI، الحوكمة والأدوار.",
+              },
+              step4: {
+                title: "التنفيذ",
+                desc: "خطط عمل، متابعة، لوحات وتقويم مستمر.",
+              },
+            },
+            services: { title: "النطاق" },
+            domains: {
+              strategic: {
+                title: "استراتيجي",
+                l1: "مخاطر السوق والمنافسة",
+                l2: "التحول والتغيير",
+                l3: "الامتثال والسمعة",
+                l4: "الأمن السيبراني والمرونة",
+              },
+              operational: {
+                title: "تشغيلي",
+                l1: "العمليات والرقابة الداخلية",
+                l2: "استمرارية الأعمال",
+                l3: "السلامة والأمن",
+                l4: "المورّدون والأطراف الثالثة",
+              },
+              financial: {
+                title: "مالي",
+                l1: "السيولة والائتمان",
+                l2: "الفائدة وسعر الصرف",
+                l3: "الاحتيال والخسائر غير المتوقعة",
+                l4: "التغطية التأمينية",
+              },
+            },
+            deliverables: {
+              register: "سجل المخاطر",
+              registerDesc:
+                "قاعدة مخاطر منظّمة مع المالكين والمستويات والخطط والحالة.",
+              appetite: "إطار شهية المخاطر",
+              appetiteDesc: "شهية وحدود متوافقة مع الإستراتيجية.",
+              dashboard: "لوحات متابعة",
+              dashboardDesc: "مؤشرات حية وتنبيهات وتقارير للجنة المخاطر.",
+              action: "خطط عمل",
+              actionDesc: "أعمال ذات أولوية مع مسؤولين وجداول زمنية ومنافع.",
+            },
+          },
+          actuarial: {
+            title: "تقييم التزامات الموظفين",
+            intro: "قياس وشرح وتوجيه الالتزامات بدقة اكتوارية وشفافية.",
+            expertise: { title: "الخبرة" },
+            services: {
+              ifc: {
+                title: "الحسابات والتوحيد",
+                l1: "حساب الالتزامات للقوائم المالية",
+                l2: "تحليل الحركات",
+                l3: "الملاحظات والإفصاحات",
+                l4: "دعم المراجعة",
+              },
+              pension: {
+                title: "خطط التقاعد",
+                l1: "مكافأة نهاية الخدمة",
+                l2: "خطط المزايا المحددة",
+                l3: "خطط المساهمات المحددة (التواصل)",
+                l4: "تحسين وإغلاق الخطط",
+              },
+              benefits: {
+                title: "منافع الموظفين",
+                l1: "الصحة والحياة",
+                l2: "مزايا إنهاء الخدمة",
+                l3: "منافع طويلة الأجل",
+                l4: "التزامات خاصة أخرى",
+              },
+            },
+            methodology: { title: "المنهجية" },
+            process: {
+              step1: {
+                title: "البيانات",
+                desc: "بيانات الموظفين والسجلات التاريخية.",
+              },
+              step2: {
+                title: "الفرضيات",
+                desc: "صياغة ومراجعة الفرضيات الديموغرافية والمالية.",
+              },
+              step3: {
+                title: "الحسابات",
+                desc: "نمذجة اكتوارية وسيناريوهات وحساسيات.",
+              },
+              step4: {
+                title: "التقارير",
+                desc: "تقارير، حزم الحوكمة ودعم المراجعة.",
+              },
+            },
+            compliance: { title: "الامتثال والمعايير" },
+            standards: {
+              local: {
+                title: "المعايير المحلية",
+                desc: "امتثال للمتطلبات الوطنية.",
+              },
+              ifrs: {
+                title: "المعايير الدولية IFRS/IAS",
+                desc: "معالجة IAS 19 والإفصاحات.",
+              },
+              audit: {
+                title: "التدقيق والتتبّع",
+                desc: "مسار تدقيق كامل وقابل للإعادة.",
+              },
+            },
+          },
+          training: {
+            title: "تدريب مخصص",
+            intro: "مسارات من الأساسيات إلى المتقدم مع حالات واقعية وورش عمل.",
+            programs: {
+              risk: {
+                title: "إدارة المخاطر",
+                foundations: "الأساسيات",
+                f1: "المبادئ والمصطلحات والإطار",
+                f2: "خرائط المخاطر وترتيب الأولويات",
+                f3: "المؤشرات والتقارير",
+                advanced: "متقدم",
+                a1: "شهية المخاطر والحدود",
+                a2: "KRIs ولوحات وتنبيهات",
+                a3: "دمج المخاطر في الأداء",
+              },
+              insurance: {
+                title: "التأمين وإعادة التأمين",
+                principles: "مبادئ التأمين",
+                p1: "تقنيات الممتلكات والحوادث",
+                p2: "الاكتتاب والتسعير",
+                p3: "المطالبات والاحتياطيات",
+                reinsurance: "إعادة التأمين",
+                r1: "نسبي وغير نسبي",
+                r2: "تصميم وتحسين البرامج",
+                r3: "بنود أساسية ومزالق",
+              },
+              actuarial: {
+                title: "الاكتوارية",
+                basics: "الأساسيات",
+                b1: "الرياضيات الاكتوارية",
+                b2: "الفرضيات والجداول",
+                b3: "IAS 19 — نظرة عامة",
+                modeling: "النمذجة",
+                m1: "نماذج التدفقات والخصم",
+                m2: "الحساسيات والسيناريوهات",
+                m3: "التوثيق والضوابط",
+              },
+            },
+            methodology: { title: "الأسلوب والتقديم" },
+            pedagogy: {
+              step1: { title: "التقييم", desc: "احتياجات ومهارات المتدربين." },
+              step2: { title: "التصميم", desc: "برنامج مخصص مع حالات قطاعية." },
+              step3: { title: "التنفيذ", desc: "ورش تفاعلية وتمارين مصححة." },
+              step4: {
+                title: "المتابعة",
+                desc: "تقرير ختامي وتقييم وتدريب لاحق.",
+              },
+            },
+            deliverables: {
+              materials: "مواد تدريبية",
+              materialsDesc: "شرائح وأوراق مختصرة وتمارين مع حلول.",
+              assessments: "تقييمات",
+              assessmentsDesc: "اختبارات قبل/بعد وشهادة إتمام.",
+              toolkit: "عدة أدوات",
+              toolkitDesc: "قوالب وقوائم فحص قابلة لإعادة الاستخدام.",
+              support: "دعم",
+              supportDesc: "أسئلة وأجوبة مسندة ومساعدة لاحقة.",
+            },
+          },
+          approach: {
+            title: "منهجيتنا",
+            intro: "براغماتية وقابلة للتتبع وتعاونية — لتحقيق أثر ملموس.",
+            pillars: {
+              pragmatic: {
+                title: "براغماتية",
+                l1: "الأولوية للتنفيذ والنتائج",
+                l2: "مخرجات تشغيلية",
+                l3: "قيمة سريعة",
+                l4: "ترتيب حسب القيمة",
+              },
+              traceable: {
+                title: "قابلة للتتبع",
+                l1: "فرضيات موثّقة ومدققة",
+                l2: "نماذج موثّقة",
+                l3: "حسابات قابلة للإعادة",
+                l4: "حوكمة واضحة",
+              },
+              collaborative: {
+                title: "تعاونية",
+                l1: "بناء مشترك مع الفرق",
+                l2: "نقل المعرفة",
+                l3: "تدريب المسؤولين",
+                l4: "ممارسات رائدة",
+              },
+            },
+            quality: {
+              title: "الجودة والضمان",
+              expertise: {
+                title: "خبرة",
+                desc: "مستشارون كبار واكتواريون معتمدون وخبراء مجال.",
+              },
+              methodology: {
+                title: "منهجية",
+                desc: "أطر مثبتة وضوابط جودة ومراجعات زملاء.",
+              },
+              support: { title: "دعم", desc: "مساندة مستمرة وتوفر القيادة." },
+            },
+            process: {
+              step1: {
+                title: "تحديد النطاق",
+                desc: "الأهداف والنطاق والخطة والحوكمة.",
+              },
+              step2: {
+                title: "التنفيذ",
+                desc: "ورش وتحليلات ونماذج أولية سريعة.",
+              },
+              step3: { title: "التسليم", desc: "توثيق وتدريب وانتقال." },
+              step4: {
+                title: "التحسين",
+                desc: "مراجعات ودورات تحسين مستهدفة.",
+              },
+            },
+          },
+          value: {
+            title: "لماذا نحن",
+            intro: "نتميّز بالخبرة والتعليم والابتكار والنتائج.",
+            differentiators: {
+              expertise: {
+                title: "خبرة",
+                l1: "خبرة متعددة القطاعات",
+                l2: "معايير دولية",
+                l3: "مراجع قابلة للتدقيق",
+                l4: "مستوى عالٍ من الأقدمية",
+              },
+              pedagogy: {
+                title: "تعليم",
+                l1: "نهج واضح ومنظم",
+                l2: "حالات واقعية وورش",
+                l3: "مواد قابلة للتطبيق",
+                l4: "نقل المعرفة",
+              },
+              innovation: {
+                title: "ابتكار",
+                l1: "أدوات ونماذج حديثة",
+                l2: "أتمتة التقارير",
+                l3: "لوحات تفاعلية",
+                l4: "رصد تنظيمي",
+              },
+              results: {
+                title: "نتائج",
+                l1: "قرارات أسرع",
+                l2: "خفض للمخاطر الرئيسية",
+                l3: "امتثال آمن",
+                l4: "قيمة قابلة للقياس",
+              },
+            },
+            testimonials: {
+              title: "ثقة العملاء",
+              t1: "مخرجات واضحة وتنفيذ ممتاز.",
+              t1Author: "مدير المخاطر، بنك",
+              t2: "بسّطوا IAS 19 وزودونا بأدوات مستدامة.",
+              t2Author: "مدير الموارد البشرية، مجموعة صناعية",
+              t3: "تدريبات عملية قابلة للتطبيق فورًا.",
+              t3Author: "رئيس التدقيق الداخلي، شركة تأمين",
+            },
+          },
+          cta: {
+            contact: "لنتحدث عن مشروعك",
+            quote: "اطلب عرض سعر",
+          },
+          footer: {
+            col1: {
+              address:
+                "شركة وساطة واستراتيجيات معتمدة من هيئة مراقبة التأمينات (ACAPS).<br/>المقر: 16 شارع تيرف، الطابق الثاني،<br/>حي مرس السلطان، الدار البيضاء.",
+              notice:
+                "وسيط تأمين يخضع للقانون 17-99 المتعلق بمدونة التأمينات.<br/>بموجب القرار رقم COU5047.00000.0.C.2025.472.",
+            },
+            col2: { title: "التنقل" },
+            col3: { title: "تأمين الأفراد" },
+            col4: { title: "تأمين الشركات" },
+            col5: {
+              title: "الاتصال",
+              tel1label: "هاتف:",
+              tel1: "+212 666 756 991",
+              tel2label: "هاتف:",
+              tel2: "+212 675 208 909",
+              emailLabel: "البريد الإلكتروني:",
+              email: "contact@riskalia.ma",
+            },
+            copyright:
+              "© " + new Date().getFullYear() + " ريسكاليا. جميع الحقوق محفوظة.",
+          },
+        },
+      };
+
+      /* Helpers */
+      let lang = localStorage.getItem("riskalia_lang") || "fr";
+      if (!["fr", "en", "ar"].includes(lang)) lang = "fr";
+      const $ = (s, root = document) => root.querySelector(s);
+      const $$ = (s, root = document) => Array.from(root.querySelectorAll(s));
+
+      /* Remplace uniquement le 1er nœud texte direct d’un élément (préserve les enfants ex: <span class="caret">) */
+      function setTextPreserveChildren(el, text) {
+        const tn = Array.from(el.childNodes).find(
+          (n) => n.nodeType === Node.TEXT_NODE
+        );
+        if (tn) {
+          const needsSpace = el.children.length && !/\s$/.test(text);
+          tn.textContent = text + (needsSpace ? " " : "");
+        } else if (el.children.length) {
+          el.insertBefore(document.createTextNode(text + " "), el.firstChild);
+        } else {
+          el.textContent = text;
+        }
+      }
+
+      function t(path) {
+        const ns = path.split(".");
+        let cur = window.I18N?.[lang];
+        for (const n of ns) {
+          if (cur == null || !(n in cur)) return path;
+          cur = cur[n];
+        }
+        return cur;
+      }
+
+      function applyI18n() {
+        $$("[data-i18n]").forEach((el) => {
+          const key = el.dataset.i18n;
+          const text = t(key);
+          if (text !== key) {
+            if (/<br\s*\/?>/i.test(el.innerHTML)) el.innerHTML = text;
+            else setTextPreserveChildren(el, text);
+          }
+        });
+      }
+
+      function applyI18nAttrs() {
+        $$("[data-i18n-attr]").forEach((el) => {
+          const pairs = (el.dataset.i18nAttr || "")
+            .split(",")
+            .map((s) => s.trim())
+            .filter(Boolean);
+          for (const pair of pairs) {
+            const [attr, key] = pair.split(":").map((s) => s.trim());
+            const val = t(key);
+            if (attr && val != null) el.setAttribute(attr, val);
+          }
+        });
+      }
+
+      function setMeta() {
+        const m = window.I18N?.[lang]?.meta;
+        if (m?.title) document.title = m.title;
+        if (m?.desc) {
+          let md = document.querySelector('meta[name="description"]');
+          if (!md) {
+            md = document.createElement("meta");
+            md.setAttribute("name", "description");
+            document.head.appendChild(md);
+          }
+          md.setAttribute("content", m.desc);
+        }
+      }
+
+      function applyDir() {
+        document.documentElement.lang = lang;
+        document.body.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+      }
+
+      function syncLangButtons() {
+        $$(".lang-btn").forEach((b) =>
+          b.classList.toggle("active", b.dataset.lang === lang)
+        );
+      }
+
+      function initLangSwitch() {
+        $$(".lang-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            lang = btn.dataset.lang;
+            localStorage.setItem("riskalia_lang", lang);
+            applyDir();
+            applyI18n();
+            applyI18nAttrs();
+            setMeta();
+            syncLangButtons();
+            $("#nav-search-input")?.setAttribute("placeholder", t("ui.search"));
+          });
+        });
+      }
+
+      function initTabs() {
+        const tabs = $$(".consulting-tab");
+        const panels = $$(".consulting-panel");
+        const activate = (target) => {
+          tabs.forEach((tb) =>
+            tb.classList.toggle("active", tb.dataset.tab === target)
+          );
+          panels.forEach((p) => p.classList.toggle("active", p.id === target));
+          $(".consulting-tabs")?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        };
+        tabs.forEach((tb) => {
+          tb.addEventListener("click", () => activate(tb.dataset.tab));
+          tb.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              activate(tb.dataset.tab);
+            }
+          });
+        });
+        const hash = (location.hash || "").slice(1);
+        if (hash && panels.some((p) => p.id === hash)) activate(hash);
+      }
+
+      function initMenu() {
+        // Mobile menu toggle removed - using NavigationComponent
+      }
+
+      function initReveal() {
+        const els = $$(".reveal");
+        if ("IntersectionObserver" in window) {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((en) => {
+                if (en.isIntersecting) {
+                  en.target.classList.add("active");
+                  io.unobserve(en.target);
+                }
+              });
+            },
+            { threshold: 0.12 }
+          );
+          els.forEach((el) => io.observe(el));
+        } else {
+          els.forEach((el) => el.classList.add("active"));
+        }
+      }
+    </script>
+    <!-- NAV SEARCH Scripts removed - using NavigationComponent -->
+
+    <!-- Dropdown sizing/alignment helpers -->
+    <script>
+      function alignDropdown() {
+        const list = document.getElementById("nav-search-list");
+        const box = document.querySelector(".nav-search");
+        if (!list || !box) return;
+
+        list.style.left = "0";
+        list.style.right = "auto";
+
+        const r = list.getBoundingClientRect();
+        if (r.right > window.innerWidth) {
+          list.style.left = "auto";
+          list.style.right = "0";
+        }
+
+        function commitSelection() {
+          const it = currentItem();
+          if (it) goTo(it.url);
+          else if (input.value.trim()) {
+            const f = filterItems(input.value)[0];
+            if (f) goTo(f.url);
+          }
+        }
+
+        function goTo(url) {
+          closeList();
+          if (!url) return;
+          if (url.startsWith("services.html#")) {
+            const id = url.split("#")[1];
+            if (id) {
+              history.pushState(null, "", "#" + id);
+              document
+                .querySelector(`.consulting-tab[data-tab="${id}"]`)
+                ?.click();
+              $(".consulting-tabs")?.scrollIntoView({ behavior: "smooth" });
+              return;
+            }
+          }
+          location.href = url;
+        }
+
+        input.addEventListener("input", () => {
+          const v = input.value;
+          wrap.classList.toggle("has-value", v.length > 0);
+          openList(filterItems(v));
+        });
+        input.addEventListener("focus", () => {
+          const items = filterItems(input.value);
+          if (items.length) openList(items);
+        });
+        input.addEventListener("keydown", (e) => {
+          const opts = $$('#nav-search-list li[role="option"]');
+          if (e.key === "ArrowDown") {
+            e.preventDefault();
+            if (opts.length)
+              setActive(
+                Math.min(activeIndex < 0 ? 0 : activeIndex + 1, opts.length - 1)
+              );
+          } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            if (opts.length)
+              setActive(
+                Math.max(activeIndex < 0 ? opts.length - 1 : activeIndex - 1, 0)
+              );
+          } else if (e.key === "Enter") {
+            e.preventDefault();
+            commitSelection();
+          } else if (e.key === "Escape") {
+            closeList();
+            input.blur();
+          }
+        });
+        document.addEventListener("click", (e) => {
+          if (!wrap.contains(e.target)) closeList();
+        });
+
+        input.setAttribute("placeholder", t("ui.search"));
+      }
+
+      /* Boot */
+      document.addEventListener("DOMContentLoaded", () => {
+        applyDir();
+        setMeta();
+        applyI18n();
+        applyI18nAttrs();
+        syncLangButtons();
+
+        initLangSwitch();
+        initTabs();
+        initMenu();
+        initReveal();
+        initNavSearch();
+      });
+    </script>
+
+    <!-- Component Scripts -->
+    <script src="assets/js/components/SearchComponent.js"></script>
+    <script src="assets/js/components/NavigationComponent.js"></script>
+    <script src="assets/js/components/FooterComponent.js"></script>
+
+    <!-- Initialize Components -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize Navigation Component
+        if (typeof NavigationComponent !== "undefined") {
+          const nav = new NavigationComponent("navigation-container");
+          nav.init();
+
+          // Make navigation component available globally for language changes
+          window.navigationComponent = nav;
+        }
+
+        // Initialize Footer Component
+        if (typeof FooterComponent !== "undefined") {
+          const footer =
+            window.footerComponent || new FooterComponent("footer-container");
+
+          // Make footer component available globally for language changes
+          window.footerComponent = footer;
+        }
+
+        // Listen for language changes from the navigation component
+        document.addEventListener("languageChanged", function (e) {
+          if (e.detail && e.detail.language) {
+            // Update the global language variable
+            lang = e.detail.language;
+
+            // Call the existing language change function
+            if (typeof applyTexts === "function") {
+              applyTexts();
+            }
+
+            // Call any other language change handlers
+            if (typeof window._onLangChanged === "function") {
+              window._onLangChanged();
+            }
+          }
+        });
+      });
+
+      // Update components when language changes from other sources
+      const originalOnLangChanged = window._onLangChanged;
+      window._onLangChanged = function () {
+        // Call original language change handler
+        if (originalOnLangChanged) {
+          originalOnLangChanged();
+        }
+
+        // Update navigation component
+        if (window.navigationComponent) {
+          const currentLang = localStorage.getItem("riskalia_lang") || "fr";
+          window.navigationComponent.updateLanguage(currentLang);
+        }
+
+        // Update footer component
+        if (window.footerComponent) {
+          window.footerComponent.updateTranslations();
+        }
+      };
+    </script>
+  </body>
+</html>
+
+

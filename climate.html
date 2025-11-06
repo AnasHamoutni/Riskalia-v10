@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Riskalia — Risques climatiques</title>
+    <meta
+      name="description"
+      content="Identifier, quantifier et piloter les risques climatiques : risques physiques et de transition, scénarios (RCP/SSP), feuille de route d'adaptation, transfert de risque et reporting."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <noscript
+      ><style>
+        .tabpanel {
+          display: block;
+        }
+      </style></noscript
+    >
+
+    <!-- Fonts (match index.html) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/components/navigation.css" />
+    <link rel="stylesheet" href="assets/css/components/footer.css" />
+
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      /* ================== Essential Custom Styles Only ================== */
+      :root {
+        --c1: #005c73;
+        --c2: #00849b;
+        --c3: #00b0c8;
+        --cl: #fff;
+        --cm: #f6fafc;
+        --cd: #243238;
+      }
+
+      /* Base font families */
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+      body[dir="rtl"] {
+        font-family: "Tajawal", "Open Sans", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Montserrat", sans-serif;
+      }
+      body[dir="rtl"] h1,
+      body[dir="rtl"] h2,
+      body[dir="rtl"] h3,
+      body[dir="rtl"] h4 {
+        font-family: "Tajawal", "Open Sans", sans-serif;
+        letter-spacing: 0;
+      }
+
+      /* Hero wave animation */
+      .hero::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        height: 64px;
+        background: url('data:image/svg+xml;utf8,<svg width="1440" height="64" viewBox="0 0 1440 64" xmlns="http://www.w3.org/2000/svg"><path d="M0,30 C240,80 480,0 720,30 C960,60 1200,10 1440,28 L1440,64 L0,64 Z" fill="%23f7fcfe"></svg>')
+          center/cover no-repeat;
+        pointer-events: none;
+        animation: waveFloat 8s ease-in-out infinite;
+      }
+      @keyframes waveFloat {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(4px);
+        }
+      }
+
+      /* Section wave */
+      .section-wave {
+        background: url('data:image/svg+xml;utf8,<svg width="1440" height="44" viewBox="0 0 1440 44" xmlns="http://www.w3.org/2000/svg"><path d="M0,6 C240,44 480,0 720,18 C960,36 1200,8 1440,18 L1440,44 L0,44 Z" fill="%23f7fcfe"></svg>')
+          center/cover no-repeat;
+      }
+      .section-wave::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        height: 48px;
+        background: linear-gradient(
+          to bottom,
+          rgba(247, 252, 254, 1) 0%,
+          rgba(247, 252, 254, 0) 100%
+        );
+        pointer-events: none;
+      }
+
+      /* Card left border */
+      .card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+        background: linear-gradient(180deg, var(--c3), var(--c2));
+        opacity: 0.55;
+      }
+
+      /* Timeline styling */
+      .timeline li::before {
+        content: attr(data-step);
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--c3), var(--c2));
+        color: #fff;
+        font-weight: 800;
+        font-size: 0.9rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .timeline li::after {
+        content: "";
+        position: absolute;
+        left: 13px;
+        top: 32px;
+        bottom: -14px;
+        width: 2px;
+        background: linear-gradient(var(--c2), transparent);
+      }
+      .timeline li:last-child::after {
+        display: none;
+      }
+
+      /* Tab active state */
+      .tab.active {
+        background: linear-gradient(
+            135deg,
+            rgba(0, 176, 200, 0.18),
+            rgba(0, 92, 115, 0.1)
+          ),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.92),
+            rgba(255, 255, 255, 0.78)
+          );
+        border-color: rgba(0, 92, 115, 0.25);
+        box-shadow: 0 8px 22px rgba(0, 176, 200, 0.18);
+      }
+
+      /* Tab panels */
+      .tabpanel {
+        display: none;
+      }
+      .tabpanel.active {
+        display: block;
+      }
+
+      /* RTL list styling */
+      ul.card-list {
+        list-style-position: inside;
+        padding-inline-start: 0;
+      }
+      body[dir="rtl"] ul.card-list {
+        text-align: right;
+        list-style-position: inside;
+      }
+      ul.card-list li {
+        padding-inline-start: 1ch;
+        margin-block: 5px;
+      }
+    </style>
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- Navigation Component Container -->
+    <div id="navigation-container"></div>
+
+    <!-- HERO -->
+    <section
+      class="hero-bg min-h-[30vh] flex items-center text-white text-center relative py-12"
+      style="
+        background: linear-gradient(
+            rgba(0, 92, 115, 0.86),
+            rgba(0, 92, 115, 0.86)
+          ),
+          url('https://images.unsplash.com/photo-1472145246862-b24cf25c4a36?auto=format&fit=crop&w=2000&q=70')
+            center/cover no-repeat;
+      "
+    >
+      <!-- Floating Background Elements -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="floating-element absolute top-1/4 left-1/4 w-2 h-2 bg-white/20 rounded-full"
+        ></div>
+        <div
+          class="floating-element absolute top-1/3 right-1/3 w-1 h-1 bg-white/30 rounded-full"
+        ></div>
+        <div
+          class="floating-element absolute bottom-1/4 right-1/4 w-3 h-3 bg-white/10 rounded-full"
+        ></div>
+      </div>
+
+      <div class="hero-content container mx-auto px-4 max-w-6xl relative z-10">
+        <div class="space-y-8 px-4">
+          <h1
+            class="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight mb-2 sm:mb-3 md:mb-4"
+            data-i18n="climate.title"
+          >
+            Risques climatiques
+          </h1>
+          <h3
+            class="text-white/95 text-sm sm:text-base md:text-lg lg:text-xl font-light mb-2 sm:mb-3 md:mb-4 max-w-4xl mx-auto leading-relaxed"
+            data-i18n="climate.subtitle"
+          >
+            Identifier, quantifier et piloter les impacts liés au climat :
+            risques physiques (aigus/chroniques) et de transition, scénarios
+            (RCP/SSP), feuille de route d'adaptation, transfert de risque et
+            reporting TCFD/ISSB.
+          </h3>
+          <div
+            class="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          >
+            <a
+              href="contact.html"
+              class="bg-gradient-to-r from-[var(--c3)] to-[var(--c2)] hover:from-[var(--c2)] hover:to-[var(--c1)] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base no-underline hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl"
+              data-i18n="climate.cta.contact"
+            >
+              Nous contacter
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section-wave" aria-hidden="true"></div>
+
+
+    <!-- SMOOTH IMAGE-BACKED AREA -->
+    <div class="main-wrapper max-w-7xl mx-auto mt-4">
+      <div class="main-bloc">
+      <!-- Introduction Climate -->
+      <section class="" id="intro-climate">
+        <div class="container max-w-7xl mx-auto px-4">
+          <div
+            class="bg-gradient-to-br from-[rgba(0,176,200,0.08)] to-[rgba(0,92,115,0.04)] rounded-2xl p-5 border border-[rgba(0,95,115,0.12)] shadow-lg"
+          >
+            <h2 class="flex items-center gap-3 mb-4 text-[var(--c1)]">
+              <span class="text-3xl">🌡️</span>
+              <span data-i18n="climate.intro_climate.title"
+                >Le défi climatique au Maroc</span
+              >
+            </h2>
+            <p
+              data-i18n="climate.intro_climate.content"
+              class="text-[#243238] leading-relaxed"
+            >
+              Le changement climatique est devenu l'un des premiers facteurs de
+              risque pour les économies africaines et marocaines. Il est
+              indispensable de passer d'une logique réactive à une approche
+              anticipative : mesurer, planifier et couvrir.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-6">
+        <div class="container max-w-7xl mx-auto px-4">
+          <!-- Tabs -->
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2 sm:gap-3 max-w-6xl mx-auto px-2 py-4 sm:py-8"
+            role="tablist"
+            aria-label="Sections climat"
+          >
+            <button
+              class="tab active px-2 py-2 sm:px-4 sm:py-3 rounded-full border border-[rgba(0,93,115,0.16)] font-bold text-xs sm:text-sm text-[#0b4e5b] text-center cursor-pointer bg-gradient-to-b from-white/92 to-white/78 backdrop-blur-sm shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+              role="tab"
+              id="tab-intro"
+              aria-selected="true"
+              aria-controls="intro"
+              data-tab="intro"
+              data-i18n="climate.sec.intro.t"
+            >
+              Introduction
+            </button>
+            <button
+              class="tab px-2 py-2 sm:px-4 sm:py-3 rounded-full border border-[rgba(0,93,115,0.16)] font-bold text-xs sm:text-sm text-[#0b4e5b] text-center cursor-pointer bg-gradient-to-b from-white/92 to-white/78 backdrop-blur-sm shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+              role="tab"
+              id="tab-risks"
+              aria-selected="false"
+              aria-controls="risks"
+              data-tab="risks"
+              data-i18n="climate.sec.risks.t"
+            >
+              Risques physiques & transition
+            </button>
+            <button
+              class="tab px-2 py-2 sm:px-4 sm:py-3 rounded-full border border-[rgba(0,93,115,0.16)] font-bold text-xs sm:text-sm text-[#0b4e5b] text-center cursor-pointer bg-gradient-to-b from-white/92 to-white/78 backdrop-blur-sm shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+              role="tab"
+              id="tab-data"
+              aria-selected="false"
+              aria-controls="data"
+              data-tab="data"
+              data-i18n="climate.sec.data.t"
+            >
+              Données & scénarios
+            </button>
+            <button
+              class="tab px-2 py-2 sm:px-4 sm:py-3 rounded-full border border-[rgba(0,93,115,0.16)] font-bold text-xs sm:text-sm text-[#0b4e5b] text-center cursor-pointer bg-gradient-to-b from-white/92 to-white/78 backdrop-blur-sm shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+              role="tab"
+              id="tab-strategy"
+              aria-selected="false"
+              aria-controls="strategy"
+              data-tab="strategy"
+              data-i18n="climate.sec.strategy.t"
+            >
+              Stratégie & roadmap
+            </button>
+            <button
+              class="tab px-2 py-2 sm:px-4 sm:py-3 rounded-full border border-[rgba(0,93,115,0.16)] font-bold text-xs sm:text-sm text-[#0b4e5b] text-center cursor-pointer bg-gradient-to-b from-white/92 to-white/78 backdrop-blur-sm shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+              role="tab"
+              id="tab-finance"
+              aria-selected="false"
+              aria-controls="finance"
+              data-tab="finance"
+              data-i18n="climate.sec.finance.t"
+            >
+              Financement & transfert
+            </button>
+            <button
+              class="tab px-2 py-2 sm:px-4 sm:py-3 rounded-full border border-[rgba(0,93,115,0.16)] font-bold text-xs sm:text-sm text-[#0b4e5b] text-center cursor-pointer bg-gradient-to-b from-white/92 to-white/78 backdrop-blur-sm shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+              role="tab"
+              id="tab-value"
+              aria-selected="false"
+              aria-controls="value"
+              data-tab="value"
+              data-i18n="climate.sec.value.t"
+            >
+              Valeur ajoutée
+            </button>
+            <button
+              class="tab px-2 py-2 sm:px-4 sm:py-3 rounded-full border border-[rgba(0,93,115,0.16)] font-bold text-xs sm:text-sm text-[#0b4e5b] text-center cursor-pointer bg-gradient-to-b from-white/92 to-white/78 backdrop-blur-sm shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+              role="tab"
+              id="tab-faq"
+              aria-selected="false"
+              aria-controls="faq"
+              data-tab="faq"
+              data-i18n="climate.sec.faq.t"
+            >
+              FAQ
+            </button>
+          </div>
+        </div>
+
+        <div class="container max-w-7xl mx-auto px-4">
+          <!-- 1. Introduction -->
+          <article
+            id="intro"
+            class="tabpanel active relative rounded-2xl overflow-hidden bg-gradient-to-b from-white/96 to-white/90 backdrop-blur-sm shadow-lg border border-[rgba(0,93,115,0.16)] p-4 sm:p-6 transition-all duration-300 max-w-5xl mx-auto mb-5"
+            role="tabpanel"
+            aria-labelledby="tab-intro"
+          >
+            <h2
+              class="inline-block bg-gradient-to-br from-[rgba(0,176,200,0.14)] to-[rgba(0,92,115,0.08)] border border-[rgba(0,92,115,0.18)] rounded-xl px-4 py-2 text-[var(--c1)] shadow-sm mb-4"
+              data-i18n="climate.sec.intro.t"
+            >
+              Introduction
+            </h2>
+
+            <p
+              data-i18n="climate.sec.intro.p1"
+              class="max-w-4xl leading-relaxed text-[#243238] mb-4"
+            >
+              Le changement climatique est devenu l'un des premiers facteurs de
+              risque pour les économies africaines et marocaines. Sécheresses
+              récurrentes, stress hydrique, vagues de chaleur, inondations
+              soudaines et feux de forêts : ces phénomènes ne sont plus
+              exceptionnels mais tendent à se répéter et à s'intensifier.
+            </p>
+
+            <div
+              class="bg-gradient-to-br from-[rgba(0,176,200,0.06)] to-white/95 border-l-4 border-[var(--c3)] p-4 sm:p-6 my-5 rounded-r-xl shadow-sm"
+            >
+              <h3
+                data-i18n="climate.sec.intro.impacts_title"
+                class="text-[var(--c1)] font-semibold mb-3"
+              >
+                Au Maroc, les impacts sont déjà mesurables :
+              </h3>
+              <ul class="pl-5 space-y-2">
+                <li
+                  data-i18n="climate.sec.intro.impact1"
+                  class="text-[#586e77]"
+                >
+                  pertes agricoles et baisse de rendements,
+                </li>
+                <li
+                  data-i18n="climate.sec.intro.impact2"
+                  class="text-[#586e77]"
+                >
+                  dégâts aux infrastructures et perturbations des chaînes
+                  logistiques,
+                </li>
+                <li
+                  data-i18n="climate.sec.intro.impact3"
+                  class="text-[#586e77]"
+                >
+                  hausse des coûts de l'énergie et de l'eau,
+                </li>
+                <li
+                  data-i18n="climate.sec.intro.impact4"
+                  class="text-[#586e77]"
+                >
+                  effets sur la santé et la productivité des salariés.
+                </li>
+              </ul>
+            </div>
+
+            <p
+              data-i18n="climate.sec.intro.conclusion"
+              class="max-w-4xl leading-relaxed text-[#243238]"
+            >
+              Ces risques touchent toutes les catégories d'acteurs : assureurs,
+              réassureurs, entreprises, collectivités, mais aussi ménages et
+              investisseurs. Face à cette réalité, il est indispensable de
+              passer d'une logique réactive (gérer après coup) à une approche
+              anticipative (mesurer, planifier et couvrir).
+            </p>
+          </article>
+
+          <!-- 2. Risks -->
+          <article
+            id="risks"
+            class="tabpanel relative rounded-2xl overflow-hidden bg-gradient-to-b from-white/96 to-white/90 backdrop-blur-sm shadow-lg border border-[rgba(0,93,115,0.16)] p-4 sm:p-6 transition-all duration-300 max-w-5xl mx-auto mb-5"
+            role="tabpanel"
+            aria-labelledby="tab-risks"
+          >
+            <h2
+              class="inline-block bg-gradient-to-br from-[rgba(0,176,200,0.14)] to-[rgba(0,92,115,0.08)] border border-[rgba(0,92,115,0.18)] rounded-xl px-4 py-2 text-[var(--c1)] shadow-sm mb-4"
+              data-i18n="climate.sec.risks.t"
+            >
+              Risques physiques & de transition
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 my-5">
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h3
+                  data-i18n="climate.sec.risks.phys.t"
+                  class="text-[var(--c1)] font-semibold mb-3"
+                >
+                  Risques physiques
+                </h3>
+                <p
+                  data-i18n="climate.sec.risks.distinction"
+                  class="text-[#243238] mb-3"
+                >
+                  On distingue :
+                </p>
+                <ul class="space-y-3">
+                  <li class="text-[#586e77]">
+                    <strong
+                      data-i18n="climate.sec.risks.acute"
+                      class="text-[var(--c1)]"
+                      >Les risques aigus :</strong
+                    >
+                    <span
+                      data-i18n="climate.sec.risks.acute_desc"
+                      class="block mt-1"
+                    >
+                      événements soudains et destructeurs comme les inondations
+                      urbaines, les tempêtes violentes, les vagues de chaleur
+                      extrêmes ou les feux de forêts. Ils entraînent des
+                      dommages immédiats aux bâtiments, aux équipements, aux
+                      réseaux et peuvent interrompre l'activité.
+                    </span>
+                  </li>
+                  <li class="text-[#586e77]">
+                    <strong
+                      data-i18n="climate.sec.risks.chronic"
+                      class="text-[var(--c1)]"
+                      >Les risques chroniques :</strong
+                    >
+                    <span
+                      data-i18n="climate.sec.risks.chronic_desc"
+                      class="block mt-1"
+                    >
+                      effets progressifs mais durables comme la hausse des
+                      températures moyennes, la raréfaction de l'eau ou
+                      l'érosion côtière. Ils fragilisent les cultures,
+                      augmentent les coûts d'irrigation et modifient les
+                      conditions d'exploitation industrielle et agricole.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h3
+                  data-i18n="climate.sec.risks.trans.t"
+                  class="text-[var(--c1)] font-semibold mb-3"
+                >
+                  Risques de transition
+                </h3>
+                <p
+                  data-i18n="climate.sec.risks.trans_intro"
+                  class="text-[#243238] mb-3"
+                >
+                  Ils découlent de l'évolution vers une économie bas carbone :
+                </p>
+                <ul class="space-y-2">
+                  <li
+                    data-i18n="climate.sec.risks.trans1"
+                    class="text-[#586e77]"
+                  >
+                    nouvelles réglementations (taxes carbone, normes de
+                    reporting ESG),
+                  </li>
+                  <li
+                    data-i18n="climate.sec.risks.trans2"
+                    class="text-[#586e77]"
+                  >
+                    exigences des bailleurs et assureurs internationaux,
+                  </li>
+                  <li
+                    data-i18n="climate.sec.risks.trans3"
+                    class="text-[#586e77]"
+                  >
+                    transformation des chaînes de valeur mondiales (exportateurs
+                    soumis à des critères climatiques stricts),
+                  </li>
+                  <li
+                    data-i18n="climate.sec.risks.trans4"
+                    class="text-[#586e77]"
+                  >
+                    attentes sociétales et réputationnelles (investisseurs,
+                    consommateurs).
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="border border-dashed border-[rgba(0,92,115,0.28)] bg-gradient-to-b from-[rgba(0,176,200,0.08)] to-white/94 rounded-2xl p-4 sm:p-5 text-[#085160] my-4 shadow-sm"
+            >
+              <strong class="text-[var(--c1)]">
+                ➡️
+                <span data-i18n="climate.sec.risks.why_title"
+                  >Pourquoi c'est important ?</span
+                >
+              </strong>
+              <span data-i18n="climate.sec.risks.why_desc" class="block mt-2">
+                Parce qu'un acteur qui n'anticipe pas ces évolutions peut perdre
+                des financements, voir ses coûts grimper, ou rater des
+                opportunités de marché.
+              </span>
+            </div>
+          </article>
+
+          <!-- 3. Data & scenarios -->
+          <article
+            id="data"
+            class="tabpanel relative rounded-2xl overflow-hidden bg-gradient-to-b from-white/96 to-white/90 backdrop-blur-sm shadow-lg border border-[rgba(0,93,115,0.16)] p-4 sm:p-6 transition-all duration-300 max-w-5xl mx-auto mb-5"
+            role="tabpanel"
+            aria-labelledby="tab-data"
+          >
+            <h2
+              class="inline-block bg-gradient-to-br from-[rgba(0,176,200,0.14)] to-[rgba(0,92,115,0.08)] border border-[rgba(0,92,115,0.18)] rounded-xl px-4 py-2 text-[var(--c1)] shadow-sm mb-4"
+              data-i18n="climate.sec.data.t"
+            >
+              Données & scénarios
+            </h2>
+
+            <div
+              class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-5 shadow-md mb-5"
+            >
+              <h3
+                data-i18n="climate.sec.data.collect.t"
+                class="text-[var(--c1)] font-semibold mb-3"
+              >
+                Collecte et analyse
+              </h3>
+              <p
+                data-i18n="climate.sec.data.collect.p"
+                class="text-[#243238] leading-relaxed"
+              >
+                Nous partons de données concrètes : historiques de sinistres,
+                bases climatiques disponibles au Maroc et à l'international,
+                données locales de pluviométrie ou de température, mais aussi
+                témoignages et retours d'expérience de vos équipes.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 my-5">
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h3
+                  data-i18n="climate.sec.data.map.t"
+                  class="text-[var(--c1)] font-semibold mb-3"
+                >
+                  Cartographie
+                </h3>
+                <p
+                  data-i18n="climate.sec.data.map.intro"
+                  class="text-[#243238] mb-3"
+                >
+                  Nous traduisons ces données en cartes claires :
+                </p>
+                <ul class="space-y-2">
+                  <li data-i18n="climate.sec.data.map1" class="text-[#586e77]">
+                    zones agricoles exposées à la sécheresse,
+                  </li>
+                  <li data-i18n="climate.sec.data.map2" class="text-[#586e77]">
+                    villes à risque d'inondation,
+                  </li>
+                  <li data-i18n="climate.sec.data.map3" class="text-[#586e77]">
+                    régions industrielles confrontées aux vagues de chaleur.
+                  </li>
+                </ul>
+                <p
+                  data-i18n="climate.sec.data.map.conclusion"
+                  class="text-[#243238] mt-3"
+                >
+                  Chaque carte met en évidence les actifs critiques et les
+                  points de fragilité de vos opérations.
+                </p>
+              </div>
+
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h3
+                  data-i18n="climate.sec.data.scen.t"
+                  class="text-[var(--c1)] font-semibold mb-3"
+                >
+                  Scénarios prospectifs
+                </h3>
+                <p
+                  data-i18n="climate.sec.data.scen.intro"
+                  class="text-[#243238] mb-3"
+                >
+                  Nous construisons des trajectoires à horizon 2030 et 2050 pour
+                  tester la robustesse de vos stratégies :
+                </p>
+                <ul class="space-y-2">
+                  <li data-i18n="climate.sec.data.scen1" class="text-[#586e77]">
+                    combien de jours de chaleur extrême supplémentaires ?
+                  </li>
+                  <li data-i18n="climate.sec.data.scen2" class="text-[#586e77]">
+                    quelle fréquence d'inondations dans telle région ?
+                  </li>
+                  <li data-i18n="climate.sec.data.scen3" class="text-[#586e77]">
+                    quel impact sur la productivité agricole ou industrielle ?
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h3
+              data-i18n="climate.sec.data.kpi.title"
+              class="text-[var(--c1)] font-semibold mb-3"
+            >
+              Indicateurs clés
+            </h3>
+            <p
+              data-i18n="climate.sec.data.kpi.intro"
+              class="text-[#243238] mb-4"
+            >
+              Nous traduisons tout cela en indicateurs simples :
+            </p>
+
+            <div
+              class="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-4 my-6"
+            >
+              <div
+                class="border border-[rgba(0,93,115,0.12)] bg-gradient-to-br from-[rgba(0,176,200,0.12)] to-white/94 rounded-2xl p-4 shadow-md text-center transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <div
+                  class="text-[#0b4e5b] font-extrabold text-sm mb-1"
+                  data-i18n="climate.sec.data.kpi.aal"
+                >
+                  Pertes annuelles moyennes
+                </div>
+                <div
+                  class="text-2xl font-extrabold text-[var(--c1)] leading-tight"
+                >
+                  AAL
+                </div>
+              </div>
+              <div
+                class="border border-[rgba(0,93,115,0.12)] bg-gradient-to-br from-[rgba(0,176,200,0.12)] to-white/94 rounded-2xl p-4 shadow-md text-center transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <div
+                  class="text-[#0b4e5b] font-extrabold text-sm mb-1"
+                  data-i18n="climate.sec.data.kpi.pml"
+                >
+                  Perte maximale probable
+                </div>
+                <div
+                  class="text-2xl font-extrabold text-[var(--c1)] leading-tight"
+                >
+                  PML
+                </div>
+              </div>
+              <div
+                class="border border-[rgba(0,93,115,0.12)] bg-gradient-to-br from-[rgba(0,176,200,0.12)] to-white/94 rounded-2xl p-4 shadow-md text-center transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <div
+                  class="text-[#0b4e5b] font-extrabold text-sm mb-1"
+                  data-i18n="climate.sec.data.kpi.costs"
+                >
+                  Évolution des coûts
+                </div>
+                <div
+                  class="text-2xl font-extrabold text-[var(--c1)] leading-tight"
+                >
+                  Δ coûts
+                </div>
+              </div>
+              <div
+                class="border border-[rgba(0,93,115,0.12)] bg-gradient-to-br from-[rgba(0,176,200,0.12)] to-white/94 rounded-2xl p-4 shadow-md text-center transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <div
+                  class="text-[#0b4e5b] font-extrabold text-sm mb-1"
+                  data-i18n="climate.sec.data.kpi.impact"
+                >
+                  Impact financier
+                </div>
+                <div
+                  class="text-2xl font-extrabold text-[var(--c1)] leading-tight"
+                >
+                  Impact
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="border border-dashed border-[rgba(0,92,115,0.28)] bg-gradient-to-b from-[rgba(0,176,200,0.08)] to-white/94 rounded-2xl p-4 sm:p-5 text-[#085160] my-4 shadow-sm"
+            >
+              <strong class="text-[var(--c1)]">
+                ➡️
+                <span data-i18n="climate.sec.data.objective">Objectif :</span>
+              </strong>
+              <span
+                data-i18n="climate.sec.data.objective_desc"
+                class="block mt-2"
+              >
+                rendre la donnée climatique lisible, comparable et directement
+                exploitable dans vos décisions de gestion, de financement et
+                d'assurance.
+              </span>
+            </div>
+          </article>
+
+          <!-- 4. Strategy & roadmap -->
+          <article
+            id="strategy"
+            class="tabpanel relative rounded-2xl overflow-hidden bg-gradient-to-b from-white/96 to-white/90 backdrop-blur-sm shadow-lg border border-[rgba(0,93,115,0.16)] p-4 sm:p-6 transition-all duration-300 max-w-5xl mx-auto mb-5"
+            role="tabpanel"
+            aria-labelledby="tab-strategy"
+          >
+            <h2
+              class="inline-block bg-gradient-to-br from-[rgba(0,176,200,0.14)] to-[rgba(0,92,115,0.08)] border border-[rgba(0,92,115,0.18)] rounded-xl px-4 py-2 text-[var(--c1)] shadow-sm mb-4"
+              data-i18n="climate.sec.strategy.t"
+            >
+              Stratégie & feuille de route
+            </h2>
+
+            <p
+              data-i18n="climate.sec.strategy.intro"
+              class="text-[#243238] leading-relaxed mb-5"
+            >
+              Une bonne stratégie ne se limite pas à dresser un constat. Elle
+              doit déboucher sur un plan d'action hiérarchisé et opérationnel.
+            </p>
+
+            <h3
+              data-i18n="climate.sec.strategy.steps_title"
+              class="text-[var(--c1)] font-semibold mb-4"
+            >
+              Les 4 étapes
+            </h3>
+            <div class="timeline relative my-6 pl-3">
+              <ol class="list-none p-0 m-0">
+                <li
+                  class="relative pl-10 my-4 text-[#586e77] leading-relaxed"
+                  data-step="1"
+                >
+                  <strong
+                    data-i18n="climate.sec.strategy.step1_title"
+                    class="text-[var(--c1)]"
+                    >Mesurer :</strong
+                  >
+                  <span data-i18n="climate.sec.strategy.step1_desc">
+                    identifier clairement vos vulnérabilités et estimer leur
+                    coût.
+                  </span>
+                </li>
+                <li
+                  class="relative pl-10 my-4 text-[#586e77] leading-relaxed"
+                  data-step="2"
+                >
+                  <strong
+                    data-i18n="climate.sec.strategy.step2_title"
+                    class="text-[var(--c1)]"
+                    >Réduire :</strong
+                  >
+                  <span data-i18n="climate.sec.strategy.step2_desc">
+                    mettre en place des mesures d'adaptation (renforcer les
+                    infrastructures sensibles, investir dans des solutions
+                    d'irrigation efficientes, établir des plans de continuité
+                    d'activité).
+                  </span>
+                </li>
+                <li
+                  class="relative pl-10 my-4 text-[#586e77] leading-relaxed"
+                  data-step="3"
+                >
+                  <strong
+                    data-i18n="climate.sec.strategy.step3_title"
+                    class="text-[var(--c1)]"
+                    >Transférer :</strong
+                  >
+                  <span data-i18n="climate.sec.strategy.step3_desc">
+                    compléter la prévention par des mécanismes d'assurance et de
+                    réassurance, classiques ou paramétriques.
+                  </span>
+                </li>
+                <li
+                  class="relative pl-10 my-4 text-[#586e77] leading-relaxed"
+                  data-step="4"
+                >
+                  <strong
+                    data-i18n="climate.sec.strategy.step4_title"
+                    class="text-[var(--c1)]"
+                    >Piloter :</strong
+                  >
+                  <span data-i18n="climate.sec.strategy.step4_desc">
+                    suivre l'évolution des risques et mettre à jour
+                    régulièrement vos protections.
+                  </span>
+                </li>
+              </ol>
+            </div>
+
+            <h3
+              data-i18n="climate.sec.strategy.roadmap.t"
+              class="text-[var(--c1)] font-semibold mb-3"
+            >
+              La feuille de route Riskalia
+            </h3>
+            <p
+              data-i18n="climate.sec.strategy.roadmap_intro"
+              class="text-[#243238] mb-4"
+            >
+              Nous livrons une roadmap sur 12 à 24 mois, structurée en :
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 my-5">
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h4
+                  data-i18n="climate.sec.strategy.quickwins_title"
+                  class="text-[var(--c1)] font-semibold mb-2"
+                >
+                  Quick wins
+                </h4>
+                <p
+                  data-i18n="climate.sec.strategy.quickwins_desc"
+                  class="text-[#243238]"
+                >
+                  mesures à faible coût mais à fort impact immédiat.
+                </p>
+              </div>
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h4
+                  data-i18n="climate.sec.strategy.investments_title"
+                  class="text-[var(--c1)] font-semibold mb-2"
+                >
+                  Investissements prioritaires
+                </h4>
+                <p
+                  data-i18n="climate.sec.strategy.investments_desc"
+                  class="text-[#243238]"
+                >
+                  actions de résilience à planifier et financer.
+                </p>
+              </div>
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h4
+                  data-i18n="climate.sec.strategy.coverage_title"
+                  class="text-[var(--c1)] font-semibold mb-2"
+                >
+                  Programme de couverture
+                </h4>
+                <p
+                  data-i18n="climate.sec.strategy.coverage_desc"
+                  class="text-[#243238]"
+                >
+                  assurance traditionnelle et/ou paramétrique adaptée à vos
+                  expositions.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="border border-dashed border-[rgba(0,92,115,0.28)] bg-gradient-to-b from-[rgba(0,176,200,0.08)] to-white/94 rounded-2xl p-4 sm:p-5 text-[#085160] my-4 shadow-sm"
+            >
+              <strong class="text-[var(--c1)]">
+                ➡️
+                <span data-i18n="climate.sec.strategy.benefit_title"
+                  >Bénéfice :</span
+                >
+              </strong>
+              <span
+                data-i18n="climate.sec.strategy.benefit_desc"
+                class="block mt-2"
+              >
+                vous disposez d'un plan clair, compréhensible par les dirigeants
+                comme par les opérationnels, et qui peut être suivi dans le
+                temps.
+              </span>
+            </div>
+          </article>
+
+          <!-- 5. Finance & transfer -->
+          <article
+            id="finance"
+            class="tabpanel relative rounded-2xl overflow-hidden bg-gradient-to-b from-white/96 to-white/90 backdrop-blur-sm shadow-lg border border-[rgba(0,93,115,0.16)] p-4 sm:p-6 transition-all duration-300 max-w-5xl mx-auto mb-5"
+            role="tabpanel"
+            aria-labelledby="tab-finance"
+          >
+            <h2
+              class="inline-block bg-gradient-to-br from-[rgba(0,176,200,0.14)] to-[rgba(0,92,115,0.08)] border border-[rgba(0,92,115,0.18)] rounded-xl px-4 py-2 text-[var(--c1)] shadow-sm mb-4"
+              data-i18n="climate.sec.finance.t"
+            >
+              Financement & transfert de risque
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 my-5">
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h3
+                  data-i18n="climate.sec.finance.fund.t"
+                  class="text-[var(--c1)] font-semibold mb-3"
+                >
+                  Financer l'adaptation
+                </h3>
+                <p
+                  data-i18n="climate.sec.finance.fund.intro"
+                  class="text-[#243238] mb-3"
+                >
+                  L'adaptation climatique a un coût. Mais des leviers existent :
+                </p>
+                <ul class="space-y-2">
+                  <li
+                    data-i18n="climate.sec.finance.fund1"
+                    class="text-[#586e77]"
+                  >
+                    subventions et programmes publics pour l'agriculture, l'eau
+                    et l'énergie,
+                  </li>
+                  <li
+                    data-i18n="climate.sec.finance.fund2"
+                    class="text-[#586e77]"
+                  >
+                    lignes de crédit vert des banques locales et
+                    internationales,
+                  </li>
+                  <li
+                    data-i18n="climate.sec.finance.fund3"
+                    class="text-[#586e77]"
+                  >
+                    garanties publiques (comme Tamwilcom) pour réduire le coût
+                    du risque,
+                  </li>
+                  <li
+                    data-i18n="climate.sec.finance.fund4"
+                    class="text-[#586e77]"
+                  >
+                    partenariats public-privé pour mutualiser les
+                    investissements de protection.
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h3
+                  data-i18n="climate.sec.finance.transfer.t"
+                  class="text-[var(--c1)] font-semibold mb-3"
+                >
+                  Transférer le risque
+                </h3>
+                <p
+                  data-i18n="climate.sec.finance.transfer.intro"
+                  class="text-[#243238] mb-3"
+                >
+                  L'assurance joue un rôle clé :
+                </p>
+                <ul class="space-y-3">
+                  <li class="text-[#586e77]">
+                    <strong
+                      data-i18n="climate.sec.finance.transfer1_title"
+                      class="text-[var(--c1)]"
+                      >Produits traditionnels :</strong
+                    >
+                    <span
+                      data-i18n="climate.sec.finance.transfer1_desc"
+                      class="block mt-1"
+                    >
+                      dommages, catastrophes naturelles, multirisque agricole.
+                    </span>
+                  </li>
+                  <li class="text-[#586e77]">
+                    <strong
+                      data-i18n="climate.sec.finance.transfer2_title"
+                      class="text-[var(--c1)]"
+                      >Paramétriques météo :</strong
+                    >
+                    <span
+                      data-i18n="climate.sec.finance.transfer2_desc"
+                      class="block mt-1"
+                    >
+                      déclenchement automatique si un indice (pluie, chaleur,
+                      vent, sécheresse) dépasse un seuil. Indemnisation rapide,
+                      moins de litiges, plus de prévisibilité.
+                    </span>
+                  </li>
+                  <li class="text-[#586e77]">
+                    <strong
+                      data-i18n="climate.sec.finance.transfer3_title"
+                      class="text-[var(--c1)]"
+                      >Programmes mutualisés :</strong
+                    >
+                    <span
+                      data-i18n="climate.sec.finance.transfer3_desc"
+                      class="block mt-1"
+                    >
+                      couverture de groupes d'agriculteurs, de coopératives ou
+                      de collectivités.
+                    </span>
+                  </li>
+                  <li class="text-[#586e77]">
+                    <strong
+                      data-i18n="climate.sec.finance.transfer4_title"
+                      class="text-[var(--c1)]"
+                      >Réassurance et pools :</strong
+                    >
+                    <span
+                      data-i18n="climate.sec.finance.transfer4_desc"
+                      class="block mt-1"
+                    >
+                      sécurisation de la capacité sur les périls majeurs.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="bg-gradient-to-br from-[rgba(0,176,200,0.06)] to-white/95 border-l-4 border-[var(--c3)] p-4 sm:p-6 my-5 rounded-r-xl shadow-sm"
+            >
+              <h3
+                data-i18n="climate.sec.finance.blended.t"
+                class="text-[var(--c1)] font-semibold mb-3"
+              >
+                Blended finance
+              </h3>
+              <p
+                data-i18n="climate.sec.finance.blended.desc"
+                class="text-[#243238]"
+              >
+                Dans certains cas, nous combinons subventions, prêts
+                concessionnels et assurance pour rendre les projets bancables et
+                atténuer le coût final pour les assurés.
+              </p>
+            </div>
+
+            <h3
+              data-i18n="climate.sec.finance.role.t"
+              class="text-[var(--c1)] font-semibold mb-3"
+            >
+              Rôle de Riskalia
+            </h3>
+            <p
+              data-i18n="climate.sec.finance.role.intro"
+              class="text-[#243238] mb-4"
+            >
+              Nous intervenons sur :
+            </p>
+
+            <div
+              class="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-4 my-5"
+            >
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h4
+                  data-i18n="climate.sec.finance.role1"
+                  class="text-[var(--c1)] font-semibold"
+                >
+                  Montage financier
+                </h4>
+              </div>
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h4
+                  data-i18n="climate.sec.finance.role2"
+                  class="text-[var(--c1)] font-semibold"
+                >
+                  Conception des couvertures
+                </h4>
+              </div>
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h4
+                  data-i18n="climate.sec.finance.role3"
+                  class="text-[var(--c1)] font-semibold"
+                >
+                  Sourcing de capacité
+                </h4>
+              </div>
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h4
+                  data-i18n="climate.sec.finance.role4"
+                  class="text-[var(--c1)] font-semibold"
+                >
+                  Gouvernance et traçabilité
+                </h4>
+              </div>
+            </div>
+
+            <div
+              class="border border-dashed border-[rgba(0,92,115,0.28)] bg-gradient-to-b from-[rgba(0,176,200,0.08)] to-white/94 rounded-2xl p-4 sm:p-5 text-[#085160] my-4 shadow-sm"
+            >
+              <strong class="text-[var(--c1)]">
+                ➡️
+                <span data-i18n="climate.sec.finance.promise_title"
+                  >Notre promesse :</span
+                >
+              </strong>
+              <span
+                data-i18n="climate.sec.finance.promise_desc"
+                class="block mt-2"
+              >
+                transformer une contrainte financière en solution soutenable et
+                durable.
+              </span>
+            </div>
+          </article>
+
+          <!-- 6. Value -->
+          <article
+            id="value"
+            class="tabpanel relative rounded-2xl overflow-hidden bg-gradient-to-b from-white/96 to-white/90 backdrop-blur-sm shadow-lg border border-[rgba(0,93,115,0.16)] p-4 sm:p-6 transition-all duration-300 max-w-5xl mx-auto mb-5"
+            role="tabpanel"
+            aria-labelledby="tab-value"
+          >
+            <h2
+              class="inline-block bg-gradient-to-br from-[rgba(0,176,200,0.14)] to-[rgba(0,92,115,0.08)] border border-[rgba(0,92,115,0.18)] rounded-xl px-4 py-2 text-[var(--c1)] shadow-sm mb-4"
+              data-i18n="climate.sec.value.t"
+            >
+              La valeur ajoutée de Riskalia
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 my-5">
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h3
+                  data-i18n="climate.sec.value.expertise_title"
+                  class="text-[var(--c1)] font-semibold mb-3"
+                >
+                  🌍 Expertise locale et internationale
+                </h3>
+                <p
+                  data-i18n="climate.sec.value.expertise_desc"
+                  class="text-[#243238]"
+                >
+                  connaissance des réalités marocaines et benchmark des
+                  meilleures pratiques.
+                </p>
+              </div>
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h3
+                  data-i18n="climate.sec.value.approach_title"
+                  class="text-[var(--c1)] font-semibold mb-3"
+                >
+                  📚 Approche pédagogique
+                </h3>
+                <p
+                  data-i18n="climate.sec.value.approach_desc"
+                  class="text-[#243238]"
+                >
+                  simplifier, vulgariser et impliquer tous les niveaux de
+                  décision.
+                </p>
+              </div>
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h3
+                  data-i18n="climate.sec.value.solutions_title"
+                  class="text-[var(--c1)] font-semibold mb-3"
+                >
+                  🚀 Solutions innovantes
+                </h3>
+                <p
+                  data-i18n="climate.sec.value.solutions_desc"
+                  class="text-[#243238]"
+                >
+                  assurance paramétrique, schémas mutualisés, partenariats
+                  public-privé.
+                </p>
+              </div>
+              <div
+                class="border border-[rgba(0,93,115,0.14)] bg-gradient-to-b from-white/96 to-white/88 rounded-2xl p-4 sm:p-5 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <h3
+                  data-i18n="climate.sec.value.impact_title"
+                  class="text-[var(--c1)] font-semibold mb-3"
+                >
+                  🎯 Impact concret
+                </h3>
+                <p
+                  data-i18n="climate.sec.value.impact_desc"
+                  class="text-[#243238]"
+                >
+                  réduction des vulnérabilités, amélioration de la résilience et
+                  meilleur accès au financement.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. FAQ -->
+          <article
+            id="faq"
+            class="tabpanel relative rounded-2xl overflow-hidden bg-gradient-to-b from-white/96 to-white/90 backdrop-blur-sm shadow-lg border border-[rgba(0,93,115,0.16)] p-4 sm:p-6 transition-all duration-300 max-w-5xl mx-auto mb-5"
+            role="tabpanel"
+            aria-labelledby="tab-faq"
+          >
+            <h2
+              class="inline-block bg-gradient-to-br from-[rgba(0,176,200,0.14)] to-[rgba(0,92,115,0.08)] border border-[rgba(0,92,115,0.18)] rounded-xl px-4 py-2 text-[var(--c1)] shadow-sm mb-4"
+              data-i18n="climate.sec.faq.t"
+            >
+              FAQ
+            </h2>
+
+            <details
+              class="border border-[rgba(0,93,115,0.14)] rounded-xl my-2 bg-white/96 shadow-sm"
+            >
+              <summary
+                class="p-3 sm:p-4 cursor-pointer font-semibold text-[var(--c1)] rounded-xl transition-colors duration-200 hover:bg-[rgba(0,176,200,0.05)]"
+              >
+                ❓
+                <span data-i18n="climate.faq.q1">
+                  Par où commencer si nous avons peu de données ?
+                </span>
+              </summary>
+              <div class="p-3 sm:p-4">
+                <p data-i18n="climate.faq.a1" class="text-[#243238]">
+                  Un diagnostic rapide permet d'obtenir une première vision en
+                  3–4 semaines, même avec des données limitées.
+                </p>
+              </div>
+            </details>
+
+            <details
+              class="border border-[rgba(0,93,115,0.14)] rounded-xl my-2 bg-white/96 shadow-sm"
+            >
+              <summary
+                class="p-3 sm:p-4 cursor-pointer font-semibold text-[var(--c1)] rounded-xl transition-colors duration-200 hover:bg-[rgba(0,176,200,0.05)]"
+              >
+                ❓
+                <span data-i18n="climate.faq.q2">
+                  Combien de temps pour avoir un plan d'action ?
+                </span>
+              </summary>
+              <div class="p-3 sm:p-4">
+                <p data-i18n="climate.faq.a2" class="text-[#243238]">
+                  Un premier plan priorisé peut être livré en moins d'un mois,
+                  avec des actions rapides et une vision sur 12–24 mois.
+                </p>
+              </div>
+            </details>
+
+            <details
+              class="border border-[rgba(0,93,115,0.14)] rounded-xl my-2 bg-white/96 shadow-sm"
+            >
+              <summary
+                class="p-3 sm:p-4 cursor-pointer font-semibold text-[var(--c1)] rounded-xl transition-colors duration-200 hover:bg-[rgba(0,176,200,0.05)]"
+              >
+                ❓
+                <span data-i18n="climate.faq.q3">
+                  La réassurance peut-elle couvrir les aléas climatiques ?
+                </span>
+              </summary>
+              <div class="p-3 sm:p-4">
+                <p data-i18n="climate.faq.a3" class="text-[#243238]">
+                  Oui, à travers des traités CatNat, mais aussi via des
+                  solutions paramétriques spécialement conçues pour sécheresse,
+                  inondations ou vagues de chaleur.
+                </p>
+              </div>
+            </details>
+
+            <details
+              class="border border-[rgba(0,93,115,0.14)] rounded-xl my-2 bg-white/96 shadow-sm"
+            >
+              <summary
+                class="p-3 sm:p-4 cursor-pointer font-semibold text-[var(--c1)] rounded-xl transition-colors duration-200 hover:bg-[rgba(0,176,200,0.05)]"
+              >
+                ❓
+                <span data-i18n="climate.faq.q4">
+                  Qu'est-ce qu'une couverture paramétrique ?
+                </span>
+              </summary>
+              <div class="p-3 sm:p-4">
+                <p data-i18n="climate.faq.a4" class="text-[#243238]">
+                  C'est une assurance déclenchée par un indice (ex. volume de
+                  pluie, température). L'indemnité est versée automatiquement,
+                  sans attendre une expertise longue et coûteuse.
+                </p>
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+    </div>
+</div> 
+    <!-- CONTACT CTA -->
+    <section
+      class="py-8 px-4"
+      style="background: linear-gradient(200deg, var(--c1), var(--c2))"
+    >
+      <div class="container mx-auto max-w-4xl text-center">
+        <h2
+          class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-white"
+          data-i18n="climate.contact.title"
+        >
+          Prêt à anticiper les risques climatiques ?
+        </h2>
+        <p
+          class="text-base md:text-lg mb-4 md:mb-6 text-white/90 max-w-3xl mx-auto leading-relaxed"
+          data-i18n="climate.contact.subtitle"
+        >
+          Commençons par un diagnostic rapide de vos expositions et
+          opportunités.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            class="bg-[var(--c3)] hover:bg-[var(--c2)] text-white px-8 py-4 rounded-xl font-bold no-underline transition-all duration-300 hover:-translate-y-0.5"
+            href="contact.html"
+            data-i18n="climate.cta.contact"
+          >
+            Demander un diagnostic
+          </a>
+          <a
+            class="bg-white text-[var(--c1)] hover:bg-gray-100 px-8 py-4 rounded-xl font-bold no-underline transition-all duration-300 hover:-translate-y-0.5"
+            href="contact.html"
+            data-i18n="climate.cta.advisor"
+          >
+            Parler à un expert
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Component Container -->
+    <div id="footer-container"></div>
+
+    <!-- ================== SCRIPTS: i18n & UI ================== -->
+    <script src="assets/js/i18n.js"></script>
+    <script>
+      /* Tabs */
+      function bindTabs() {
+        const tabs = $$(".tab");
+        const panels = $$(".tabpanel");
+        function show(id, push = true) {
+          tabs.forEach((btn) => {
+            const on = btn.dataset.tab === id;
+            btn.classList.toggle("active", on);
+            btn.setAttribute("aria-selected", on ? "true" : "false");
+            btn.tabIndex = on ? 0 : -1;
+          });
+          panels.forEach((p) => p.classList.toggle("active", p.id === id));
+          if (push) history.replaceState(null, "", "#" + id);
+          $("#tab-" + id)?.focus({ preventScroll: true });
+        }
+        tabs.forEach((btn) =>
+          btn.addEventListener("click", () => show(btn.dataset.tab))
+        );
+        function fromHash() {
+          const id = (location.hash || "#intro").slice(1);
+          const known = [
+            "intro",
+            "risks",
+            "data",
+            "strategy",
+            "finance",
+            "value",
+            "faq",
+          ];
+          show(known.includes(id) ? id : "intro", false);
+        }
+        window.addEventListener("hashchange", fromHash);
+        fromHash();
+      }
+
+      /* UI init */
+      function initUI() {
+        bindTabs();
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        try {
+          if (!window.I18N) throw new Error("I18N not loaded");
+
+          // Make translation functions available globally for components
+          window.applyI18n = window.applyTexts;
+          window.t = window.t;
+
+          // Apply initial translations
+          if (typeof window.applyTexts === "function") {
+            window.applyTexts();
+          } else if (typeof applyTexts === "function") {
+            applyTexts();
+          }
+
+          initUI();
+        } catch (e) {
+          console.error(e);
+          document.documentElement.lang = "fr";
+        }
+      });
+    </script>
+
+    <!-- Dropdown accessibility removed - using NavigationComponent -->
+    <!-- Dropdown accessibility removed - using NavigationComponent -->
+
+    <!-- NAV SEARCH Scripts removed - using NavigationComponent -->
+    <script src="assets/js/components/SearchComponent.js"></script>
+    <script src="assets/js/components/NavigationComponent.js"></script>
+    <script src="assets/js/components/FooterComponent.js"></script>
+
+    <!-- Initialize Components -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize Navigation Component
+        if (typeof NavigationComponent !== "undefined") {
+          const nav = new NavigationComponent("navigation-container");
+          nav.init();
+
+          // Make navigation component available globally for language changes
+          window.navigationComponent = nav;
+        }
+
+        // Initialize Footer Component
+        if (typeof FooterComponent !== "undefined") {
+          const footer =
+            window.footerComponent || new FooterComponent("footer-container");
+
+          // Make footer component available globally for language changes
+          window.footerComponent = footer;
+        }
+
+        // Listen for language changes from the navigation component
+        document.addEventListener("languageChanged", function (e) {
+          if (e.detail && e.detail.language) {
+            // Update the global language variable
+            window.lang = e.detail.language; // Update global lang variable
+            localStorage.setItem("riskalia_lang", window.lang);
+
+            // Apply translations to the main page
+            if (typeof window.applyTexts === "function") {
+              window.applyTexts();
+            } else if (typeof applyTexts === "function") {
+              applyTexts();
+            }
+
+            // Update components
+            if (
+              window.navigationComponent &&
+              typeof window.navigationComponent.updateTranslations ===
+                "function"
+            ) {
+              window.navigationComponent.updateTranslations();
+            }
+            if (
+              window.footerComponent &&
+              typeof window.footerComponent.updateTranslations === "function"
+            ) {
+              window.footerComponent.updateTranslations();
+            }
+          }
+        });
+      });
+
+      // Update components when language changes from other sources
+      const originalOnLangChanged = window._onLangChanged;
+      window._onLangChanged = function () {
+        // Call original language change handler
+        if (originalOnLangChanged) {
+          originalOnLangChanged();
+        }
+
+        // Update navigation component
+        if (window.navigationComponent) {
+          const currentLang = localStorage.getItem("riskalia_lang") || "fr";
+          window.navigationComponent.updateLanguage(currentLang);
+        }
+
+        // Update footer component
+        if (window.footerComponent) {
+          window.footerComponent.updateTranslations();
+        }
+      };
+    </script>
+  </body>
+</html>

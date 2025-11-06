@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Riskalia — Transport (marchandises) / Cargo</title>
+    <meta
+      name="description"
+      content="Assurance transport de marchandises : tous risques facultés, RC transporteur/commissionnaire, Stock Throughput, War & SRCC, options température et paramétriques météo. Conseil Incoterms & prévention emballage/traçabilité."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <!-- Fonts + global CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="../assets/css/components/navigation.css" />
+    <link rel="stylesheet" href="../assets/css/components/footer.css" />
+
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+
+    <!-- Chatbot Component Styles -->
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <style>
+      /* Tab functionality */
+      .tabpanel {
+        display: none;
+      }
+      .tabpanel.active {
+        display: block;
+      }
+
+      /* Mobile confort */
+      @media (max-width: 600px) {
+        .sticky {
+          top: 66px;
+        }
+      }
+    </style>
+
+    <noscript
+      ><style>
+        .tabpanel {
+          display: block;
+        }
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style></noscript
+    >
+  </head>
+  <body class="spacious">
+    <!-- Navigation Container -->
+    <div id="navigation-container"></div>
+
+    <!-- HERO -->
+    <section
+      class="min-h-[35vh] bg-cover bg-center bg-no-repeat flex items-center text-center py-12"
+      style="
+        background: linear-gradient(
+            rgba(0, 92, 115, 0.85),
+            rgba(0, 92, 115, 0.85)
+          ),
+          url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=60')
+            center/cover no-repeat;
+      "
+    >
+      <div class="container mx-auto px-4">
+        <h1
+          class="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-2"
+          data-i18n="transport.title"
+        >
+          Transport (marchandises)
+        </h1>
+        <p
+          class="text-white/98 max-w-4xl mx-auto text-lg md:text-xl mb-4"
+          data-i18n="transport.subtitle"
+        >
+          Tous risques facultés • RC transporteur/commissionnaire • Stock
+          Throughput • War & SRCC • Conseils Incoterms • Options température &
+          paramétriques météo.
+        </p>
+        <div class="flex flex-wrap justify-center gap-2 mt-3">
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="transport.badges.0"
+            >Maritime • Aérien • Route • Rail</span
+          >
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="transport.badges.1"
+            >Flux import/export & domestiques</span
+          >
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="transport.badges.2"
+            >Traçabilité & prévention emballage</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="py-8 max-w-7xl mx-auto">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <!-- Onglets -->
+        <nav
+          class="bg-white p-2 border border-gray-200 rounded-xl overflow-x-auto whitespace-nowrap shadow-lg mb-4"
+          role="tablist"
+          aria-label="Cargo tabs"
+        >
+          <button
+            class="tab active flex-shrink-0 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer"
+            style="background-color: rgba(0, 92, 115, 0.9)"
+            id="tab-over"
+            role="tab"
+            aria-selected="true"
+            data-tab="over"
+            data-i18n="transport.tabs.over"
+          >
+            Aperçu
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 hover:bg-gray-200 cursor-pointer"
+            id="tab-cov"
+            role="tab"
+            aria-selected="false"
+            data-tab="cov"
+            data-i18n="transport.tabs.cov"
+          >
+            Couvertures
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 hover:bg-gray-200 cursor-pointer"
+            id="tab-opt"
+            role="tab"
+            aria-selected="false"
+            data-tab="opt"
+            data-i18n="transport.tabs.opt"
+          >
+            Options & services
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 hover:bg-gray-200 cursor-pointer"
+            id="tab-admin"
+            role="tab"
+            aria-selected="false"
+            data-tab="admin"
+            data-i18n="transport.tabs.admin"
+          >
+            Tarification & mise en place
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 hover:bg-gray-200 cursor-pointer"
+            id="tab-claim"
+            role="tab"
+            aria-selected="false"
+            data-tab="claim"
+            data-i18n="transport.tabs.claim"
+          >
+            Sinistres
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 hover:bg-gray-200 cursor-pointer"
+            id="tab-faq"
+            role="tab"
+            aria-selected="false"
+            data-tab="faq"
+            data-i18n="transport.tabs.faq"
+          >
+            FAQ
+          </button>
+        </nav>
+
+        <!-- Aperçu -->
+        <article
+          id="over"
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 tabpanel active"
+          role="tabpanel"
+          aria-labelledby="tab-over"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="transport.over.t"
+          >
+            1. Aperçu
+          </h2>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2">
+              <p
+                class="text-gray-600 text-lg leading-relaxed mb-6"
+                data-i18n="transport.over.p"
+              >
+                Nous protégeons vos flux
+                <strong class="text-gray-900"
+                  >import/export et domestiques</strong
+                >
+                sur tous modes (mer, air, route, rail). La police cargo couvre
+                les
+                <em style="color: rgba(0, 92, 115, 0.8)">facultés</em>
+                (marchandises), la
+                <strong class="text-gray-900"
+                  >responsabilité des transporteurs/commissionnaires</strong
+                >
+                et, si besoin, un
+                <strong class="text-gray-900">Stock Throughput</strong> (STP)
+                continu entre sites, dépôts et transit.
+              </p>
+              <ul class="space-y-3 pl-6">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.over.li.0">
+                    Analyse des <strong>Incoterms</strong> pour clarifier le
+                    transfert de risques.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.over.li.1">
+                    Paramétrage des limites par expédition, véhicule, navire ou
+                    site.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.over.li.2">
+                    Conseils emballage, arrimage & traçabilité pour réduire la
+                    casse.
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-4">
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="font-bold text-lg mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="transport.over.kpi.0"
+                >
+                  Modes
+                </div>
+                <div
+                  class="text-gray-600 text-sm"
+                  data-i18n="transport.over.kpi_desc.0"
+                >
+                  Mer • Air • Route • Rail
+                </div>
+              </div>
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="font-bold text-lg mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="transport.over.kpi.1"
+                >
+                  Forme
+                </div>
+                <div
+                  class="text-gray-600 text-sm"
+                  data-i18n="transport.over.kpi_desc.1"
+                >
+                  Police ouverte annuelle
+                </div>
+              </div>
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="font-bold text-lg mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="transport.over.kpi.2"
+                >
+                  Déclaration
+                </div>
+                <div
+                  class="text-gray-600 text-sm"
+                  data-i18n="transport.over.kpi_desc.2"
+                >
+                  Mensuelle / par envoi
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Couvertures -->
+        <article
+          id="cov"
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 tabpanel"
+          role="tabpanel"
+          aria-labelledby="tab-cov"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="transport.cov.t"
+          >
+            2. Couvertures principales
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="transport.cov.c0.t"
+              >
+                Facultés (cargo) — All Risks
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.cov.c0.li.0">
+                    Couvertures type ICC (A/B/C) selon profils & valeurs.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.cov.c0.li.1">
+                    Marchandises générales, vrac, conteneur, projets.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.cov.c0.li.2">
+                    Extensions : War & SRCC lorsque disponible.
+                  </span>
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="transport.cov.c1.t"
+              >
+                RC transporteur / commissionnaire
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.cov.c1.li.0">
+                    Responsabilités légales du transport, stockage &
+                    manutention.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.cov.c1.li.1">
+                    Limites par événement / véhicule / privilège de limitation.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.cov.c1.li.2">
+                    Contrats & conditions standard gérés avec nos équipes.
+                  </span>
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="transport.cov.c2.t"
+              >
+                Stock Throughput (STP)
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.cov.c2.li.0">
+                    Chaîne continue : origine → transit → dépôts → distribution.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.cov.c2.li.1">
+                    Pics saisonniers & valeurs cumulées par site.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.cov.c2.li.2">
+                    Paramètres température & rupture de chaîne du froid
+                    (option).
+                  </span>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <!-- Options & services -->
+        <article
+          id="opt"
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 tabpanel"
+          role="tabpanel"
+          aria-labelledby="tab-opt"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="transport.opt.t"
+          >
+            3. Options & services
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="transport.opt.c0.t"
+              >
+                Température & denrées sensibles
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.opt.c0.li.0">
+                    Clauses température / enregistreurs & IoT.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.opt.c0.li.1">
+                    Déviations froid/chaud & frais de sauvetage.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.opt.c0.li.2">
+                    Emballage & procédures HACCP.
+                  </span>
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="transport.opt.c1.t"
+              >
+                Paramétriques météo & projet
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.opt.c1.li.0">
+                    Typhon, pluie extrême, vent — déclenchement rapide.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.opt.c1.li.1">
+                    Project cargo & heavy-lift : survey & escortes.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.opt.c1.li.2">
+                    Plans de route & escales à risques.
+                  </span>
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="transport.opt.c2.t"
+              >
+                Sécurité & prévention
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.opt.c2.li.0">
+                    Itinéraires sécurisés, parkings agréés, double équipage.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.opt.c2.li.1">
+                    Scellés & géolocalisation, contrôle des sous-traitants.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.opt.c2.li.2">
+                    Audit emballage & arrimage (CTU Code).
+                  </span>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <!-- Tarification & mise en place -->
+        <article
+          id="admin"
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 tabpanel"
+          role="tabpanel"
+          aria-labelledby="tab-admin"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="transport.admin.t"
+          >
+            4. Tarification & mise en place
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="transport.admin.c0.t"
+              >
+                Données requises
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="transport.admin.c0.li.0"
+                  >
+                    Flux par mode, origines/destinations, valeurs par envoi.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="transport.admin.c0.li.1"
+                  >
+                    Incoterms, emballages, fréquences & pics saisonniers.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="transport.admin.c0.li.2"
+                  >
+                    Sinistralité 3–5 ans & procédures de sûreté.
+                  </span>
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="transport.admin.c1.t"
+              >
+                Processus
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="transport.admin.c1.li.0"
+                  >
+                    Police ouverte annuelle + déclarations (EDI possible).
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="transport.admin.c1.li.1"
+                  >
+                    Certificats cargo pour lettres de crédit si besoin.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="transport.admin.c1.li.2"
+                  >
+                    Paramétrage des limites véhicules/navires/sites.
+                  </span>
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="transport.admin.c2.t"
+              >
+                Documents utiles
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="transport.admin.c2.li.0"
+                  >
+                    B/L, AWB, CMR, listes de colisage & preuves d'emballage.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="transport.admin.c2.li.1"
+                  >
+                    Rapports de température / traceurs.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="transport.admin.c2.li.2"
+                  >
+                    Contrats transport & consignes aux transitaires.
+                  </span>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <!-- Sinistres -->
+        <article
+          id="claim"
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 tabpanel"
+          role="tabpanel"
+          aria-labelledby="tab-claim"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="transport.claim.t"
+          >
+            5. Gestion des sinistres
+          </h2>
+          <details
+            class="rounded-xl p-6 border"
+            style="
+              background: linear-gradient(
+                135deg,
+                rgba(0, 92, 115, 0.1),
+                rgba(0, 92, 115, 0.05)
+              );
+              border-color: rgba(0, 92, 115, 0.2);
+            "
+          >
+            <summary
+              class="text-xl font-bold cursor-pointer"
+              style="color: rgba(0, 92, 115, 0.9)"
+            >
+              🧭 <span data-i18n="transport.claim.sum">Notre approche</span>
+            </summary>
+            <div class="mt-4">
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.claim.li.0">
+                    Instructions d'urgence : réserves, survey, sauvegarde des
+                    preuves.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.claim.li.1">
+                    Lettre de protestation au transporteur dans les délais.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-3 mt-1" style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span class="text-gray-700" data-i18n="transport.claim.li.2">
+                    Process digital & SLA de règlement accéléré.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+        <!-- FAQ -->
+        <article
+          id="faq"
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 tabpanel"
+          role="tabpanel"
+          aria-labelledby="tab-faq"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="transport.faq.t"
+          >
+            6. FAQ
+          </h2>
+          <div class="space-y-4">
+            <details
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <summary
+                class="text-lg font-bold cursor-pointer"
+                style="color: rgba(0, 92, 115, 0.9)"
+              >
+                ❓
+                <span data-i18n="transport.faq.q0"
+                  >Quand le risque passe-t-il avec les Incoterms ?</span
+                >
+              </summary>
+              <div class="mt-4">
+                <p class="text-gray-700" data-i18n="transport.faq.a0">
+                  Selon l'Incoterm choisi (EXW, FOB, CIF, DDP…). Nous vérifions
+                  vos contrats pour aligner transfert des risques et police.
+                </p>
+              </div>
+            </details>
+            <details
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <summary
+                class="text-lg font-bold cursor-pointer"
+                style="color: rgba(0, 92, 115, 0.9)"
+              >
+                ❓
+                <span data-i18n="transport.faq.q1"
+                  >Les biens d'occasion sont-ils couverts ?</span
+                >
+              </summary>
+              <div class="mt-4">
+                <p class="text-gray-700" data-i18n="transport.faq.a1">
+                  Oui sous conditions (état, emballage, test), parfois avec
+                  franchises/clauses spécifiques.
+                </p>
+              </div>
+            </details>
+            <details
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <summary
+                class="text-lg font-bold cursor-pointer"
+                style="color: rgba(0, 92, 115, 0.9)"
+              >
+                ❓
+                <span data-i18n="transport.faq.q2"
+                  >Les retards sont-ils indemnisés ?</span
+                >
+              </summary>
+              <div class="mt-4">
+                <p class="text-gray-700" data-i18n="transport.faq.a2">
+                  Généralement non en dommage classique ; des solutions
+                  paramétriques peuvent compléter sur des seuils météo.
+                </p>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <!-- CTA -->
+        <article
+          class="rounded-xl shadow-lg border p-8 text-center mt-6"
+          style="
+            background: linear-gradient(
+              135deg,
+              rgba(0, 92, 115, 0.9),
+              rgba(0, 92, 115, 0.8)
+            );
+            border-color: rgba(0, 92, 115, 0.9);
+          "
+        >
+          <h3
+            class="text-2xl font-bold text-white mb-4"
+            data-i18n="transport.cta.t"
+          >
+            Sécurisons votre supply chain
+          </h3>
+          <p class="text-white/90 text-lg mb-6" data-i18n="transport.cta.p">
+            Nous calibrons vos couvertures cargo, RC & STP avec des options
+            adaptées aux routes et marchandises.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              class="bg-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 shadow-lg"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="../contact.html"
+              data-i18n="transport.cta.quote"
+              >Obtenir un devis</a
+            >
+            <a
+              class="px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg border"
+              style="
+                background-color: rgba(0, 92, 115, 1);
+                color: white;
+                border-color: rgba(0, 92, 115, 0.9);
+              "
+              href="../contact.html"
+              data-i18n="transport.cta.talk"
+              >Parler à un conseiller</a
+            >
+          </div>
+        </article>
+
+        <!-- Liens produits (précédent/suivant) -->
+        <article
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 text-center mt-4"
+        >
+          <p class="text-gray-600">
+            <a
+              class="font-medium transition-colors duration-200"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="./multirisques.html"
+              >←
+              <span data-i18n="transport.nav.prev"
+                >Multirisques Entreprise</span
+              ></a
+            >
+            <span class="mx-4 text-gray-400">|</span>
+            <a
+              class="font-medium transition-colors duration-200"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="./flotte.html"
+              ><span data-i18n="transport.nav.next">Automobile & Flotte</span>
+              →</a
+            >
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- FAQ SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quand le risque passe-t-il avec les Incoterms ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Selon l’Incoterm choisi (EXW, FOB, CIF, DDP…). Nous vérifions vos contrats pour aligner transfert des risques et police."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Les biens d’occasion sont-ils couverts ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui sous conditions (état, emballage, test), parfois avec franchises/clauses spécifiques."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Les retards sont-ils indemnisés ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Généralement non en dommage classique ; des solutions paramétriques peuvent compléter sur des seuils météo."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script>
+      /* ================== Page-specific JavaScript ================== */
+      function bindTabs() {
+        const tabs = document.querySelectorAll(".tab");
+        const panels = document.querySelectorAll(".tabpanel");
+        function show(id, push = true) {
+          tabs.forEach((btn) => {
+            const act = btn.dataset.tab === id;
+            if (act) {
+              btn.classList.remove("bg-gray-100", "text-gray-700");
+              btn.style.backgroundColor = "rgba(0, 92, 115, 0.9)";
+              btn.classList.add("text-white");
+            } else {
+              btn.style.backgroundColor = "";
+              btn.classList.remove("text-white");
+              btn.classList.add("bg-gray-100", "text-gray-700");
+            }
+            btn.classList.toggle("active", act);
+            btn.setAttribute("aria-selected", act ? "true" : "false");
+          });
+          panels.forEach((p) => p.classList.toggle("active", p.id === id));
+          if (push) history.replaceState(null, "", "#" + id);
+        }
+        tabs.forEach((btn) =>
+          btn.addEventListener("click", () => show(btn.dataset.tab))
+        );
+        function fromHash() {
+          const id = (location.hash || "#over").slice(1);
+          const known = ["over", "cov", "opt", "admin", "claim", "faq"];
+          show(known.includes(id) ? id : "over", false);
+        }
+        window.addEventListener("hashchange", fromHash);
+        fromHash();
+      }
+      function initUI() {
+        bindTabs();
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Use global translation functions from i18n.js
+        if (typeof window.applyTexts === "function") {
+          window.applyTexts();
+        }
+        initUI();
+      });
+    </script>
+
+    <!-- Global I18N Script -->
+    <script src="../assets/js/i18n.js"></script>
+
+    <!-- Component Scripts -->
+    <script src="../assets/js/components/SearchComponent.js"></script>
+    <script src="../assets/js/components/NavigationComponent.js"></script>
+    <script src="../assets/js/components/FooterComponent.js"></script>
+  </body>
+</html>

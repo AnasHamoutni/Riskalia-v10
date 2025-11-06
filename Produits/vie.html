@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>
+      Riskalia — Assurance-vie & placements — Épargne long terme, transmission &
+      supports d'investissement
+    </title>
+    <meta
+      name="description"
+      content="Assurance-vie et placements : épargne long terme, transmission, supports en dirhams & unités de compte, options de gestion, rachats partiels/avances, fiscalité selon cadre."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Fonts + global CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Component CSS -->
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="../assets/css/components/navigation.css" />
+    <link rel="stylesheet" href="../assets/css/components/footer.css" />
+
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+
+    <style>
+      /* Tab panel display logic */
+      .tabpanel {
+        display: none;
+      }
+      .tabpanel.active {
+        display: block;
+      }
+
+      /* Sticky tabs */
+      @media (min-width: 768px) {
+        .tabs.sticky {
+          top: 66px;
+        }
+      }
+    </style>
+
+    <noscript
+      ><style>
+        .tabpanel {
+          display: block;
+        }
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style></noscript
+    >
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <div id="navigation-container"></div>
+
+    <!-- HERO -->
+    <section
+      class="hero hero--product min-h-[35vh] bg-cover bg-center bg-no-repeat flex items-center text-center py-12"
+      style="
+        background: linear-gradient(
+            rgba(0, 92, 115, 0.85),
+            rgba(0, 92, 115, 0.85)
+          ),
+          url('https://images.unsplash.com/photo-1531983412531-1f49a365ffed?auto=format&fit=crop&w=1600&q=70')
+            center/cover no-repeat;
+      "
+    >
+      <div class="container mx-auto">
+        <h1
+          class="text-white text-4xl md:text-5xl font-bold mb-4"
+          data-i18n="vie.title"
+        >
+          Assurance-vie & placements
+        </h1>
+        <p
+          class="text-white text-lg md:text-xl mb-6 max-w-4xl mx-auto"
+          data-i18n="vie.subtitle"
+        >
+          Épargne long terme • Transmission • Supports en dirhams & unités de
+          compte • Options de gestion • Rachats & avances • Fiscalité selon
+          cadre.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 mt-4">
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="vie.badges.0"
+            >Épargne & succession</span
+          >
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="vie.badges.1"
+            >Gestion pilotée</span
+          >
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="vie.badges.2"
+            >Unités de compte</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="py-8 max-w-7xl mx-auto">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <!-- Onglets -->
+        <nav
+          class="tabs top-16 z-30 bg-white p-2 border border-gray-200 rounded-xl overflow-x-auto whitespace-nowrap shadow-lg mb-4"
+          role="tablist"
+          aria-label="Vie tabs"
+        >
+          <button
+            class="tab active flex-shrink-0 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            style="background-color: rgba(0, 92, 115, 0.9)"
+            id="tab-over"
+            role="tab"
+            aria-selected="true"
+            data-tab="over"
+            data-i18n="vie.tabs.over"
+          >
+            Aperçu
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-cov"
+            role="tab"
+            aria-selected="false"
+            data-tab="cov"
+            data-i18n="vie.tabs.cov"
+          >
+            Garanties
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-inv"
+            role="tab"
+            aria-selected="false"
+            data-tab="inv"
+            data-i18n="vie.tabs.inv"
+          >
+            Supports d'investissement
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-ops"
+            role="tab"
+            aria-selected="false"
+            data-tab="ops"
+            data-i18n="vie.tabs.ops"
+          >
+            Options & rachats
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-fees"
+            role="tab"
+            aria-selected="false"
+            data-tab="fees"
+            data-i18n="vie.tabs.fees"
+          >
+            Frais & fiscalité
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-faq"
+            role="tab"
+            aria-selected="false"
+            data-tab="faq"
+            data-i18n="vie.tabs.faq"
+          >
+            FAQ
+          </button>
+        </nav>
+
+        <!-- Aperçu -->
+        <article
+          id="over"
+          class="tabpanel active bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-over"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="vie.over.t"
+          >
+            1. Aperçu
+          </h2>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2">
+              <p
+                class="text-gray-600 text-lg leading-relaxed mb-6"
+                data-i18n="vie.over.p"
+              >
+                L'assurance-vie est un cadre souple pour
+                <strong>épargner</strong>, <strong>investir</strong> et
+                <strong>transmettre</strong> dans la durée, via des versements
+                libres ou programmés et un choix de supports.
+              </p>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.over.li.0"
+                    >Horizon conseillé : moyen/long terme (5–10 ans+).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.over.li.1"
+                    >Clause bénéficiaire personnalisable (succession).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.over.li.2"
+                    >Arbitrages et options de gestion automatiques.</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-4">
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="text-lg font-semibold mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="vie.over.kpi.0"
+                >
+                  Versements
+                </div>
+                <div class="text-gray-600 text-sm" data-i18n="vie.over.kpi.0l">
+                  libres / programmés
+                </div>
+              </div>
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="text-lg font-semibold mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="vie.over.kpi.1"
+                >
+                  Profil
+                </div>
+                <div class="text-gray-600 text-sm" data-i18n="vie.over.kpi.1l">
+                  prudent ↔ dynamique
+                </div>
+              </div>
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="text-lg font-semibold mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="vie.over.kpi.2"
+                >
+                  Horizon
+                </div>
+                <div class="text-gray-600 text-sm">5–10+ ans</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Garanties -->
+        <article
+          id="cov"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-cov"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="vie.cov.t"
+          >
+            2. Prestations & garanties
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="vie.cov.c0.t"
+              >
+                Décès
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.cov.c0.li.0"
+                    >Capital transmis aux bénéficiaires désignés.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.cov.c0.li.1"
+                    >Possibilité de garanties plancher/majorées (selon
+                    contrat).</span
+                  >
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="vie.cov.c1.t"
+              >
+                Vie
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.cov.c1.li.0"
+                    >Rachats partiels programmés ou ponctuels.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.cov.c1.li.1"
+                    >Avances (prêt adossé au contrat) possibles.</span
+                  >
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="vie.cov.c2.t"
+              >
+                Options de sortie
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.cov.c2.li.0"
+                    >Capital ou rente (selon conditions).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.cov.c2.li.1"
+                    >Clauses bénéficiaires démembrées ou à options.</span
+                  >
+                </li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <!-- Supports d'investissement -->
+        <article
+          id="inv"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-inv"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="vie.inv.t"
+          >
+            3. Supports d'investissement
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="vie.inv.c0.t"
+              >
+                Support en dirhams
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.inv.c0.li.0"
+                    >Objectif de préservation du capital (hors frais).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.inv.c0.li.1"
+                    >Rendement annuel servi par l'assureur.</span
+                  >
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="vie.inv.c1.t"
+              >
+                Unités de compte (UC)
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.inv.c1.li.0"
+                    >Accès à des fonds
+                    actions/obligations/immobilier/monétaire…</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.inv.c1.li.1"
+                    >Risque et rendement variables, capital non garanti.</span
+                  >
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="vie.inv.c2.t"
+              >
+                Gestion
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.inv.c2.li.0"
+                    >Libre ou pilotée (mandats
+                    prudent/équilibré/dynamique).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.inv.c2.li.1"
+                    >Rééquilibrage automatique, stop-loss, sécurisation des
+                    plus-values.</span
+                  >
+                </li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <!-- Options & rachats -->
+        <article
+          id="ops"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-ops"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="vie.ops.t"
+          >
+            4. Options & rachats
+          </h2>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span
+                class="text-teal-600 mr-3 mt-1"
+                style="color: rgba(0, 92, 115, 0.8)"
+                >✓</span
+              >
+              <span class="text-gray-700" data-i18n="vie.ops.li.0"
+                >Rachats partiels sans clôture du contrat (selon
+                frais/plafonds).</span
+              >
+            </li>
+            <li class="flex items-start">
+              <span
+                class="text-teal-600 mr-3 mt-1"
+                style="color: rgba(0, 92, 115, 0.8)"
+                >✓</span
+              >
+              <span class="text-gray-700" data-i18n="vie.ops.li.1"
+                >Arbitrages entre supports (frais possibles).</span
+              >
+            </li>
+            <li class="flex items-start">
+              <span
+                class="text-teal-600 mr-3 mt-1"
+                style="color: rgba(0, 92, 115, 0.8)"
+                >✓</span
+              >
+              <span class="text-gray-700" data-i18n="vie.ops.li.2"
+                >Avances possibles, remboursables, sans désinvestir.</span
+              >
+            </li>
+            <li class="flex items-start">
+              <span
+                class="text-teal-600 mr-3 mt-1"
+                style="color: rgba(0, 92, 115, 0.8)"
+                >✓</span
+              >
+              <span class="text-gray-700" data-i18n="vie.ops.li.3"
+                >Clause bénéficiaire modulable à tout moment.</span
+              >
+            </li>
+          </ul>
+          <p class="text-gray-600 mt-6" data-i18n="vie.ops.note">
+            Les modalités varient selon l'assureur (planchers, délais, frais,
+            pièces). Nous vous guidons pour optimiser ces options.
+          </p>
+        </article>
+
+        <!-- Frais & fiscalité -->
+        <article
+          id="fees"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-fees"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="vie.fees.t"
+          >
+            5. Frais & fiscalité (aperçu)
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="vie.fees.c0.t"
+              >
+                Frais
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.fees.c0.li.0"
+                    >Frais sur versements & gestion du contrat.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.fees.c0.li.1"
+                    >Frais de gestion des unités de compte (propres aux
+                    fonds).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.fees.c0.li.2"
+                    >Frais d'arbitrage selon grille.</span
+                  >
+                </li>
+              </ul>
+            </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="vie.fees.c1.t"
+              >
+                Fiscalité
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.fees.c1.li.0"
+                    >Traitement fiscal variable selon le cadre juridique
+                    local.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.fees.c1.li.1"
+                    >Avantages possibles à long terme et en transmission.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span class="text-gray-700" data-i18n="vie.fees.c1.li.2"
+                    >Nous ne rendons pas d'avis fiscal : rapprochez-vous de
+                    votre conseil.</span
+                  >
+                </li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <!-- FAQ -->
+        <article
+          id="faq"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-faq"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="vie.faq.t"
+          >
+            6. FAQ
+          </h2>
+          <div class="space-y-4">
+            <details
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <summary
+                class="text-lg font-semibold cursor-pointer"
+                style="color: rgba(0, 92, 115, 0.9)"
+              >
+                ❓
+                <span data-i18n="vie.faq.q0"
+                  >Puis-je changer de profil de gestion ?</span
+                >
+              </summary>
+              <div class="mt-4">
+                <p class="text-gray-600" data-i18n="vie.faq.a0">
+                  Oui, via un arbitrage ou un passage en gestion pilotée. Des
+                  frais et délais peuvent s'appliquer.
+                </p>
+              </div>
+            </details>
+            <details
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <summary
+                class="text-lg font-semibold cursor-pointer"
+                style="color: rgba(0, 92, 115, 0.9)"
+              >
+                ❓
+                <span data-i18n="vie.faq.q1"
+                  >Les performances passées sont-elles garanties ?</span
+                >
+              </summary>
+              <div class="mt-4">
+                <p class="text-gray-600" data-i18n="vie.faq.a1">
+                  Non. En unités de compte, le capital n'est pas garanti et peut
+                  fluctuer à la hausse comme à la baisse.
+                </p>
+              </div>
+            </details>
+            <details
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <summary
+                class="text-lg font-semibold cursor-pointer"
+                style="color: rgba(0, 92, 115, 0.9)"
+              >
+                ❓
+                <span data-i18n="vie.faq.q2"
+                  >Comment désigner mes bénéficiaires ?</span
+                >
+              </summary>
+              <div class="mt-4">
+                <p class="text-gray-600" data-i18n="vie.faq.a2">
+                  Par clause libre (personnalisée). Nous vous aidons à la
+                  formuler et à la mettre à jour.
+                </p>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <!-- CTA -->
+        <article
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 mt-6 text-center"
+          style="
+            background: linear-gradient(
+              135deg,
+              rgba(0, 92, 115, 0.9),
+              rgba(0, 92, 115, 0.8)
+            );
+            border-color: rgba(0, 92, 115, 0.9);
+          "
+        >
+          <h3 class="text-2xl font-bold text-white mb-4" data-i18n="vie.cta.t">
+            Donnez du sens à votre épargne
+          </h3>
+          <p class="text-white/90 text-lg mb-6" data-i18n="vie.cta.p">
+            Nous ajustons supports, frais et options à votre horizon, votre
+            tolérance au risque et vos objectifs patrimoniaux.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              class="bg-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 shadow-lg"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="../contact.html"
+              data-i18n="vie.cta.quote"
+              >Obtenir un devis</a
+            >
+            <a
+              class="px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 shadow-lg"
+              style="
+                background-color: rgba(0, 92, 115, 1);
+                color: white;
+                border-color: rgba(0, 92, 115, 0.9);
+              "
+              href="../contact.html"
+              data-i18n="vie.cta.talk"
+              >Parler à un conseiller</a
+            >
+          </div>
+        </article>
+
+        <!-- Liens produits (précédent/suivant) -->
+        <article
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 mt-6 text-center"
+        >
+          <p class="text-gray-600">
+            <a
+              class="hover:underline"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="./habitation.html"
+              >← <span data-i18n="vie.nav.prev">Biens (Habitation)</span></a
+            >
+            &nbsp;|&nbsp;
+            <a
+              class="hover:underline"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="./auto.html"
+              ><span data-i18n="vie.nav.next">RISKALIA Auto</span> →</a
+            >
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- FAQ SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Puis-je changer de profil de gestion ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, via un arbitrage ou un passage en gestion pilotée. Des frais et délais peuvent s'appliquer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Les performances passées sont-elles garanties ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. En unités de compte, le capital n'est pas garanti et peut fluctuer à la hausse comme à la baisse."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment désigner mes bénéficiaires ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Par clause libre (personnalisée). Nous vous aidons à la formuler et à la mettre à jour."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script>
+      /* ================== Tab Management ================== */
+      function bindTabs() {
+        const tabs = document.querySelectorAll(".tabs .tab");
+        const panels = document.querySelectorAll(".tabpanel");
+
+        function show(id, push = true) {
+          tabs.forEach((btn) => {
+            const act = btn.dataset.tab === id;
+            btn.classList.toggle("active", act);
+            btn.setAttribute("aria-selected", act ? "true" : "false");
+
+            // Update tab styling
+            if (act) {
+              btn.style.backgroundColor = "rgba(0, 92, 115, 0.9)";
+              btn.style.color = "white";
+              btn.classList.remove("bg-gray-100", "text-gray-700");
+              btn.classList.add("text-white");
+            } else {
+              btn.style.backgroundColor = "";
+              btn.style.color = "";
+              btn.classList.remove("text-white");
+              btn.classList.add("bg-gray-100", "text-gray-700");
+            }
+          });
+          panels.forEach((p) => p.classList.toggle("active", p.id === id));
+          if (push) history.replaceState(null, "", "#" + id);
+        }
+
+        tabs.forEach((btn) =>
+          btn.addEventListener("click", () => show(btn.dataset.tab))
+        );
+
+        function fromHash() {
+          const id = (location.hash || "#over").slice(1);
+          const known = ["over", "cov", "inv", "ops", "fees", "faq"];
+          show(known.includes(id) ? id : "over", false);
+        }
+
+        window.addEventListener("hashchange", fromHash);
+        fromHash();
+      }
+
+      function initUI() {
+        bindTabs();
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Use global translation functions from i18n.js
+        if (typeof window.applyTexts === "function") {
+          window.applyTexts();
+        }
+        initUI();
+      });
+    </script>
+
+    <!-- Global I18N Script -->
+    <script src="../assets/js/i18n.js"></script>
+
+    <!-- Component Scripts -->
+    <script src="../assets/js/components/SearchComponent.js"></script>
+    <script src="../assets/js/components/NavigationComponent.js"></script>
+    <script src="../assets/js/components/FooterComponent.js"></script>
+  </body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=3.0,user-scalable=yes"
+    />
+    <title>Riskalia — Page introuvable</title>
+    <meta
+      name="description"
+      content="Page introuvable. Trouvez rapidement les pages Solutions, Réassurance, Risques Climatiques, ESG ou Contact de Riskalia."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Navigation Component Styles -->
+    <link rel="stylesheet" href="assets/css/components/navigation.css" />
+
+    <!-- Footer Component Styles -->
+    <link rel="stylesheet" href="assets/css/components/footer.css" />
+
+    <!-- Chatbot Component Styles -->
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+  </head>
+  <body class="bg-white text-gray-800 overflow-x-hidden">
+    <!-- Navigation Component Container -->
+    <div id="navigation-container"></div>
+
+    <!-- HERO SECTION -->
+    <section
+      class="hero-bg min-h-[40vh] flex items-center text-white text-center relative"
+    >
+      <!-- Floating Background Elements -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="floating-element absolute top-1/4 left-1/4 w-2 h-2 bg-white/20 rounded-full"
+        ></div>
+        <div
+          class="floating-element absolute top-1/3 right-1/3 w-1 h-1 bg-white/30 rounded-full"
+        ></div>
+        <div
+          class="floating-element absolute bottom-1/4 right-1/4 w-3 h-3 bg-white/10 rounded-full"
+        ></div>
+      </div>
+
+      <div class="hero-content container mx-auto px-4 max-w-6xl relative z-10">
+        <div class="space-y-8">
+          <!-- 404 Number -->
+          <div
+            class="text-8xl sm:text-9xl md:text-[12rem] font-bold text-white/20 mb-4"
+          >
+            404
+          </div>
+
+          <h1
+            class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4"
+            data-i18n="error.title"
+          >
+            Page introuvable
+          </h1>
+
+          <p
+            class="text-white/95 text-base sm:text-lg md:text-xl font-light mb-8 max-w-3xl mx-auto leading-relaxed"
+            data-i18n="error.sub"
+          >
+            Oups ! La page que vous recherchez n'existe pas ou a été déplacée.
+          </p>
+
+          <!-- Action Buttons -->
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <a
+              href="index.html"
+              class="bg-gradient-to-r from-[var(--c3)] to-[var(--c2)] hover:from-[var(--c2)] hover:to-[var(--c1)] text-white px-8 py-4 rounded-xl font-semibold text-lg no-underline hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl"
+              data-i18n="error.homeBtn"
+            >
+              Retour à l'accueil
+            </a>
+            <a
+              href="contact.html"
+              class="bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 hover:border-white/50 text-white px-8 py-4 rounded-xl font-semibold text-lg no-underline hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl"
+              data-i18n="error.contactBtn"
+            >
+              Nous contacter
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-wrapper py-16 max-w-7xl mx-auto">
+      <div class="container mx-auto px-4 max-w-7xl">
+        <!-- Quick Navigation -->
+        <div class="text-center mb-12">
+          <h2
+            class="text-3xl font-bold text-gray-800 mb-4"
+            data-i18n="error.quickNavTitle"
+          >
+            Pages populaires
+          </h2>
+          <p class="text-gray-600 text-lg" data-i18n="error.quickNavSub">
+            Trouvez rapidement ce que vous cherchez
+          </p>
+        </div>
+
+        <!-- Quick Links Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <!-- Solutions Card -->
+          <a
+            href="solutions.html"
+            class="group block p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl border border-gray-200 hover:border-[var(--c3)] hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+          >
+            <div class="text-center">
+              <div
+                class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"
+              >
+                🧩
+              </div>
+              <h3
+                class="text-xl font-semibold text-gray-800 group-hover:text-[var(--c1)] transition-colors duration-300 mb-2"
+                data-i18n="nav.solutions"
+              >
+                Solutions
+              </h3>
+              <p class="text-gray-600 text-sm" data-i18n="error.solutionsDesc">
+                Produits pour entreprises et particuliers
+              </p>
+            </div>
+          </a>
+
+          <!-- Réassurance Card -->
+          <a
+            href="reinsurance.html"
+            class="group block p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl border border-gray-200 hover:border-[var(--c3)] hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+          >
+            <div class="text-center">
+              <div
+                class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"
+              >
+                🧭
+              </div>
+              <h3
+                class="text-xl font-semibold text-gray-800 group-hover:text-[var(--c1)] transition-colors duration-300 mb-2"
+                data-i18n="nav.re"
+              >
+                Réassurance
+              </h3>
+              <p
+                class="text-gray-600 text-sm"
+                data-i18n="error.reinsuranceDesc"
+              >
+                Traités, facultatives, sinistres & arbitrages
+              </p>
+            </div>
+          </a>
+
+          <!-- Risques Climatiques Card -->
+          <a
+            href="climate.html"
+            class="group block p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl border border-gray-200 hover:border-[var(--c3)] hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+          >
+            <div class="text-center">
+              <div
+                class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"
+              >
+                🌍
+              </div>
+              <h3
+                class="text-xl font-semibold text-gray-800 group-hover:text-[var(--c1)] transition-colors duration-300 mb-2"
+                data-i18n="nav.climate"
+              >
+                Risques Climatiques
+              </h3>
+              <p class="text-gray-600 text-sm" data-i18n="error.climateDesc">
+                Identification, Quantification, Pilotage & Reporting
+              </p>
+            </div>
+          </a>
+
+          <!-- ESG Card -->
+          <a
+            href="esg.html"
+            class="group block p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl border border-gray-200 hover:border-[var(--c3)] hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+          >
+            <div class="text-center">
+              <div
+                class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"
+              >
+                🌿
+              </div>
+              <h3
+                class="text-xl font-semibold text-gray-800 group-hover:text-[var(--c1)] transition-colors duration-300 mb-2"
+                data-i18n="nav.esg"
+              >
+                ESG
+              </h3>
+              <p class="text-gray-600 text-sm" data-i18n="error.esgDesc">
+                Gouvernance, Éthique, Bien-être, Diversité
+              </p>
+            </div>
+          </a>
+
+          <!-- Contact Card -->
+          <a
+            href="contact.html"
+            class="group block p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl border border-gray-200 hover:border-[var(--c3)] hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+          >
+            <div class="text-center">
+              <div
+                class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"
+              >
+                ✉️
+              </div>
+              <h3
+                class="text-xl font-semibold text-gray-800 group-hover:text-[var(--c1)] transition-colors duration-300 mb-2"
+                data-i18n="nav.contact"
+              >
+                Contact
+              </h3>
+              <p class="text-gray-600 text-sm" data-i18n="error.contactDesc">
+                Demande de devis, sinistres, coordonnées
+              </p>
+            </div>
+          </a>
+
+          <!-- Services Card -->
+          <a
+            href="services.html"
+            class="group block p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl border border-gray-200 hover:border-[var(--c3)] hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+          >
+            <div class="text-center">
+              <div
+                class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"
+              >
+                🛠️
+              </div>
+              <h3
+                class="text-xl font-semibold text-gray-800 group-hover:text-[var(--c1)] transition-colors duration-300 mb-2"
+                data-i18n="nav.services"
+              >
+                Services de Conseil
+              </h3>
+              <p class="text-gray-600 text-sm" data-i18n="error.servicesDesc">
+                Formation, évaluation et accompagnement sur mesure
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Help Section -->
+        <div
+          class="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 text-center"
+        >
+          <h3
+            class="text-2xl font-bold text-gray-800 mb-4"
+            data-i18n="error.helpTitle"
+          >
+            Besoin d'aide ?
+          </h3>
+          <p class="text-gray-600 text-lg mb-6" data-i18n="error.helpText">
+            Si vous pensez qu'il s'agit d'une erreur, n'hésitez pas à nous
+            contacter.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="mailto:contact@riskalia.ma"
+              class="bg-[var(--c3)] hover:bg-[var(--c2)] text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-300"
+              data-i18n="error.emailBtn"
+            >
+              contact@riskalia.ma
+            </a>
+            <a
+              href="tel:+212666756991"
+              class="bg-white hover:bg-gray-50 text-[var(--c1)] border border-[var(--c3)] px-6 py-3 rounded-xl font-semibold transition-colors duration-300"
+              data-i18n="error.phoneBtn"
+            >
+              +212 666 756 991
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer Component Container -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/i18n.js"></script>
+    <script>
+      // Use the global lang variable from i18n.js
+      // lang is already available globally from i18n.js
+
+      // Helper functions are already available globally from i18n.js
+
+      /* UI init */
+      function initUI() {
+        // Smart redirect functionality
+        function trySmartRedirect() {
+          const path = (location.pathname || "").toLowerCase();
+          const slug = path.split("").filter(Boolean).pop() || "";
+          const key = slug
+            .replace(".html", "")
+            .replace(".htm", "")
+            .replace(/[-_]/g, "");
+
+          const redirects = {
+            accueil: "index.html",
+            home: "index.html",
+            index: "index.html",
+            solutions: "solutions.html",
+            produits: "solutions.html",
+            products: "solutions.html",
+            reinsurance: "reinsurance.html",
+            reassurance: "reinsurance.html",
+            re: "reinsurance.html",
+            esg: "esg.html",
+            climat: "climate.html",
+            sustainability: "climate.html",
+            climate: "climate.html",
+            contact: "contact.html",
+            contacts: "contact.html",
+            "contact-us": "contact.html",
+            "contactez-nous": "contact.html",
+          };
+
+          const maybe = redirects[key];
+          if (maybe) {
+            location.replace("" + maybe);
+          }
+        }
+
+        trySmartRedirect();
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        try {
+          if (!window.I18N) throw new Error("I18N not loaded");
+
+          // Make translation functions available globally for components
+          window.applyI18n = window.applyTexts;
+          window.t = window.t;
+
+          // Apply initial translations
+          if (typeof window.applyTexts === "function") {
+            window.applyTexts();
+          } else if (typeof applyTexts === "function") {
+            applyTexts();
+          }
+
+          // Setup language change listener after everything is ready
+          document.addEventListener("languageChanged", function () {
+            if (typeof window.applyTexts === "function") {
+              window.applyTexts();
+            } else if (typeof applyTexts === "function") {
+              applyTexts();
+            }
+          });
+
+          initUI();
+        } catch (e) {
+          console.error(e);
+          document.documentElement.lang = "fr";
+        }
+      });
+    </script>
+
+    <!-- Search Component Script -->
+    <script src="assets/js/components/SearchComponent.js"></script>
+
+    <!-- Navigation Component Script -->
+    <script src="assets/js/components/NavigationComponent.js"></script>
+
+    <!-- Footer Component Script -->
+    <script src="assets/js/components/FooterComponent.js"></script>
+  </body>
+</html>
+

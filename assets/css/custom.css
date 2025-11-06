@@ -1,0 +1,269 @@
+/* ===== RISKALIA CUSTOM STYLES ===== */
+
+/* Display Scaling Fix */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Custom CSS Variables for Brand Colors */
+:root {
+  --c1: #005c73;
+  --c2: #00849b;
+  --c3: #00b0c8;
+  --cl: #fff;
+  --cm: #f6fafc;
+  --cd: #243238;
+}
+
+/* Custom Fonts */
+body {
+  font-family: "Open Sans", sans-serif;
+  /* Responsive font sizing that adapts to display scaling */
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.6;
+}
+
+body[dir="rtl"] {
+  font-family: "Tajawal", "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
+}
+body[dir="rtl"] h1,
+body[dir="rtl"] h2,
+body[dir="rtl"] h3,
+body[dir="rtl"] h4 {
+  font-family: "Tajawal", "Open Sans", sans-serif;
+  letter-spacing: 0;
+}
+
+/* Custom Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced Hero Background Effects */
+.hero-bg {
+  background: linear-gradient(
+      135deg,
+      rgba(0, 92, 115, 0.95) 0%,
+      rgba(0, 132, 155, 0.9) 50%,
+      rgba(0, 176, 200, 0.85) 100%
+    ),
+    url("https://upload.wikimedia.org/wikipedia/commons/a/a0/CFC_Casa_Tower.jpg?auto=format&fit=crop&w=2000&q=70")
+      center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero Animated Background Particles */
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 20% 80%,
+      rgba(0, 176, 200, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(0, 132, 155, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 40%,
+      rgba(255, 255, 255, 0.05) 0%,
+      transparent 50%
+    );
+  animation: heroFloat 20s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+/* Hero Content Enhancement */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero Text Glow Effect - Applied to h1 elements */
+.hero-content h1 {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.1);
+  animation: heroTitleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes heroTitleGlow {
+  from {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  to {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4),
+      0 0 30px rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Hero Buttons Enhancement - Now handled by Tailwind classes */
+
+/* Custom Card Hover Effects */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom Button Styles */
+.btn-primary {
+  background: var(--c3);
+  color: white;
+  transition: all 0.25s ease;
+}
+.btn-primary:hover {
+  background: var(--c2);
+  transform: translateY(-1px);
+}
+.btn-secondary {
+  background: white;
+  color: var(--c1);
+  border: 1px solid #cfe1e6;
+}
+
+/* Custom Bio Equalization */
+.bio-equal {
+  display: flex;
+  flex-direction: column;
+}
+.bio-equal .bio-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.bio-equal .bio-text {
+  flex: 1;
+}
+
+/* Custom Background Colors */
+.bg-gray-25 {
+  background-color: #fafbfc;
+}
+
+/* Divider under hero */
+.section-wave {
+  height: 44px;
+  margin-top: -44px;
+  background: url('data:image/svg+xml;utf8,<svg width="1440" height="44" viewBox="0 0 1440 44" xmlns="http://www.w3.org/2000/svg"><path d="M0,6 C240,44 480,0 720,18 C960,36 1200,8 1440,18 L1440,44 L0,44 Z" fill="%23fcf9fa"/></svg>')
+    center/cover no-repeat;
+  position: relative;
+}
+
+.section-wave::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 48px;
+
+  pointer-events: none;
+}
+
+/* Main Content Wrapper Enhancement */
+.main-wrapper {
+  position: relative;
+  /* background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%); */
+  background: white;
+}
+
+/* Floating Elements Animation */
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-element:nth-child(2) {
+  animation-delay: -2s;
+}
+
+.floating-element:nth-child(3) {
+  animation-delay: -4s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ===== MOBILE RESPONSIVE IMPROVEMENTS ===== */
+
+/* Mobile Hero Section Improvements */
+@media (max-width: 768px) {
+  /* Wave is now visible on mobile */
+
+  /* Hero section mobile adjustments */
+  .hero-bg {
+    /* min-height: 70vh; */
+    /* padding: clamp(1.5rem, 4vw, 2rem) clamp(0.75rem, 3vw, 1rem); */
+  }
+
+  /* Hero content mobile spacing */
+  .hero-content {
+    padding: clamp(0.75rem, 2vw, 1rem) 0;
+  }
+
+  /* Hero buttons mobile improvements - now handled by Tailwind classes */
+  .hero-content .flex {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    align-items: stretch !important;
+  }
+
+  /* Reduce floating elements on mobile for better performance */
+  .floating-element {
+    display: none;
+  }
+
+  /* Adjust main wrapper margin on mobile */
+  .main-wrapper {
+    margin-top: 0;
+  }
+}
+
+/* Small mobile devices (phones in portrait) */
+@media (max-width: 480px) {
+  .hero-bg {
+    /* min-height: 65vh; */
+    /* padding: clamp(1rem, 3vw, 1.5rem) clamp(0.5rem, 2vw, 0.75rem); */
+  }
+}

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Riskalia — ESG & Développement Durable</title>
+    <meta
+      name="description"
+      content="Notre engagement ESG : gouvernance responsable, développement social, respect environnemental et impact sociétal positif pour un courtage durable au Maroc."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Navigation Component Styles -->
+    <link rel="stylesheet" href="assets/css/components/navigation.css" />
+
+    <!-- ESG Page Styles -->
+    <link rel="stylesheet" href="assets/css/components/esg.css" />
+
+    <!-- Footer Component Styles -->
+    <link rel="stylesheet" href="assets/css/components/footer.css" />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <noscript>
+      <style>
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body class="bg-white text-gray-800 overflow-x-hidden">
+    <!-- Navigation Component Container -->
+    <div id="navigation-container"></div>
+
+    <!-- HERO -->
+    <section
+      class="esg-hero min-h-[34vh] flex items-center text-white text-center relative py-1"
+    >
+      <!-- Floating Background Elements -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="floating-element absolute top-1/4 left-1/4 w-2 h-2 bg-white/20 rounded-full"
+        ></div>
+        <div
+          class="floating-element absolute top-1/3 right-1/3 w-1 h-1 bg-white/30 rounded-full"
+        ></div>
+        <div
+          class="floating-element absolute bottom-1/4 right-1/4 w-3 h-3 bg-white/10 rounded-full"
+        ></div>
+      </div>
+
+      <div class="hero-content container mx-auto px-4 max-w-6xl relative z-10">
+        <div class="space-y-8 px-4">
+          <h1
+            class="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight mb-2 sm:mb-3 md:mb-4"
+          >
+            Notre engagement ESG
+          </h1>
+          <h3
+            class="text-white/95 text-sm sm:text-base md:text-lg lg:text-xl font-light mb-2 sm:mb-3 md:mb-4 max-w-4xl mx-auto leading-relaxed"
+            data-i18n="esg.hero.subtitle"
+          >
+            Un cabinet de courtage responsable, transparent et engagé pour la
+            société marocaine
+          </h3>
+          <div
+            class="actions flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <a
+              href="contact.html"
+              class="bg-gradient-to-r from-[var(--c3)] to-[var(--c2)] hover:from-[var(--c2)] hover:to-[var(--c1)] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base no-underline hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl"
+              data-i18n="esg.cta.contact"
+              >Nous contacter</a
+            >
+            <a
+              href="#governance"
+              class="bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 hover:border-white/50 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base no-underline hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl"
+              data-i18n="esg.cta.discover"
+              >Découvrir nos actions</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-wave" aria-hidden="true"></div>
+
+    <!-- SMOOTH IMAGE-BACKED AREA -->
+    <div class="main-wrapper max-w-7xl mx-auto">
+      <div class="main-bloc">
+        <!-- Introduction ESG -->
+        <section class="reveal py-12 px-4">
+          <div class="container mx-auto max-w-7xl">
+            <div
+              class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 mb-8 border border-blue-100"
+            >
+              <h2
+                class="text-[var(--c1)] text-xl md:text-2xl font-bold mb-4 flex items-center gap-3"
+              >
+                <i class="fas fa-seedling text-green-600"></i>
+                <span data-i18n="esg.intro.title">Notre vision ESG</span>
+              </h2>
+              <p
+                class="text-gray-700 leading-relaxed text-base md:text-lg"
+                data-i18n="esg.intro.content"
+              >
+                Chez Riskalia, nous croyons qu'un cabinet de courtage doit être
+                plus qu'un intermédiaire financier : il doit être un acteur
+                responsable, transparent et engagé pour la société. Notre
+                démarche ESG (Environnement, Social, Gouvernance) est conçue
+                pour refléter nos valeurs, répondre aux attentes de nos clients
+                et partenaires, et contribuer au développement durable du Maroc.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Gouvernance -->
+        <section class="reveal py-12 px-4" id="governance">
+          <div class="container mx-auto max-w-7xl">
+            <div class="mb-8 text-center">
+              <p
+                class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3"
+                data-i18n="esg.governance.kicker"
+              >
+                Gouvernance
+              </p>
+              <h2
+                class="text-[var(--c1)] text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-4 flex items-center justify-center gap-3"
+                data-i18n="esg.governance.title"
+              >
+                <i class="fas fa-gem text-blue-600"></i>
+                Gouvernance responsable
+              </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-100 hover:shadow-lg transition-all duration-300"
+              >
+                <h3
+                  class="text-[var(--c1)] text-lg font-bold mb-4 flex items-center gap-3"
+                >
+                  <i class="fas fa-balance-scale text-blue-600"></i>
+                  <span data-i18n="esg.governance.integrity.title"
+                    >Intégrité et transparence</span
+                  >
+                </h3>
+                <ul class="space-y-3">
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-blue-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.governance.integrity.item1">
+                      Relations transparentes avec clients, partenaires et
+                      régulateurs (ACAPS)
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-blue-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.governance.integrity.item2">
+                      Respect strict des règles du marché
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-blue-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.governance.integrity.item3">
+                      Communication claire et honnête sur nos pratiques
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100 hover:shadow-lg transition-all duration-300"
+              >
+                <h3
+                  class="text-[var(--c1)] text-lg font-bold mb-4 flex items-center gap-3"
+                >
+                  <i class="fas fa-bullseye text-green-600"></i>
+                  <span data-i18n="esg.governance.ethics.title"
+                    >Déontologie et indépendance</span
+                  >
+                </h3>
+                <ul class="space-y-3">
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-green-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.governance.ethics.item1">
+                      Gestion rigoureuse des conflits d'intérêt
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-green-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.governance.ethics.item2">
+                      Indépendance dans nos conseils et recommandations
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-green-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.governance.ethics.item3">
+                      Code de conduite strict appliqué par tous
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 border border-purple-100 hover:shadow-lg transition-all duration-300"
+              >
+                <h3
+                  class="text-[var(--c1)] text-lg font-bold mb-4 flex items-center gap-3"
+                >
+                  <i class="fas fa-building text-purple-600"></i>
+                  <span data-i18n="esg.governance.structure.title"
+                    >Gouvernance claire</span
+                  >
+                </h3>
+                <ul class="space-y-3">
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-purple-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.governance.structure.item1">
+                      Décisions structurées et documentées
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-purple-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.governance.structure.item2">
+                      Processus proportionnés à notre taille
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-purple-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.governance.structure.item3">
+                      Alignement avec les meilleures pratiques du secteur
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Social -->
+        <section class="reveal py-12 px-4" id="social">
+          <div class="container mx-auto max-w-7xl">
+            <div class="mb-8 text-center">
+              <p
+                class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3"
+                data-i18n="esg.social.kicker"
+              >
+                Social
+              </p>
+              <h2
+                class="text-[var(--c1)] text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-4 flex items-center justify-center gap-3"
+                data-i18n="esg.social.title"
+              >
+                <i class="fas fa-users text-green-600"></i>
+                Engagement social
+              </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div
+                class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100 hover:shadow-lg transition-all duration-300"
+              >
+                <h3
+                  class="text-[var(--c1)] text-lg font-bold mb-4 flex items-center gap-3"
+                >
+                  <i class="fas fa-handshake text-green-600"></i>
+                  <span data-i18n="esg.social.diversity.title"
+                    >Égalité des chances et diversité</span
+                  >
+                </h3>
+                <ul class="space-y-3">
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-green-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.social.diversity.item1">
+                      Recrutements basés sur les talents sans discrimination
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-green-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.social.diversity.item2">
+                      Égalité de genre, d'origine et de parcours
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-green-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.social.diversity.item3">
+                      Promotion de la diversité à tous les niveaux
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-100 hover:shadow-lg transition-all duration-300"
+              >
+                <h3
+                  class="text-[var(--c1)] text-lg font-bold mb-4 flex items-center gap-3"
+                >
+                  <i class="fas fa-graduation-cap text-blue-600"></i>
+                  <span data-i18n="esg.social.development.title"
+                    >Développement des compétences</span
+                  >
+                </h3>
+                <ul class="space-y-3">
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-blue-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.social.development.item1">
+                      Plan de formation continue pour chaque collaborateur
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-blue-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.social.development.item2">
+                      Formation technique et développement personnel
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-blue-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.social.development.item3">
+                      Accompagnement dans l'évolution de carrière
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 border border-purple-100 hover:shadow-lg transition-all duration-300"
+              >
+                <h3
+                  class="text-[var(--c1)] text-lg font-bold mb-4 flex items-center gap-3"
+                >
+                  <i class="fas fa-heart text-purple-600"></i>
+                  <span data-i18n="esg.social.wellbeing.title"
+                    >Bien-être au travail</span
+                  >
+                </h3>
+                <ul class="space-y-3">
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-purple-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.social.wellbeing.item1">
+                      Environnement respectueux et collaboratif
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-purple-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.social.wellbeing.item2">
+                      Équilibre vie professionnelle - vie personnelle
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-purple-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.social.wellbeing.item3">
+                      Conditions de travail favorisant l'épanouissement
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-6 border border-orange-100 hover:shadow-lg transition-all duration-300"
+              >
+                <h3
+                  class="text-[var(--c1)] text-lg font-bold mb-4 flex items-center gap-3"
+                >
+                  <i class="fas fa-globe text-orange-600"></i>
+                  <span data-i18n="esg.social.impact.title"
+                    >Impact sociétal</span
+                  >
+                </h3>
+                <ul class="space-y-3">
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-orange-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.social.impact.item1">
+                      Assurance inclusive pour PME et agriculteurs
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-orange-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.social.impact.item2">
+                      Solutions innovantes face aux aléas climatiques
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-orange-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.social.impact.item3">
+                      Partenariats associatifs et soutien à l'éducation
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Environnement -->
+        <section class="reveal py-12 px-4" id="environment">
+          <div class="container mx-auto max-w-7xl">
+            <div class="mb-8 text-center">
+              <p
+                class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3"
+                data-i18n="esg.environment.kicker"
+              >
+                Environnement
+              </p>
+              <h2
+                class="text-[var(--c1)] text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-4 flex items-center justify-center gap-3"
+                data-i18n="esg.environment.title"
+              >
+                <i class="fas fa-leaf text-green-600"></i>
+                Respect de l'environnement
+              </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100 hover:shadow-lg transition-all duration-300"
+              >
+                <h3
+                  class="text-[var(--c1)] text-lg font-bold mb-4 flex items-center gap-3"
+                >
+                  <i class="fas fa-lightbulb text-green-600"></i>
+                  <span data-i18n="esg.environment.energy.title"
+                    >Sobriété énergétique et numérique</span
+                  >
+                </h3>
+                <ul class="space-y-3">
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-green-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.environment.energy.item1">
+                      Réduction des consommations dans nos bureaux
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-green-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.environment.energy.item2">
+                      Outils digitaux responsables
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-green-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.environment.energy.item3">
+                      Optimisation de l'éclairage et climatisation
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-100 hover:shadow-lg transition-all duration-300"
+              >
+                <h3
+                  class="text-[var(--c1)] text-lg font-bold mb-4 flex items-center gap-3"
+                >
+                  <i class="fas fa-bicycle text-blue-600"></i>
+                  <span data-i18n="esg.environment.mobility.title"
+                    >Mobilité raisonnée</span
+                  >
+                </h3>
+                <ul class="space-y-3">
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-blue-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.environment.mobility.item1">
+                      Limitation des déplacements inutiles
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-blue-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.environment.mobility.item2">
+                      Recours privilégié à la visioconférence
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-blue-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.environment.mobility.item3">
+                      Encouragement de la mobilité douce
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 border border-purple-100 hover:shadow-lg transition-all duration-300"
+              >
+                <h3
+                  class="text-[var(--c1)] text-lg font-bold mb-4 flex items-center gap-3"
+                >
+                  <i class="fas fa-recycle text-purple-600"></i>
+                  <span data-i18n="esg.environment.waste.title"
+                    >Gestes simples, impacts concrets</span
+                  >
+                </h3>
+                <ul class="space-y-3">
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-purple-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.environment.waste.item1">
+                      Optimisation de l'usage du papier
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-purple-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.environment.waste.item2">
+                      Réduction et tri des déchets
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-purple-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.environment.waste.item3">
+                      Économies d'eau et d'électricité
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Achats Responsables -->
+        <section class="reveal py-12 px-4" id="procurement">
+          <div class="container mx-auto max-w-7xl">
+            <div class="mb-8 text-center">
+              <p
+                class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3"
+                data-i18n="esg.procurement.kicker"
+              >
+                Achats Responsables
+              </p>
+              <h2
+                class="text-[var(--c1)] text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-4 flex items-center justify-center gap-3"
+                data-i18n="esg.procurement.title"
+              >
+                <i class="fas fa-shopping-cart text-orange-600"></i>
+                Achats responsables
+              </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div
+                class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-6 border border-orange-100 hover:shadow-lg transition-all duration-300"
+              >
+                <h3
+                  class="text-[var(--c1)] text-lg font-bold mb-4 flex items-center gap-3"
+                >
+                  <i class="fas fa-flag text-orange-600"></i>
+                  <span data-i18n="esg.procurement.local.title"
+                    >Priorité au local</span
+                  >
+                </h3>
+                <ul class="space-y-3">
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-orange-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.procurement.local.item1">
+                      Privilégier les fournisseurs locaux
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-orange-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.procurement.local.item2">
+                      Soutien aux PME marocaines
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-orange-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.procurement.local.item3">
+                      Contribution au développement économique régional
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100 hover:shadow-lg transition-all duration-300"
+              >
+                <h3
+                  class="text-[var(--c1)] text-lg font-bold mb-4 flex items-center gap-3"
+                >
+                  <i class="fas fa-check-circle text-green-600"></i>
+                  <span data-i18n="esg.procurement.ethics.title"
+                    >Critères éthiques</span
+                  >
+                </h3>
+                <ul class="space-y-3">
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-green-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.procurement.ethics.item1">
+                      Intégration de critères éthiques dans nos choix
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-green-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.procurement.ethics.item2">
+                      Soutien à l'économie sociale et solidaire
+                    </span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-gray-700 leading-relaxed text-sm"
+                  >
+                    <span class="text-green-500 font-bold mt-1">•</span>
+                    <span data-i18n="esg.procurement.ethics.item3">
+                      Évaluation de l'impact social de nos prestataires
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Impact et Vision -->
+        <section class="reveal py-12 px-4">
+          <div class="container mx-auto max-w-7xl">
+            <div
+              class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-8 mb-8 border border-indigo-100"
+            >
+              <h2
+                class="text-[var(--c1)] text-xl md:text-2xl font-bold mb-4 flex items-center gap-3"
+              >
+                <i class="fas fa-rocket text-indigo-600"></i>
+                <span data-i18n="esg.vision.title">Notre ambition</span>
+              </h2>
+              <p
+                class="text-gray-700 leading-relaxed text-base md:text-lg"
+                data-i18n="esg.vision.content"
+              >
+                Avec cette démarche, Riskalia se positionne comme un courtier
+                engagé, ancré dans son territoire et tourné vers l'avenir. Notre
+                ambition est simple : accompagner nos clients tout en créant un
+                impact positif et durable pour nos collaborateurs, nos
+                partenaires et la société.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="end-fade" aria-hidden="true"></div>
+    </div>
+
+    <!-- CONTACT -->
+    <section class="reveal esg-contact py-8 px-4">
+      <div class="container mx-auto max-w-4xl text-center">
+        <h2
+          class="text-xl md:text-2xl font-bold mb-3 md:mb-4 !text-white"
+          data-i18n="esg.contact.title"
+        >
+          Rejoignez notre démarche ESG
+        </h2>
+        <p
+          class="muted text-base md:text-lg mb-4 md:mb-6 text-white/90"
+          data-i18n="esg.contact.subtitle"
+        >
+          Découvrez comment nous pouvons collaborer pour un avenir plus durable
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            class="btn bg-[var(--c3)] hover:bg-[var(--c2)] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-0.5"
+            href="contact.html"
+            data-i18n="esg.cta.contact"
+            >Nous contacter</a
+          >
+          <a
+            class="btn secondary bg-white text-[var(--c1)] hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-0.5"
+            href="contact.html"
+            data-i18n="esg.cta.partnership"
+            >Partenariat ESG</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Component Container -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/i18n.js"></script>
+    <script>
+      /* UI init */
+      function initUI() {
+        // Language switching is now handled by the navigation component
+        // Listen for language change events from the navigation component
+        document.addEventListener("languageChanged", (e) => {
+          lang = e.detail.language;
+          localStorage.setItem("riskalia_lang", lang);
+          applyTexts();
+          if (window._onLangChanged) window._onLangChanged();
+        });
+
+        const rev = $$(".reveal");
+        const onScroll = () => {
+          const tr = window.innerHeight * 0.85;
+          rev.forEach((el) => {
+            if (el.getBoundingClientRect().top < tr) el.classList.add("active");
+          });
+        };
+        window.addEventListener("scroll", onScroll);
+        onScroll();
+        const firstReveal = document.querySelector(".main-wrapper .reveal");
+        if (firstReveal) firstReveal.classList.add("active");
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        try {
+          if (!window.I18N) throw new Error("I18N not loaded");
+          applyTexts();
+          initUI();
+        } catch (e) {
+          console.error(e);
+          document.documentElement.lang = "fr";
+        }
+      });
+    </script>
+
+    <!-- Search Component Script -->
+    <script src="assets/js/components/SearchComponent.js"></script>
+
+    <!-- Navigation Component Script -->
+    <script src="assets/js/components/NavigationComponent.js"></script>
+
+    <!-- Footer Component Script -->
+    <script src="assets/js/components/FooterComponent.js"></script>
+  </body>
+</html>
+
+

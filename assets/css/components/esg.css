@@ -1,0 +1,255 @@
+/* ESG Page Specific Styles */
+
+/* ESG Specific Styles */
+.esg-intro {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 176, 200, 0.08),
+    rgba(0, 92, 115, 0.04)
+  );
+  border-radius: 18px;
+  padding: 24px;
+  margin: 24px 0;
+  border: 1px solid rgba(0, 95, 115, 0.12);
+}
+
+.esg-intro h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.esg-intro .icon {
+  font-size: 1.8em;
+}
+
+/* Grids & Cards */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: saturate(110%) blur(3px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.07);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  border: var(--border);
+  display: flex;
+  flex-direction: column; /* equal heights */
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin: 0 0 4px;
+}
+
+.card-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  color: #053b46;
+  font-weight: 800;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 176, 200, 0.12),
+    rgba(0, 92, 115, 0.06)
+  );
+}
+
+.card-body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.card-body p {
+  color: #586e77;
+  text-align: justify;
+  margin: 0;
+}
+
+.card-list {
+  padding: 0 0 0 16px;
+  margin-top: 6px;
+}
+
+.card-list li {
+  color: #586e77;
+  margin: 5px 0;
+}
+
+/* ESG Cards - special styling */
+.esg-card {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(0, 95, 115, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.esg-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.esg-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: var(--c1);
+}
+
+.esg-card .icon {
+  font-size: 1.5em;
+}
+
+.esg-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.esg-list li {
+  position: relative;
+  padding-left: 20px;
+  margin: 8px 0;
+  color: #586e77;
+  line-height: 1.5;
+}
+
+.esg-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--c3);
+  font-weight: 800;
+}
+
+/* Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ESG Hero Section */
+.esg-hero {
+  /* min-height: 55vh; */
+  background: linear-gradient(rgba(0, 92, 115, 0.86), rgba(0, 92, 115, 0.86)),
+    url("https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=70")
+      center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.esg-hero h1 {
+  color: #fff;
+  /* font-size: clamp(2rem, 3.2vw, 3rem); */
+}
+
+.esg-hero p {
+  color: #fff;
+  opacity: 0.98;
+  max-width: 920px;
+  margin: 8px auto 14px;
+}
+
+.esg-hero .actions {
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.esg-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 64px;
+  background: url('data:image/svg+xml;utf8,<svg width="1440" height="64" viewBox="0 0 1440 64" xmlns="http://www.w3.org/2000/svg"><path d="M0,30 C240,80 480,0 720,30 C960,60 1200,10 1440,28 L1440,64 L0,64 Z" fill="%23f7fcfe"/></svg>')
+    center/cover no-repeat;
+  pointer-events: none;
+}
+
+/* ESG Contact Section */
+.esg-contact {
+  background: linear-gradient(200deg, var(--c1), var(--c2));
+  color: white;
+}
+
+.esg-contact h2 {
+  color: white;
+}
+
+.esg-contact .muted {
+  color: white;
+}
+
+.esg-contact .btn {
+  color: white;
+}
+
+.esg-contact .btn.secondary {
+  color: var(--c1) !important;
+  background: white;
+}
+
+.esg-contact .btn.secondary:hover {
+  color: var(--c1) !important;
+  background: #f8f9fa;
+}
+
+/* RTL fixes for ESG */
+ul.card-list {
+  list-style-position: inside;
+  padding-inline-start: 0;
+}
+
+body[dir="rtl"] ul.card-list {
+  text-align: right;
+  list-style-position: inside;
+}
+
+ul.card-list li {
+  padding-inline-start: 1ch;
+  margin-block: 5px;
+}

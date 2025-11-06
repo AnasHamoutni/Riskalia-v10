@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>
+      Riskalia — Santé collective & Prévoyance (Group Health & Benefits)
+    </title>
+    <meta
+      name="description"
+      content="Programmes santé collective & prévoyance pour salariés : soins courants, hospitalisation, maternité, dentaire/optique, vie/décès, invalidité, accidents, maladies graves. Réseaux de soins et tiers payant, gouvernance, prévention & bien-être."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+  <!-- Fonts + global CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="../assets/css/components/navigation.css" />
+    <link rel="stylesheet" href="../assets/css/components/footer.css" />
+
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+
+  <style>
+      /* Tab panel display logic */
+      .tabpanel {
+        display: none;
+      }
+      .tabpanel.active {
+        display: block;
+      }
+
+      /* Sticky tabs */
+      @media (min-width: 768px) {
+        .tabs.sticky {
+          top: 66px;
+        }
+    }
+  </style>
+
+    <noscript
+      ><style>
+        .tabpanel {
+          display: block;
+        }
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style></noscript
+    >
+</head>
+<body class="spacious">
+    <!-- Navigation Container -->
+    <div id="navigation-container"></div>
+
+<!-- HERO -->
+    <section
+      class="hero hero--product min-h-[35vh] bg-cover bg-center bg-no-repeat flex items-center text-center py-12"
+      style="
+        background: linear-gradient(
+            rgba(0, 92, 115, 0.85),
+            rgba(0, 92, 115, 0.85)
+          ),
+          url('https://images.unsplash.com/photo-1519494080410-f9aa76cb4283?auto=format&fit=crop&w=1600&q=70')
+            center/cover no-repeat;
+      "
+    >
+  <div class="container mx-auto">
+        <h1
+          class="text-white text-4xl md:text-5xl font-bold mb-4"
+          data-i18n="santecollective.title"
+        >
+          Santé collective & Prévoyance
+        </h1>
+        <p
+          class="text-white text-lg md:text-xl mb-6 max-w-4xl mx-auto"
+          data-i18n="santecollective.subtitle"
+        >
+          Soins courants & hospitalisation • Dentaire & optique • Maternité •
+          Vie / Décès, invalidité & accidents • Réseaux & tiers payant •
+          Prévention & bien-être.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 mt-4">
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="santecollective.badges.0"
+            >PME à grands comptes</span
+          >
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="santecollective.badges.1"
+            >Réseaux de soins & TPA</span
+          >
+          <span
+            class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30"
+            data-i18n="santecollective.badges.2"
+            >Conformité locale</span
+          >
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+    <section class="py-8 max-w-7xl mx-auto">
+      <div class="container mx-auto px-4 max-w-6xl">
+    <!-- Onglets -->
+        <nav
+          class="tabs  bg-white p-2 border border-gray-200 rounded-xl overflow-x-auto whitespace-nowrap shadow-lg mb-4"
+          role="tablist"
+          aria-label="Group health tabs"
+        >
+          <button
+            class="tab active flex-shrink-0 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            style="background-color: rgba(0, 92, 115, 0.9)"
+            id="tab-over"
+            role="tab"
+            aria-selected="true"
+            data-tab="over"
+            data-i18n="santecollective.tabs.over"
+          >
+            Aperçu
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-cov"
+            role="tab"
+            aria-selected="false"
+            data-tab="cov"
+            data-i18n="santecollective.tabs.cov"
+          >
+            Couvertures
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-opt"
+            role="tab"
+            aria-selected="false"
+            data-tab="opt"
+            data-i18n="santecollective.tabs.opt"
+          >
+            Options & réseaux
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-admin"
+            role="tab"
+            aria-selected="false"
+            data-tab="admin"
+            data-i18n="santecollective.tabs.admin"
+          >
+            Tarification & mise en place
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-claim"
+            role="tab"
+            aria-selected="false"
+            data-tab="claim"
+            data-i18n="santecollective.tabs.claim"
+          >
+            Sinistres
+          </button>
+          <button
+            class="tab flex-shrink-0 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer hover:bg-gray-200"
+            id="tab-faq"
+            role="tab"
+            aria-selected="false"
+            data-tab="faq"
+            data-i18n="santecollective.tabs.faq"
+          >
+            FAQ
+          </button>
+    </nav>
+
+    <!-- Aperçu -->
+        <article
+          id="over"
+          class="tabpanel active bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-over"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="santecollective.over.t"
+          >
+            1. Aperçu
+          </h2>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2">
+              <p
+                class="text-gray-600 text-lg leading-relaxed mb-6"
+                data-i18n="santecollective.over.p"
+              >
+                Des programmes <strong>santé & prévoyance</strong> modulaires
+                pour attirer et fidéliser : soins courants, hospitalisation et
+                maternité, dentaire/optique, ainsi que
+                <strong>vie/décès, invalidité, accidents</strong> et maladies
+                graves. Gouvernance claire, <em>réseaux & tiers payant</em>, et
+                pilotage des coûts.
+              </p>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.over.li.0"
+                    >Conception du plan : niveaux, plafonds, co-pays,
+                    franchises.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.over.li.1"
+                    >Réseaux partenaires & gestion TPA pour remboursements
+                    rapides.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >✓</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.over.li.2"
+                    >Prévention & bien-être : bilans, vaccinations, santé
+                    mentale.</span
+                  >
+                </li>
+          </ul>
+        </div>
+            <div class="space-y-4">
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="text-lg font-semibold mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="santecollective.over.kpi.0"
+                >
+                  Population
+                </div>
+                <div class="text-gray-600 text-sm">5–5 000+ FTE</div>
+              </div>
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="text-lg font-semibold mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="santecollective.over.kpi.1"
+                >
+                  SLA remboursements
+                </div>
+                <div class="text-gray-600 text-sm">&lt; 5–7 jours</div>
+              </div>
+              <div
+                class="rounded-xl p-4 border"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 92, 115, 0.1),
+                    rgba(0, 92, 115, 0.05)
+                  );
+                  border-color: rgba(0, 92, 115, 0.2);
+                "
+              >
+                <div
+                  class="text-lg font-semibold mb-2"
+                  style="color: rgba(0, 92, 115, 0.9)"
+                  data-i18n="santecollective.over.kpi.2"
+                >
+                  Réseau
+                </div>
+                <div class="text-gray-600 text-sm">
+                  Direct billing / tiers payant
+                </div>
+              </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Couvertures -->
+        <article
+          id="cov"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-cov"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="santecollective.cov.t"
+          >
+            2. Couvertures principales
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="santecollective.cov.c0.t"
+              >
+                Santé (médical)
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.cov.c0.li.0"
+                    >Soins ambulatoires, spécialistes & analyses.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.cov.c0.li.1"
+                    >Hospitalisation & maternité (plafonds & carences).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.cov.c0.li.2"
+                    >Optique & dentaire (barèmes, prothèses, orthodontie).</span
+                  >
+                </li>
+          </ul>
+        </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="santecollective.cov.c1.t"
+              >
+                Prévoyance (risk benefits)
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.cov.c1.li.0"
+                    >Vie/décès (capital, rente éducation).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.cov.c1.li.1"
+                    >Invalidité (temporaire/perm., IPP/ITP).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.cov.c1.li.2"
+                    >Accidents & maladies graves (CI).</span
+                  >
+                </li>
+          </ul>
+        </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="santecollective.cov.c2.t"
+              >
+                Services
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.cov.c2.li.0"
+                    >Réseaux tiers payant & TPA.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.cov.c2.li.1"
+                    >Télé-médecine & EAP (assistance psycho-sociale).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.cov.c2.li.2"
+                    >Évacuation & rapatriement (selon zones).</span
+                  >
+                </li>
+          </ul>
+      </div>
+    </article>
+
+    <!-- Options & Réseaux -->
+        <article
+          id="opt"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-opt"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="santecollective.opt.t"
+          >
+            3. Options & réseaux
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="santecollective.opt.c0.t"
+              >
+                Réseaux & tiers payant
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.opt.c0.li.0"
+                    >Cartes d'accès & applis partenaires.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.opt.c0.li.1"
+                    >Accords tarifaires cliniques, dentistes & opticiens.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.opt.c0.li.2"
+                    >Parcours hors réseau (remboursement au barème).</span
+                  >
+                </li>
+          </ul>
+        </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="santecollective.opt.c1.t"
+              >
+                Expatriés & zones
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.opt.c1.li.0"
+                    >Covers régionaux/monde, assistance internationale.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.opt.c1.li.1"
+                    >Coordination sécurité sociale locale.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.opt.c1.li.2"
+                    >Options maternité/CI spécifiques.</span
+                  >
+                </li>
+          </ul>
+        </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="santecollective.opt.c2.t"
+              >
+                Pilotage & prévention
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.opt.c2.li.0"
+                    >Tableaux de bord : sinistres & ratio (LR).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.opt.c2.li.1"
+                    >Programmes bien-être & dépistage.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.opt.c2.li.2"
+                    >Stop-loss/ASO (si auto-assuré).</span
+                  >
+                </li>
+          </ul>
+    </article>
+
+    <!-- Tarification & mise en place -->
+        <article
+          id="admin"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-admin"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="santecollective.admin.t"
+          >
+            4. Tarification & mise en place
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="santecollective.admin.c0.t"
+              >
+                Données requises (cotation)
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.admin.c0.li.0"
+                    >Census anonymisé (âge/genre, ayants droit,
+                    effectifs).</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.admin.c0.li.1"
+                    >Historique sinistres 24–36 mois & ratio.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.admin.c0.li.2"
+                    >Design du plan & budget cible.</span
+                  >
+                </li>
+          </ul>
+        </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="santecollective.admin.c1.t"
+              >
+                Paramètres de plan
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.admin.c1.li.0"
+                    >Plafonds, co-pays, franchises, carences.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.admin.c1.li.1"
+                    >Eligibilité, périodes d'attente & portabilité.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.admin.c1.li.2"
+                    >Contributif employeur/salarié & classes.</span
+                  >
+                </li>
+          </ul>
+        </section>
+            <section
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <h3
+                class="text-xl font-semibold mb-4"
+                style="color: rgba(0, 92, 115, 0.9)"
+                data-i18n="santecollective.admin.c2.t"
+              >
+                Administration & services
+              </h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.admin.c2.li.0"
+                    >Onboarding, cartes & appli assurés.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.admin.c2.li.1"
+                    >Télétransmission & e-réclamations.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.admin.c2.li.2"
+                    >Comités trimestriels & actions de maîtrise.</span
+                  >
+                </li>
+          </ul>
+        </section>
+      </div>
+    </article>
+
+    <!-- Sinistres -->
+        <article
+          id="claim"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-claim"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="santecollective.claim.t"
+          >
+            5. Gestion des sinistres
+          </h2>
+          <details
+            class="rounded-xl p-6 border"
+            style="
+              background: linear-gradient(
+                135deg,
+                rgba(0, 92, 115, 0.1),
+                rgba(0, 92, 115, 0.05)
+              );
+              border-color: rgba(0, 92, 115, 0.2);
+            "
+          >
+            <summary
+              class="text-xl font-semibold cursor-pointer"
+              style="color: rgba(0, 92, 115, 0.9)"
+            >
+              🧭
+              <span data-i18n="santecollective.claim.sum">Notre approche</span>
+            </summary>
+            <div class="mt-4">
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.claim.li.0"
+                    >TPA & réseau : tiers payant prioritaire.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.claim.li.1"
+                    >Remboursements digitaux & SLA &lt; 5–7 jours.</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="text-teal-600 mr-3 mt-1"
+                    style="color: rgba(0, 92, 115, 0.8)"
+                    >•</span
+                  >
+                  <span
+                    class="text-gray-700"
+                    data-i18n="santecollective.claim.li.2"
+                    >Revues LR & mesures anti-surconsommation.</span
+                  >
+                </li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <!-- FAQ -->
+        <article
+          id="faq"
+          class="tabpanel bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+          role="tabpanel"
+          aria-labelledby="tab-faq"
+        >
+          <h2
+            class="text-2xl font-bold text-gray-900 mb-6"
+            data-i18n="santecollective.faq.t"
+          >
+            6. FAQ
+          </h2>
+          <div class="space-y-4">
+            <details
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <summary
+                class="text-lg font-semibold cursor-pointer"
+                style="color: rgba(0, 92, 115, 0.9)"
+              >
+                ❓
+                <span data-i18n="santecollective.faq.q0"
+                  >Prise en charge des antécédents ?</span
+                >
+              </summary>
+              <div class="mt-4">
+                <p class="text-gray-600" data-i18n="santecollective.faq.a0">
+                  Au cas par cas selon assureur, taille & historique. Des
+                  clauses MHD/FMU peuvent s'appliquer.
+                </p>
+              </div>
+      </details>
+            <details
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <summary
+                class="text-lg font-semibold cursor-pointer"
+                style="color: rgba(0, 92, 115, 0.9)"
+              >
+                ❓
+                <span data-i18n="santecollective.faq.q1"
+                  >Couverture hors réseau / à l'étranger ?</span
+                >
+              </summary>
+              <div class="mt-4">
+                <p class="text-gray-600" data-i18n="santecollective.faq.a1">
+                  Possible avec barèmes & plafonds dédiés. Expatriés : zones et
+                  assistance à calibrer.
+                </p>
+              </div>
+      </details>
+            <details
+              class="rounded-xl p-6 border"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(0, 92, 115, 0.1),
+                  rgba(0, 92, 115, 0.05)
+                );
+                border-color: rgba(0, 92, 115, 0.2);
+              "
+            >
+              <summary
+                class="text-lg font-semibold cursor-pointer"
+                style="color: rgba(0, 92, 115, 0.9)"
+              >
+                ❓
+                <span data-i18n="santecollective.faq.q2"
+                  >Délais de remboursement ?</span
+                >
+              </summary>
+              <div class="mt-4">
+                <p class="text-gray-600" data-i18n="santecollective.faq.a2">
+                  Avec e-réclamations complètes, le SLA cible est de 5 à 7 jours
+                  ouvrés.
+                </p>
+              </div>
+      </details>
+          </div>
+    </article>
+
+    <!-- CTA -->
+        <article
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 mt-6 text-center"
+          style="
+            background: linear-gradient(
+              135deg,
+              rgba(0, 92, 115, 0.9),
+              rgba(0, 92, 115, 0.8)
+            );
+            border-color: rgba(0, 92, 115, 0.9);
+          "
+        >
+          <h3
+            class="text-2xl font-bold text-white mb-4"
+            data-i18n="santecollective.cta.t"
+          >
+            Construisons votre plan salariés
+          </h3>
+          <p
+            class="text-white/90 text-lg mb-6"
+            data-i18n="santecollective.cta.p"
+          >
+            Nous cadrons le design, les réseaux et le budget avec un calendrier
+            de mise en place.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              class="bg-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 shadow-lg"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="../contact.html"
+              data-i18n="santecollective.cta.quote"
+              >Obtenir un devis</a
+            >
+            <a
+              class="px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 shadow-lg"
+              style="
+                background-color: rgba(0, 92, 115, 1);
+                color: white;
+                border-color: rgba(0, 92, 115, 0.9);
+              "
+              href="../contact.html"
+              data-i18n="santecollective.cta.talk"
+              >Parler à un conseiller</a
+            >
+      </div>
+    </article>
+
+    <!-- Liens produits (précédent/suivant) -->
+        <article
+          class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 mt-6 text-center"
+        >
+          <p class="text-gray-600">
+            <a
+              class="hover:underline"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="./construction.html"
+              >←
+              <span data-i18n="santecollective.nav.prev"
+                >Construction (CAR/EAR)</span
+              ></a
+            >
+        &nbsp;|&nbsp;
+            <a
+              class="hover:underline"
+              style="color: rgba(0, 92, 115, 0.9)"
+              href="./multirisques.html"
+              ><span data-i18n="santecollective.nav.next"
+                >Multirisques Entreprise</span
+              >
+              →</a
+            >
+      </p>
+    </article>
+  </div>
+</section>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+<!-- FAQ SEO -->
+<script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Prise en charge des antécédents ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Au cas par cas selon assureur, taille & historique. Des clauses MHD/FMU peuvent s'appliquer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Couverture hors réseau / à l'étranger ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Possible avec barèmes & plafonds dédiés. Expatriés : zones et assistance à calibrer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Délais de remboursement ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Avec e-réclamations complètes, le SLA cible est de 5 à 7 jours ouvrés."
+            }
+          }
+        ]
+      }
+</script>
+
+<script>
+      /* ================== Tab Management ================== */
+      function bindTabs() {
+        const tabs = document.querySelectorAll(".tabs .tab");
+        const panels = document.querySelectorAll(".tabpanel");
+
+        function show(id, push = true) {
+          tabs.forEach((btn) => {
+            const act = btn.dataset.tab === id;
+            btn.classList.toggle("active", act);
+            btn.setAttribute("aria-selected", act ? "true" : "false");
+
+            // Update tab styling
+            if (act) {
+              btn.style.backgroundColor = "rgba(0, 92, 115, 0.9)";
+              btn.style.color = "white";
+              btn.classList.remove("bg-gray-100", "text-gray-700");
+              btn.classList.add("text-white");
+            } else {
+              btn.style.backgroundColor = "";
+              btn.style.color = "";
+              btn.classList.remove("text-white");
+              btn.classList.add("bg-gray-100", "text-gray-700");
+            }
+          });
+          panels.forEach((p) => p.classList.toggle("active", p.id === id));
+          if (push) history.replaceState(null, "", "#" + id);
+        }
+
+        tabs.forEach((btn) =>
+          btn.addEventListener("click", () => show(btn.dataset.tab))
+        );
+
+        function fromHash() {
+          const id = (location.hash || "#over").slice(1);
+          const known = ["over", "cov", "opt", "admin", "claim", "faq"];
+          show(known.includes(id) ? id : "over", false);
+        }
+
+        window.addEventListener("hashchange", fromHash);
+  fromHash();
+}
+
+      function initUI() {
+  bindTabs();
+}
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Use global translation functions from i18n.js
+        if (typeof window.applyTexts === "function") {
+          window.applyTexts();
+        }
+        initUI();
+      });
+</script>
+
+    <!-- Global I18N Script -->
+    <script src="../assets/js/i18n.js"></script>
+
+    <!-- Component Scripts -->
+    <script src="../assets/js/components/SearchComponent.js"></script>
+    <script src="../assets/js/components/NavigationComponent.js"></script>
+    <script src="../assets/js/components/FooterComponent.js"></script>
+  </body>
+</html>

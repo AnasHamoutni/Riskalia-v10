@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Riskalia — Services de Conseil en Gestion des Risques</title>
+    <meta
+      name="description"
+      content="Services de conseil spécialisés : gestion des risques, évaluation actuarielle des engagements sociaux, formation sur mesure. Cartographies vivantes, hypothèses auditées, ateliers pratiques pour dirigeants et équipes techniques."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/components/navigation.css" />
+    <link rel="stylesheet" href="assets/css/components/footer.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --c1: #005c73;
+        --c2: #00849b;
+        --c3: #00b0c8;
+        --cl: #fff;
+        --cm: #f6fafc;
+        --cd: #243238;
+        --radius: 18px;
+        --shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+        --border: 1px solid rgba(0, 93, 115, 0.18);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        overflow-x: hidden;
+      }
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--cd);
+        line-height: 1.7;
+        background: #fff;
+      }
+      body[dir="rtl"] {
+        direction: rtl;
+        font-family: "Tajawal", "Open Sans", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Montserrat", sans-serif;
+        color: var(--c1);
+      }
+      body[dir="rtl"] h1,
+      body[dir="rtl"] h2,
+      body[dir="rtl"] h3,
+      body[dir="rtl"] h4 {
+        font-family: "Tajawal", "Open Sans", sans-serif;
+        letter-spacing: 0;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      .container {
+        max-width: 1180px;
+        margin: auto;
+        padding: 0 18px;
+      }
+      .kicker {
+        color: #4e6a74;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 800;
+        margin-bottom: 6px;
+      }
+      .muted {
+        color: #5f7781;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 16px;
+        background: var(--c3);
+        color: #fff;
+        border-radius: 12px;
+        font-weight: 800;
+        border: 1px solid transparent;
+        transition: 0.25s;
+      }
+      .btn:hover {
+        background: var(--c2);
+        transform: translateY(-1px);
+      }
+      .btn.secondary {
+        background: #fff;
+        color: var(--c1);
+        border-color: #cfe1e6;
+      }
+
+      /* NAV - Removed conflicting styles, using NavigationComponent instead */
+
+      /* Navigation search styles removed - using NavigationComponent */
+      /* Brand styles removed - using NavigationComponent */
+
+      /* RTL fixes */
+      :root {
+        --c1: #005c73;
+        --c2: #00849b;
+        --c3: #00b0c8;
+        --cl: #fff;
+        --cm: #f6fafc;
+        --cd: #243238;
+        --radius: 18px;
+        --shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+        --border: 1px solid rgba(0, 93, 115, 0.18);
+      }
+
+      /* ====== Ajouts / Correctifs RTL ====== */
+      ul.card-list {
+        list-style-position: inside;
+        padding-inline-start: 0;
+      }
+      body[dir="rtl"] ul.card-list {
+        text-align: right;
+        list-style-position: inside;
+      }
+      ul.card-list li {
+        padding-inline-start: 1ch;
+        margin-block: 5px;
+      }
+
+      /* RTL fixes for nav-search removed - using NavigationComponent */
+
+      /* Lang switch RTL fix removed - using NavigationComponent */
+
+      /* ================== ENHANCED HERO SECTION ================== */
+      .hero {
+        min-height: 75vh;
+        background: linear-gradient(
+            135deg,
+            rgba(0, 92, 115, 0.95) 0%,
+            rgba(0, 132, 155, 0.92) 35%,
+            rgba(0, 176, 200, 0.88) 100%
+          ),
+          radial-gradient(
+            ellipse at 70% 20%,
+            rgba(0, 176, 200, 0.3) 0%,
+            transparent 50%
+          ),
+          url("https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2000&q=80")
+            center/cover no-repeat;
+
+        position: relative;
+        overflow: hidden;
+      }
+
+      .badges {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .badge {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.18) 0%,
+          rgba(255, 255, 255, 0.12) 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 50px;
+        font-weight: 600;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .badge::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      .badge:hover::before {
+        left: 100%;
+      }
+
+      .section-wave {
+        height: 44px;
+        margin-top: -44px;
+        background: url('data:image/svg+xml;utf8,<svg width="1440" height="44" viewBox="0 0 1440 44" xmlns="http://www.w3.org/2000/svg"><path d="M0,6 C240,44 480,0 720,18 C960,36 1200,8 1440,18 L1440,44 L0,44 Z" fill="white"></svg>')
+          center/cover no-repeat;
+        position: relative;
+      }
+      .section-wave::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        height: 48px;
+
+        pointer-events: none;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+          opacity: 0.7;
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+          opacity: 1;
+        }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .hero {
+          min-height: 60vh;
+          padding: 60px 0 100px;
+        }
+
+        .badges {
+          gap: 8px;
+          margin-top: 1.5rem;
+        }
+
+        .badge {
+          padding: 10px 16px;
+          font-size: 0.9rem;
+        }
+
+        .hero-wave {
+          height: 60px;
+        }
+
+        /* Mobile-specific fixes */
+        .tabs {
+          padding: 0 20px;
+          gap: 8px;
+        }
+
+        .tab {
+          padding: 12px 16px;
+          font-size: 0.9rem;
+        }
+
+        .tools {
+          padding: 0 20px;
+        }
+
+        .search {
+          gap: 12px;
+        }
+
+        .search input[type="search"] {
+          padding: 14px 16px;
+          font-size: 1rem;
+        }
+
+        .search .btn {
+          padding: 14px 16px;
+          font-size: 1rem;
+        }
+
+        .chips {
+          padding: 0 20px;
+          gap: 6px;
+        }
+
+        .chip {
+          padding: 10px 14px;
+          font-size: 0.85rem;
+        }
+
+        .grid {
+          gap: 12px;
+          padding: 0 20px;
+        }
+
+        .card {
+          border-radius: 20px;
+        }
+
+        .card-content {
+          padding: 20px;
+        }
+
+        .card h3 {
+          font-size: 1.15rem;
+          margin-bottom: 10px;
+        }
+
+        .card p {
+          font-size: 0.9rem;
+          margin-bottom: 14px;
+        }
+
+        .card ul {
+          font-size: 0.85rem;
+          margin-bottom: 18px;
+        }
+
+        .illus {
+          height: 160px;
+        }
+
+        .actions {
+          gap: 10px;
+          margin-top: 18px;
+        }
+
+        .actions .btn {
+          padding: 10px 16px;
+          font-size: 0.85rem;
+          flex: 1;
+          min-width: 100px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero {
+          min-height: 55vh;
+          padding: 50px 0 80px;
+        }
+
+        .badges {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .badge {
+          width: fit-content;
+          min-width: 200px;
+        }
+
+        /* Extra small screens */
+        .tabs {
+          padding: 0 16px;
+          gap: 6px;
+        }
+
+        .tab {
+          padding: 10px 12px;
+          font-size: 0.85rem;
+        }
+
+        .tools {
+          padding: 0 16px;
+        }
+
+        .search input[type="search"] {
+          padding: 12px 14px;
+          font-size: 0.95rem;
+        }
+
+        .search .btn {
+          padding: 12px 14px;
+          font-size: 0.95rem;
+        }
+
+        .chips {
+          padding: 0 16px;
+          gap: 4px;
+        }
+
+        .chip {
+          padding: 8px 12px;
+          font-size: 0.8rem;
+        }
+
+        .grid {
+          padding: 0 16px;
+          gap: 10px;
+        }
+
+        .card {
+          border-radius: 16px;
+        }
+
+        .card-content {
+          padding: 16px;
+        }
+
+        .card h3 {
+          font-size: 1.05rem;
+          margin-bottom: 8px;
+        }
+
+        .card p {
+          font-size: 0.85rem;
+          margin-bottom: 12px;
+        }
+
+        .card ul {
+          font-size: 0.8rem;
+          margin-bottom: 16px;
+        }
+
+        .illus {
+          height: 140px;
+        }
+
+        .actions {
+          gap: 8px;
+          margin-top: 16px;
+          flex-direction: column;
+        }
+
+        .actions .btn {
+          padding: 12px 16px;
+          font-size: 0.85rem;
+          width: 100%;
+          min-width: auto;
+        }
+      }
+
+      /* ================== Tabs (segments) ================== */
+      .tabs {
+        margin: 10px auto 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        max-width: 620px;
+        padding: 0 16px;
+      }
+      .tab {
+        padding: 10px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(0, 93, 115, 0.16);
+        font-weight: var(--fw-bold);
+        font-size: 0.95rem;
+        color: #0b4e5b;
+        text-align: center;
+        cursor: pointer;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.92),
+          rgba(255, 255, 255, 0.78)
+        );
+        backdrop-filter: saturate(115%) blur(4px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+        transition: transform 0.18s ease, box-shadow 0.18s ease,
+          background 0.18s ease, border-color 0.18s ease;
+      }
+      .tab:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      }
+      .tab.active {
+        background: linear-gradient(
+            135deg,
+            rgba(0, 176, 200, 0.18),
+            rgba(0, 92, 115, 0.1)
+          ),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.92),
+            rgba(255, 255, 255, 0.78)
+          );
+        border-color: rgba(0, 92, 115, 0.25);
+        box-shadow: 0 8px 22px rgba(0, 176, 200, 0.18);
+      }
+
+      /* ================== Tools: search + chips ================== */
+      .tools {
+        display: flex;
+        justify-content: center;
+        margin: 8px 0;
+        padding: 0 16px;
+      }
+      .search {
+        display: flex;
+        gap: 8px;
+        width: 100%;
+        max-width: 600px;
+        flex-direction: column;
+      }
+      .search input[type="search"] {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 93, 115, 0.16);
+        background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0.92));
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+        font-size: 1rem;
+        min-width: 0;
+      }
+      .search .btn {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 0.95rem;
+        border-radius: 12px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 16px;
+        background: var(--c3);
+        color: #fff;
+        border-radius: 12px;
+        font-weight: var(--fw-bold);
+        border: 1px solid transparent;
+        transition: 0.25s;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background: var(--c2);
+        transform: translateY(-1px);
+      }
+      .btn.secondary {
+        background: #fff;
+        color: var(--c1);
+        border-color: #cfe1e6;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        margin: 10px auto;
+        max-width: 980px;
+        padding: 0 16px;
+      }
+      .chip {
+        border: 1px solid rgba(0, 93, 115, 0.16);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.94),
+          rgba(255, 255, 255, 0.86)
+        );
+        border-radius: 999px;
+        padding: 8px 12px;
+        font-weight: 800;
+        color: #0b4e5b;
+        cursor: pointer;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+        transition: 0.18s;
+      }
+      .chip:hover {
+        transform: translateY(-1px);
+      }
+      .chip.active {
+        background: linear-gradient(
+            135deg,
+            rgba(0, 176, 200, 0.16),
+            rgba(0, 92, 115, 0.08)
+          ),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.94),
+            rgba(255, 255, 255, 0.86)
+          );
+        border-color: rgba(0, 92, 115, 0.25);
+        color: #064b58;
+        box-shadow: 0 8px 22px rgba(0, 176, 200, 0.14);
+      }
+
+      /* ================== Product grid ================== */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+      @media (max-width: 980px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 580px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .card {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.95) 0%,
+          rgba(255, 255, 255, 0.85) 50%,
+          rgba(255, 255, 255, 0.9) 100%
+        );
+        backdrop-filter: saturate(120%) blur(20px);
+        box-shadow: 0 8px 32px rgba(0, 92, 115, 0.08),
+          0 2px 8px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        transform-style: preserve-3d;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--c3) 0%,
+          var(--c2) 50%,
+          var(--c1) 100%
+        );
+        opacity: 0.8;
+        z-index: 1;
+      }
+
+      .card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 176, 200, 0.02) 0%,
+          rgba(0, 132, 155, 0.01) 50%,
+          rgba(0, 92, 115, 0.02) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 60px rgba(0, 92, 115, 0.15),
+          0 8px 24px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        border-color: rgba(0, 176, 200, 0.3);
+      }
+
+      .card:hover::after {
+        opacity: 1;
+      }
+
+      .card:hover::before {
+        opacity: 1;
+        height: 6px;
+      }
+      .illus {
+        height: 180px;
+        border-radius: 0;
+        object-fit: cover;
+        width: 100%;
+        border: none;
+        background: linear-gradient(135deg, #f8fbfc 0%, #e6eef1 100%);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .illus::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 176, 200, 0.1) 0%,
+          rgba(0, 132, 155, 0.05) 50%,
+          rgba(0, 92, 115, 0.1) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+      }
+
+      .card:hover .illus {
+        transform: scale(1.05);
+      }
+
+      .card:hover .illus::before {
+        opacity: 1;
+      }
+      .card-content {
+        padding: 24px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .card h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--c1);
+        margin: 0 0 12px 0;
+        line-height: 1.3;
+        font-family: "Montserrat", sans-serif;
+        transition: color 0.3s ease;
+      }
+
+      .card:hover h3 {
+        color: var(--c2);
+      }
+
+      .card p {
+        color: #5f7781;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin: 0 0 16px 0;
+        font-weight: 500;
+      }
+
+      .card ul {
+        color: #5f7781;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin: 0 0 20px 0;
+        padding-left: 20px;
+        list-style: none;
+      }
+
+      .card ul li {
+        position: relative;
+        margin-bottom: 8px;
+        padding-left: 16px;
+      }
+
+      .card ul li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--c3);
+        font-weight: bold;
+        font-size: 0.8rem;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .actions .btn {
+        flex: 1;
+        min-width: 120px;
+        padding: 12px 20px;
+        border-radius: 16px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-align: center;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .actions .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .actions .btn:hover::before {
+        left: 100%;
+      }
+
+      .actions .btn:not(.secondary) {
+        background: linear-gradient(135deg, var(--c3) 0%, var(--c2) 100%);
+        color: white;
+        box-shadow: 0 4px 16px rgba(0, 176, 200, 0.3);
+      }
+
+      .actions .btn:not(.secondary):hover {
+        background: linear-gradient(135deg, var(--c2) 0%, var(--c1) 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 176, 200, 0.4);
+      }
+
+      .actions .btn.secondary {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.9) 0%,
+          rgba(255, 255, 255, 0.7) 100%
+        );
+        color: var(--c1);
+        border: 1px solid rgba(0, 176, 200, 0.2);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .actions .btn.secondary:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 176, 200, 0.1) 0%,
+          rgba(0, 132, 155, 0.05) 100%
+        );
+        border-color: rgba(0, 176, 200, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(0, 176, 200, 0.15);
+      }
+
+      /* ================== Enhanced Card Animations ================== */
+
+      /* ================== Loading Animation ================== */
+      .card {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: cardSlideIn 0.6s ease-out forwards;
+      }
+
+      @keyframes cardSlideIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .card:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .card:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .card:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+
+      /* ================== Footer ================== */
+      footer {
+        background: var(--c1);
+        color: #fff;
+        padding: 36px 0;
+        margin-top: 0;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+      footer h4 {
+        color: #a8ecf4;
+        margin-bottom: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Component Container -->
+    <div id="navigation-container"></div>
+
+    <!-- HERO -->
+    <section
+      class="hero min-h-[30vh] flex items-center text-white text-center relative py-12"
+    >
+      <div class="container">
+        <h1
+          class="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight mb-2 sm:mb-3 md:mb-4"
+          data-i18n="solutionsPage.hero.title"
+        >
+          Solutions d'assurance
+        </h1>
+        <p
+          class="text-white/95 text-sm sm:text-base md:text-lg lg:text-xl font-light mb-2 sm:mb-3 md:mb-4 max-w-4xl mx-auto leading-relaxed"
+          data-i18n="solutionsPage.hero.subtitle"
+        >
+          Deux parcours : <strong>Entreprises</strong> et
+          <strong>Particuliers</strong>. Produits inspirés des meilleures
+          pratiques du marché (multirisques, transport, flotte, RC,
+          construction… / auto, santé, habitation, vie, retraite).
+        </p>
+        <div class="badges" id="solutions-badges"></div>
+      </div>
+    </section>
+    <div class="section-wave" aria-hidden="true"></div>
+    <!-- MAIN -->
+    <div class="main-wrapper">
+      <section class="">
+        <div class="container mb-6 max-w-7xl mx-auto px-4">
+          <!-- Tabs -->
+          <div class="tabs" role="tablist" aria-label="Segments">
+            <button
+              class="tab active"
+              id="tab-corp"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              data-seg="corp"
+              data-i18n="solutionsPage.tabs.corp"
+            >
+              Entreprises
+            </button>
+            <button
+              class="tab"
+              id="tab-retail"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-seg="retail"
+              data-i18n="solutionsPage.tabs.retail"
+            >
+              Particuliers
+            </button>
+          </div>
+
+          <!-- Tools -->
+          <div class="tools">
+            <div class="search" role="search">
+              <input
+                id="q"
+                type="search"
+                placeholder="Rechercher…"
+                aria-label="Rechercher"
+                data-i18n-attr="placeholder:solutionsPage.ui.search,aria-label:solutionsPage.ui.search"
+              />
+              <button
+                class="btn"
+                id="clear"
+                type="button"
+                data-i18n="solutionsPage.ui.clear"
+              >
+                Effacer
+              </button>
+            </div>
+          </div>
+
+          <!-- Chips -->
+          <div class="chips" id="chips"></div>
+
+          <!-- Product grid in "glass" cards -->
+          <div id="grid" class="grid" aria-live="polite"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer Component Container -->
+    <div id="footer-container"></div>
+
+    <!-- ================== i18n & data ================== -->
+    <script src="assets/js/i18n.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const state = { seg: "corp", chip: "all", query: "" };
+        const $ = (selector, root = document) => root.querySelector(selector);
+        const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+
+        const getLang = () => window.lang || localStorage.getItem("riskalia_lang") || "fr";
+        const getPack = () => window.I18N?.[getLang()]?.solutionsPage || {};
+        const text = (path) =>
+          (typeof window.t === "function"
+            ? window.t(`solutionsPage.${path}`)
+            : `solutionsPage.${path}`);
+
+        function applyMeta() {
+          const meta = getPack().meta;
+          if (!meta) return;
+          if (meta.title) {
+            document.title = meta.title;
+          }
+          if (meta.desc) {
+            let md = document.querySelector('meta[name="description"]');
+            if (!md) {
+              md = document.createElement("meta");
+              md.setAttribute("name", "description");
+              document.head.appendChild(md);
+            }
+            md.setAttribute("content", meta.desc);
+          }
+        }
+
+        function renderBadges() {
+          const wrap = $("#solutions-badges");
+          if (!wrap) return;
+          wrap.innerHTML = "";
+          const badges = getPack().hero?.badges || [];
+          badges.forEach((label) => {
+            const span = document.createElement("span");
+            span.className = "badge text-xs sm:text-sm";
+            span.textContent = label;
+            wrap.appendChild(span);
+          });
+        }
+
+        function highlightChip() {
+          $$("#chips .chip").forEach((chipEl) => {
+            chipEl.classList.toggle("active", chipEl.dataset.id === state.chip);
+          });
+        }
+
+        function renderChips() {
+          const wrap = $("#chips");
+          if (!wrap) return;
+          wrap.innerHTML = "";
+          const items = getPack().filters?.[state.seg] || [];
+          items.forEach(([id, label]) => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "chip" + (state.chip === id ? " active" : "");
+            button.dataset.id = id;
+            button.textContent = label;
+            button.addEventListener("click", () => {
+              state.chip = id;
+              renderGrid();
+              highlightChip();
+            });
+            wrap.appendChild(button);
+          });
+          highlightChip();
+        }
+
+        function filterProducts(list) {
+          const q = state.query.trim().toLowerCase();
+          return list.filter((item) => {
+            const okCat =
+              state.chip === "all" || (item.cat || []).includes(state.chip);
+            if (!okCat) return false;
+            if (!q) return true;
+            const haystack = [item.t, item.p, ...(item.bul || [])]
+              .filter(Boolean)
+              .map((entry) => entry.toLowerCase());
+            return haystack.some((entry) => entry.includes(q));
+          });
+        }
+
+        function renderGrid() {
+          const grid = $("#grid");
+          if (!grid) return;
+          grid.innerHTML = "";
+          const products = getPack().products?.[state.seg] || [];
+          const filtered = filterProducts(products);
+
+          if (!filtered.length) {
+            const empty = document.createElement("p");
+            empty.className = "muted";
+            empty.textContent = text("ui.nores");
+            grid.appendChild(empty);
+            return;
+          }
+
+          filtered.forEach((item) => {
+            const img =
+              item.img ||
+              "https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&fit=crop&w=1200&q=60";
+            const url = item.url || "contact.html";
+            const card = document.createElement("article");
+            card.className = "card";
+            const bullets = (item.bul || [])
+              .map((entry) => `<li>${entry}</li>`)
+              .join("");
+            card.innerHTML = `
+        <a href="${url}" aria-label="${item.t}" class="block">
+          <img class="illus" src="${img}" alt="${item.t}" />
+        </a>
+        <div class="card-content">
+          <h3>${item.t}</h3>
+          <p>${item.p || ""}</p>
+          ${bullets ? `<ul class="card-list list-disc list-inside space-y-2">${bullets}</ul>` : ""}
+          <div class="actions">
+            <a class="btn" href="${url}">
+              <span>${text("cta.learn")}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17"></path>
+              </svg>
+            </a>
+            <a class="btn secondary" href="contact.html">
+              <span>${text("cta.quote")}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      `;
+            grid.appendChild(card);
+          });
+        }
+
+        function syncTabs() {
+          $$("#tab-corp, #tab-retail").forEach((btn) => {
+            const active = btn.dataset.seg === state.seg;
+            btn.classList.toggle("active", active);
+            btn.setAttribute("aria-selected", active ? "true" : "false");
+          });
+        }
+
+        function updateUI() {
+          if (typeof window.applyI18n === "function") {
+            window.applyI18n();
+          }
+          applyMeta();
+          renderBadges();
+          renderChips();
+          renderGrid();
+          syncTabs();
+        }
+
+        $$("#tab-corp, #tab-retail").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const seg =
+              btn.dataset.seg || btn.getAttribute("data-seg") || "corp";
+            state.seg = seg;
+            state.chip = "all";
+            state.query = "";
+            const input = $("#q");
+            if (input) input.value = "";
+            updateUI();
+          });
+        });
+
+        const searchInput = $("#q");
+        if (searchInput) {
+          searchInput.addEventListener("input", (event) => {
+            state.query = event.target.value || "";
+            renderGrid();
+          });
+        }
+
+        const clearBtn = $("#clear");
+        if (clearBtn) {
+          clearBtn.addEventListener("click", () => {
+            state.query = "";
+            if (searchInput) searchInput.value = "";
+            renderGrid();
+          });
+        }
+
+        document.addEventListener("languageChanged", () => {
+          updateUI();
+        });
+
+        updateUI();
+      });
+    </script>
+    <!-- NAV SEARCH Scripts removed - using NavigationComponent -->
+
+    <!-- Component Scripts -->
+    <script src="assets/js/components/SearchComponent.js"></script>
+    <script src="assets/js/components/NavigationComponent.js"></script>
+    <script src="assets/js/components/FooterComponent.js"></script>
+
+    <!-- Initialize Components -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof NavigationComponent !== "undefined") {
+          const nav = new NavigationComponent("navigation-container");
+          nav.init();
+          window.navigationComponent = nav;
+        }
+
+        if (typeof FooterComponent !== "undefined") {
+          const footer =
+            window.footerComponent || new FooterComponent("footer-container");
+          window.footerComponent = footer;
+        }
+
+        document.addEventListener("languageChanged", function (event) {
+          const currentLang =
+            event?.detail?.language ||
+            window.lang ||
+            localStorage.getItem("riskalia_lang") || "fr";
+
+          if (window.navigationComponent) {
+            window.navigationComponent.updateLanguage(currentLang);
+          }
+
+          if (window.footerComponent) {
+            window.footerComponent.updateTranslations();
+          }
+        });
+      });
+
+      const previousOnLangChanged = window._onLangChanged;
+      window._onLangChanged = function () {
+        if (typeof previousOnLangChanged === "function") {
+          previousOnLangChanged();
+        }
+
+        const currentLang =
+          window.lang || localStorage.getItem("riskalia_lang") || "fr";
+
+        if (window.navigationComponent) {
+          window.navigationComponent.updateLanguage(currentLang);
+        }
+
+        if (window.footerComponent) {
+          window.footerComponent.updateTranslations();
+        }
+      };
+    </script>
+  </body>
+</html>
