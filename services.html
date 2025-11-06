@@ -2303,7 +2303,21 @@
       function applyDir() {
         document.documentElement.lang = lang;
         document.body.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+
+        // Add/remove RTL class for additional styling control
+        if (lang === "ar") {
+          document.body.classList.add("rtl");
+          document.body.classList.remove("ltr");
+        } else {
+          document.body.classList.add("ltr");
+          document.body.classList.remove("rtl");
+        }
       }
+
+      // Make functions globally available for components
+      window.t = t;
+      window.applyI18n = applyI18n;
+      window.lang = lang;
 
       function syncLangButtons() {
         $$(".lang-btn").forEach((b) =>
@@ -2505,10 +2519,35 @@
           if (e.detail && e.detail.language) {
             // Update the global language variable
             lang = e.detail.language;
+            window.lang = lang;
+            localStorage.setItem("riskalia_lang", lang);
 
-            // Call the existing language change function
-            if (typeof applyTexts === "function") {
-              applyTexts();
+            // Call the local i18n functions
+            if (typeof applyDir === "function") {
+              applyDir();
+            }
+            if (typeof applyI18n === "function") {
+              applyI18n();
+            }
+            if (typeof applyI18nAttrs === "function") {
+              applyI18nAttrs();
+            }
+            if (typeof setMeta === "function") {
+              setMeta();
+            }
+            if (typeof syncLangButtons === "function") {
+              syncLangButtons();
+            }
+
+            // Update search placeholder
+            const searchInput = document.getElementById("nav-search-input");
+            if (searchInput && typeof t === "function") {
+              searchInput.setAttribute("placeholder", t("ui.search"));
+            }
+
+            // Update footer component
+            if (window.footerComponent && window.footerComponent.updateTranslations) {
+              window.footerComponent.updateTranslations();
             }
 
             // Call any other language change handlers
