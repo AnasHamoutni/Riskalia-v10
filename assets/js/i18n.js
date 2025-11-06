@@ -502,7 +502,7 @@ footer: {
     col1: {
       title: "Riskalia",
       address:
-        "Cabinet de courtage & stratégies agréé ACAPS.<br/>Siège : 16, Rue de Terves, 2ème étage,<br/>Quartier Mers Sultan, Casablanca.",
+        "Cabinet de courtage & stratégies agréé ACAPS.<br/>Siège : 16, Rue de Terves, 2ème étage, Quartier Mers Sultan, Casablanca.",
       notice:
         "Intermédiaire d'assurance régi par la loi 17-99 portant code des assurances.<br/>Sous la décision n°COU5047.00000.0.C.2025.472."
     },
@@ -3231,7 +3231,7 @@ footer: {
     col1: {
       title: "Riskalia",
       address:
-        "Licensed insurance & strategy brokerage (ACAPS).<br/>Head office: 16 Rue de Terves, 2nd floor,<br/>Mers Sultan district, Casablanca.",
+        "Licensed insurance & strategy brokerage (ACAPS).<br/>Head office: 16 Rue de Terves, 2nd floor, Mers Sultan district, Casablanca.",
       notice:
         "Insurance intermediary governed by Law 17-99 on the Insurance Code.<br/>Under decision No. COU5047.00000.0.C.2025.472."
     },
@@ -5918,7 +5918,7 @@ footer: {
     col1: {
       title: "ريسكاليا",
       address:
-        "شركة وساطة واستراتيجيات معتمدة من هيئة مراقبة التأمينات (ACAPS).<br/>المقر: 16 شارع تيرف، الطابق الثاني،<br/>حي مرس سلطان، الدار البيضاء.",
+        "شركة وساطة واستراتيجيات معتمدة من هيئة مراقبة التأمينات (ACAPS).<br/>المقر: 16 شارع تيرف، الطابق الثاني، حي مرس سلطان، الدار البيضاء.",
       notice:
         "وسيط تأمين يخضع للقانون 17-99 المتعلق بمدونة التأمينات.<br/>بموجب القرار رقم COU5047.00000.0.C.2025.472."
     },

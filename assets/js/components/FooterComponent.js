@@ -38,8 +38,7 @@ getFooterHTML() {
   />
             <p class="leading-relaxed mb-3" data-i18n="footer.col1.address">
               Cabinet de courtage & stratégies agréé ACAPS.<br/>
-              Siège : 16, Rue de Terves, 2ème étage,<br/>
-              Quartier Mers Sultan, Casablanca.
+              Siège : 16, Rue de Terves, 2ème étage, Quartier Mers Sultan, Casablanca.
             </p>
             <p class="text-xs text-gray-400 italic" data-i18n="footer.col1.notice">
               Intermédiaire d'assurance régi par la loi 17-99 portant code des assurances.<br/>
