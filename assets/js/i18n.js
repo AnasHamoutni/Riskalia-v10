@@ -890,12 +890,12 @@ footer: {
       nabil: {
         name: "Nabil Cherkaoui",
         title: "Associé dirigeant",
-        bio: "Juriste de formation et spécialiste de la réassurance, Nabil Cherkaoui a dirigé au sein de la SCR (Groupe CDG) la gouvernance, la conformité, le juridique, les sinistres majeurs et le risque de contrepartie. Référence du marché pour la rédaction et la négociation des placements en réassurance, il a piloté les relations avec régulateurs, agences de notation et partenaires mondiaux. Dirigeant effectif de Riskalia, il garantit la solidité institutionnelle, la conformité et la qualité d'exécution. Chercheur associé à Paris-Dauphine, il apporte une rigueur académique au service de solutions robustes, alliant sécurité juridique, clarté contractuelle et valeur client.",
+        bio: "Juriste de formation et spécialiste de la réassurance, Nabil Cherkaoui a dirigé au sein de la SCR (Groupe CDG) la gouvernance, la conformité, le juridique, les sinistres majeurs et le risque de contrepartie. Référence du marché pour la rédaction et la négociation des placements en réassurance, il a piloté les relations avec régulateurs, agences de notation et partenaires mondiaux. Dirigeant effectif de Riskalia, il garantit la solidité institutionnelle, la conformité et la qualité d'exécution. Chercheur associé à Paris-Dauphine, il apporte une rigueur académique au service de solutions alliant sécurité juridique et clarté contractuelle.",
       },
       anasse: {
         name: "Anasse Youssfi",
         title: "Associé stratégique",
-        bio: "Actuaire et dirigeant, Anasse Youssfi cumule plus de vingt ans d'expérience auprès d'assureurs, de réassureurs et d'institutions financières en Afrique et à l'international. Il conjugue vision et exigence méthodologique, enseigne comme maître de conférences et forme de nouvelles générations d'actuaires. Chez Riskalia, il apporte un appui technique sur les dossiers à fort enjeu : structuration de couvertures sur mesure, critères de souscription, programmes multi-lignes/réassurance et solutions paramétriques. Objectif : aligner précisément risques, coût et valeur client.",
+        bio: "Actuaire et dirigeant d'Actuelia Afrque, Anasse Youssfi cumule plus de vingt ans d'expérience auprès d'assureurs, de réassureurs et d'institutions financières en Afrique et à l'international. Il conjugue vision et exigence méthodologique, enseigne comme maître de conférences et forme de nouvelles générations d'actuaires. Chez Riskalia, il apporte un appui technique sur les dossiers à fort enjeu : structuration de couvertures sur mesure, critères de souscription, programmes multi-lignes/réassurance et solutions paramétriques. Objectif : aligner précisément risques, coût et valeur client.",
       },
     },
     cta: {
@@ -8172,6 +8172,7 @@ window.applyI18n = applyTexts;
     if (climate[key]) delete climate[key];
   });
 });
+
 
 
 
