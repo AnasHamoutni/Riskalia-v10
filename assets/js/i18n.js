@@ -2720,6 +2720,55 @@ footer: {
         next: "Santé",
       },
     },
+    // Client Space page
+    clientspace: {
+      meta: {
+        title: "Riskalia — Espace Client",
+        desc: "Accédez à vos documents, déclarez vos sinistres en ligne et suivez vos demandes via notre portail sécurisé."
+      },
+      hero: {
+        title: "Espace Client",
+        subtitle: "Notre portail sécurisé donne aux assurés un accès permanent à leurs documents, opérations et déclarations"
+      },
+      features: {
+        title: "Fonctionnalités",
+        items: [
+          {
+            icon: "🗂️",
+            title: "Documents",
+            desc: "Téléchargement des contrats, quittances et attestations"
+          },
+          {
+            icon: "📝",
+            title: "Déclaration de sinistre",
+            desc: "Déclaration de sinistre en ligne"
+          },
+          {
+            icon: "🔍",
+            title: "Suivi",
+            desc: "Suivi de vos demandes ou réclamations"
+          },
+          {
+            icon: "📎",
+            title: "Documents justificatifs",
+            desc: "Transmission sécurisée de pièces justificatives"
+          }
+        ]
+      },
+      security: {
+        title: "Sécurité et conformité",
+        badges: [
+          "🔒 Conformité Loi 09-08",
+          "🇲🇦 Données hébergées localement",
+          "🔐 Authentification renforcée"
+        ]
+      },
+      cta: {
+        login: "Se connecter",
+        register: "Créer un compte",
+        contact: "Nous contacter"
+      }
+    },
     // 404 Error page translations
     error: {
       title: "Page introuvable",
@@ -5430,6 +5479,55 @@ footer: {
         next: "Health",
       },
     },
+    // Client Space page
+    clientspace: {
+      meta: {
+        title: "Riskalia — Client Space",
+        desc: "Access your documents, file claims online and track your requests through our secure portal."
+      },
+      hero: {
+        title: "Client Space",
+        subtitle: "Our secure portal gives policyholders permanent access to their documents, operations and declarations"
+      },
+      features: {
+        title: "Features",
+        items: [
+          {
+            icon: "🗂️",
+            title: "Documents",
+            desc: "Download contracts, receipts and certificates"
+          },
+          {
+            icon: "📝",
+            title: "Claims Declaration",
+            desc: "File claims online"
+          },
+          {
+            icon: "🔍",
+            title: "Tracking",
+            desc: "Track your requests or complaints"
+          },
+          {
+            icon: "📎",
+            title: "Supporting Documents",
+            desc: "Secure transmission of supporting documents"
+          }
+        ]
+      },
+      security: {
+        title: "Security and Compliance",
+        badges: [
+          "🔒 Law 09-08 Compliance",
+          "🇲🇦 Locally Hosted Data",
+          "🔐 Enhanced Authentication"
+        ]
+      },
+      cta: {
+        login: "Log In",
+        register: "Create Account",
+        contact: "Contact Us"
+      }
+    },
     // 404 Error page translations
     error: {
       title: "Page not found",
@@ -8071,6 +8169,55 @@ footer: {
         prev: "سفر شنغن",
         next: "الصحة",
       },
+    },
+    // Client Space page
+    clientspace: {
+      meta: {
+        title: "ريسكاليا — مساحة العميل",
+        desc: "الوصول إلى مستنداتك، الإبلاغ عن المطالبات عبر الإنترنت وتتبع طلباتك عبر بوابتنا الآمنة."
+      },
+      hero: {
+        title: "مساحة العميل",
+        subtitle: "توفر بوابتنا الآمنة لحاملي الوثائق وصولاً دائماً إلى مستنداتهم وعملياتهم وإقراراتهم"
+      },
+      features: {
+        title: "المميزات",
+        items: [
+          {
+            icon: "🗂️",
+            title: "المستندات",
+            desc: "تحميل العقود والإيصالات والشهادات"
+          },
+          {
+            icon: "📝",
+            title: "الإبلاغ عن المطالبات",
+            desc: "الإبلاغ عن المطالبات عبر الإنترنت"
+          },
+          {
+            icon: "🔍",
+            title: "التتبع",
+            desc: "تتبع طلباتك أو شكاواك"
+          },
+          {
+            icon: "📎",
+            title: "المستندات الداعمة",
+            desc: "نقل آمن للمستندات الداعمة"
+          }
+        ]
+      },
+      security: {
+        title: "الأمان والامتثال",
+        badges: [
+          "🔒 الامتثال للقانون 09-08",
+          "🇲🇦 بيانات مستضافة محلياً",
+          "🔐 مصادقة معززة"
+        ]
+      },
+      cta: {
+        login: "تسجيل الدخول",
+        register: "إنشاء حساب",
+        contact: "اتصل بنا"
+      }
     },
     // 404 Error page translations
     error: {
