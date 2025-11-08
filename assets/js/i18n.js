@@ -2769,6 +2769,107 @@ footer: {
         contact: "Nous contacter"
       }
     },
+    // Blog & News page
+    blog: {
+      meta: {
+        title: "Riskalia — Blog & Actualités",
+        desc: "Articles de fond sur la réassurance, l'assurance et la gestion des risques. Actualités réglementaires et insights du marché."
+      },
+      hero: {
+        title: "Blog & Actualités",
+        subtitle: "Notre blog vous propose régulièrement des articles à forte valeur ajoutée pour mieux comprendre les enjeux du marché"
+      },
+      sections: {
+        articles: "📘 Articles de fond",
+        news: "📅 Actualités"
+      },
+      articles: [
+        {
+          id: "reinsurance-history",
+          title: "Réassurance : des racines antiques à l'architecture moderne du risque",
+          excerpt: "La réassurance puise ses racines jusqu'au Talmud de Babylone, évoluant des républiques maritimes italiennes vers un secteur structuré mondial.",
+          date: "2025-01-15",
+          readTime: "8 min"
+        },
+        {
+          id: "facultative-reinsurance",
+          title: "La réassurance facultative : entre art de la sélection et contrat sur mesure",
+          excerpt: "Une forme singulière de transfert du risque qui ne s'applique qu'à un seul risque, sélectionné et analysé individuellement.",
+          date: "2025-01-12",
+          readTime: "6 min"
+        },
+        {
+          id: "utmost-good-faith",
+          title: "L'extrême bonne foi : mythe anglo-saxon ou principe universel ?",
+          excerpt: "Ce principe impose au cédant une obligation renforcée de transparence, né de la pratique maritime anglo-saxonne.",
+          date: "2025-01-10",
+          readTime: "7 min"
+        },
+        {
+          id: "follow-fortunes",
+          title: "Le partage de sort : quand le réassureur suit les pas de l'assureur",
+          excerpt: "La clause 'follow the fortunes' engage le réassureur à suivre les décisions de sa cédante dans la limite de la police d'origine.",
+          date: "2025-01-08",
+          readTime: "5 min"
+        },
+        {
+          id: "arbitration-equity",
+          title: "Arbitrage & équité : pourquoi les contrats de réassurance s'éloignent des tribunaux",
+          excerpt: "L'arbitrage en réassurance repose sur l'amiable composition et évite les juges étatiques peu familiers des subtilités techniques.",
+          date: "2025-01-05",
+          readTime: "6 min"
+        },
+        {
+          id: "contractual-imbalances",
+          title: "Réassurance ou adhésion ? Les déséquilibres contractuels sous la loupe",
+          excerpt: "Bien que théoriquement de gré à gré, la réassurance comporte souvent des clauses imposées via des modèles standardisés.",
+          date: "2025-01-03",
+          readTime: "7 min"
+        },
+        {
+          id: "private-international-law",
+          title: "Réassurance et droit international privé : un vide normatif à combler ?",
+          excerpt: "La diversité des systèmes juridiques crée une incertitude sur le droit applicable et la juridiction compétente.",
+          date: "2024-12-28",
+          readTime: "8 min"
+        },
+        {
+          id: "back-to-back",
+          title: "Le contrat « back to back » : entre autonomie du réassureur et risque de fragmentation",
+          excerpt: "Le principe 'as original' suppose que la réassurance reflète les termes du contrat d'assurance sous-jacent.",
+          date: "2024-12-25",
+          readTime: "6 min"
+        },
+        {
+          id: "legal-sovereignty",
+          title: "La souveraineté juridique à l'épreuve de la réassurance mondiale",
+          excerpt: "Les grands réassureurs imposent leurs règles contractuelles, mettant à l'épreuve la souveraineté des États émergents.",
+          date: "2024-12-22",
+          readTime: "7 min"
+        },
+        {
+          id: "reinsurance-law",
+          title: "Pour un droit de la réassurance : utopie ou nécessité ?",
+          excerpt: "La réassurance reste une 'zone grise' du droit, échappant aux codes nationaux et reposant sur la liberté contractuelle.",
+          date: "2024-12-20",
+          readTime: "9 min"
+        }
+      ],
+      news: {
+        title: "Actualités",
+        items: [
+          "Évolutions législatives (ACAPS, Code marocain, Réglementation UE)",
+          "Alertes réglementaires",
+          "Nouveaux produits ou offres du cabinet",
+          "Partenariats stratégiques"
+        ]
+      },
+      cta: {
+        readMore: "Lire l'article",
+        backToList: "← Retour aux articles",
+        share: "Partager"
+      }
+    },
     // 404 Error page translations
     error: {
       title: "Page introuvable",
@@ -5528,6 +5629,107 @@ footer: {
         contact: "Contact Us"
       }
     },
+    // Blog & News page
+    blog: {
+      meta: {
+        title: "Riskalia — Blog & News",
+        desc: "In-depth articles on reinsurance, insurance and risk management. Regulatory news and market insights."
+      },
+      hero: {
+        title: "Blog & News",
+        subtitle: "Our blog regularly offers high-value articles to better understand market issues"
+      },
+      sections: {
+        articles: "📘 In-Depth Articles",
+        news: "📅 News"
+      },
+      articles: [
+        {
+          id: "reinsurance-history",
+          title: "Reinsurance: from ancient roots to modern risk architecture",
+          excerpt: "Reinsurance traces its roots back to the Babylonian Talmud, evolving from Italian maritime republics to a structured global industry.",
+          date: "2025-01-15",
+          readTime: "8 min"
+        },
+        {
+          id: "facultative-reinsurance",
+          title: "Facultative reinsurance: between art of selection and bespoke contract",
+          excerpt: "A unique form of risk transfer that applies only to a single risk, individually selected and analyzed.",
+          date: "2025-01-12",
+          readTime: "6 min"
+        },
+        {
+          id: "utmost-good-faith",
+          title: "Utmost good faith: Anglo-Saxon myth or universal principle?",
+          excerpt: "This principle imposes an enhanced duty of transparency on the ceding company, born from Anglo-Saxon maritime practice.",
+          date: "2025-01-10",
+          readTime: "7 min"
+        },
+        {
+          id: "follow-fortunes",
+          title: "Follow the fortunes: when the reinsurer follows the insurer's footsteps",
+          excerpt: "The 'follow the fortunes' clause commits the reinsurer to follow its cedent's decisions within the limits of the original policy.",
+          date: "2025-01-08",
+          readTime: "5 min"
+        },
+        {
+          id: "arbitration-equity",
+          title: "Arbitration & equity: why reinsurance contracts avoid courts",
+          excerpt: "Arbitration in reinsurance relies on amicable composition and avoids state judges unfamiliar with technical subtleties.",
+          date: "2025-01-05",
+          readTime: "6 min"
+        },
+        {
+          id: "contractual-imbalances",
+          title: "Reinsurance or adhesion? Contractual imbalances under scrutiny",
+          excerpt: "Although theoretically negotiated at arm's length, reinsurance often involves clauses imposed via standardized models.",
+          date: "2025-01-03",
+          readTime: "7 min"
+        },
+        {
+          id: "private-international-law",
+          title: "Reinsurance and private international law: a regulatory void to fill?",
+          excerpt: "The diversity of legal systems creates uncertainty about applicable law and competent jurisdiction.",
+          date: "2024-12-28",
+          readTime: "8 min"
+        },
+        {
+          id: "back-to-back",
+          title: "The 'back to back' contract: between reinsurer autonomy and fragmentation risk",
+          excerpt: "The 'as original' principle assumes that reinsurance mirrors the terms of the underlying insurance contract.",
+          date: "2024-12-25",
+          readTime: "6 min"
+        },
+        {
+          id: "legal-sovereignty",
+          title: "Legal sovereignty tested by global reinsurance",
+          excerpt: "Major reinsurers impose their contractual rules, testing the sovereignty of emerging states.",
+          date: "2024-12-22",
+          readTime: "7 min"
+        },
+        {
+          id: "reinsurance-law",
+          title: "Toward a reinsurance law: utopia or necessity?",
+          excerpt: "Reinsurance remains a legal 'gray zone', escaping national codes and relying on contractual freedom.",
+          date: "2024-12-20",
+          readTime: "9 min"
+        }
+      ],
+      news: {
+        title: "News",
+        items: [
+          "Legislative developments (ACAPS, Moroccan Code, EU Regulations)",
+          "Regulatory alerts",
+          "New products or firm offerings",
+          "Strategic partnerships"
+        ]
+      },
+      cta: {
+        readMore: "Read article",
+        backToList: "← Back to articles",
+        share: "Share"
+      }
+    },
     // 404 Error page translations
     error: {
       title: "Page not found",
@@ -8217,6 +8419,107 @@ footer: {
         login: "تسجيل الدخول",
         register: "إنشاء حساب",
         contact: "اتصل بنا"
+      }
+    },
+    // Blog & News page
+    blog: {
+      meta: {
+        title: "ريسكاليا — المدونة والأخبار",
+        desc: "مقالات متعمقة حول إعادة التأمين والتأمين وإدارة المخاطر. أخبار تنظيمية ورؤى السوق."
+      },
+      hero: {
+        title: "المدونة والأخبار",
+        subtitle: "تقدم مدونتنا بانتظام مقالات ذات قيمة عالية لفهم أفضل لقضايا السوق"
+      },
+      sections: {
+        articles: "📘 مقالات متعمقة",
+        news: "📅 الأخبار"
+      },
+      articles: [
+        {
+          id: "reinsurance-history",
+          title: "إعادة التأمين: من الجذور القديمة إلى الهندسة الحديثة للمخاطر",
+          excerpt: "تعود جذور إعادة التأمين إلى التلمود البابلي، متطورة من الجمهوريات البحرية الإيطالية إلى صناعة عالمية منظمة.",
+          date: "2025-01-15",
+          readTime: "8 دقائق"
+        },
+        {
+          id: "facultative-reinsurance",
+          title: "إعادة التأمين الاختيارية: بين فن الاختيار والعقد المخصص",
+          excerpt: "شكل فريد من نقل المخاطر ينطبق فقط على خطر واحد، يتم اختياره وتحليله بشكل فردي.",
+          date: "2025-01-12",
+          readTime: "6 دقائق"
+        },
+        {
+          id: "utmost-good-faith",
+          title: "حسن النية القصوى: أسطورة أنجلوسكسونية أم مبدأ عالمي؟",
+          excerpt: "يفرض هذا المبدأ التزامًا معززًا بالشفافية على الشركة المتنازلة، ولد من الممارسة البحرية الأنجلوسكسونية.",
+          date: "2025-01-10",
+          readTime: "7 دقائق"
+        },
+        {
+          id: "follow-fortunes",
+          title: "مشاركة المصير: عندما يتبع معيد التأمين خطوات المؤمن",
+          excerpt: "يلزم بند 'اتبع الحظوظ' معيد التأمين باتباع قرارات المتنازل في حدود الوثيقة الأصلية.",
+          date: "2025-01-08",
+          readTime: "5 دقائق"
+        },
+        {
+          id: "arbitration-equity",
+          title: "التحكيم والإنصاف: لماذا تتجنب عقود إعادة التأمين المحاكم",
+          excerpt: "يعتمد التحكيم في إعادة التأمين على التسوية الودية ويتجنب قضاة الدولة غير المألوفين بالتفاصيل التقنية.",
+          date: "2025-01-05",
+          readTime: "6 دقائق"
+        },
+        {
+          id: "contractual-imbalances",
+          title: "إعادة التأمين أم الانضمام؟ الاختلالات التعاقدية تحت المجهر",
+          excerpt: "على الرغم من أنها نظريًا يتم التفاوض عليها بحرية، غالبًا ما تتضمن إعادة التأمين بنودًا مفروضة عبر نماذج موحدة.",
+          date: "2025-01-03",
+          readTime: "7 دقائق"
+        },
+        {
+          id: "private-international-law",
+          title: "إعادة التأمين والقانون الدولي الخاص: فراغ تنظيمي يجب ملؤه؟",
+          excerpt: "يخلق تنوع الأنظمة القانونية عدم يقين بشأن القانون الواجب التطبيق والولاية القضائية المختصة.",
+          date: "2024-12-28",
+          readTime: "8 دقائق"
+        },
+        {
+          id: "back-to-back",
+          title: "عقد 'ظهر لظهر': بين استقلالية معيد التأمين ومخاطر التجزئة",
+          excerpt: "يفترض مبدأ 'كما الأصل' أن إعادة التأمين تعكس شروط عقد التأمين الأساسي.",
+          date: "2024-12-25",
+          readTime: "6 دقائق"
+        },
+        {
+          id: "legal-sovereignty",
+          title: "السيادة القانونية في مواجهة إعادة التأمين العالمية",
+          excerpt: "يفرض معيدو التأمين الكبار قواعدهم التعاقدية، مما يختبر سيادة الدول الناشئة.",
+          date: "2024-12-22",
+          readTime: "7 دقائق"
+        },
+        {
+          id: "reinsurance-law",
+          title: "نحو قانون لإعادة التأمين: طوباوية أم ضرورة؟",
+          excerpt: "تبقى إعادة التأمين 'منطقة رمادية' قانونية، تهرب من القوانين الوطنية وتعتمد على الحرية التعاقدية.",
+          date: "2024-12-20",
+          readTime: "9 دقائق"
+        }
+      ],
+      news: {
+        title: "الأخبار",
+        items: [
+          "التطورات التشريعية (ACAPS، القانون المغربي، اللوائح الأوروبية)",
+          "التنبيهات التنظيمية",
+          "منتجات أو عروض جديدة من المكتب",
+          "الشراكات الاستراتيجية"
+        ]
+      },
+      cta: {
+        readMore: "اقرأ المقال",
+        backToList: "← العودة إلى المقالات",
+        share: "مشاركة"
       }
     },
     // 404 Error page translations
