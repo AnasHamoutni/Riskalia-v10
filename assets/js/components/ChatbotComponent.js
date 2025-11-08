@@ -50,10 +50,63 @@ class ChatbotComponent {
         <!-- Chatbot Toggle Button -->
         <button class="chatbot-toggle-btn" id="chatbot-toggle">
           <div class="chatbot-icon">
-            <svg class="chatbot-icon-svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M10 26.33H30V16.4916C30 15.4933 29.1907 14.684 28.1924 14.684H11.8076C10.8093 14.684 10 15.4933 10 16.4916V26.33ZM30 28.5908V27.5722H10V28.5908C10 29.5891 10.8093 30.3983 11.8076 30.3983H28.1924C29.1907 30.3983 30 29.5891 30 28.5908ZM15.6522 23.1934C16.6813 23.1934 17.5155 22.3591 17.5155 21.33C17.5155 20.3009 16.6813 19.4667 15.6522 19.4667C14.6231 19.4667 13.7888 20.3009 13.7888 21.33C13.7888 22.3591 14.6231 23.1934 15.6522 23.1934ZM26.2112 21.33C26.2112 22.3591 25.3769 23.1934 24.3478 23.1934C23.3187 23.1934 22.4845 22.3591 22.4845 21.33C22.4845 20.3009 23.3187 19.4667 24.3478 19.4667C25.3769 19.4667 26.2112 20.3009 26.2112 21.33Z" fill="#FFF"/>
-              <path d="M21.8076 11.4092C21.8076 12.4075 20.9983 13.2168 20 13.2168C19.0017 13.2168 18.1924 12.4075 18.1924 11.4092C18.1924 10.4109 19.0017 9.60165 20 9.60165C20.9983 9.60165 21.8076 10.4109 21.8076 11.4092Z" fill="#FFF"/>
-              <path d="M19.5481 12.3067H20.4519V15.0181H19.5481V12.3067Z" fill="#FFF"/>
+            <svg class="chatbot-icon-svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 512 512" fill="none">
+              <defs>
+                <linearGradient id="grad-phone" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#37B3FF" />
+                  <stop offset="100%" stop-color="#005C73" />
+                </linearGradient>
+                <linearGradient id="grad-bot" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#FFFFFF" />
+                  <stop offset="100%" stop-color="#E8F5FF" />
+                </linearGradient>
+                <linearGradient id="grad-shadow" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#58C6FF" stop-opacity="0.18" />
+                  <stop offset="100%" stop-color="#00465C" stop-opacity="0.12" />
+                </linearGradient>
+                <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#004C6A" flood-opacity="0.22" />
+                </filter>
+              </defs>
+              <g filter="url(#shadow)">
+                <rect x="128" y="16" width="256" height="480" rx="64" fill="url(#grad-phone)" />
+                <rect x="160" y="88" width="192" height="336" rx="36" fill="#F5FBFF" fill-opacity="0.25" />
+                <circle cx="256" cy="64" r="10" fill="#9FE6FF" />
+              </g>
+              <g transform="translate(0,12)">
+                <ellipse cx="256" cy="416" rx="120" ry="40" fill="url(#grad-shadow)" />
+              </g>
+              <g transform="translate(0,12)">
+                <g transform="translate(96,120)">
+                  <rect x="96" y="48" width="128" height="144" rx="48" fill="url(#grad-bot)" />
+                  <rect x="124" y="24" width="72" height="44" rx="22" fill="#00B0C8" />
+                  <rect x="132" y="28" width="56" height="20" rx="10" fill="#37B3FF" />
+                  <circle cx="160" cy="120" r="72" fill="url(#grad-bot)" />
+                  <rect x="120" y="160" width="80" height="60" rx="30" fill="#F1F8FF" />
+                  <circle cx="136" cy="112" r="18" fill="#1B7191" />
+                  <circle cx="184" cy="112" r="18" fill="#1B7191" />
+                  <circle cx="136" cy="112" r="9" fill="#9FE6FF" />
+                  <circle cx="184" cy="112" r="9" fill="#9FE6FF" />
+                  <path d="M140 156C148 166 172 166 180 156" stroke="#00A4C4" stroke-width="10" stroke-linecap="round" />
+                  <rect x="96" y="200" width="128" height="20" rx="10" fill="#00AEDA" opacity="0.45" />
+                  <g>
+                    <path d="M84 142C66 150 54 172 58 192C62 208 76 220 94 222" stroke="#C2E9FF" stroke-width="12" stroke-linecap="round" />
+                    <path d="M84 142C68 152 60 170 62 188C64 204 74 216 90 220" stroke="#7AD7FF" stroke-width="6" stroke-linecap="round" />
+                    <path d="M84 142L72 116" stroke="#37B3FF" stroke-width="10" stroke-linecap="round" />
+                    <circle cx="70" cy="110" r="10" fill="#00B0C8" />
+                  </g>
+                  <g transform="translate(128)">
+                    <path d="M172 142C190 150 202 172 198 192C194 208 180 220 162 222" stroke="#C2E9FF" stroke-width="12" stroke-linecap="round" />
+                    <path d="M172 142C188 152 196 170 194 188C192 204 182 216 166 220" stroke="#7AD7FF" stroke-width="6" stroke-linecap="round" />
+                    <path d="M172 142L184 116" stroke="#37B3FF" stroke-width="10" stroke-linecap="round" />
+                    <circle cx="186" cy="110" r="10" fill="#00B0C8" />
+                  </g>
+                </g>
+              </g>
+              <g transform="translate(0,12)">
+                <rect x="196" y="332" width="120" height="16" rx="8" fill="#00B0C8" opacity="0.6" />
+                <rect x="204" y="360" width="104" height="12" rx="6" fill="#FFFFFF" opacity="0.5" />
+              </g>
             </svg>
           </div>
           <div class="chatbot-pulse"></div>
