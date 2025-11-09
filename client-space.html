@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Riskalia — Espace Client</title>
+    <meta
+      name="description"
+      content="Accédez à vos documents, déclarez vos sinistres en ligne et suivez vos demandes via notre portail sécurisé."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Navigation Component Styles -->
+    <link rel="stylesheet" href="assets/css/components/navigation.css" />
+
+    <!-- Footer Component Styles -->
+    <link rel="stylesheet" href="assets/css/components/footer.css" />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <style>
+      :root {
+        --c1: #005c73;
+        --c2: #00849b;
+        --c3: #00b0c8;
+        --cl: #fff;
+        --cm: #f6fafc;
+        --cd: #243238;
+      }
+
+      .client-space-hero {
+        background: linear-gradient(135deg, var(--c1) 0%, var(--c2) 100%);
+      }
+
+      .feature-card {
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 176, 200, 0.1);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 176, 200, 0.15);
+        border-color: var(--c3);
+      }
+
+      .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .security-badge {
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        border: 1px solid rgba(0, 176, 200, 0.2);
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .security-badge:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 176, 200, 0.2);
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 14px 32px;
+        border-radius: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .cta-primary {
+        background: linear-gradient(135deg, var(--c3) 0%, var(--c2) 100%);
+        color: white;
+      }
+
+      .cta-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 176, 200, 0.3);
+      }
+
+      .cta-secondary {
+        background: white;
+        color: var(--c1);
+        border: 2px solid var(--c2);
+      }
+
+      .cta-secondary:hover {
+        background: var(--cm);
+      }
+    </style>
+
+    <noscript>
+      <style>
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body class="bg-white text-gray-800 overflow-x-hidden">
+    <!-- Navigation Component Container -->
+    <div id="navigation-container"></div>
+
+    <!-- HERO SECTION -->
+    <section
+      class="client-space-hero min-h-[35vh] flex items-center text-white text-center relative py-16"
+    >
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="floating-element absolute top-1/4 left-1/4 w-2 h-2 bg-white/20 rounded-full"></div>
+        <div class="floating-element absolute top-1/3 right-1/3 w-1 h-1 bg-white/30 rounded-full"></div>
+        <div class="floating-element absolute bottom-1/4 right-1/4 w-3 h-3 bg-white/10 rounded-full"></div>
+      </div>
+
+      <div class="hero-content container mx-auto px-4 max-w-6xl relative z-10">
+        <div class="space-y-6 px-4">
+          <h1
+            class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+            data-i18n="clientspace.hero.title"
+          >
+            Espace Client
+          </h1>
+          <p
+            class="text-white/90 text-base sm:text-lg md:text-xl max-w-3xl mx-auto"
+            data-i18n="clientspace.hero.subtitle"
+          >
+            Notre portail sécurisé donne aux assurés un accès permanent à leurs documents, opérations et déclarations
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900"
+          data-i18n="clientspace.features.title"
+        >
+          Fonctionnalités
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Feature 1: Documents -->
+          <div class="feature-card bg-white p-8 rounded-xl text-center">
+            <div class="feature-icon">🗂️</div>
+            <h3
+              class="text-xl font-bold mb-3 text-gray-900"
+              id="feature-1-title"
+            >
+              Documents
+            </h3>
+            <p class="text-gray-600" id="feature-1-desc">
+              Téléchargement des contrats, quittances et attestations
+            </p>
+          </div>
+
+          <!-- Feature 2: Claims -->
+          <div class="feature-card bg-white p-8 rounded-xl text-center">
+            <div class="feature-icon">📝</div>
+            <h3
+              class="text-xl font-bold mb-3 text-gray-900"
+              id="feature-2-title"
+            >
+              Déclaration de sinistre
+            </h3>
+            <p class="text-gray-600" id="feature-2-desc">
+              Déclaration de sinistre en ligne
+            </p>
+          </div>
+
+          <!-- Feature 3: Tracking -->
+          <div class="feature-card bg-white p-8 rounded-xl text-center">
+            <div class="feature-icon">🔍</div>
+            <h3
+              class="text-xl font-bold mb-3 text-gray-900"
+              id="feature-3-title"
+            >
+              Suivi
+            </h3>
+            <p class="text-gray-600" id="feature-3-desc">
+              Suivi de vos demandes ou réclamations
+            </p>
+          </div>
+
+          <!-- Feature 4: Documents Upload -->
+          <div class="feature-card bg-white p-8 rounded-xl text-center">
+            <div class="feature-icon">📎</div>
+            <h3
+              class="text-xl font-bold mb-3 text-gray-900"
+              id="feature-4-title"
+            >
+              Documents justificatifs
+            </h3>
+            <p class="text-gray-600" id="feature-4-desc">
+              Transmission sécurisée de pièces justificatives
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECURITY SECTION -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900"
+          data-i18n="clientspace.security.title"
+        >
+          Sécurité et conformité
+        </h2>
+
+        <div class="flex flex-wrap justify-center gap-6">
+          <div class="security-badge text-center" id="security-1">
+            🔒 Conformité Loi 09-08
+          </div>
+          <div class="security-badge text-center" id="security-2">
+            🇲🇦 Données hébergées localement
+          </div>
+          <div class="security-badge text-center" id="security-3">
+            🔐 Authentification renforcée
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
+          Accédez à votre espace
+        </h2>
+        <p class="text-lg text-gray-600 mb-10">
+          Connectez-vous à votre compte ou créez-en un nouveau pour commencer
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#" class="cta-button cta-primary" data-i18n="clientspace.cta.login">
+            Se connecter
+          </a>
+          <a href="#" class="cta-button cta-secondary" data-i18n="clientspace.cta.register">
+            Créer un compte
+          </a>
+          <a href="contact.html" class="cta-button cta-secondary" data-i18n="clientspace.cta.contact">
+            Nous contacter
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Component Container -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/components/NavigationComponent.js"></script>
+    <script src="assets/js/components/FooterComponent.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Apply i18n meta tags
+        if (window.I18N) {
+          const lang = localStorage.getItem("riskalia_lang") || "fr";
+          const meta = window.I18N[lang].clientspace.meta;
+          document.title = meta.title;
+          document.querySelector('meta[name="description"]').setAttribute("content", meta.desc);
+        }
+
+        // Apply translations to features
+        function updateFeatures() {
+          const lang = localStorage.getItem("riskalia_lang") || "fr";
+          if (!window.I18N || !window.I18N[lang]) return;
+
+          const features = window.I18N[lang].clientspace.features.items;
+          features.forEach((feature, index) => {
+            const titleEl = document.getElementById(`feature-${index + 1}-title`);
+            const descEl = document.getElementById(`feature-${index + 1}-desc`);
+            if (titleEl) titleEl.textContent = feature.title;
+            if (descEl) descEl.textContent = feature.desc;
+          });
+
+          // Update security badges
+          const badges = window.I18N[lang].clientspace.security.badges;
+          badges.forEach((badge, index) => {
+            const badgeEl = document.getElementById(`security-${index + 1}`);
+            if (badgeEl) badgeEl.textContent = badge;
+          });
+        }
+
+        // Initial update
+        updateFeatures();
+
+        // Listen for language changes
+        document.addEventListener("languageChanged", (e) => {
+          window.lang = e.detail.language;
+          localStorage.setItem("riskalia_lang", window.lang);
+
+          // Update meta tags
+          const meta = window.I18N[window.lang].clientspace.meta;
+          document.title = meta.title;
+          document.querySelector('meta[name="description"]').setAttribute("content", meta.desc);
+
+          // Apply translations
+          if (typeof window.applyTexts === "function") window.applyTexts();
+
+          // Update components
+          window.navigationComponent?.updateTranslations?.();
+          window.footerComponent?.updateTranslations?.();
+
+          // Update features
+          updateFeatures();
+        });
+
+        // Initialize components
+        if (typeof FooterComponent !== "undefined" && !window.footerComponent) {
+          window.footerComponent = new FooterComponent();
+        }
+      });
+    </script>
+  </body>
+</html>
