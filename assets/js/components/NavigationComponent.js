@@ -33,7 +33,7 @@ class NavigationComponent {
             </div>
 
             <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex items-center space-x-2 xl:space-x-4 flex-shrink-1 min-w-0 nav-container overflow-x-auto">
+            <nav class="hidden lg:flex items-center space-x-2 xl:space-x-4 flex-shrink-1 min-w-0 nav-container">
               <a href="/index.html" data-page="index" class="nav-link text-gray-700 hover:text-[var(--c3)] px-2 lg:px-3 py-2 text-sm font-medium transition-colors duration-200 relative whitespace-nowrap" data-i18n="nav.home">
                 Accueil
               </a>
