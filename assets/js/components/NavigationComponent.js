@@ -22,18 +22,18 @@ class NavigationComponent {
   getNavigationHTML() {
     return `
       <header class="sticky top-0 bg-white shadow-lg z-50 border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex justify-between items-center h-16 lg:h-20 gap-4">
-            
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+          <div class="flex justify-between items-center h-16 lg:h-20 gap-2 lg:gap-3">
+
             <!-- Brand Logo -->
             <div class="flex-shrink-0">
               <a href="/index.html" class="flex items-center space-x-2">
-                <img src="/assets/Riskalia-Logo.png" alt="Riskalia" class="h-14 lg:h-18 w-auto">
+                <img src="/assets/Riskalia-Logo.png" alt="Riskalia" class="h-12 lg:h-16 w-auto">
               </a>
             </div>
 
             <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex items-center space-x-4 xl:space-x-6 flex-shrink-0">
+            <nav class="hidden lg:flex items-center space-x-2 xl:space-x-4 flex-shrink-1 min-w-0 nav-container overflow-x-auto">
               <a href="/index.html" data-page="index" class="nav-link text-gray-700 hover:text-[var(--c3)] px-2 lg:px-3 py-2 text-sm font-medium transition-colors duration-200 relative whitespace-nowrap" data-i18n="nav.home">
                 Accueil
               </a>
@@ -79,15 +79,15 @@ class NavigationComponent {
             </nav>
 
             <!-- Desktop Actions -->
-            <div class="hidden lg:flex items-center space-x-3 flex-shrink-0">
-              
+            <div class="hidden lg:flex items-center space-x-2 xl:space-x-3 flex-shrink-0">
+
               <!-- Search -->
               <div class="relative search-wrapper">
-                <div class="search-container flex items-center bg-gray-50 rounded-full px-4 py-2 focus-within:bg-white focus-within:shadow-md focus-within:ring-2 focus-within:ring-[var(--c3)] focus-within:ring-opacity-20 transition-all duration-200">
+                <div class="search-container flex items-center bg-gray-50 rounded-full px-3 py-2 focus-within:bg-white focus-within:shadow-md focus-within:ring-2 focus-within:ring-[var(--c3)] focus-within:ring-opacity-20 transition-all duration-200">
                   <svg class="w-4 h-4 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                   </svg>
-                  <input type="search" placeholder="Rechercher..." class="search-input bg-transparent border-none outline-none text-sm text-gray-700 placeholder-gray-400 w-32 focus:w-48 transition-all duration-200" autocomplete="off">
+                  <input type="search" placeholder="Rechercher..." class="search-input bg-transparent border-none outline-none text-sm text-gray-700 placeholder-gray-400 w-24 xl:w-32 focus:w-40 xl:focus:w-48 transition-all duration-200" autocomplete="off">
                 </div>
                 <!-- Search Results Dropdown -->
                 <div class="search-results absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible transition-all duration-200 transform translate-y-1 z-50 max-w-sm">
