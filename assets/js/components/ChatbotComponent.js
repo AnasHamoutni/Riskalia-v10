@@ -50,10 +50,63 @@ class ChatbotComponent {
         <!-- Chatbot Toggle Button -->
         <button class="chatbot-toggle-btn" id="chatbot-toggle">
           <div class="chatbot-icon">
-            <svg class="chatbot-icon-svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M10 26.33H30V16.4916C30 15.4933 29.1907 14.684 28.1924 14.684H11.8076C10.8093 14.684 10 15.4933 10 16.4916V26.33ZM30 28.5908V27.5722H10V28.5908C10 29.5891 10.8093 30.3983 11.8076 30.3983H28.1924C29.1907 30.3983 30 29.5891 30 28.5908ZM15.6522 23.1934C16.6813 23.1934 17.5155 22.3591 17.5155 21.33C17.5155 20.3009 16.6813 19.4667 15.6522 19.4667C14.6231 19.4667 13.7888 20.3009 13.7888 21.33C13.7888 22.3591 14.6231 23.1934 15.6522 23.1934ZM26.2112 21.33C26.2112 22.3591 25.3769 23.1934 24.3478 23.1934C23.3187 23.1934 22.4845 22.3591 22.4845 21.33C22.4845 20.3009 23.3187 19.4667 24.3478 19.4667C25.3769 19.4667 26.2112 20.3009 26.2112 21.33Z" fill="#FFF"/>
-              <path d="M21.8076 11.4092C21.8076 12.4075 20.9983 13.2168 20 13.2168C19.0017 13.2168 18.1924 12.4075 18.1924 11.4092C18.1924 10.4109 19.0017 9.60165 20 9.60165C20.9983 9.60165 21.8076 10.4109 21.8076 11.4092Z" fill="#FFF"/>
-              <path d="M19.5481 12.3067H20.4519V15.0181H19.5481V12.3067Z" fill="#FFF"/>
+            <svg class="chatbot-icon-svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 512 512" fill="none">
+              <defs>
+                <linearGradient id="grad-phone" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#37B3FF" />
+                  <stop offset="100%" stop-color="#005C73" />
+                </linearGradient>
+                <linearGradient id="grad-bot" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#FFFFFF" />
+                  <stop offset="100%" stop-color="#E8F5FF" />
+                </linearGradient>
+                <linearGradient id="grad-shadow" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#58C6FF" stop-opacity="0.18" />
+                  <stop offset="100%" stop-color="#00465C" stop-opacity="0.12" />
+                </linearGradient>
+                <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#004C6A" flood-opacity="0.22" />
+                </filter>
+              </defs>
+              <g filter="url(#shadow)">
+                <rect x="128" y="16" width="256" height="480" rx="64" fill="url(#grad-phone)" />
+                <rect x="160" y="88" width="192" height="336" rx="36" fill="#F5FBFF" fill-opacity="0.25" />
+                <circle cx="256" cy="64" r="10" fill="#9FE6FF" />
+              </g>
+              <g transform="translate(0,12)">
+                <ellipse cx="256" cy="416" rx="120" ry="40" fill="url(#grad-shadow)" />
+              </g>
+              <g transform="translate(0,12)">
+                <g transform="translate(96,120)">
+                  <rect x="96" y="48" width="128" height="144" rx="48" fill="url(#grad-bot)" />
+                  <rect x="124" y="24" width="72" height="44" rx="22" fill="#00B0C8" />
+                  <rect x="132" y="28" width="56" height="20" rx="10" fill="#37B3FF" />
+                  <circle cx="160" cy="120" r="72" fill="url(#grad-bot)" />
+                  <rect x="120" y="160" width="80" height="60" rx="30" fill="#F1F8FF" />
+                  <circle cx="136" cy="112" r="18" fill="#1B7191" />
+                  <circle cx="184" cy="112" r="18" fill="#1B7191" />
+                  <circle cx="136" cy="112" r="9" fill="#9FE6FF" />
+                  <circle cx="184" cy="112" r="9" fill="#9FE6FF" />
+                  <path d="M140 156C148 166 172 166 180 156" stroke="#00A4C4" stroke-width="10" stroke-linecap="round" />
+                  <rect x="96" y="200" width="128" height="20" rx="10" fill="#00AEDA" opacity="0.45" />
+                  <g>
+                    <path d="M84 142C66 150 54 172 58 192C62 208 76 220 94 222" stroke="#C2E9FF" stroke-width="12" stroke-linecap="round" />
+                    <path d="M84 142C68 152 60 170 62 188C64 204 74 216 90 220" stroke="#7AD7FF" stroke-width="6" stroke-linecap="round" />
+                    <path d="M84 142L72 116" stroke="#37B3FF" stroke-width="10" stroke-linecap="round" />
+                    <circle cx="70" cy="110" r="10" fill="#00B0C8" />
+                  </g>
+                  <g transform="translate(128)">
+                    <path d="M172 142C190 150 202 172 198 192C194 208 180 220 162 222" stroke="#C2E9FF" stroke-width="12" stroke-linecap="round" />
+                    <path d="M172 142C188 152 196 170 194 188C192 204 182 216 166 220" stroke="#7AD7FF" stroke-width="6" stroke-linecap="round" />
+                    <path d="M172 142L184 116" stroke="#37B3FF" stroke-width="10" stroke-linecap="round" />
+                    <circle cx="186" cy="110" r="10" fill="#00B0C8" />
+                  </g>
+                </g>
+              </g>
+              <g transform="translate(0,12)">
+                <rect x="196" y="332" width="120" height="16" rx="8" fill="#00B0C8" opacity="0.6" />
+                <rect x="204" y="360" width="104" height="12" rx="6" fill="#FFFFFF" opacity="0.5" />
+              </g>
             </svg>
           </div>
           <div class="chatbot-pulse"></div>
@@ -984,13 +1037,35 @@ class ChatbotComponent {
 
   handlePhoneCall() {
     const phoneNumber = "+212-666-756991";
-    const message = `Appel téléphonique vers ${phoneNumber}`;
-    this.addMessage(message, "bot", "Appel téléphonique");
+
+    // Get language-specific text
+    const translations = {
+      fr: {
+        message: `Appel téléphonique vers ${phoneNumber}`,
+        title: "Appel téléphonique",
+        linkText: `📞 Appeler ${phoneNumber}`
+      },
+      en: {
+        message: `Phone call to ${phoneNumber}`,
+        title: "Phone Call",
+        linkText: `📞 Call ${phoneNumber}`
+      },
+      ar: {
+        message: `مكالمة هاتفية إلى ${phoneNumber}`,
+        title: "مكالمة هاتفية",
+        linkText: `📞 اتصل ${phoneNumber}`
+      }
+    };
+
+    const lang = this.currentLang || "fr";
+    const text = translations[lang] || translations.fr;
+
+    this.addMessage(text.message, "bot", text.title);
 
     // Create clickable phone link
     const phoneLink = document.createElement("a");
     phoneLink.href = `tel:${phoneNumber}`;
-    phoneLink.textContent = `📞 Appeler ${phoneNumber}`;
+    phoneLink.textContent = text.linkText;
     phoneLink.style.cssText = `
       display: inline-block;
       background: linear-gradient(135deg, #10b981 0%, #059669 100%);
@@ -1014,13 +1089,35 @@ class ChatbotComponent {
 
   handleEmail() {
     const email = "contact@riskalia.ma";
-    const message = `Envoi d'email vers ${email}`;
-    this.addMessage(message, "bot", "Envoi d'email");
+
+    // Get language-specific text
+    const translations = {
+      fr: {
+        message: `Envoi d'email vers ${email}`,
+        title: "Envoi d'email",
+        linkText: `📧 Envoyer un email`
+      },
+      en: {
+        message: `Send email to ${email}`,
+        title: "Send Email",
+        linkText: `📧 Send email`
+      },
+      ar: {
+        message: `إرسال بريد إلكتروني إلى ${email}`,
+        title: "إرسال بريد إلكتروني",
+        linkText: `📧 إرسال بريد إلكتروني`
+      }
+    };
+
+    const lang = this.currentLang || "fr";
+    const text = translations[lang] || translations.fr;
+
+    this.addMessage(text.message, "bot", text.title);
 
     // Create clickable email link
     const emailLink = document.createElement("a");
     emailLink.href = `mailto:${email}`;
-    emailLink.textContent = `📧 Envoyer un email`;
+    emailLink.textContent = text.linkText;
     emailLink.style.cssText = `
       display: inline-block;
       background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
@@ -1043,21 +1140,58 @@ class ChatbotComponent {
   }
 
   handleAppointment() {
-    const message =
-      "Pour prendre rendez-vous, veuillez nous contacter :\n\n📞 Tél: +212-666-756991\n📧 Email: contact@riskalia.ma\n\nNous vous proposerons un créneau adapté à vos disponibilités.";
-    this.addMessage(message, "bot", "Rendez-vous");
+    // Get language-specific text
+    const translations = {
+      fr: {
+        message: "Pour prendre rendez-vous, veuillez nous contacter :\n\n📞 Tél: +212-666-756991\n📧 Email: contact@riskalia.ma\n\nNous vous proposerons un créneau adapté à vos disponibilités.",
+        title: "Rendez-vous"
+      },
+      en: {
+        message: "To schedule an appointment, please contact us:\n\n📞 Phone: +212-666-756991\n📧 Email: contact@riskalia.ma\n\nWe will offer you a time slot that fits your availability.",
+        title: "Appointment"
+      },
+      ar: {
+        message: "لتحديد موعد، يرجى الاتصال بنا:\n\n📞 الهاتف: +212-666-756991\n📧 البريد الإلكتروني: contact@riskalia.ma\n\nسنقترح عليك موعدًا يناسب توفرك.",
+        title: "موعد"
+      }
+    };
+
+    const lang = this.currentLang || "fr";
+    const text = translations[lang] || translations.fr;
+
+    this.addMessage(text.message, "bot", text.title);
   }
 
   handleLocation() {
-    const message =
-      "Notre siège social :\n\n📍 16, Rue de Terves, 2ème Etage\nQuartier Mers Sultan, Casablanca\n\n🕒 Horaires d'ouverture :\nLundi - Vendredi : 9h00 - 18h00\nSamedi : 9h00 - 13h00";
-    this.addMessage(message, "bot", "Localisation");
+    // Get language-specific text
+    const translations = {
+      fr: {
+        message: "Notre siège social :\n\n📍 16, Rue de Terves, 2ème Etage\nQuartier Mers Sultan, Casablanca\n\n🕒 Horaires d'ouverture :\nLundi - Vendredi : 9h00 - 18h00\nSamedi : 9h00 - 13h00",
+        title: "Localisation",
+        linkText: "🗺️ Voir sur Google Maps"
+      },
+      en: {
+        message: "Our headquarters:\n\n📍 16 Rue de Terves, 2nd Floor\nMers Sultan District, Casablanca\n\n🕒 Opening hours:\nMonday - Friday: 9:00 AM - 6:00 PM\nSaturday: 9:00 AM - 1:00 PM",
+        title: "Location",
+        linkText: "🗺️ View on Google Maps"
+      },
+      ar: {
+        message: "مقرنا الرئيسي:\n\n📍 16 شارع تيرف، الطابق الثاني\nحي مرس سلطان، الدار البيضاء\n\n🕒 ساعات العمل:\nالاثنين - الجمعة: 9:00 صباحًا - 6:00 مساءً\nالسبت: 9:00 صباحًا - 1:00 مساءً",
+        title: "الموقع",
+        linkText: "🗺️ عرض على خرائط جوجل"
+      }
+    };
+
+    const lang = this.currentLang || "fr";
+    const text = translations[lang] || translations.fr;
+
+    this.addMessage(text.message, "bot", text.title);
 
     // Create Google Maps link
     const mapsLink = document.createElement("a");
     mapsLink.href = "https://maps.google.com/?q=16+Rue+de+Terves+Casablanca";
     mapsLink.target = "_blank";
-    mapsLink.textContent = "🗺️ Voir sur Google Maps";
+    mapsLink.textContent = text.linkText;
     mapsLink.style.cssText = `
       display: inline-block;
       background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
@@ -1907,18 +2041,73 @@ class ChatbotComponent {
     this.currentNode = "root";
     this.navigationHistory = [];
 
+    // Apply translations to chatbot elements if window.t is available
+    if (typeof window.t === "function") {
+      try {
+        // Update title
+        const title = document.querySelector(".chatbot-title");
+        if (title) {
+          const titleText = window.t("chatbot.title");
+          if (titleText && !titleText.startsWith("chatbot.")) {
+            title.textContent = titleText;
+          }
+        }
+
+        // Update subtitle
+        const subtitle = document.querySelector(".chatbot-subtitle");
+        if (subtitle) {
+          const subtitleText = window.t("chatbot.subtitle");
+          if (subtitleText && !subtitleText.startsWith("chatbot.")) {
+            subtitle.textContent = subtitleText;
+          }
+        }
+
+        // Update welcome message
+        const welcomeMsg = document.querySelector(".chatbot-welcome p[data-i18n]");
+        if (welcomeMsg) {
+          const welcomeText = window.t("chatbot.welcome");
+          if (welcomeText && !welcomeText.startsWith("chatbot.")) {
+            welcomeMsg.textContent = welcomeText;
+          }
+        }
+
+        // Update "now" timestamp in welcome message
+        const welcomeTime = document.querySelector(".chatbot-welcome .chatbot-message-time");
+        if (welcomeTime) {
+          const nowText = window.t("chatbot.now");
+          if (nowText && !nowText.startsWith("chatbot.")) {
+            welcomeTime.textContent = nowText;
+          }
+        }
+
+        // Update typing indicator text
+        const typingText = document.querySelector(".chatbot-typing-text");
+        if (typingText) {
+          const typingTextVal = window.t("chatbot.typing");
+          if (typingTextVal && !typingTextVal.startsWith("chatbot.")) {
+            typingText.textContent = typingTextVal;
+          }
+        }
+      } catch (error) {
+        console.warn("Chatbot translation update failed:", error);
+      }
+    }
+
     // Initialize with root node for new language
     setTimeout(() => {
       const tree = this.decisionTree[this.currentLang];
-      const rootNode = tree.root;
-      if (rootNode) {
-        this.updateQuickActions(rootNode.actions);
+      if (tree && tree.root) {
+        this.updateQuickActions(tree.root.actions);
       }
     }, 100);
 
-    // Apply translations if available
+    // Apply global translations if available
     if (typeof window.applyTexts === "function") {
-      window.applyTexts();
+      try {
+        window.applyTexts();
+      } catch (error) {
+        console.warn("Global applyTexts failed:", error);
+      }
     }
   }
 
@@ -1950,9 +2139,18 @@ class ChatbotComponent {
   }
 }
 
-// Auto-initialize when DOM is ready
+// Auto-initialize when DOM is ready AND i18n is available
+function initChatbot() {
+  if (window.I18N && typeof window.t === "function") {
+    window.chatbotComponent = new ChatbotComponent();
+  } else {
+    // Retry after a short delay if i18n isn't ready yet
+    setTimeout(initChatbot, 100);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  window.chatbotComponent = new ChatbotComponent();
+  initChatbot();
 });
 
 // Export for manual use

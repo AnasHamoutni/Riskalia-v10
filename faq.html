@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Riskalia — Questions Fréquentes</title>
+    <meta
+      name="description"
+      content="Toutes les réponses à vos questions sur nos services, contrats, garanties, sinistres et engagements réglementaires."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Navigation Component Styles -->
+    <link rel="stylesheet" href="assets/css/components/navigation.css" />
+
+    <!-- Footer Component Styles -->
+    <link rel="stylesheet" href="assets/css/components/footer.css" />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <style>
+      :root {
+        --c1: #005c73;
+        --c2: #00849b;
+        --c3: #00b0c8;
+        --cl: #fff;
+        --cm: #f6fafc;
+        --cd: #243238;
+      }
+
+      .faq-hero {
+        background: linear-gradient(135deg, var(--c1) 0%, var(--c2) 100%);
+      }
+
+      .category-section {
+        margin-bottom: 3rem;
+      }
+
+      .category-title {
+        font-size: 1.75rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        color: var(--cd);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .accordion-item {
+        border: 1px solid rgba(0, 176, 200, 0.2);
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .accordion-item:hover {
+        border-color: var(--c3);
+        box-shadow: 0 5px 15px rgba(0, 176, 200, 0.1);
+      }
+
+      .accordion-header {
+        padding: 1.25rem 1.5rem;
+        cursor: pointer;
+        background: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .accordion-header:hover {
+        background: rgba(0, 176, 200, 0.05);
+      }
+
+      .accordion-header.active {
+        background: linear-gradient(135deg, rgba(0, 176, 200, 0.1) 0%, rgba(0, 132, 155, 0.05) 100%);
+      }
+
+      .accordion-question {
+        font-weight: 600;
+        color: var(--cd);
+        font-size: 1.1rem;
+        flex: 1;
+      }
+
+      .accordion-icon {
+        color: var(--c3);
+        font-size: 1.25rem;
+        transition: transform 0.3s ease;
+      }
+
+      .accordion-header.active .accordion-icon {
+        transform: rotate(180deg);
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .accordion-content.active {
+        max-height: 1000px;
+      }
+
+      .accordion-answer {
+        padding: 1.5rem;
+        background: rgba(0, 176, 200, 0.02);
+        border-top: 1px solid rgba(0, 176, 200, 0.1);
+        line-height: 1.8;
+        color: #444;
+      }
+
+      .compliance-card {
+        background: white;
+        border: 1px solid rgba(0, 176, 200, 0.2);
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .compliance-card:hover {
+        border-color: var(--c3);
+        box-shadow: 0 5px 15px rgba(0, 176, 200, 0.1);
+        transform: translateX(5px);
+      }
+
+      .compliance-label {
+        font-weight: 700;
+        color: var(--c1);
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .compliance-desc {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      .timeline-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 176, 200, 0.1);
+        margin-top: 1.5rem;
+      }
+
+      .timeline-table th {
+        background: linear-gradient(135deg, var(--c1) 0%, var(--c2) 100%);
+        color: white;
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+      }
+
+      .timeline-table td {
+        padding: 1rem;
+        border-bottom: 1px solid rgba(0, 176, 200, 0.1);
+        background: white;
+      }
+
+      .timeline-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .timeline-table tr:nth-child(even) td {
+        background: rgba(0, 176, 200, 0.02);
+      }
+
+      .timeline-label {
+        font-weight: 700;
+        color: var(--c1);
+        white-space: nowrap;
+      }
+
+      .timeline-desc {
+        color: #666;
+      }
+
+      @media (max-width: 768px) {
+        .category-title {
+          font-size: 1.5rem;
+        }
+
+        .accordion-question {
+          font-size: 1rem;
+        }
+
+        .timeline-table {
+          font-size: 0.9rem;
+        }
+
+        .timeline-table th,
+        .timeline-table td {
+          padding: 0.75rem;
+        }
+      }
+    </style>
+
+    <noscript>
+      <style>
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .accordion-content {
+          max-height: none !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body class="bg-white text-gray-800 overflow-x-hidden">
+    <!-- Navigation Component Container -->
+    <div id="navigation-container"></div>
+
+    <!-- HERO SECTION -->
+    <section
+      class="faq-hero min-h-[35vh] flex items-center text-white text-center relative py-16"
+    >
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="floating-element absolute top-1/4 left-1/4 w-2 h-2 bg-white/20 rounded-full"></div>
+        <div class="floating-element absolute top-1/3 right-1/3 w-1 h-1 bg-white/30 rounded-full"></div>
+        <div class="floating-element absolute bottom-1/4 right-1/4 w-3 h-3 bg-white/10 rounded-full"></div>
+      </div>
+
+      <div class="hero-content container mx-auto px-4 max-w-6xl relative z-10">
+        <div class="space-y-6 px-4">
+          <h1
+            class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+            data-i18n="faqPage.hero.title"
+          >
+            Questions Fréquentes
+          </h1>
+          <p
+            class="text-white/90 text-base sm:text-lg md:text-xl max-w-3xl mx-auto"
+            data-i18n="faqPage.hero.subtitle"
+          >
+            Toutes les réponses à vos questions sur le courtage, la réassurance et nos services
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ CONTENT -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <!-- Categories will be rendered here by JavaScript -->
+        <div id="faq-categories"></div>
+      </div>
+    </section>
+
+    <!-- Footer Component Container -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/components/NavigationComponent.js"></script>
+    <script src="assets/js/components/FooterComponent.js"></script>
+
+    <script>
+      // Accordion toggle function
+      function toggleAccordion(index) {
+        const header = document.getElementById(`accordion-header-${index}`);
+        const content = document.getElementById(`accordion-content-${index}`);
+
+        header.classList.toggle('active');
+        content.classList.toggle('active');
+      }
+
+      // Render FAQ categories
+      function renderFAQContent() {
+        const lang = localStorage.getItem("riskalia_lang") || "fr";
+        if (!window.I18N || !window.I18N[lang] || !window.I18N[lang].faqPage) return;
+
+        const faqData = window.I18N[lang].faqPage;
+        const container = document.getElementById("faq-categories");
+
+        if (!container) return;
+
+        let html = '';
+        let accordionIndex = 0;
+
+        // Broker category
+        if (faqData.categories.broker) {
+          html += `
+            <div class="category-section">
+              <h2 class="category-title">${faqData.categories.broker.title}</h2>
+              ${faqData.categories.broker.questions.map((item) => {
+                const idx = accordionIndex++;
+                return `
+                  <div class="accordion-item">
+                    <div class="accordion-header" id="accordion-header-${idx}" onclick="toggleAccordion(${idx})">
+                      <div class="accordion-question">${item.q}</div>
+                      <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content" id="accordion-content-${idx}">
+                      <div class="accordion-answer">${item.a}</div>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          `;
+        }
+
+        // Contracts category
+        if (faqData.categories.contracts) {
+          html += `
+            <div class="category-section">
+              <h2 class="category-title">${faqData.categories.contracts.title}</h2>
+              ${faqData.categories.contracts.questions.map((item) => {
+                const idx = accordionIndex++;
+                return `
+                  <div class="accordion-item">
+                    <div class="accordion-header" id="accordion-header-${idx}" onclick="toggleAccordion(${idx})">
+                      <div class="accordion-question">${item.q}</div>
+                      <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content" id="accordion-content-${idx}">
+                      <div class="accordion-answer">${item.a}</div>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          `;
+        }
+
+        // Claims category (with timeline)
+        if (faqData.categories.claims) {
+          html += `
+            <div class="category-section">
+              <h2 class="category-title">${faqData.categories.claims.title}</h2>
+              ${faqData.categories.claims.questions.map((item) => {
+                const idx = accordionIndex++;
+                return `
+                  <div class="accordion-item">
+                    <div class="accordion-header" id="accordion-header-${idx}" onclick="toggleAccordion(${idx})">
+                      <div class="accordion-question">${item.q}</div>
+                      <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content" id="accordion-content-${idx}">
+                      <div class="accordion-answer">${item.a}</div>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+
+              ${faqData.categories.claims.timeline ? `
+                <div style="margin-top: 2rem;">
+                  <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 1rem; color: var(--cd);">
+                    ${faqData.categories.claims.timeline.title}
+                  </h3>
+                  <table class="timeline-table">
+                    <thead>
+                      <tr>
+                        <th style="width: 25%;">Période</th>
+                        <th>Étape</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      ${faqData.categories.claims.timeline.steps.map((step) => `
+                        <tr>
+                          <td class="timeline-label">${step.label}</td>
+                          <td class="timeline-desc">${step.desc}</td>
+                        </tr>
+                      `).join('')}
+                    </tbody>
+                  </table>
+                </div>
+              ` : ''}
+            </div>
+          `;
+        }
+
+        // Reinsurance category
+        if (faqData.categories.reinsurance) {
+          html += `
+            <div class="category-section">
+              <h2 class="category-title">${faqData.categories.reinsurance.title}</h2>
+              ${faqData.categories.reinsurance.questions.map((item) => {
+                const idx = accordionIndex++;
+                return `
+                  <div class="accordion-item">
+                    <div class="accordion-header" id="accordion-header-${idx}" onclick="toggleAccordion(${idx})">
+                      <div class="accordion-question">${item.q}</div>
+                      <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content" id="accordion-content-${idx}">
+                      <div class="accordion-answer">${item.a}</div>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          `;
+        }
+
+        // Regulatory category
+        if (faqData.categories.regulatory) {
+          html += `
+            <div class="category-section">
+              <h2 class="category-title">${faqData.categories.regulatory.title}</h2>
+              ${faqData.categories.regulatory.compliance.map((item) => `
+                <div class="compliance-card">
+                  <div class="compliance-label">${item.label}</div>
+                  <div class="compliance-desc">${item.desc}</div>
+                </div>
+              `).join('')}
+            </div>
+          `;
+        }
+
+        container.innerHTML = html;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Apply i18n meta tags
+        if (window.I18N) {
+          const lang = localStorage.getItem("riskalia_lang") || "fr";
+          const meta = window.I18N[lang].faqPage.meta;
+          document.title = meta.title;
+          document.querySelector('meta[name="description"]').setAttribute("content", meta.desc);
+        }
+
+        // Initial render
+        renderFAQContent();
+
+        // Listen for language changes
+        document.addEventListener("languageChanged", (e) => {
+          window.lang = e.detail.language;
+          localStorage.setItem("riskalia_lang", window.lang);
+
+          // Update meta tags
+          const meta = window.I18N[window.lang].faqPage.meta;
+          document.title = meta.title;
+          document.querySelector('meta[name="description"]').setAttribute("content", meta.desc);
+
+          // Apply translations
+          if (typeof window.applyTexts === "function") window.applyTexts();
+
+          // Update components
+          window.navigationComponent?.updateTranslations?.();
+          window.footerComponent?.updateTranslations?.();
+
+          // Re-render FAQ content
+          renderFAQContent();
+        });
+
+        // Initialize components
+        if (typeof FooterComponent !== "undefined" && !window.footerComponent) {
+          window.footerComponent = new FooterComponent();
+        }
+      });
+    </script>
+  </body>
+</html>
