@@ -150,6 +150,8 @@
       </div>
     </section>
 
+    <div class="section-wave" aria-hidden="true"></div>
+
     <!-- FEATURES SECTION -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4 max-w-6xl">
@@ -240,6 +242,88 @@
           <div class="security-badge text-center" id="security-3">
             🔐 Authentification renforcée
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGIN SECTION -->
+    <section class="py-16 bg-gradient-to-br from-blue-50 to-cyan-50">
+      <div class="container mx-auto px-4 max-w-md">
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+          <div class="text-center mb-8">
+            <div class="inline-block p-4 bg-gradient-to-br from-[var(--c3)] to-[var(--c2)] rounded-full mb-4">
+              <i class="fas fa-user-shield text-white text-3xl"></i>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2" data-i18n="clientspace.login.title">
+              Connexion Espace Client
+            </h2>
+            <p class="text-gray-600" data-i18n="clientspace.login.subtitle">
+              Accédez à votre espace sécurisé
+            </p>
+          </div>
+
+          <form id="login-form" class="space-y-6">
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="clientspace.login.email">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--c3)] focus:border-transparent transition-all"
+                placeholder="votre@email.com"
+              />
+            </div>
+
+            <div>
+              <label for="password" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="clientspace.login.password">
+                Mot de passe
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--c3)] focus:border-transparent transition-all"
+                placeholder="••••••••"
+              />
+            </div>
+
+            <div class="flex items-center justify-between">
+              <label class="flex items-center">
+                <input type="checkbox" class="w-4 h-4 text-[var(--c3)] border-gray-300 rounded focus:ring-[var(--c3)]">
+                <span class="ml-2 text-sm text-gray-600" data-i18n="clientspace.login.remember">Se souvenir de moi</span>
+              </label>
+              <a href="#" class="text-sm text-[var(--c3)] hover:text-[var(--c2)] transition-colors" data-i18n="clientspace.login.forgot">
+                Mot de passe oublié ?
+              </a>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-gradient-to-r from-[var(--c3)] to-[var(--c2)] text-white font-semibold py-3 px-6 rounded-lg hover:from-[var(--c2)] hover:to-[var(--c1)] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            >
+              <span data-i18n="clientspace.login.submit">Se connecter</span>
+            </button>
+          </form>
+
+          <div class="mt-6 text-center">
+            <p class="text-sm text-gray-600">
+              <span data-i18n="clientspace.login.noAccount">Pas encore de compte ?</span>
+              <a href="/contact.html" class="text-[var(--c3)] hover:text-[var(--c2)] font-semibold transition-colors ml-1" data-i18n="clientspace.login.contact">
+                Contactez-nous
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-6 text-center">
+          <p class="text-sm text-gray-500">
+            <i class="fas fa-lock mr-2"></i>
+            <span data-i18n="clientspace.login.secure">Connexion sécurisée SSL 256-bit</span>
+          </p>
         </div>
       </div>
     </section>

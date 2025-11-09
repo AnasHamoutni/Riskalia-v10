@@ -2767,6 +2767,18 @@ footer: {
         login: "Se connecter",
         register: "Créer un compte",
         contact: "Nous contacter"
+      },
+      login: {
+        title: "Connexion Espace Client",
+        subtitle: "Accédez à votre espace sécurisé",
+        email: "Email",
+        password: "Mot de passe",
+        remember: "Se souvenir de moi",
+        forgot: "Mot de passe oublié ?",
+        submit: "Se connecter",
+        noAccount: "Pas encore de compte ?",
+        contact: "Contactez-nous",
+        secure: "Connexion sécurisée SSL 256-bit"
       }
     },
     // Blog & News page
@@ -5862,6 +5874,18 @@ footer: {
         login: "Log In",
         register: "Create Account",
         contact: "Contact Us"
+      },
+      login: {
+        title: "Client Space Login",
+        subtitle: "Access your secure space",
+        email: "Email",
+        password: "Password",
+        remember: "Remember me",
+        forgot: "Forgot password?",
+        submit: "Log in",
+        noAccount: "Don't have an account yet?",
+        contact: "Contact us",
+        secure: "256-bit SSL secure connection"
       }
     },
     // Blog & News page
@@ -8889,6 +8913,18 @@ footer: {
         login: "تسجيل الدخول",
         register: "إنشاء حساب",
         contact: "اتصل بنا"
+      },
+      login: {
+        title: "تسجيل دخول مساحة العميل",
+        subtitle: "الوصول إلى مساحتك الآمنة",
+        email: "البريد الإلكتروني",
+        password: "كلمة المرور",
+        remember: "تذكرني",
+        forgot: "نسيت كلمة المرور؟",
+        submit: "تسجيل الدخول",
+        noAccount: "ليس لديك حساب بعد؟",
+        contact: "اتصل بنا",
+        secure: "اتصال آمن SSL 256-bit"
       }
     },
     // Blog & News page

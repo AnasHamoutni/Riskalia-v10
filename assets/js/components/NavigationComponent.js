@@ -46,7 +46,7 @@ class NavigationComponent {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
-                <div class="solutions-dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 z-50" style="display: none;">
+                <div class="solutions-dropdown-menu w-48 bg-white rounded-lg shadow-lg border border-gray-100">
                   <div class="py-2">
                     <a href="/solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[var(--c3)] transition-colors duration-150" data-i18n="nav.assurance">
                       Assurance

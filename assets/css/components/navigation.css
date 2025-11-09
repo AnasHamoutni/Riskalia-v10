@@ -145,7 +145,20 @@ header img {
   overflow-y: auto;
 }
 
-/* Solutions Dropdown Visibility */
+/* Solutions Dropdown Visibility - Multiple approaches for reliability */
+.solutions-dropdown {
+  position: relative;
+}
+
+.solutions-dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 0.5rem;
+  display: none;
+  z-index: 1000;
+}
+
 .solutions-dropdown:hover .solutions-dropdown-menu,
 .solutions-dropdown-menu:hover {
   display: block !important;
@@ -153,6 +166,11 @@ header img {
 
 .solutions-dropdown:hover .dropdown-arrow {
   transform: rotate(180deg);
+  transition: transform 0.2s ease;
+}
+
+.dropdown-arrow {
+  transition: transform 0.2s ease;
 }
 
 /* Language Dropdown Visibility - Keep existing behavior */
