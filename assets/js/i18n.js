@@ -3010,7 +3010,7 @@ footer: {
             },
             {
               label: "Directeur de la publication",
-              text: "Anas Hamoutni, Gérant"
+              text: "Nabil Cherkaoui, Gérant"
             }
           ]
         },
@@ -6105,7 +6105,7 @@ footer: {
             },
             {
               label: "Publication director",
-              text: "Anas Hamoutni, Manager"
+              text: "Nabil Cherkaoui, Manager"
             }
           ]
         },
@@ -9132,7 +9132,7 @@ footer: {
             },
             {
               label: "مدير النشر",
-              text: "أنس حموتني، مدير"
+              text: "نبيل شرقاوي، مدير"
             }
           ]
         },
