@@ -2041,7 +2041,7 @@ class ChatbotComponent {
     this.currentNode = "root";
     this.navigationHistory = [];
 
-    // Apply translations to chatbot elements if window.t is available
+    // Apply translations to chatbot elements BEFORE clearing
     if (typeof window.t === "function") {
       try {
         // Update title
@@ -2062,24 +2062,6 @@ class ChatbotComponent {
           }
         }
 
-        // Update welcome message
-        const welcomeMsg = document.querySelector(".chatbot-welcome p[data-i18n]");
-        if (welcomeMsg) {
-          const welcomeText = window.t("chatbot.welcome");
-          if (welcomeText && !welcomeText.startsWith("chatbot.")) {
-            welcomeMsg.textContent = welcomeText;
-          }
-        }
-
-        // Update "now" timestamp in welcome message
-        const welcomeTime = document.querySelector(".chatbot-welcome .chatbot-message-time");
-        if (welcomeTime) {
-          const nowText = window.t("chatbot.now");
-          if (nowText && !nowText.startsWith("chatbot.")) {
-            welcomeTime.textContent = nowText;
-          }
-        }
-
         // Update typing indicator text
         const typingText = document.querySelector(".chatbot-typing-text");
         if (typingText) {
@@ -2091,6 +2073,36 @@ class ChatbotComponent {
       } catch (error) {
         console.warn("Chatbot translation update failed:", error);
       }
+    }
+
+    // Clear conversation to refresh messages in new language
+    this.clearConversation();
+
+    // Update welcome message after clearing
+    if (typeof window.t === "function") {
+      setTimeout(() => {
+        try {
+          // Update welcome message
+          const welcomeMsg = document.querySelector(".chatbot-welcome p[data-i18n]");
+          if (welcomeMsg) {
+            const welcomeText = window.t("chatbot.welcome");
+            if (welcomeText && !welcomeText.startsWith("chatbot.")) {
+              welcomeMsg.textContent = welcomeText;
+            }
+          }
+
+          // Update "now" timestamp in welcome message
+          const welcomeTime = document.querySelector(".chatbot-welcome .chatbot-message-time");
+          if (welcomeTime) {
+            const nowText = window.t("chatbot.now");
+            if (nowText && !nowText.startsWith("chatbot.")) {
+              welcomeTime.textContent = nowText;
+            }
+          }
+        } catch (error) {
+          console.warn("Chatbot welcome message translation update failed:", error);
+        }
+      }, 50);
     }
 
     // Initialize with root node for new language
