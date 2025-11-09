@@ -87,7 +87,7 @@ class NavigationComponent {
                   <svg class="w-4 h-4 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                   </svg>
-                  <input type="search" placeholder="Rechercher..." class="search-input bg-transparent border-none outline-none text-sm text-gray-700 placeholder-gray-400 w-24 xl:w-32 focus:w-40 xl:focus:w-48 transition-all duration-200" autocomplete="off">
+                  <input type="search" placeholder="Rechercher..." class="search-input bg-transparent border-none outline-none text-sm text-gray-700 placeholder-gray-400 w-20 xl:w-28 focus:w-32 xl:focus:w-36 transition-all duration-200" autocomplete="off">
                 </div>
                 <!-- Search Results Dropdown -->
                 <div class="search-results absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible transition-all duration-200 transform translate-y-1 z-50 max-w-sm">

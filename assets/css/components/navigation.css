@@ -124,6 +124,13 @@ header img {
   overflow-y: auto;
 }
 
+/* Dropdown Menu Visibility */
+.group:hover > div {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
 /* RTL Support */
 body[dir="rtl"] .lang-dropdown {
   left: 0;

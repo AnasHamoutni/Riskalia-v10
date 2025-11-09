@@ -557,7 +557,251 @@ class ChatbotComponent {
             { key: "assurance_devis", label: "Request quote", icon: "📋" },
           ],
         },
-        // ... (English translations would continue here)
+
+        assurance_entreprise: {
+          title: "Business Insurance",
+          content:
+            "Our business solutions include:\n\n• Multi-risk Business\n• Transportation (goods)\n• Fleet & automobile\n• Civil liability\n• Construction\n• Group health & benefits",
+          actions: [
+            { key: "multirisques", label: "Multi-risk", icon: "🏭" },
+            { key: "transport", label: "Transportation", icon: "🚛" },
+            { key: "flotte", label: "Fleet", icon: "🚗" },
+            { key: "rc", label: "Civil Liability", icon: "⚖️" },
+            { key: "construction", label: "Construction", icon: "🏗️" },
+            { key: "sante_collective", label: "Group Health", icon: "🏥" },
+            { key: "devis_entreprise", label: "Business Quote", icon: "📋" },
+          ],
+        },
+
+        assurance_particulier: {
+          title: "Individual Insurance",
+          content:
+            "Our individual solutions include:\n\n• Health\n• Personal accidents\n• Home\n• Life insurance & savings\n• Schengen travel\n• Retirement",
+          actions: [
+            { key: "sante", label: "Health", icon: "🏥" },
+            { key: "alv", label: "Personal Accidents", icon: "🛡️" },
+            { key: "habitation", label: "Home", icon: "🏠" },
+            { key: "vie", label: "Life Insurance", icon: "💰" },
+            { key: "schengen", label: "Schengen Travel", icon: "✈️" },
+            { key: "retraite", label: "Retirement", icon: "👴" },
+            { key: "devis_particulier", label: "Individual Quote", icon: "📋" },
+          ],
+        },
+
+        // Business products
+        multirisques: {
+          title: "Multi-risk Business",
+          content:
+            "Comprehensive protection for your assets and activities:\n\n• Fire, water damage, machinery breakdown\n• Business interruption\n• Natural disaster options\n• Inventory and machinery coverage\n• Replacement value options\n\nFor inquiries or quotes, use contact options.",
+          actions: [],
+        },
+
+        transport: {
+          title: "Transportation Insurance (Goods)",
+          content:
+            "Full coverage for your shipments:\n\n• All-risk cargo coverage\n• Carrier liability\n• Parametric climate options\n• Import/export coverage\n• Logistics and transit\n\nFor inquiries or quotes, use contact options.",
+          actions: [],
+        },
+
+        flotte: {
+          title: "Fleet & Automobile",
+          content:
+            "Complete fleet management (5 to 5,000 vehicles):\n\n• Third party/comprehensive/glass\n• Assistance and replacement vehicles\n• Accident tracking dashboards\n• Risk monitoring and reduction\n• Centralized management\n\nFor inquiries or quotes, use contact options.",
+          actions: [],
+        },
+
+        rc: {
+          title: "Civil Liability",
+          content:
+            "General/professional/environmental/products:\n\n• Operations and post-delivery\n• Professional liability\n• Environmental liability\n• Legal protection\n\nFor inquiries or quotes, use contact options.",
+          actions: [],
+        },
+
+        construction: {
+          title: "Construction Insurance (CAR/EAR)",
+          content:
+            "All-risk construction and 10-year warranty:\n\n• Construction, energy, and infrastructure sites\n• Construction business interruption\n• Phase-based coverage\n• 10-year warranty\n\nFor inquiries or quotes, use contact options.",
+          actions: [],
+        },
+
+        sante_collective: {
+          title: "Group Health & Savings",
+          content:
+            "Employee contracts: medical expenses and savings:\n\n• Treatment networks and direct payment\n• Executive/non-executive coverage\n• Cost management and prevention\n• Centralized administration\n\nFor inquiries or quotes, use contact options.",
+          actions: [],
+        },
+
+        // Individual products
+        sante: {
+          title: "Health Insurance",
+          content:
+            "Reimbursement for medical, hospital, optical, and dental expenses:\n\n• Partner networks and direct payment\n• Flexible plans\n• 24/7 assistance\n• Supplemental coverage\n\nFor inquiries or quotes, use contact options.",
+          actions: [],
+        },
+
+        alv: {
+          title: "Personal Accidents",
+          content:
+            "Compensation for home and leisure accidents:\n\n• Disability and incapacity\n• Children's allowance\n• Home assistance\n• 24/7 coverage\n\nFor inquiries or quotes, use contact options.",
+          actions: [],
+        },
+
+        habitation: {
+          title: "Home Insurance",
+          content:
+            "Fire, theft, water damage, civil liability:\n\n• Replacement value options\n• Legal protection\n• Valuable items\n\nFor inquiries or quotes, use contact options.",
+          actions: [],
+        },
+
+        vie: {
+          title: "Life Insurance & Savings",
+          content:
+            "Savings, transfer, investment:\n\n• Guaranteed funds and unit-linked accounts\n• Control and taxation\n• Beneficiary options\n\nFor inquiries or quotes, use contact options.",
+          actions: [],
+        },
+
+        schengen: {
+          title: "Schengen Travel Insurance",
+          content:
+            "Certificate of conformity, visa, and assistance:\n\n• Medical expenses and repatriation\n• Luggage and delays\n• Short/long-term plans\n\nFor inquiries or quotes, use contact options.",
+          actions: [],
+        },
+
+        retraite: {
+          title: "Retirement",
+          content:
+            "Build a pension/long-term savings:\n\n• Scheduled payments\n• Tax advantages (depending on framework)\n• Reversionary options\n\nFor inquiries or quotes, use contact options.",
+          actions: [],
+        },
+
+        // Reinsurance
+        reassurance: {
+          title: "Reinsurance Services",
+          content:
+            "Our reinsurance services include:\n\n• QS/Surplus/XoL/Stop-Loss treaties\n• Targeted facultatives\n• Claims & arbitration 24/7\n• Placement on complex risks\n• Negotiation of differentiating clauses",
+          actions: [
+            { key: "traites", label: "Treaties", icon: "📜" },
+            { key: "facultatives", label: "Facultatives", icon: "🎯" },
+            { key: "sinistres", label: "Claims 24/7", icon: "🚨" },
+            { key: "placement", label: "Placement", icon: "💼" },
+            { key: "expertise_re", label: "Reinsurance Expertise", icon: "👨‍💼" },
+          ],
+        },
+
+        traites: {
+          title: "Treaties QS/Surplus/XoL/Stop-Loss",
+          content:
+            "Clear and robust programs:\n\n• Measured PML/AAL\n• Optimized retentions\n• Compared geometries\n• Technical result stabilization\n• Capital security\n• Growth support\n\nFor inquiries or quotes, use contact options.",
+          actions: [],
+        },
+
+        facultatives: {
+          title: "Targeted Facultatives",
+          content:
+            "Placement on complex risks:\n\n• Property, liability, energy, construction\n• Financial lines, transportation\n• A+/AA markets\n• Solid technical file\n• Negotiation of differentiating clauses\n• Rigorous follow-up until bind\n\nFor inquiries or quotes, use contact options.",
+          actions: [],
+        },
+
+        // Climate risk
+        climate: {
+          title: "Climate Risk",
+          content:
+            "From analysis to action:\n\n• Mapping & NGFS scenarios\n• Modeling & transfer\n• Parametric weather solutions\n• Resilience & TCFD/ISSB reporting\n• Adaptation plans\n• Tracking indicators",
+          actions: [
+            { key: "cartographie", label: "Mapping", icon: "🗺️" },
+            { key: "modelisation", label: "Modeling", icon: "📊" },
+            { key: "resilience", label: "Resilience", icon: "🌱" },
+            {
+              key: "parametrique_climat",
+              label: "Parametric Solutions",
+              icon: "📈",
+            },
+            { key: "expert_climat", label: "Climate Expert", icon: "👨‍💼" },
+          ],
+        },
+
+        cartographie: {
+          title: "Mapping & Scenarios",
+          content:
+            "Complete climate risk analysis:\n\n• Physical and transition analysis\n• NGFS scenarios and stress tests\n• Materiality by sites and businesses\n• Risk prioritization\n• Investment decisions\n• Business continuity\n\nFor inquiries or quotes, use contact options.",
+          actions: [],
+        },
+
+        // Advisory services
+        services: {
+          title: "Advisory Services",
+          content:
+            "Our specialized advisory services:\n\n• Risk Management Consulting\n• Social obligations assessment\n• Tailored training\n• Living mappings\n• Audited assumptions\n• Practical workshops",
+          actions: [
+            { key: "conseil_risques", label: "Risk Consulting", icon: "📊" },
+            {
+              key: "evaluation_sociale",
+              label: "Social Assessment",
+              icon: "👥",
+            },
+            { key: "formation", label: "Training", icon: "🎓" },
+            { key: "audit_risques", label: "Risk Audit", icon: "🔍" },
+            { key: "expert_conseil", label: "Advisory Expert", icon: "👨‍💼" },
+          ],
+        },
+
+        // ESG
+        esg: {
+          title: "ESG Policy",
+          content:
+            "Governance, social, environment:\n\n• Governance & ethics\n• People & diversity\n• Environmental responsibility\n• Code of conduct\n• Anti-corruption\n• Cybersecurity",
+          actions: [
+            { key: "gouvernance", label: "Governance", icon: "⚖️" },
+            { key: "social", label: "Social", icon: "👥" },
+            { key: "environnement", label: "Environment", icon: "🌱" },
+            { key: "audit_esg", label: "ESG Audit", icon: "🔍" },
+            { key: "expert_esg", label: "ESG Expert", icon: "👨‍💼" },
+          ],
+        },
+
+        // Contact
+        contact: {
+          title: "Contact Us",
+          content:
+            "For any questions or requests:\n\n📞 Tel1: +212-666-756991\n📞 Tel2: +212-675-208909\n📧 Nabil: nabil.cherkaoui@riskalia.ma\n📧 Info: contact@riskalia.ma\n\n📍 Head office: 16, Rue de Terves, 2nd Floor\nMers Sultan District, Casablanca\n\nWe respond within 24-48h.",
+          actions: [
+            { key: "appel_telephone", label: "Call", icon: "📞" },
+            { key: "envoyer_email", label: "Email", icon: "📧" },
+            { key: "rendez_vous", label: "Appointment", icon: "📅" },
+            { key: "localisation", label: "Location", icon: "📍" },
+          ],
+        },
+
+        // Quote actions
+        devis_entreprise: {
+          title: "Business Quote",
+          content:
+            "To get a personalized quote for your business:\n\n📧 Email: contact@riskalia.ma\n📞 Tel: +212-666-756991\n\nPlease specify:\n• Business sector\n• Company size\n• Risks to cover\n• Approximate budget",
+          actions: [
+            { key: "envoyer_email", label: "Send Email", icon: "📧" },
+            { key: "appel_telephone", label: "Call", icon: "📞" },
+            {
+              key: "retour_assurance",
+              label: "← Back to Insurance",
+              icon: "🔙",
+            },
+          ],
+        },
+
+        devis_particulier: {
+          title: "Individual Quote",
+          content:
+            "To get a personalized quote:\n\n📧 Email: contact@riskalia.ma\n📞 Tel: +212-666-756991\n\nPlease specify:\n• Type of coverage desired\n• Personal situation\n• Approximate budget\n• Specific needs",
+          actions: [
+            { key: "envoyer_email", label: "Send Email", icon: "📧" },
+            { key: "appel_telephone", label: "Call", icon: "📞" },
+            {
+              key: "retour_assurance",
+              label: "← Back to Insurance",
+              icon: "🔙",
+            },
+          ],
+        },
       },
 
       // Arabic translations
