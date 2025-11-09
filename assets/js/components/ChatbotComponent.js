@@ -119,7 +119,7 @@ class ChatbotComponent {
           <div class="chatbot-header">
             <div class="chatbot-header-content">
               <div class="chatbot-avatar">
-                <img src="/assets/Riskalia-Logo.png" alt="Riskalia Assistant" class="chatbot-avatar-img">
+                <img src="/assets/chatbot-mascot.svg" alt="Riskalia Assistant" class="chatbot-avatar-img">
               </div>
               <div class="chatbot-header-info">
                 <h3 class="chatbot-title" data-i18n="chatbot.title">Assistant Riskalia</h3>
@@ -140,7 +140,7 @@ class ChatbotComponent {
             <div class="chatbot-welcome">
               <div class="chatbot-message chatbot-message-bot">
                 <div class="chatbot-message-avatar">
-                  <img src="/assets/Riskalia-Logo.png" alt="Riskalia" class="chatbot-message-avatar-img">
+                  <img src="/assets/chatbot-mascot.svg" alt="Riskalia" class="chatbot-message-avatar-img">
                 </div>
                 <div class="chatbot-message-content">
                   <div class="chatbot-message-bubble">
@@ -2220,7 +2220,7 @@ class ChatbotComponent {
     if (sender === "bot") {
       messageDiv.innerHTML = `
         <div class="chatbot-message-avatar">
-          <img src="/assets/Riskalia-Logo.png" alt="Riskalia" class="chatbot-message-avatar-img">
+          <img src="/assets/chatbot-mascot.svg" alt="Riskalia" class="chatbot-message-avatar-img">
         </div>
         <div class="chatbot-message-content">
           ${title ? `<div class="chatbot-message-title">${title}</div>` : ""}

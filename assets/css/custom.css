@@ -182,6 +182,7 @@ body[dir="rtl"] h4 {
   background: url('data:image/svg+xml;utf8,<svg width="1440" height="44" viewBox="0 0 1440 44" xmlns="http://www.w3.org/2000/svg"><path d="M0,6 C240,44 480,0 720,18 C960,36 1200,8 1440,18 L1440,44 L0,44 Z" fill="%23fcf9fa"/></svg>')
     center/cover no-repeat;
   position: relative;
+  width: 100%;
 }
 
 .section-wave::after {
@@ -191,7 +192,11 @@ body[dir="rtl"] h4 {
   right: 0;
   top: 100%;
   height: 48px;
-
+  background: linear-gradient(
+    to bottom,
+    rgba(252, 249, 250, 1) 0%,
+    rgba(252, 249, 250, 0) 100%
+  );
   pointer-events: none;
 }
 

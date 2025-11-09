@@ -11,6 +11,7 @@ window.I18N = {
       solutions: "Solutions",
       assurance: "Assurance",
       re: "Réassurance",
+      search: "Rechercher",
       climate: "Risques Climatiques",
       services: "Services de Conseil",
       esg: "ESG",
@@ -2730,6 +2731,28 @@ footer: {
         title: "Espace Client",
         subtitle: "Notre portail sécurisé donne aux assurés un accès permanent à leurs documents, opérations et déclarations"
       },
+      login: {
+        title: "Accès sécurisé",
+        subtitle:
+          "Connectez-vous pour retrouver vos dossiers, suivre vos demandes et dialoguer avec votre équipe Riskalia.",
+        bullet1: "Authentification multi-facteurs dès l'ouverture générale du portail.",
+        bullet2: "Gestion des polices, quittances et sinistres en un seul endroit.",
+        bullet3: "Support multilingue (FR · EN · AR) et équipes dédiées.",
+        emailLabel: "Adresse e-mail professionnelle",
+        emailPlaceholder: "votre.email@entreprise.com",
+        passwordLabel: "Mot de passe",
+        passwordPlaceholder: "Votre mot de passe",
+        remember: "Se souvenir de moi",
+        forgot: "Mot de passe oublié ?",
+        submit: "Se connecter",
+        helper: "Vous n'avez pas encore de compte ?",
+        contact: "Contactez votre gestionnaire dédié pour recevoir vos identifiants.",
+        errors: {
+          missing: "Veuillez renseigner votre e-mail et votre mot de passe.",
+        },
+        pending:
+          "Connexion en cours de préparation. Nous vous avertirons dès l'activation de votre espace client sécurisé.",
+      },
       features: {
         title: "Fonctionnalités",
         items: [
@@ -3137,6 +3160,7 @@ footer: {
       solutions: "Solutions",
       assurance: "Insurance",
       re: "Reinsurance",
+      search: "Search",
       climate: "Climate Risks",
       services: "Advisory Services",
       esg: "ESG",
@@ -5825,6 +5849,28 @@ footer: {
         title: "Client Space",
         subtitle: "Our secure portal gives policyholders permanent access to their documents, operations and declarations"
       },
+      login: {
+        title: "Secure access",
+        subtitle:
+          "Sign in to retrieve your policies, follow ongoing requests and chat with your Riskalia team.",
+        bullet1: "Multi-factor authentication will go live when the portal opens to all clients.",
+        bullet2: "Manage policies, invoices and claims from a single dashboard.",
+        bullet3: "Multilingual support (FR · EN · AR) with dedicated account teams.",
+        emailLabel: "Business email address",
+        emailPlaceholder: "your.email@company.com",
+        passwordLabel: "Password",
+        passwordPlaceholder: "Your password",
+        remember: "Remember me",
+        forgot: "Forgot password?",
+        submit: "Sign in",
+        helper: "No account yet?",
+        contact: "Contact your dedicated account manager to receive your credentials.",
+        errors: {
+          missing: "Please enter both your email address and password.",
+        },
+        pending:
+          "Secure login is being finalised. We will notify you as soon as your client area is activated.",
+      },
       features: {
         title: "Features",
         items: [
@@ -6232,6 +6278,7 @@ footer: {
       solutions: "الحلول",
       assurance: "التأمين",
       re: "إعادة التأمين",
+      search: "بحث",
       climate: "مخاطر المناخ",
       services: "الخدمات الاستشارية",
       esg: "الاستدامة",
@@ -8851,6 +8898,29 @@ footer: {
       hero: {
         title: "مساحة العميل",
         subtitle: "توفر بوابتنا الآمنة لحاملي الوثائق وصولاً دائماً إلى مستنداتهم وعملياتهم وإقراراتهم"
+      },
+      login: {
+        title: "ولوج آمن",
+        subtitle:
+          "سجّل الدخول للاطلاع على ملفاتك، متابعة الطلبات والتواصل مع فريق ريسكاليا.",
+        bullet1:
+          "المصادقة المتعددة العوامل ستكون متاحة عند الإطلاق العام للبوابة.",
+        bullet2: "إدارة الوثائق، الإيصالات والملفات التعويضية في مكان واحد.",
+        bullet3: "دعم بلغات متعددة (الفرنسية · الإنجليزية · العربية) وفِرق مخصصة.",
+        emailLabel: "البريد الإلكتروني المهني",
+        emailPlaceholder: "your.email@company.com",
+        passwordLabel: "كلمة المرور",
+        passwordPlaceholder: "كلمة المرور الخاصة بك",
+        remember: "تذكرني",
+        forgot: "نسيت كلمة المرور؟",
+        submit: "تسجيل الدخول",
+        helper: "لا تملك حساباً بعد؟",
+        contact: "تواصل مع مدير حسابك للحصول على بيانات الولوج.",
+        errors: {
+          missing: "يرجى إدخال البريد الإلكتروني وكلمة المرور.",
+        },
+        pending:
+          "نقوم باستكمال تأمين الولوج. سنعلمك فور تفعيل مساحتك المخصصة.",
       },
       features: {
         title: "المميزات",

@@ -48,7 +48,7 @@
   /* Allow navigation to scroll smoothly on smaller lg screens */
   .nav-container {
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: visible;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
     scroll-behavior: smooth;
@@ -63,6 +63,7 @@
   nav {
     flex-shrink: 1;
     min-width: 0;
+    overflow: visible;
   }
 
   /* Ensure dropdown buttons don't wrap awkwardly */
@@ -145,14 +146,29 @@ header img {
   overflow-y: auto;
 }
 
-/* Solutions Dropdown Visibility */
-.solutions-dropdown:hover .solutions-dropdown-menu,
-.solutions-dropdown-menu:hover {
-  display: block !important;
+/* Desktop solutions dropdown transitions */
+.solutions-dropdown-menu {
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
-.solutions-dropdown:hover .dropdown-arrow {
-  transform: rotate(180deg);
+.solutions-dropdown-menu[data-state="open"] {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.solutions-dropdown-menu[data-state="closing"] {
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .solutions-dropdown-menu {
+    transition: none;
+    transform: none;
+  }
 }
 
 /* Language Dropdown Visibility - Keep existing behavior */

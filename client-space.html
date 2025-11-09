@@ -8,10 +8,10 @@
       name="description"
       content="Accédez à vos documents, déclarez vos sinistres en ligne et suivez vos demandes via notre portail sécurisé."
     />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap"
@@ -150,8 +150,119 @@
       </div>
     </section>
 
+    <div class="section-wave" aria-hidden="true"></div>
+
+    <!-- LOGIN SECTION -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <div class="space-y-4">
+            <h2
+              class="text-2xl md:text-3xl font-bold text-gray-900"
+              data-i18n="clientspace.login.title"
+            >
+              Accès sécurisé
+            </h2>
+            <p
+              class="text-gray-600 text-base md:text-lg"
+              data-i18n="clientspace.login.subtitle"
+            >
+              Connectez-vous pour retrouver vos dossiers, suivre vos demandes et dialoguer avec votre équipe Riskalia.
+            </p>
+            <ul class="space-y-2 text-sm md:text-base text-gray-600">
+              <li class="flex items-start gap-2">
+                <span class="mt-1 text-[var(--c3)]">•</span>
+                <span data-i18n="clientspace.login.bullet1">
+                  Authentification multi-facteurs dès l'ouverture générale du portail.
+                </span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1 text-[var(--c3)]">•</span>
+                <span data-i18n="clientspace.login.bullet2">
+                  Gestion des polices, quittances et sinistres en un seul endroit.
+                </span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1 text-[var(--c3)]">•</span>
+                <span data-i18n="clientspace.login.bullet3">
+                  Support multilingue (FR · EN · AR) et équipes dédiées.
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <form
+              id="client-login-form"
+              class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 space-y-5"
+            >
+              <div class="space-y-2">
+                <label for="login-email" class="block text-sm font-semibold text-gray-700" data-i18n="clientspace.login.emailLabel">
+                  Adresse e-mail professionnelle
+                </label>
+                <input
+                  type="email"
+                  id="login-email"
+                  name="email"
+                  class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-gray-700 focus:border-[var(--c3)] focus:ring-2 focus:ring-[var(--c3)]/30 transition-all"
+                  required
+                  autocomplete="email"
+                  data-i18n-attr="placeholder:clientspace.login.emailPlaceholder"
+                />
+              </div>
+              <div class="space-y-2">
+                <label for="login-password" class="block text-sm font-semibold text-gray-700" data-i18n="clientspace.login.passwordLabel">
+                  Mot de passe
+                </label>
+                <input
+                  type="password"
+                  id="login-password"
+                  name="password"
+                  class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-gray-700 focus:border-[var(--c3)] focus:ring-2 focus:ring-[var(--c3)]/30 transition-all"
+                  required
+                  autocomplete="current-password"
+                  data-i18n-attr="placeholder:clientspace.login.passwordPlaceholder"
+                />
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm">
+                <label class="inline-flex items-center gap-2 text-gray-600">
+                  <input type="checkbox" class="rounded border-gray-300 text-[var(--c3)] focus:ring-[var(--c3)]" name="remember" />
+                  <span data-i18n="clientspace.login.remember">Se souvenir de moi</span>
+                </label>
+                <a
+                  href="#"
+                  class="text-[var(--c3)] font-semibold hover:underline"
+                  data-i18n="clientspace.login.forgot"
+                >
+                  Mot de passe oublié ?
+                </a>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-gradient-to-r from-[var(--c3)] to-[var(--c2)] text-white font-semibold py-3 rounded-xl shadow-lg hover:from-[var(--c2)] hover:to-[var(--c1)] transition-transform transform hover:-translate-y-0.5"
+                data-i18n="clientspace.login.submit"
+              >
+                Se connecter
+              </button>
+              <div class="text-sm text-gray-500" data-i18n="clientspace.login.helper">
+                Vous n'avez pas encore de compte ?
+              </div>
+              <div class="text-sm text-gray-700 font-medium" data-i18n="clientspace.login.contact">
+                Contactez votre gestionnaire dédié pour recevoir vos identifiants.
+              </div>
+              <div
+                id="login-feedback"
+                class="hidden rounded-lg border px-4 py-3 text-sm"
+                role="status"
+                aria-live="polite"
+              ></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FEATURES SECTION -->
-    <section class="py-16 bg-white">
+    <section class="py-12 bg-white">
       <div class="container mx-auto px-4 max-w-6xl">
         <h2
           class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900"
@@ -308,8 +419,80 @@
           });
         }
 
+        // Login form helper
+        const loginForm = document.getElementById("client-login-form");
+        const loginFeedback = document.getElementById("login-feedback");
+
+        function applyFeedbackStyles(type) {
+          if (!loginFeedback) return;
+          const classesToRemove = [
+            "hidden",
+            "bg-red-50",
+            "border-red-200",
+            "text-red-700",
+            "bg-cyan-50",
+            "border-cyan-200",
+            "text-cyan-700",
+          ];
+          loginFeedback.classList.remove(...classesToRemove);
+
+          if (type === "error") {
+            loginFeedback.classList.add("bg-red-50", "border-red-200", "text-red-700");
+          } else {
+            loginFeedback.classList.add("bg-cyan-50", "border-cyan-200", "text-cyan-700");
+          }
+        }
+
+        function translateFeedback() {
+          if (!loginFeedback || loginFeedback.classList.contains("hidden")) return;
+          const key = loginFeedback.dataset.i18nKey;
+          if (!key || typeof window.t !== "function") return;
+          const text = window.t(key);
+          if (text && text !== key) {
+            loginFeedback.textContent = text;
+          }
+        }
+
+        function showFeedback(type, key) {
+          if (!loginFeedback) return;
+          const text = typeof window.t === "function" ? window.t(key) : key;
+          loginFeedback.dataset.i18nKey = key;
+          applyFeedbackStyles(type);
+          loginFeedback.textContent = text;
+        }
+
+        function hideFeedback() {
+          if (!loginFeedback) return;
+          loginFeedback.classList.add("hidden");
+          loginFeedback.textContent = "";
+          delete loginFeedback.dataset.i18nKey;
+        }
+
+        if (loginForm) {
+          loginForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const email = loginForm.email.value.trim();
+            const password = loginForm.password.value.trim();
+
+            if (!email || !password) {
+              showFeedback("error", "clientspace.login.errors.missing");
+              return;
+            }
+
+            showFeedback("info", "clientspace.login.pending");
+            loginForm.reset();
+          });
+
+          loginForm.addEventListener("input", () => {
+            if (loginFeedback && !loginFeedback.classList.contains("hidden")) {
+              hideFeedback();
+            }
+          });
+        }
+
         // Initial update
         updateFeatures();
+        translateFeedback();
 
         // Listen for language changes
         document.addEventListener("languageChanged", (e) => {
@@ -330,6 +513,7 @@
 
           // Update features
           updateFeatures();
+          translateFeedback();
         });
 
         // Initialize components
