@@ -59,6 +59,7 @@ getFooterHTML() {
               <li><a href="/client-space.html" data-i18n="nav.clientspace" class="hover:text-white">Espace Client</a></li>
               <li><a href="/blog.html" data-i18n="nav.blog" class="hover:text-white">Blog</a></li>
               <li><a href="/faq.html" data-i18n="nav.faq" class="hover:text-white">FAQ</a></li>
+              <li><a href="/contact.html" data-i18n="nav.contact" class="hover:text-white">Contact</a></li>
               <li><a href="/legal.html" data-i18n="nav.legal" class="hover:text-white">Mentions Légales</a></li>
             </ul>
           </div>
