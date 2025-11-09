@@ -45,20 +45,6 @@
 
 /* Navigation Responsiveness Improvements */
 @media (min-width: 1024px) {
-  /* Allow navigation to scroll smoothly on smaller lg screens */
-  .nav-container {
-    overflow-x: auto;
-    overflow-y: visible;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-  }
-
-  .nav-container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
-  }
-
   /* Ensure navigation doesn't force unwanted width */
   nav {
     flex-shrink: 1;
