@@ -398,8 +398,8 @@ class NavigationComponent {
       };
 
       const commitHide = () => {
-        solutionsDropdownMenu.hidden = true;
         solutionsDropdownMenu.dataset.state = "closed";
+        solutionsDropdownMenu.hidden = true;
       };
 
       const showDropdown = () => {
@@ -409,9 +409,8 @@ class NavigationComponent {
         }
 
         solutionsDropdownMenu.hidden = false;
-        requestAnimationFrame(() => {
-          solutionsDropdownMenu.dataset.state = "open";
-        });
+        solutionsDropdownMenu.removeAttribute("hidden");
+        solutionsDropdownMenu.dataset.state = "open";
 
         solutionsDropdownButton.setAttribute("aria-expanded", "true");
         dropdownArrow?.classList.add("rotate-180");
@@ -433,7 +432,7 @@ class NavigationComponent {
           if (solutionsDropdownMenu.dataset.state !== "open") {
             commitHide();
           }
-        }, 160);
+        }, 180);
       };
 
       const scheduleHide = () => {

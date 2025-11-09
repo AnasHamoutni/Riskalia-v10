@@ -148,20 +148,20 @@ header img {
 
 /* Desktop solutions dropdown transitions */
 .solutions-dropdown-menu {
-  pointer-events: none;
   opacity: 0;
+  visibility: hidden;
   transform: translateY(0.5rem);
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
 .solutions-dropdown-menu[data-state="open"] {
-  pointer-events: auto;
   opacity: 1;
+  visibility: visible;
   transform: translateY(0);
 }
 
-.solutions-dropdown-menu[data-state="closing"] {
-  pointer-events: none;
+.solutions-dropdown-menu[hidden] {
+  display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1093,6 +1093,7 @@ footer: {
     chatbot: {
       title: "Assistant Riskalia",
       subtitle: "Expert en assurance & réassurance",
+      mascotAlt: "Assistant virtuel Riskalia",
       welcome:
         "Bonjour ! Je suis votre assistant Riskalia. Comment puis-je vous aider avec vos besoins en assurance ou réassurance ?",
       now: "Maintenant",
@@ -4223,6 +4224,7 @@ footer: {
     chatbot: {
       title: "Riskalia Assistant",
       subtitle: "Insurance & reinsurance expert",
+      mascotAlt: "Riskalia virtual assistant",
       welcome:
         "Hello! I'm your Riskalia assistant. How can I help you with your insurance or reinsurance needs?",
       now: "Now",
@@ -7307,6 +7309,7 @@ footer: {
     chatbot: {
       title: "مساعد ريسكاليا",
       subtitle: "خبير في التأمين وإعادة التأمين",
+      mascotAlt: "المساعد الافتراضي لريسكاليا",
       welcome:
         "مرحباً! أنا مساعد ريسكاليا. كيف يمكنني مساعدتك في احتياجاتك للتأمين أو إعادة التأمين؟",
       now: "الآن",

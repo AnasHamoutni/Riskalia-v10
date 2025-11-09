@@ -50,64 +50,12 @@ class ChatbotComponent {
         <!-- Chatbot Toggle Button -->
         <button class="chatbot-toggle-btn" id="chatbot-toggle">
           <div class="chatbot-icon">
-            <svg class="chatbot-icon-svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 512 512" fill="none">
-              <defs>
-                <linearGradient id="grad-phone" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#37B3FF" />
-                  <stop offset="100%" stop-color="#005C73" />
-                </linearGradient>
-                <linearGradient id="grad-bot" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#FFFFFF" />
-                  <stop offset="100%" stop-color="#E8F5FF" />
-                </linearGradient>
-                <linearGradient id="grad-shadow" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#58C6FF" stop-opacity="0.18" />
-                  <stop offset="100%" stop-color="#00465C" stop-opacity="0.12" />
-                </linearGradient>
-                <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#004C6A" flood-opacity="0.22" />
-                </filter>
-              </defs>
-              <g filter="url(#shadow)">
-                <rect x="128" y="16" width="256" height="480" rx="64" fill="url(#grad-phone)" />
-                <rect x="160" y="88" width="192" height="336" rx="36" fill="#F5FBFF" fill-opacity="0.25" />
-                <circle cx="256" cy="64" r="10" fill="#9FE6FF" />
-              </g>
-              <g transform="translate(0,12)">
-                <ellipse cx="256" cy="416" rx="120" ry="40" fill="url(#grad-shadow)" />
-              </g>
-              <g transform="translate(0,12)">
-                <g transform="translate(96,120)">
-                  <rect x="96" y="48" width="128" height="144" rx="48" fill="url(#grad-bot)" />
-                  <rect x="124" y="24" width="72" height="44" rx="22" fill="#00B0C8" />
-                  <rect x="132" y="28" width="56" height="20" rx="10" fill="#37B3FF" />
-                  <circle cx="160" cy="120" r="72" fill="url(#grad-bot)" />
-                  <rect x="120" y="160" width="80" height="60" rx="30" fill="#F1F8FF" />
-                  <circle cx="136" cy="112" r="18" fill="#1B7191" />
-                  <circle cx="184" cy="112" r="18" fill="#1B7191" />
-                  <circle cx="136" cy="112" r="9" fill="#9FE6FF" />
-                  <circle cx="184" cy="112" r="9" fill="#9FE6FF" />
-                  <path d="M140 156C148 166 172 166 180 156" stroke="#00A4C4" stroke-width="10" stroke-linecap="round" />
-                  <rect x="96" y="200" width="128" height="20" rx="10" fill="#00AEDA" opacity="0.45" />
-                  <g>
-                    <path d="M84 142C66 150 54 172 58 192C62 208 76 220 94 222" stroke="#C2E9FF" stroke-width="12" stroke-linecap="round" />
-                    <path d="M84 142C68 152 60 170 62 188C64 204 74 216 90 220" stroke="#7AD7FF" stroke-width="6" stroke-linecap="round" />
-                    <path d="M84 142L72 116" stroke="#37B3FF" stroke-width="10" stroke-linecap="round" />
-                    <circle cx="70" cy="110" r="10" fill="#00B0C8" />
-                  </g>
-                  <g transform="translate(128)">
-                    <path d="M172 142C190 150 202 172 198 192C194 208 180 220 162 222" stroke="#C2E9FF" stroke-width="12" stroke-linecap="round" />
-                    <path d="M172 142C188 152 196 170 194 188C192 204 182 216 166 220" stroke="#7AD7FF" stroke-width="6" stroke-linecap="round" />
-                    <path d="M172 142L184 116" stroke="#37B3FF" stroke-width="10" stroke-linecap="round" />
-                    <circle cx="186" cy="110" r="10" fill="#00B0C8" />
-                  </g>
-                </g>
-              </g>
-              <g transform="translate(0,12)">
-                <rect x="196" y="332" width="120" height="16" rx="8" fill="#00B0C8" opacity="0.6" />
-                <rect x="204" y="360" width="104" height="12" rx="6" fill="#FFFFFF" opacity="0.5" />
-              </g>
-            </svg>
+            <img
+              src="/assets/chatbot-mascot.svg"
+              alt="Riskalia Assistant"
+              class="chatbot-icon-img"
+              data-i18n-attr="alt:chatbot.mascotAlt"
+            />
           </div>
           <div class="chatbot-pulse"></div>
         </button>
