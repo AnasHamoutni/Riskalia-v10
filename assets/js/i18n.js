@@ -14,7 +14,11 @@ window.I18N = {
       climate: "Risques Climatiques",
       services: "Services de Conseil",
       esg: "ESG",
+      clientspace: "Espace Client",
+      blog: "Blog",
       contact: "Contact",
+      faq: "FAQ",
+      legal: "Mentions Légales",
     },
     hero: {
       title: "L'expertise qui rassure",
@@ -502,7 +506,7 @@ footer: {
     col1: {
       title: "Riskalia",
       address:
-        "Cabinet de courtage & stratégies agréé ACAPS.<br/>Siège : 16, Rue de Terves, 2ème étage,<br/>Quartier Mers Sultan, Casablanca.",
+        "Cabinet de courtage & stratégies agréé ACAPS.<br/>Siège : 16, Rue de Terves, 2ème étage, Quartier Mers Sultan, Casablanca.",
       notice:
         "Intermédiaire d'assurance régi par la loi 17-99 portant code des assurances.<br/>Sous la décision n°COU5047.00000.0.C.2025.472."
     },
@@ -895,7 +899,7 @@ footer: {
       anasse: {
         name: "Anasse Youssfi",
         title: "Associé stratégique",
-        bio: "Actuaire et dirigeant d'Actuelia Afrque, Anasse Youssfi cumule plus de vingt ans d'expérience auprès d'assureurs, de réassureurs et d'institutions financières en Afrique et à l'international. Il conjugue vision et exigence méthodologique, enseigne comme maître de conférences et forme de nouvelles générations d'actuaires. Chez Riskalia, il apporte un appui technique sur les dossiers à fort enjeu : structuration de couvertures sur mesure, critères de souscription, programmes multi-lignes/réassurance et solutions paramétriques. Objectif : aligner précisément risques, coût et valeur client.",
+        bio: "Actuaire et dirigeant d'Actuelia Afrique, Anasse Youssfi cumule plus de vingt ans d'expérience auprès d'assureurs, de réassureurs et d'institutions financières en Afrique et à l'international. Il conjugue vision et exigence méthodologique, enseigne comme maître de conférences et forme de nouvelles générations d'actuaires. Chez Riskalia, il apporte un appui technique sur les dossiers à fort enjeu : structuration de couvertures sur mesure, critères de souscription, programmes multi-lignes/réassurance et solutions paramétriques. Objectif : aligner précisément risques, coût et valeur client.",
       },
     },
     cta: {
@@ -2716,6 +2720,391 @@ footer: {
         next: "Santé",
       },
     },
+    // Client Space page
+    clientspace: {
+      meta: {
+        title: "Riskalia — Espace Client",
+        desc: "Accédez à vos documents, déclarez vos sinistres en ligne et suivez vos demandes via notre portail sécurisé."
+      },
+      hero: {
+        title: "Espace Client",
+        subtitle: "Notre portail sécurisé donne aux assurés un accès permanent à leurs documents, opérations et déclarations"
+      },
+      features: {
+        title: "Fonctionnalités",
+        items: [
+          {
+            icon: "🗂️",
+            title: "Documents",
+            desc: "Téléchargement des contrats, quittances et attestations"
+          },
+          {
+            icon: "📝",
+            title: "Déclaration de sinistre",
+            desc: "Déclaration de sinistre en ligne"
+          },
+          {
+            icon: "🔍",
+            title: "Suivi",
+            desc: "Suivi de vos demandes ou réclamations"
+          },
+          {
+            icon: "📎",
+            title: "Documents justificatifs",
+            desc: "Transmission sécurisée de pièces justificatives"
+          }
+        ]
+      },
+      security: {
+        title: "Sécurité et conformité",
+        badges: [
+          "🔒 Conformité Loi 09-08",
+          "🇲🇦 Données hébergées localement",
+          "🔐 Authentification renforcée"
+        ]
+      },
+      cta: {
+        login: "Se connecter",
+        register: "Créer un compte",
+        contact: "Nous contacter"
+      }
+    },
+    // Blog & News page
+    blog: {
+      meta: {
+        title: "Riskalia — Blog & Actualités",
+        desc: "Articles de fond sur la réassurance, l'assurance et la gestion des risques. Actualités réglementaires et insights du marché."
+      },
+      hero: {
+        title: "Blog & Actualités",
+        subtitle: "Notre blog vous propose régulièrement des articles à forte valeur ajoutée pour mieux comprendre les enjeux du marché"
+      },
+      sections: {
+        articles: "📘 Articles de fond",
+        news: "📅 Actualités"
+      },
+      articles: [
+        {
+          id: "reinsurance-history",
+          title: "Réassurance : des racines antiques à l'architecture moderne du risque",
+          excerpt: "La réassurance puise ses racines jusqu'au Talmud de Babylone, évoluant des républiques maritimes italiennes vers un secteur structuré mondial.",
+          date: "2025-01-15",
+          readTime: "8 min"
+        },
+        {
+          id: "facultative-reinsurance",
+          title: "La réassurance facultative : entre art de la sélection et contrat sur mesure",
+          excerpt: "Une forme singulière de transfert du risque qui ne s'applique qu'à un seul risque, sélectionné et analysé individuellement.",
+          date: "2025-01-12",
+          readTime: "6 min"
+        },
+        {
+          id: "utmost-good-faith",
+          title: "L'extrême bonne foi : mythe anglo-saxon ou principe universel ?",
+          excerpt: "Ce principe impose au cédant une obligation renforcée de transparence, né de la pratique maritime anglo-saxonne.",
+          date: "2025-01-10",
+          readTime: "7 min"
+        },
+        {
+          id: "follow-fortunes",
+          title: "Le partage de sort : quand le réassureur suit les pas de l'assureur",
+          excerpt: "La clause 'follow the fortunes' engage le réassureur à suivre les décisions de sa cédante dans la limite de la police d'origine.",
+          date: "2025-01-08",
+          readTime: "5 min"
+        },
+        {
+          id: "arbitration-equity",
+          title: "Arbitrage & équité : pourquoi les contrats de réassurance s'éloignent des tribunaux",
+          excerpt: "L'arbitrage en réassurance repose sur l'amiable composition et évite les juges étatiques peu familiers des subtilités techniques.",
+          date: "2025-01-05",
+          readTime: "6 min"
+        },
+        {
+          id: "contractual-imbalances",
+          title: "Réassurance ou adhésion ? Les déséquilibres contractuels sous la loupe",
+          excerpt: "Bien que théoriquement de gré à gré, la réassurance comporte souvent des clauses imposées via des modèles standardisés.",
+          date: "2025-01-03",
+          readTime: "7 min"
+        },
+        {
+          id: "private-international-law",
+          title: "Réassurance et droit international privé : un vide normatif à combler ?",
+          excerpt: "La diversité des systèmes juridiques crée une incertitude sur le droit applicable et la juridiction compétente.",
+          date: "2024-12-28",
+          readTime: "8 min"
+        },
+        {
+          id: "back-to-back",
+          title: "Le contrat « back to back » : entre autonomie du réassureur et risque de fragmentation",
+          excerpt: "Le principe 'as original' suppose que la réassurance reflète les termes du contrat d'assurance sous-jacent.",
+          date: "2024-12-25",
+          readTime: "6 min"
+        },
+        {
+          id: "legal-sovereignty",
+          title: "La souveraineté juridique à l'épreuve de la réassurance mondiale",
+          excerpt: "Les grands réassureurs imposent leurs règles contractuelles, mettant à l'épreuve la souveraineté des États émergents.",
+          date: "2024-12-22",
+          readTime: "7 min"
+        },
+        {
+          id: "reinsurance-law",
+          title: "Pour un droit de la réassurance : utopie ou nécessité ?",
+          excerpt: "La réassurance reste une 'zone grise' du droit, échappant aux codes nationaux et reposant sur la liberté contractuelle.",
+          date: "2024-12-20",
+          readTime: "9 min"
+        }
+      ],
+      news: {
+        title: "Actualités",
+        items: [
+          "Évolutions législatives (ACAPS, Code marocain, Réglementation UE)",
+          "Alertes réglementaires",
+          "Nouveaux produits ou offres du cabinet",
+          "Partenariats stratégiques"
+        ]
+      },
+      cta: {
+        readMore: "Lire l'article",
+        backToList: "← Retour aux articles",
+        share: "Partager"
+      }
+    },
+    // FAQ page translations
+    faqPage: {
+      meta: {
+        title: "Riskalia — Questions Fréquentes",
+        desc: "Toutes les réponses à vos questions sur nos services, contrats, garanties, sinistres et engagements réglementaires."
+      },
+      hero: {
+        title: "Questions Fréquentes",
+        subtitle: "Toutes les réponses à vos questions sur le courtage, la réassurance et nos services"
+      },
+      categories: {
+        broker: {
+          title: "🎯 Rôle du courtier",
+          questions: [
+            {
+              q: "Quelle est la différence entre un courtier et un agent d'assurance ?",
+              a: "Un agent représente une ou plusieurs compagnies d'assurance. Un courtier, en revanche, est un **mandataire de l'assuré**. Il analyse le marché, compare les offres, négocie pour vous et vous accompagne tout au long du cycle de vie du contrat. Riskalia agit en toute indépendance pour défendre vos intérêts."
+            },
+            {
+              q: "Comment est rémunéré le courtier ?",
+              a: "Le courtier perçoit une commission versée par l'assureur, mais elle est **déjà incluse dans la prime que vous payez**. Ainsi, recourir à un courtier ne vous coûte pas plus cher : vous bénéficiez d'un accompagnement expert sans surcoût, tout en profitant d'une vision objective du marché."
+            }
+          ]
+        },
+        contracts: {
+          title: "🧾 Contrats & Garanties",
+          questions: [
+            {
+              q: "Puis-je modifier mon contrat en cours d'année ?",
+              a: "Oui. Vous pouvez demander un avenant à tout moment : ajout de garanties, changement de véhicule, modification d'adresse... Selon la nature de la modification, une régularisation de prime peut être calculée au prorata temporis."
+            },
+            {
+              q: "Que se passe-t-il si je résilie un contrat sans en souscrire un autre ?",
+              a: "Pour certaines garanties obligatoires (ex. RC automobile), vous devez justifier d'une nouvelle couverture avant la résiliation effective. En assurance non-obligatoire, vérifiez que vous n'êtes pas exposé à un vide de garantie qui pourrait engager votre responsabilité."
+            },
+            {
+              q: "Comment lire une police d'assurance ?",
+              a: "Une police comporte généralement : **1)** les Conditions Générales (cadre juridique) ; **2)** les Conditions Particulières (montants, franchises, échéances) ; **3)** les Conditions Spéciales (clauses complémentaires). Riskalia vous aide à identifier les exclusions, les franchises et les plafonds de garantie."
+            }
+          ]
+        },
+        claims: {
+          title: "⚖️ Sinistres & Indemnisation",
+          questions: [
+            {
+              q: "Quel est le délai pour déclarer un sinistre ?",
+              a: "Les délais varient selon les contrats : **5 jours ouvrés** pour la plupart des sinistres, **2 jours** en cas de vol, **10 jours** pour les catastrophes naturelles. Il est impératif de respecter ces délais, sous peine de déchéance de garantie. Riskalia vous accompagne dès la survenance du sinistre."
+            },
+            {
+              q: "Pourquoi mon indemnisation est-elle inférieure à mes attentes ?",
+              a: "L'indemnisation est encadrée par le contrat : application d'une **franchise**, d'un **plafond de garantie**, de la **vétusté** (en dommages aux biens) ou d'une clause de **règle proportionnelle** si la valeur assurée est sous-évaluée. Riskalia vous aide à vérifier que l'assureur respecte bien les termes contractuels."
+            }
+          ],
+          timeline: {
+            title: "Chronologie type d'un sinistre",
+            steps: [
+              { label: "J+0", desc: "Survenance du sinistre" },
+              { label: "J+2 à J+10", desc: "Déclaration (selon type)" },
+              { label: "J+15 à J+30", desc: "Expertise et rapport" },
+              { label: "J+30 à J+60", desc: "Proposition d'indemnisation" },
+              { label: "J+60+", desc: "Réglement ou contentieux si désaccord" }
+            ]
+          }
+        },
+        reinsurance: {
+          title: "🌍 Réassurance & Grandes Entreprises",
+          questions: [
+            {
+              q: "Qu'est-ce que la réassurance et à quoi sert-elle ?",
+              a: "La réassurance est « l'assurance des assureurs ». Elle permet à votre compagnie d'assurance de transférer une partie de ses risques à un réassureur international, garantissant sa solvabilité en cas de sinistre majeur. Riskalia accompagne les grandes entreprises et les cédantes dans la structuration de programmes proportionnels (Quote-Part, Excédent de plein) et non-proportionnels (Excess of Loss, Stop Loss)."
+            },
+            {
+              q: "Mon entreprise peut-elle accéder à la réassurance facultative ?",
+              a: "Oui. Les risques atypiques ou de montant élevé (grands chantiers, cargaisons spéciales, responsabilités complexes) peuvent nécessiter une **couverture facultative**, négociée risque par risque. Riskalia prépare les dossiers de souscription et présente vos risques aux marchés internationaux."
+            }
+          ]
+        },
+        regulatory: {
+          title: "📜 Engagements Réglementaires",
+          compliance: [
+            {
+              label: "Agrément ACAPS",
+              desc: "Riskalia est enregistré comme courtier d'assurance et de réassurance sous la décision n°COU5047.00000.0.C.2025.472, conformément à la loi 17-99 portant code des assurances."
+            },
+            {
+              label: "Protection des données",
+              desc: "Nous respectons la loi 09-08 relative à la protection des personnes physiques à l'égard des traitements de données à caractère personnel. Vos informations sont hébergées au Maroc et ne sont jamais transmises à des tiers sans votre consentement."
+            },
+            {
+              label: "Devoir de conseil",
+              desc: "Nous formalisons par écrit nos recommandations et vous expliquons les garanties, exclusions et franchises avant toute souscription."
+            },
+            {
+              label: "Assurance RC Professionnelle",
+              desc: "Riskalia dispose d'une Responsabilité Civile Professionnelle couvrant les éventuels manquements dans l'exercice de son activité de courtage."
+            }
+          ]
+        }
+      }
+    },
+    // Legal page translations
+    legalPage: {
+      meta: {
+        title: "Riskalia — Mentions Légales & Politique de Confidentialité",
+        desc: "Informations légales, politique de confidentialité et conditions d'utilisation de Riskalia."
+      },
+      hero: {
+        title: "Mentions Légales",
+        subtitle: "Transparence, conformité et protection de vos données personnelles"
+      },
+      sections: {
+        legalNotice: {
+          title: "📋 Mentions Légales",
+          content: [
+            {
+              label: "Raison sociale",
+              text: "Riskalia — Cabinet de courtage d'assurance et de réassurance"
+            },
+            {
+              label: "Forme juridique",
+              text: "SARL AU (Société à responsabilité limitée à associé unique)"
+            },
+            {
+              label: "Siège social",
+              text: "16, Rue de Terves, 2ème étage, Quartier Mers Sultan, Casablanca, Maroc"
+            },
+            {
+              label: "Numéro d'enregistrement",
+              text: "Décision ACAPS n°COU5047.00000.0.C.2025.472"
+            },
+            {
+              label: "Loi applicable",
+              text: "Loi 17-99 portant code des assurances (Maroc)"
+            },
+            {
+              label: "Contact",
+              text: "Email : contact@riskalia.ma<br/>Tél : +212 666 756 991 / +212 675 208 909"
+            },
+            {
+              label: "Directeur de la publication",
+              text: "Nabil Cherkaoui, Gérant"
+            }
+          ]
+        },
+        privacy: {
+          title: "🔒 Politique de Confidentialité",
+          intro: "Riskalia accorde la plus grande importance à la protection de vos données personnelles. Cette politique vous informe sur la manière dont nous collectons, utilisons et protégeons vos informations.",
+          sections: [
+            {
+              subtitle: "Données collectées",
+              content: "Nous collectons uniquement les données nécessaires à l'exercice de notre activité de courtage : nom, prénom, coordonnées professionnelles ou personnelles, informations relatives aux contrats d'assurance, sinistres et pièces justificatives. Ces données sont collectées directement auprès de vous ou de nos partenaires assureurs."
+            },
+            {
+              subtitle: "Finalités du traitement",
+              content: "Vos données sont utilisées pour : (1) la gestion de vos contrats d'assurance et réassurance ; (2) le traitement des sinistres ; (3) la prospection commerciale avec votre consentement ; (4) le respect de nos obligations légales et réglementaires ; (5) l'amélioration de nos services."
+            },
+            {
+              subtitle: "Vos droits",
+              content: "Conformément à la loi 09-08, vous disposez d'un droit d'accès, de rectification, d'opposition et de suppression de vos données. Vous pouvez exercer ces droits en nous contactant par email à contact@riskalia.ma ou par courrier à l'adresse du siège social."
+            },
+            {
+              subtitle: "Durée de conservation",
+              content: "Vos données sont conservées pendant toute la durée de la relation contractuelle et jusqu'à 10 ans après la fin du contrat, conformément aux délais de prescription légaux en matière d'assurance."
+            },
+            {
+              subtitle: "Sécurité",
+              content: "Nous mettons en œuvre toutes les mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte, altération ou divulgation."
+            }
+          ]
+        },
+        dataProcessing: {
+          title: "📊 Traitement des Données (Loi 09-08)",
+          intro: "Conformité avec la loi 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel.",
+          points: [
+            "Responsable du traitement : Riskalia SARL AU",
+            "Base légale : Exécution du contrat, obligation légale, intérêt légitime",
+            "Hébergement des données : Maroc (serveurs locaux)",
+            "Transfert hors UE/Maroc : Aucun transfert de données vers des pays tiers sans garanties appropriées",
+            "Sous-traitants : Uniquement des prestataires conformes à la loi 09-08",
+            "Déclaration CNDP : Le traitement de données est conforme aux exigences de la Commission Nationale de contrôle de la protection des Données à caractère Personnel"
+          ]
+        },
+        cookies: {
+          title: "🍪 Politique de Cookies",
+          intro: "Notre site utilise des cookies pour améliorer votre expérience de navigation.",
+          types: [
+            {
+              name: "Cookies techniques",
+              desc: "Nécessaires au fonctionnement du site (choix de langue, session). Durée : session ou 12 mois."
+            },
+            {
+              name: "Cookies analytiques",
+              desc: "Nous permettent de mesurer l'audience et d'améliorer nos services (Google Analytics anonymisé). Durée : 13 mois."
+            },
+            {
+              name: "Gestion des cookies",
+              desc: "Vous pouvez paramétrer votre navigateur pour refuser les cookies. Cela peut affecter certaines fonctionnalités du site."
+            }
+          ]
+        },
+        terms: {
+          title: "📜 Conditions d'Utilisation",
+          sections: [
+            {
+              subtitle: "1. Objet",
+              content: "Le présent site a pour objet de présenter l'activité de courtage de Riskalia et de permettre aux visiteurs de nous contacter. L'utilisation du site implique l'acceptation pleine et entière des présentes conditions."
+            },
+            {
+              subtitle: "2. Accès au site",
+              content: "Le site est accessible 24h/24, 7j/7, sauf interruption pour maintenance. Riskalia ne saurait être tenue responsable en cas d'indisponibilité technique."
+            },
+            {
+              subtitle: "3. Responsabilité",
+              content: "Les informations présentes sur ce site sont fournies à titre informatif. Riskalia s'efforce de les maintenir à jour, mais ne garantit pas leur exhaustivité ou exactitude. Toute décision prise sur la base de ces informations relève de la seule responsabilité de l'utilisateur."
+            },
+            {
+              subtitle: "4. Liens hypertextes",
+              content: "Le site peut contenir des liens vers des sites tiers. Riskalia n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu."
+            },
+            {
+              subtitle: "5. Modification des CGU",
+              content: "Riskalia se réserve le droit de modifier à tout moment les présentes conditions. Les modifications prennent effet dès leur publication sur le site."
+            }
+          ]
+        },
+        intellectualProperty: {
+          title: "©️ Propriété Intellectuelle",
+          content: "L'ensemble des éléments présents sur ce site (textes, images, logos, graphismes, vidéos, code source) sont la propriété exclusive de Riskalia ou font l'objet d'une autorisation d'utilisation. Toute reproduction, représentation, modification, publication, transmission ou dénaturation, totale ou partielle, du site ou de son contenu, par quelque procédé que ce soit, est interdite sans autorisation écrite préalable de Riskalia. Le non-respect de cette interdiction constitue une contrefaçon susceptible d'engager la responsabilité civile et pénale du contrevenant."
+        },
+        applicableLaw: {
+          title: "⚖️ Loi Applicable & Juridiction",
+          content: "Les présentes mentions légales et conditions d'utilisation sont régies par le droit marocain. En cas de litige, et à défaut de résolution amiable, les tribunaux de Casablanca seront seuls compétents."
+        }
+      }
+    },
     // 404 Error page translations
     error: {
       title: "Page introuvable",
@@ -2751,7 +3140,11 @@ footer: {
       climate: "Climate Risks",
       services: "Advisory Services",
       esg: "ESG",
+      clientspace: "Client Space",
+      blog: "Blog",
       contact: "Contact",
+      faq: "FAQ",
+      legal: "Legal Notices",
     },
     hero: {
       title: "Expertise that reassures",
@@ -3231,7 +3624,7 @@ footer: {
     col1: {
       title: "Riskalia",
       address:
-        "Licensed insurance & strategy brokerage (ACAPS).<br/>Head office: 16 Rue de Terves, 2nd floor,<br/>Mers Sultan district, Casablanca.",
+        "Licensed insurance & strategy brokerage (ACAPS).<br/>Head office: 16 Rue de Terves, 2nd floor, Mers Sultan district, Casablanca.",
       notice:
         "Insurance intermediary governed by Law 17-99 on the Insurance Code.<br/>Under decision No. COU5047.00000.0.C.2025.472."
     },
@@ -5422,6 +5815,391 @@ footer: {
         next: "Health",
       },
     },
+    // Client Space page
+    clientspace: {
+      meta: {
+        title: "Riskalia — Client Space",
+        desc: "Access your documents, file claims online and track your requests through our secure portal."
+      },
+      hero: {
+        title: "Client Space",
+        subtitle: "Our secure portal gives policyholders permanent access to their documents, operations and declarations"
+      },
+      features: {
+        title: "Features",
+        items: [
+          {
+            icon: "🗂️",
+            title: "Documents",
+            desc: "Download contracts, receipts and certificates"
+          },
+          {
+            icon: "📝",
+            title: "Claims Declaration",
+            desc: "File claims online"
+          },
+          {
+            icon: "🔍",
+            title: "Tracking",
+            desc: "Track your requests or complaints"
+          },
+          {
+            icon: "📎",
+            title: "Supporting Documents",
+            desc: "Secure transmission of supporting documents"
+          }
+        ]
+      },
+      security: {
+        title: "Security and Compliance",
+        badges: [
+          "🔒 Law 09-08 Compliance",
+          "🇲🇦 Locally Hosted Data",
+          "🔐 Enhanced Authentication"
+        ]
+      },
+      cta: {
+        login: "Log In",
+        register: "Create Account",
+        contact: "Contact Us"
+      }
+    },
+    // Blog & News page
+    blog: {
+      meta: {
+        title: "Riskalia — Blog & News",
+        desc: "In-depth articles on reinsurance, insurance and risk management. Regulatory news and market insights."
+      },
+      hero: {
+        title: "Blog & News",
+        subtitle: "Our blog regularly offers high-value articles to better understand market issues"
+      },
+      sections: {
+        articles: "📘 In-Depth Articles",
+        news: "📅 News"
+      },
+      articles: [
+        {
+          id: "reinsurance-history",
+          title: "Reinsurance: from ancient roots to modern risk architecture",
+          excerpt: "Reinsurance traces its roots back to the Babylonian Talmud, evolving from Italian maritime republics to a structured global industry.",
+          date: "2025-01-15",
+          readTime: "8 min"
+        },
+        {
+          id: "facultative-reinsurance",
+          title: "Facultative reinsurance: between art of selection and bespoke contract",
+          excerpt: "A unique form of risk transfer that applies only to a single risk, individually selected and analyzed.",
+          date: "2025-01-12",
+          readTime: "6 min"
+        },
+        {
+          id: "utmost-good-faith",
+          title: "Utmost good faith: Anglo-Saxon myth or universal principle?",
+          excerpt: "This principle imposes an enhanced duty of transparency on the ceding company, born from Anglo-Saxon maritime practice.",
+          date: "2025-01-10",
+          readTime: "7 min"
+        },
+        {
+          id: "follow-fortunes",
+          title: "Follow the fortunes: when the reinsurer follows the insurer's footsteps",
+          excerpt: "The 'follow the fortunes' clause commits the reinsurer to follow its cedent's decisions within the limits of the original policy.",
+          date: "2025-01-08",
+          readTime: "5 min"
+        },
+        {
+          id: "arbitration-equity",
+          title: "Arbitration & equity: why reinsurance contracts avoid courts",
+          excerpt: "Arbitration in reinsurance relies on amicable composition and avoids state judges unfamiliar with technical subtleties.",
+          date: "2025-01-05",
+          readTime: "6 min"
+        },
+        {
+          id: "contractual-imbalances",
+          title: "Reinsurance or adhesion? Contractual imbalances under scrutiny",
+          excerpt: "Although theoretically negotiated at arm's length, reinsurance often involves clauses imposed via standardized models.",
+          date: "2025-01-03",
+          readTime: "7 min"
+        },
+        {
+          id: "private-international-law",
+          title: "Reinsurance and private international law: a regulatory void to fill?",
+          excerpt: "The diversity of legal systems creates uncertainty about applicable law and competent jurisdiction.",
+          date: "2024-12-28",
+          readTime: "8 min"
+        },
+        {
+          id: "back-to-back",
+          title: "The 'back to back' contract: between reinsurer autonomy and fragmentation risk",
+          excerpt: "The 'as original' principle assumes that reinsurance mirrors the terms of the underlying insurance contract.",
+          date: "2024-12-25",
+          readTime: "6 min"
+        },
+        {
+          id: "legal-sovereignty",
+          title: "Legal sovereignty tested by global reinsurance",
+          excerpt: "Major reinsurers impose their contractual rules, testing the sovereignty of emerging states.",
+          date: "2024-12-22",
+          readTime: "7 min"
+        },
+        {
+          id: "reinsurance-law",
+          title: "Toward a reinsurance law: utopia or necessity?",
+          excerpt: "Reinsurance remains a legal 'gray zone', escaping national codes and relying on contractual freedom.",
+          date: "2024-12-20",
+          readTime: "9 min"
+        }
+      ],
+      news: {
+        title: "News",
+        items: [
+          "Legislative developments (ACAPS, Moroccan Code, EU Regulations)",
+          "Regulatory alerts",
+          "New products or firm offerings",
+          "Strategic partnerships"
+        ]
+      },
+      cta: {
+        readMore: "Read article",
+        backToList: "← Back to articles",
+        share: "Share"
+      }
+    },
+    // FAQ page translations
+    faqPage: {
+      meta: {
+        title: "Riskalia — Frequently Asked Questions",
+        desc: "All the answers to your questions about our services, contracts, guarantees, claims and regulatory commitments."
+      },
+      hero: {
+        title: "Frequently Asked Questions",
+        subtitle: "All the answers to your questions about broking, reinsurance and our services"
+      },
+      categories: {
+        broker: {
+          title: "🎯 Broker's Role",
+          questions: [
+            {
+              q: "What is the difference between a broker and an insurance agent?",
+              a: "An agent represents one or more insurance companies. A broker, on the other hand, is an **agent of the insured**. They analyze the market, compare offers, negotiate for you and support you throughout the life cycle of the contract. Riskalia acts independently to defend your interests."
+            },
+            {
+              q: "How is the broker compensated?",
+              a: "The broker receives a commission paid by the insurer, but it is **already included in the premium you pay**. Thus, using a broker does not cost you more: you benefit from expert support at no extra cost, while enjoying an objective view of the market."
+            }
+          ]
+        },
+        contracts: {
+          title: "🧾 Contracts & Guarantees",
+          questions: [
+            {
+              q: "Can I modify my contract during the year?",
+              a: "Yes. You can request an endorsement at any time: adding guarantees, changing vehicles, changing address... Depending on the nature of the modification, a premium adjustment may be calculated on a pro-rata basis."
+            },
+            {
+              q: "What happens if I cancel a contract without taking out another one?",
+              a: "For certain mandatory guarantees (e.g. motor liability), you must provide proof of new coverage before the cancellation takes effect. For non-mandatory insurance, verify that you are not exposed to a coverage gap that could engage your liability."
+            },
+            {
+              q: "How to read an insurance policy?",
+              a: "A policy generally includes: **1)** General Conditions (legal framework); **2)** Particular Conditions (amounts, deductibles, due dates); **3)** Special Conditions (additional clauses). Riskalia helps you identify exclusions, deductibles and coverage limits."
+            }
+          ]
+        },
+        claims: {
+          title: "⚖️ Claims & Indemnification",
+          questions: [
+            {
+              q: "What is the deadline for reporting a claim?",
+              a: "Deadlines vary by contract: **5 working days** for most claims, **2 days** in case of theft, **10 days** for natural disasters. It is imperative to respect these deadlines, otherwise you risk forfeiture of coverage. Riskalia supports you from the occurrence of the claim."
+            },
+            {
+              q: "Why is my compensation lower than my expectations?",
+              a: "Compensation is governed by the contract: application of a **deductible**, a **coverage limit**, **depreciation** (for property damage) or a **proportional rule clause** if the insured value is underestimated. Riskalia helps you verify that the insurer respects the contractual terms."
+            }
+          ],
+          timeline: {
+            title: "Typical claim timeline",
+            steps: [
+              { label: "Day 0", desc: "Claim occurrence" },
+              { label: "Day 2-10", desc: "Declaration (depending on type)" },
+              { label: "Day 15-30", desc: "Expert assessment and report" },
+              { label: "Day 30-60", desc: "Indemnification proposal" },
+              { label: "Day 60+", desc: "Settlement or litigation if disagreement" }
+            ]
+          }
+        },
+        reinsurance: {
+          title: "🌍 Reinsurance & Large Enterprises",
+          questions: [
+            {
+              q: "What is reinsurance and what is it for?",
+              a: "Reinsurance is 'insurance for insurers'. It allows your insurance company to transfer part of its risks to an international reinsurer, guaranteeing its solvency in the event of a major claim. Riskalia supports large companies and cedents in structuring proportional programs (Quota Share, Surplus) and non-proportional programs (Excess of Loss, Stop Loss)."
+            },
+            {
+              q: "Can my company access facultative reinsurance?",
+              a: "Yes. Atypical or high-value risks (large construction sites, special cargo, complex liabilities) may require **facultative coverage**, negotiated risk by risk. Riskalia prepares underwriting files and presents your risks to international markets."
+            }
+          ]
+        },
+        regulatory: {
+          title: "📜 Regulatory Commitments",
+          compliance: [
+            {
+              label: "ACAPS Approval",
+              desc: "Riskalia is registered as an insurance and reinsurance broker under decision n°COU5047.00000.0.C.2025.472, in accordance with law 17-99 on the insurance code."
+            },
+            {
+              label: "Data Protection",
+              desc: "We comply with law 09-08 relating to the protection of individuals with regard to the processing of personal data. Your information is hosted in Morocco and is never transmitted to third parties without your consent."
+            },
+            {
+              label: "Duty to Advise",
+              desc: "We formalize our recommendations in writing and explain guarantees, exclusions and deductibles before any subscription."
+            },
+            {
+              label: "Professional Liability Insurance",
+              desc: "Riskalia has Professional Liability Insurance covering any shortcomings in the exercise of its brokerage activity."
+            }
+          ]
+        }
+      }
+    },
+    // Legal page translations
+    legalPage: {
+      meta: {
+        title: "Riskalia — Legal Notice & Privacy Policy",
+        desc: "Legal information, privacy policy and terms of use of Riskalia."
+      },
+      hero: {
+        title: "Legal Notice",
+        subtitle: "Transparency, compliance and protection of your personal data"
+      },
+      sections: {
+        legalNotice: {
+          title: "📋 Legal Notice",
+          content: [
+            {
+              label: "Company name",
+              text: "Riskalia — Insurance and reinsurance brokerage firm"
+            },
+            {
+              label: "Legal form",
+              text: "SARL AU (Limited liability company with a single partner)"
+            },
+            {
+              label: "Registered office",
+              text: "16, Rue de Terves, 2nd floor, Mers Sultan District, Casablanca, Morocco"
+            },
+            {
+              label: "Registration number",
+              text: "ACAPS Decision n°COU5047.00000.0.C.2025.472"
+            },
+            {
+              label: "Applicable law",
+              text: "Law 17-99 on the insurance code (Morocco)"
+            },
+            {
+              label: "Contact",
+              text: "Email: contact@riskalia.ma<br/>Tel: +212 666 756 991 / +212 675 208 909"
+            },
+            {
+              label: "Publication director",
+              text: "Nabil Cherkaoui, Manager"
+            }
+          ]
+        },
+        privacy: {
+          title: "🔒 Privacy Policy",
+          intro: "Riskalia attaches the utmost importance to the protection of your personal data. This policy informs you about how we collect, use and protect your information.",
+          sections: [
+            {
+              subtitle: "Data collected",
+              content: "We only collect data necessary for the exercise of our brokerage activity: name, first name, professional or personal contact details, information relating to insurance contracts, claims and supporting documents. This data is collected directly from you or from our insurance partners."
+            },
+            {
+              subtitle: "Processing purposes",
+              content: "Your data is used for: (1) managing your insurance and reinsurance contracts; (2) processing claims; (3) commercial prospecting with your consent; (4) compliance with our legal and regulatory obligations; (5) improving our services."
+            },
+            {
+              subtitle: "Your rights",
+              content: "In accordance with law 09-08, you have the right to access, rectify, object to and delete your data. You can exercise these rights by contacting us by email at contact@riskalia.ma or by mail at the registered office address."
+            },
+            {
+              subtitle: "Retention period",
+              content: "Your data is kept for the entire duration of the contractual relationship and up to 10 years after the end of the contract, in accordance with legal prescription periods for insurance."
+            },
+            {
+              subtitle: "Security",
+              content: "We implement all appropriate technical and organizational measures to protect your data against unauthorized access, loss, alteration or disclosure."
+            }
+          ]
+        },
+        dataProcessing: {
+          title: "📊 Data Processing (Law 09-08)",
+          intro: "Compliance with law 09-08 relating to the protection of individuals with regard to the processing of personal data.",
+          points: [
+            "Data controller: Riskalia SARL AU",
+            "Legal basis: Contract execution, legal obligation, legitimate interest",
+            "Data hosting: Morocco (local servers)",
+            "Transfer outside EU/Morocco: No data transfer to third countries without appropriate safeguards",
+            "Subcontractors: Only providers compliant with law 09-08",
+            "CNDP declaration: Data processing complies with the requirements of the National Commission for the Control of Personal Data Protection"
+          ]
+        },
+        cookies: {
+          title: "🍪 Cookie Policy",
+          intro: "Our site uses cookies to improve your browsing experience.",
+          types: [
+            {
+              name: "Technical cookies",
+              desc: "Necessary for the site to function (language choice, session). Duration: session or 12 months."
+            },
+            {
+              name: "Analytical cookies",
+              desc: "Allow us to measure audience and improve our services (anonymized Google Analytics). Duration: 13 months."
+            },
+            {
+              name: "Cookie management",
+              desc: "You can configure your browser to refuse cookies. This may affect certain site features."
+            }
+          ]
+        },
+        terms: {
+          title: "📜 Terms of Use",
+          sections: [
+            {
+              subtitle: "1. Purpose",
+              content: "The purpose of this site is to present Riskalia's brokerage activity and allow visitors to contact us. Use of the site implies full acceptance of these terms."
+            },
+            {
+              subtitle: "2. Site access",
+              content: "The site is accessible 24/7, except for maintenance interruptions. Riskalia cannot be held responsible in the event of technical unavailability."
+            },
+            {
+              subtitle: "3. Liability",
+              content: "The information on this site is provided for informational purposes. Riskalia strives to keep it up to date, but does not guarantee its completeness or accuracy. Any decision made on the basis of this information is the sole responsibility of the user."
+            },
+            {
+              subtitle: "4. Hyperlinks",
+              content: "The site may contain links to third-party sites. Riskalia has no control over these sites and disclaims all responsibility for their content."
+            },
+            {
+              subtitle: "5. Modification of T&Cs",
+              content: "Riskalia reserves the right to modify these terms at any time. Changes take effect upon publication on the site."
+            }
+          ]
+        },
+        intellectualProperty: {
+          title: "©️ Intellectual Property",
+          content: "All elements on this site (texts, images, logos, graphics, videos, source code) are the exclusive property of Riskalia or are subject to authorization for use. Any reproduction, representation, modification, publication, transmission or distortion, total or partial, of the site or its content, by any means whatsoever, is prohibited without prior written authorization from Riskalia. Failure to comply with this prohibition constitutes infringement that may engage the civil and criminal liability of the offender."
+        },
+        applicableLaw: {
+          title: "⚖️ Applicable Law & Jurisdiction",
+          content: "These legal notices and terms of use are governed by Moroccan law. In the event of a dispute, and failing an amicable resolution, the courts of Casablanca will have sole jurisdiction."
+        }
+      }
+    },
     // 404 Error page translations
     error: {
       title: "Page not found",
@@ -5457,7 +6235,11 @@ footer: {
       climate: "مخاطر المناخ",
       services: "الخدمات الاستشارية",
       esg: "الاستدامة",
+      clientspace: "مساحة العميل",
+      blog: "المدونة",
       contact: "تواصل",
+      faq: "الأسئلة الشائعة",
+      legal: "الإشعارات القانونية",
     },
     hero: {
       title: "خبرة تمنحك الاطمئنان",
@@ -5918,7 +6700,7 @@ footer: {
     col1: {
       title: "ريسكاليا",
       address:
-        "شركة وساطة واستراتيجيات معتمدة من هيئة مراقبة التأمينات (ACAPS).<br/>المقر: 16 شارع تيرف، الطابق الثاني،<br/>حي مرس سلطان، الدار البيضاء.",
+        "شركة وساطة واستراتيجيات معتمدة من هيئة مراقبة التأمينات (ACAPS).<br/>المقر: 16 شارع تيرف، الطابق الثاني، حي مرس سلطان، الدار البيضاء.",
       notice:
         "وسيط تأمين يخضع للقانون 17-99 المتعلق بمدونة التأمينات.<br/>بموجب القرار رقم COU5047.00000.0.C.2025.472."
     },
@@ -8060,6 +8842,391 @@ footer: {
         next: "الصحة",
       },
     },
+    // Client Space page
+    clientspace: {
+      meta: {
+        title: "ريسكاليا — مساحة العميل",
+        desc: "الوصول إلى مستنداتك، الإبلاغ عن المطالبات عبر الإنترنت وتتبع طلباتك عبر بوابتنا الآمنة."
+      },
+      hero: {
+        title: "مساحة العميل",
+        subtitle: "توفر بوابتنا الآمنة لحاملي الوثائق وصولاً دائماً إلى مستنداتهم وعملياتهم وإقراراتهم"
+      },
+      features: {
+        title: "المميزات",
+        items: [
+          {
+            icon: "🗂️",
+            title: "المستندات",
+            desc: "تحميل العقود والإيصالات والشهادات"
+          },
+          {
+            icon: "📝",
+            title: "الإبلاغ عن المطالبات",
+            desc: "الإبلاغ عن المطالبات عبر الإنترنت"
+          },
+          {
+            icon: "🔍",
+            title: "التتبع",
+            desc: "تتبع طلباتك أو شكاواك"
+          },
+          {
+            icon: "📎",
+            title: "المستندات الداعمة",
+            desc: "نقل آمن للمستندات الداعمة"
+          }
+        ]
+      },
+      security: {
+        title: "الأمان والامتثال",
+        badges: [
+          "🔒 الامتثال للقانون 09-08",
+          "🇲🇦 بيانات مستضافة محلياً",
+          "🔐 مصادقة معززة"
+        ]
+      },
+      cta: {
+        login: "تسجيل الدخول",
+        register: "إنشاء حساب",
+        contact: "اتصل بنا"
+      }
+    },
+    // Blog & News page
+    blog: {
+      meta: {
+        title: "ريسكاليا — المدونة والأخبار",
+        desc: "مقالات متعمقة حول إعادة التأمين والتأمين وإدارة المخاطر. أخبار تنظيمية ورؤى السوق."
+      },
+      hero: {
+        title: "المدونة والأخبار",
+        subtitle: "تقدم مدونتنا بانتظام مقالات ذات قيمة عالية لفهم أفضل لقضايا السوق"
+      },
+      sections: {
+        articles: "📘 مقالات متعمقة",
+        news: "📅 الأخبار"
+      },
+      articles: [
+        {
+          id: "reinsurance-history",
+          title: "إعادة التأمين: من الجذور القديمة إلى الهندسة الحديثة للمخاطر",
+          excerpt: "تعود جذور إعادة التأمين إلى التلمود البابلي، متطورة من الجمهوريات البحرية الإيطالية إلى صناعة عالمية منظمة.",
+          date: "2025-01-15",
+          readTime: "8 دقائق"
+        },
+        {
+          id: "facultative-reinsurance",
+          title: "إعادة التأمين الاختيارية: بين فن الاختيار والعقد المخصص",
+          excerpt: "شكل فريد من نقل المخاطر ينطبق فقط على خطر واحد، يتم اختياره وتحليله بشكل فردي.",
+          date: "2025-01-12",
+          readTime: "6 دقائق"
+        },
+        {
+          id: "utmost-good-faith",
+          title: "حسن النية القصوى: أسطورة أنجلوسكسونية أم مبدأ عالمي؟",
+          excerpt: "يفرض هذا المبدأ التزامًا معززًا بالشفافية على الشركة المتنازلة، ولد من الممارسة البحرية الأنجلوسكسونية.",
+          date: "2025-01-10",
+          readTime: "7 دقائق"
+        },
+        {
+          id: "follow-fortunes",
+          title: "مشاركة المصير: عندما يتبع معيد التأمين خطوات المؤمن",
+          excerpt: "يلزم بند 'اتبع الحظوظ' معيد التأمين باتباع قرارات المتنازل في حدود الوثيقة الأصلية.",
+          date: "2025-01-08",
+          readTime: "5 دقائق"
+        },
+        {
+          id: "arbitration-equity",
+          title: "التحكيم والإنصاف: لماذا تتجنب عقود إعادة التأمين المحاكم",
+          excerpt: "يعتمد التحكيم في إعادة التأمين على التسوية الودية ويتجنب قضاة الدولة غير المألوفين بالتفاصيل التقنية.",
+          date: "2025-01-05",
+          readTime: "6 دقائق"
+        },
+        {
+          id: "contractual-imbalances",
+          title: "إعادة التأمين أم الانضمام؟ الاختلالات التعاقدية تحت المجهر",
+          excerpt: "على الرغم من أنها نظريًا يتم التفاوض عليها بحرية، غالبًا ما تتضمن إعادة التأمين بنودًا مفروضة عبر نماذج موحدة.",
+          date: "2025-01-03",
+          readTime: "7 دقائق"
+        },
+        {
+          id: "private-international-law",
+          title: "إعادة التأمين والقانون الدولي الخاص: فراغ تنظيمي يجب ملؤه؟",
+          excerpt: "يخلق تنوع الأنظمة القانونية عدم يقين بشأن القانون الواجب التطبيق والولاية القضائية المختصة.",
+          date: "2024-12-28",
+          readTime: "8 دقائق"
+        },
+        {
+          id: "back-to-back",
+          title: "عقد 'ظهر لظهر': بين استقلالية معيد التأمين ومخاطر التجزئة",
+          excerpt: "يفترض مبدأ 'كما الأصل' أن إعادة التأمين تعكس شروط عقد التأمين الأساسي.",
+          date: "2024-12-25",
+          readTime: "6 دقائق"
+        },
+        {
+          id: "legal-sovereignty",
+          title: "السيادة القانونية في مواجهة إعادة التأمين العالمية",
+          excerpt: "يفرض معيدو التأمين الكبار قواعدهم التعاقدية، مما يختبر سيادة الدول الناشئة.",
+          date: "2024-12-22",
+          readTime: "7 دقائق"
+        },
+        {
+          id: "reinsurance-law",
+          title: "نحو قانون لإعادة التأمين: طوباوية أم ضرورة؟",
+          excerpt: "تبقى إعادة التأمين 'منطقة رمادية' قانونية، تهرب من القوانين الوطنية وتعتمد على الحرية التعاقدية.",
+          date: "2024-12-20",
+          readTime: "9 دقائق"
+        }
+      ],
+      news: {
+        title: "الأخبار",
+        items: [
+          "التطورات التشريعية (ACAPS، القانون المغربي، اللوائح الأوروبية)",
+          "التنبيهات التنظيمية",
+          "منتجات أو عروض جديدة من المكتب",
+          "الشراكات الاستراتيجية"
+        ]
+      },
+      cta: {
+        readMore: "اقرأ المقال",
+        backToList: "← العودة إلى المقالات",
+        share: "مشاركة"
+      }
+    },
+    // FAQ page translations
+    faqPage: {
+      meta: {
+        title: "ريسكاليا — الأسئلة الشائعة",
+        desc: "جميع الإجابات على أسئلتك حول خدماتنا والعقود والضمانات والمطالبات والالتزامات التنظيمية."
+      },
+      hero: {
+        title: "الأسئلة الشائعة",
+        subtitle: "جميع الإجابات على أسئلتك حول الوساطة وإعادة التأمين وخدماتنا"
+      },
+      categories: {
+        broker: {
+          title: "🎯 دور الوسيط",
+          questions: [
+            {
+              q: "ما الفرق بين الوسيط ووكيل التأمين؟",
+              a: "الوكيل يمثل شركة تأمين واحدة أو أكثر. الوسيط، من ناحية أخرى، هو **وكيل للمؤمن عليه**. يحلل السوق، يقارن العروض، يفاوض نيابة عنك ويرافقك طوال دورة حياة العقد. تعمل ريسكاليا بشكل مستقل للدفاع عن مصالحك."
+            },
+            {
+              q: "كيف يتم تعويض الوسيط؟",
+              a: "يتلقى الوسيط عمولة تدفعها شركة التأمين، لكنها **مدرجة بالفعل في القسط الذي تدفعه**. وبالتالي، فإن استخدام وسيط لا يكلفك أكثر: تستفيد من دعم الخبراء دون تكلفة إضافية، مع الاستمتاع برؤية موضوعية للسوق."
+            }
+          ]
+        },
+        contracts: {
+          title: "🧾 العقود والضمانات",
+          questions: [
+            {
+              q: "هل يمكنني تعديل عقدي خلال السنة؟",
+              a: "نعم. يمكنك طلب ملحق في أي وقت: إضافة ضمانات، تغيير المركبات، تغيير العنوان... اعتمادًا على طبيعة التعديل، قد يتم حساب تعديل القسط على أساس نسبي."
+            },
+            {
+              q: "ماذا يحدث إذا ألغيت عقدًا دون الاشتراك في عقد آخر؟",
+              a: "بالنسبة لبعض الضمانات الإلزامية (مثل مسؤولية السيارة)، يجب عليك تقديم دليل على تغطية جديدة قبل أن يصبح الإلغاء ساري المفعول. بالنسبة للتأمين غير الإلزامي، تحقق من أنك لست معرضًا لفجوة في التغطية قد تشرك مسؤوليتك."
+            },
+            {
+              q: "كيف أقرأ وثيقة التأمين؟",
+              a: "تتضمن الوثيقة عمومًا: **1)** الشروط العامة (الإطار القانوني)؛ **2)** الشروط الخاصة (المبالغ، الخصومات، تواريخ الاستحقاق)؛ **3)** الشروط الخاصة (بنود إضافية). تساعدك ريسكاليا في تحديد الاستثناءات والخصومات وحدود التغطية."
+            }
+          ]
+        },
+        claims: {
+          title: "⚖️ المطالبات والتعويض",
+          questions: [
+            {
+              q: "ما هو الموعد النهائي للإبلاغ عن مطالبة؟",
+              a: "تختلف المواعيد النهائية حسب العقد: **5 أيام عمل** لمعظم المطالبات، **يومان** في حالة السرقة، **10 أيام** للكوارث الطبيعية. من الضروري احترام هذه المواعيد النهائية، وإلا فإنك تخاطر بفقدان التغطية. تدعمك ريسكاليا من وقوع المطالبة."
+            },
+            {
+              q: "لماذا تعويضي أقل من توقعاتي؟",
+              a: "يحكم العقد التعويض: تطبيق **خصم**، **حد تغطية**، **الاستهلاك** (لأضرار الممتلكات) أو **بند القاعدة النسبية** إذا تم التقليل من قيمة المؤمن عليه. تساعدك ريسكاليا في التحقق من أن شركة التأمين تحترم الشروط التعاقدية."
+            }
+          ],
+          timeline: {
+            title: "الجدول الزمني النموذجي للمطالبة",
+            steps: [
+              { label: "اليوم 0", desc: "وقوع المطالبة" },
+              { label: "اليوم 2-10", desc: "الإعلان (حسب النوع)" },
+              { label: "اليوم 15-30", desc: "التقييم الخبير والتقرير" },
+              { label: "اليوم 30-60", desc: "اقتراح التعويض" },
+              { label: "اليوم 60+", desc: "التسوية أو التقاضي في حالة الخلاف" }
+            ]
+          }
+        },
+        reinsurance: {
+          title: "🌍 إعادة التأمين والمؤسسات الكبيرة",
+          questions: [
+            {
+              q: "ما هي إعادة التأمين وما فائدتها؟",
+              a: "إعادة التأمين هي 'تأمين للمؤمنين'. تسمح لشركة التأمين الخاصة بك بنقل جزء من مخاطرها إلى معيد تأمين دولي، مما يضمن ملاءتها في حالة مطالبة كبيرة. تدعم ريسكاليا الشركات الكبيرة والمتنازلين في هيكلة البرامج النسبية (حصة الحصة، الفائض) والبرامج غير النسبية (تجاوز الخسارة، إيقاف الخسارة)."
+            },
+            {
+              q: "هل يمكن لشركتي الوصول إلى إعادة التأمين الاختيارية؟",
+              a: "نعم. قد تتطلب المخاطر غير النمطية أو ذات القيمة العالية (مواقع البناء الكبيرة، البضائع الخاصة، المسؤوليات المعقدة) **تغطية اختيارية**، يتم التفاوض عليها خطر بخطر. تعد ريسكاليا ملفات الاكتتاب وتعرض مخاطرك على الأسواق الدولية."
+            }
+          ]
+        },
+        regulatory: {
+          title: "📜 الالتزامات التنظيمية",
+          compliance: [
+            {
+              label: "موافقة ACAPS",
+              desc: "ريسكاليا مسجلة كوسيط تأمين وإعادة تأمين بموجب القرار رقم COU5047.00000.0.C.2025.472، وفقًا للقانون 17-99 بشأن قانون التأمين."
+            },
+            {
+              label: "حماية البيانات",
+              desc: "نحن نمتثل للقانون 09-08 المتعلق بحماية الأفراد فيما يتعلق بمعالجة البيانات الشخصية. يتم استضافة معلوماتك في المغرب ولا يتم نقلها أبدًا إلى أطراف ثالثة دون موافقتك."
+            },
+            {
+              label: "واجب النصح",
+              desc: "نحن نضع توصياتنا كتابيًا ونشرح الضمانات والاستثناءات والخصومات قبل أي اشتراك."
+            },
+            {
+              label: "التأمين ضد المسؤولية المهنية",
+              desc: "لدى ريسكاليا تأمين المسؤولية المهنية الذي يغطي أي أوجه قصور في ممارسة نشاط الوساطة."
+            }
+          ]
+        }
+      }
+    },
+    // Legal page translations
+    legalPage: {
+      meta: {
+        title: "ريسكاليا — إشعار قانوني وسياسة الخصوصية",
+        desc: "المعلومات القانونية وسياسة الخصوصية وشروط الاستخدام لريسكاليا."
+      },
+      hero: {
+        title: "الإشعار القانوني",
+        subtitle: "الشفافية والامتثال وحماية بياناتك الشخصية"
+      },
+      sections: {
+        legalNotice: {
+          title: "📋 إشعار قانوني",
+          content: [
+            {
+              label: "اسم الشركة",
+              text: "ريسكاليا — شركة وساطة التأمين وإعادة التأمين"
+            },
+            {
+              label: "الشكل القانوني",
+              text: "SARL AU (شركة ذات مسؤولية محدودة لشريك واحد)"
+            },
+            {
+              label: "المقر المسجل",
+              text: "16، شارع دو تيرف، الطابق الثاني، حي مرس السلطان، الدار البيضاء، المغرب"
+            },
+            {
+              label: "رقم التسجيل",
+              text: "قرار ACAPS رقم COU5047.00000.0.C.2025.472"
+            },
+            {
+              label: "القانون المطبق",
+              text: "القانون 17-99 المتعلق بقانون التأمين (المغرب)"
+            },
+            {
+              label: "اتصل",
+              text: "البريد الإلكتروني: contact@riskalia.ma<br/>الهاتف: +212 666 756 991 / +212 675 208 909"
+            },
+            {
+              label: "مدير النشر",
+              text: "نبيل شرقاوي، مدير"
+            }
+          ]
+        },
+        privacy: {
+          title: "🔒 سياسة الخصوصية",
+          intro: "تولي ريسكاليا أهمية قصوى لحماية بياناتك الشخصية. تخبرك هذه السياسة بكيفية جمع معلوماتك واستخدامها وحمايتها.",
+          sections: [
+            {
+              subtitle: "البيانات المجمعة",
+              content: "نجمع فقط البيانات اللازمة لممارسة نشاط الوساطة الخاص بنا: الاسم، الاسم الأول، تفاصيل الاتصال المهنية أو الشخصية، المعلومات المتعلقة بعقود التأمين والمطالبات والمستندات الداعمة. يتم جمع هذه البيانات مباشرة منك أو من شركاء التأمين لدينا."
+            },
+            {
+              subtitle: "أغراض المعالجة",
+              content: "يتم استخدام بياناتك من أجل: (1) إدارة عقود التأمين وإعادة التأمين الخاصة بك؛ (2) معالجة المطالبات؛ (3) التنقيب التجاري بموافقتك؛ (4) الامتثال لالتزاماتنا القانونية والتنظيمية؛ (5) تحسين خدماتنا."
+            },
+            {
+              subtitle: "حقوقك",
+              content: "وفقًا للقانون 09-08، لديك الحق في الوصول إلى بياناتك وتصحيحها والاعتراض عليها وحذفها. يمكنك ممارسة هذه الحقوق عن طريق الاتصال بنا عبر البريد الإلكتروني على contact@riskalia.ma أو عن طريق البريد على عنوان المقر المسجل."
+            },
+            {
+              subtitle: "فترة الاحتفاظ",
+              content: "يتم الاحتفاظ ببياناتك طوال مدة العلاقة التعاقدية وحتى 10 سنوات بعد نهاية العقد، وفقًا لفترات التقادم القانونية للتأمين."
+            },
+            {
+              subtitle: "الأمان",
+              content: "نطبق جميع التدابير التقنية والتنظيمية المناسبة لحماية بياناتك من الوصول غير المصرح به أو الفقدان أو التغيير أو الإفصاح."
+            }
+          ]
+        },
+        dataProcessing: {
+          title: "📊 معالجة البيانات (القانون 09-08)",
+          intro: "الامتثال للقانون 09-08 المتعلق بحماية الأفراد فيما يتعلق بمعالجة البيانات الشخصية.",
+          points: [
+            "مراقب البيانات: ريسكاليا SARL AU",
+            "الأساس القانوني: تنفيذ العقد، الالتزام القانوني، المصلحة المشروعة",
+            "استضافة البيانات: المغرب (خوادم محلية)",
+            "النقل خارج الاتحاد الأوروبي/المغرب: لا نقل بيانات إلى بلدان ثالثة دون ضمانات مناسبة",
+            "المقاولون من الباطن: فقط مقدمي الخدمات المتوافقين مع القانون 09-08",
+            "إعلان CNDP: معالجة البيانات تتوافق مع متطلبات اللجنة الوطنية لمراقبة حماية البيانات الشخصية"
+          ]
+        },
+        cookies: {
+          title: "🍪 سياسة ملفات تعريف الارتباط",
+          intro: "يستخدم موقعنا ملفات تعريف الارتباط لتحسين تجربة التصفح الخاصة بك.",
+          types: [
+            {
+              name: "ملفات تعريف الارتباط التقنية",
+              desc: "ضرورية لعمل الموقع (اختيار اللغة، الجلسة). المدة: جلسة أو 12 شهرًا."
+            },
+            {
+              name: "ملفات تعريف الارتباط التحليلية",
+              desc: "تسمح لنا بقياس الجمهور وتحسين خدماتنا (Google Analytics مجهول). المدة: 13 شهرًا."
+            },
+            {
+              name: "إدارة ملفات تعريف الارتباط",
+              desc: "يمكنك تكوين متصفحك لرفض ملفات تعريف الارتباط. قد يؤثر هذا على بعض ميزات الموقع."
+            }
+          ]
+        },
+        terms: {
+          title: "📜 شروط الاستخدام",
+          sections: [
+            {
+              subtitle: "1. الغرض",
+              content: "الغرض من هذا الموقع هو تقديم نشاط وساطة ريسكاليا والسماح للزوار بالاتصال بنا. استخدام الموقع يعني القبول الكامل لهذه الشروط."
+            },
+            {
+              subtitle: "2. الوصول إلى الموقع",
+              content: "الموقع متاح على مدار الساعة طوال أيام الأسبوع، باستثناء انقطاعات الصيانة. لا يمكن تحميل ريسكاليا المسؤولية في حالة عدم التوفر الفني."
+            },
+            {
+              subtitle: "3. المسؤولية",
+              content: "المعلومات الواردة على هذا الموقع مقدمة لأغراض إعلامية. تسعى ريسكاليا جاهدة للحفاظ عليها محدثة، لكنها لا تضمن اكتمالها أو دقتها. أي قرار يتخذ بناءً على هذه المعلومات هو مسؤولية المستخدم وحده."
+            },
+            {
+              subtitle: "4. الروابط التشعبية",
+              content: "قد يحتوي الموقع على روابط إلى مواقع طرف ثالث. ليس لدى ريسكاليا سيطرة على هذه المواقع وتخلي مسؤوليتها عن محتواها."
+            },
+            {
+              subtitle: "5. تعديل الشروط والأحكام",
+              content: "تحتفظ ريسكاليا بالحق في تعديل هذه الشروط في أي وقت. تدخل التغييرات حيز التنفيذ عند النشر على الموقع."
+            }
+          ]
+        },
+        intellectualProperty: {
+          title: "©️ الملكية الفكرية",
+          content: "جميع العناصر الموجودة على هذا الموقع (النصوص، الصور، الشعارات، الرسومات، مقاطع الفيديو، شفرة المصدر) هي الملكية الحصرية لريسكاليا أو تخضع للترخيص بالاستخدام. أي استنساخ أو تمثيل أو تعديل أو نشر أو نقل أو تشويه، كلي أو جزئي، للموقع أو محتواه، بأي وسيلة كانت، محظور دون تصريح كتابي مسبق من ريسكاليا. عدم الامتثال لهذا الحظر يشكل انتهاكًا قد يشرك المسؤولية المدنية والجنائية للمخالف."
+        },
+        applicableLaw: {
+          title: "⚖️ القانون المطبق والولاية القضائية",
+          content: "تخضع هذه الإشعارات القانونية وشروط الاستخدام للقانون المغربي. في حالة نزاع، وفشل التسوية الودية، تكون محاكم الدار البيضاء هي المختصة الوحيدة."
+        }
+      }
+    },
     // 404 Error page translations
     error: {
       title: "الصفحة غير موجودة",
@@ -8135,14 +9302,73 @@ function setMeta() {
   }
 }
 
+/* Convert Western numerals to Arabic numerals */
+function toArabicNumerals(str) {
+  if (typeof str !== "string") return str;
+  const arabicNumerals = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
+  return str.replace(/[0-9]/g, (digit) => arabicNumerals[parseInt(digit)]);
+}
+
+/* Apply Arabic numerals to phone numbers and other numeric content */
+function applyArabicNumerals() {
+  if (lang !== "ar") return;
+
+  // Convert phone numbers (elements with dir="ltr" attribute typically contain phone numbers)
+  $$("[dir='ltr']").forEach((el) => {
+    // Only convert if element contains phone-like content (starts with + or contains dashes/spaces between numbers)
+    if (el.textContent && /[\+\d\-\s]/.test(el.textContent)) {
+      // Store original LTR content in data attribute for reverting
+      if (!el.dataset.originalContent) {
+        el.dataset.originalContent = el.textContent;
+      }
+      el.textContent = toArabicNumerals(el.dataset.originalContent);
+    }
+  });
+
+  // Also convert any data-i18n elements that might contain phone numbers
+  $$("[data-i18n*='phone'], [data-i18n*='tel']").forEach((el) => {
+    if (el.textContent && /\d/.test(el.textContent)) {
+      if (!el.dataset.originalContent) {
+        el.dataset.originalContent = el.textContent;
+      }
+      el.textContent = toArabicNumerals(el.dataset.originalContent);
+    }
+  });
+}
+
+/* Revert Arabic numerals back to Western numerals */
+function revertArabicNumerals() {
+  $$("[data-original-content]").forEach((el) => {
+    if (el.dataset.originalContent) {
+      el.textContent = el.dataset.originalContent;
+      delete el.dataset.originalContent;
+    }
+  });
+}
+
 /* Main apply */
 function applyTexts() {
   // Update global lang variable from localStorage
   lang = localStorage.getItem("riskalia_lang") || "fr";
   window.lang = lang;
 
+  // Set document language and text direction
   document.documentElement.lang = lang;
   document.body.dir = lang === "ar" ? "rtl" : "ltr";
+
+  // Add/remove RTL class for additional styling control
+  if (lang === "ar") {
+    document.body.classList.add("rtl");
+    document.body.classList.remove("ltr");
+  } else {
+    document.body.classList.add("ltr");
+    document.body.classList.remove("rtl");
+  }
+
+  // Revert any previous Arabic numerals before applying new translations
+  if (lang !== "ar") {
+    revertArabicNumerals();
+  }
 
   $$("[data-i18n]").forEach((el) => (el.innerHTML = t(el.dataset.i18n)));
   applyI18nAttrs();
@@ -8151,6 +9377,12 @@ function applyTexts() {
     b.classList.toggle("active", b.dataset.lang === lang)
   );
   setMeta();
+
+  // Apply Arabic numerals after translations are applied
+  if (lang === "ar") {
+    // Use setTimeout to ensure DOM has updated
+    setTimeout(() => applyArabicNumerals(), 50);
+  }
 }
 
 // Make functions globally available
@@ -8172,7 +9404,6 @@ window.applyI18n = applyTexts;
     if (climate[key]) delete climate[key];
   });
 });
-
 
 
 
