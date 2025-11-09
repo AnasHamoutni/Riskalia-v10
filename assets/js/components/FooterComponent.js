@@ -38,8 +38,7 @@ getFooterHTML() {
   />
             <p class="leading-relaxed mb-3" data-i18n="footer.col1.address">
               Cabinet de courtage & stratégies agréé ACAPS.<br/>
-              Siège : 16, Rue de Terves, 2ème étage,<br/>
-              Quartier Mers Sultan, Casablanca.
+              Siège : 16, Rue de Terves, 2ème étage, Quartier Mers Sultan, Casablanca.
             </p>
             <p class="text-xs text-gray-400 italic" data-i18n="footer.col1.notice">
               Intermédiaire d'assurance régi par la loi 17-99 portant code des assurances.<br/>
@@ -57,6 +56,10 @@ getFooterHTML() {
               <li><a href="/climate.html" data-i18n="nav.climate" class="hover:text-white">Risques climatiques</a></li>
               <li><a href="/esg.html" data-i18n="nav.esg" class="hover:text-white">ESG</a></li>
               <li><a href="/services.html" data-i18n="nav.services" class="hover:text-white">Conseil & Stratégie</a></li>
+              <li><a href="/client-space.html" data-i18n="nav.clientspace" class="hover:text-white">Espace Client</a></li>
+              <li><a href="/blog.html" data-i18n="nav.blog" class="hover:text-white">Blog</a></li>
+              <li><a href="/faq.html" data-i18n="nav.faq" class="hover:text-white">FAQ</a></li>
+              <li><a href="/legal.html" data-i18n="nav.legal" class="hover:text-white">Mentions Légales</a></li>
             </ul>
           </div>
 
@@ -128,11 +131,8 @@ getFooterHTML() {
   }
 
   updateTranslations() {
-    // Apply translations if the translation system is available
-    if (typeof window.applyI18n === "function") {
-      window.applyI18n();
-    } else if (typeof window.t === "function") {
-      // Fallback translation update
+    // Always directly translate footer elements to ensure proper updates
+    if (typeof window.t === "function") {
       const elements = document.querySelectorAll(
         ".footer-component [data-i18n]"
       );
@@ -141,6 +141,7 @@ getFooterHTML() {
         if (key) {
           const text = window.t(key);
           if (text !== key) {
+            // Check if element has <br> tags and preserve them
             if (/<br\s*\/?>/i.test(el.innerHTML)) {
               el.innerHTML = text;
             } else {

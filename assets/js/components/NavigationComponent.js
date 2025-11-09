@@ -67,6 +67,12 @@ class NavigationComponent {
               <a href="/esg.html" data-page="esg" class="nav-link text-gray-700 hover:text-[var(--c3)] px-2 lg:px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap" data-i18n="nav.esg">
                 ESG
               </a>
+              <a href="/client-space.html" data-page="client-space" class="nav-link text-gray-700 hover:text-[var(--c3)] px-2 lg:px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap" data-i18n="nav.clientspace">
+                Espace Client
+              </a>
+              <a href="/blog.html" data-page="blog" class="nav-link text-gray-700 hover:text-[var(--c3)] px-2 lg:px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap" data-i18n="nav.blog">
+                Blog
+              </a>
               <a href="/contact.html" data-page="contact" class="nav-link text-gray-700 hover:text-[var(--c3)] px-2 lg:px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap" data-i18n="nav.contact">
                 Contact
               </a>
@@ -192,6 +198,12 @@ class NavigationComponent {
                 </a>
                 <a href="/esg.html" data-page="esg" class="mobile-nav-link block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[var(--c3)] rounded-lg transition-colors duration-200 font-medium" data-i18n="nav.esg">
                   ESG
+                </a>
+                <a href="/client-space.html" data-page="client-space" class="mobile-nav-link block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[var(--c3)] rounded-lg transition-colors duration-200 font-medium" data-i18n="nav.clientspace">
+                  Espace Client
+                </a>
+                <a href="/blog.html" data-page="blog" class="mobile-nav-link block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[var(--c3)] rounded-lg transition-colors duration-200 font-medium" data-i18n="nav.blog">
+                  Blog
                 </a>
                 <a href="/contact.html" data-page="contact" class="mobile-nav-link block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[var(--c3)] rounded-lg transition-colors duration-200 font-medium" data-i18n="nav.contact">
                   Contact
