@@ -48,8 +48,13 @@ class ChatbotComponent {
       <div class="chatbot-container">
         
         <!-- Chatbot Toggle Button -->
-        <button class="chatbot-toggle-btn" id="chatbot-toggle">
-          <div class="chatbot-icon">
+        <button
+          class="chatbot-toggle-btn"
+          id="chatbot-toggle"
+          type="button"
+          data-i18n-attr="aria-label:chatbot.badgeLabel,title:chatbot.badgeLabel"
+        >
+          <div class="chatbot-icon" aria-hidden="true">
             <img
               src="/assets/chatbot-mascot.svg"
               alt="Riskalia Assistant"
@@ -57,7 +62,8 @@ class ChatbotComponent {
               data-i18n-attr="alt:chatbot.mascotAlt"
             />
           </div>
-          <div class="chatbot-pulse"></div>
+          <span class="chatbot-label" data-i18n="chatbot.badgeText">Chatbot</span>
+          <div class="chatbot-pulse" aria-hidden="true"></div>
         </button>
 
         <!-- Chatbot Window -->
@@ -67,7 +73,12 @@ class ChatbotComponent {
           <div class="chatbot-header">
             <div class="chatbot-header-content">
               <div class="chatbot-avatar">
-                <img src="/assets/chatbot-mascot.svg" alt="Riskalia Assistant" class="chatbot-avatar-img">
+                <img
+                  src="/assets/chatbot-mascot.svg"
+                  alt="Riskalia Assistant"
+                  class="chatbot-avatar-img"
+                  data-i18n-attr="alt:chatbot.mascotAlt"
+                />
               </div>
               <div class="chatbot-header-info">
                 <h3 class="chatbot-title" data-i18n="chatbot.title">Assistant Riskalia</h3>
@@ -88,7 +99,12 @@ class ChatbotComponent {
             <div class="chatbot-welcome">
               <div class="chatbot-message chatbot-message-bot">
                 <div class="chatbot-message-avatar">
-                  <img src="/assets/chatbot-mascot.svg" alt="Riskalia" class="chatbot-message-avatar-img">
+                  <img
+                    src="/assets/chatbot-mascot.svg"
+                    alt="Riskalia"
+                    class="chatbot-message-avatar-img"
+                    data-i18n-attr="alt:chatbot.mascotAlt"
+                  />
                 </div>
                 <div class="chatbot-message-content">
                   <div class="chatbot-message-bubble">
@@ -2260,6 +2276,23 @@ class ChatbotComponent {
           const typingTextVal = window.t("chatbot.typing");
           if (typingTextVal && !typingTextVal.startsWith("chatbot.")) {
             typingText.textContent = typingTextVal;
+          }
+        }
+
+        const badge = document.querySelector(".chatbot-label");
+        if (badge) {
+          const badgeTextVal = window.t("chatbot.badgeText");
+          if (badgeTextVal && !badgeTextVal.startsWith("chatbot.")) {
+            badge.textContent = badgeTextVal;
+          }
+        }
+
+        const toggleBtn = document.getElementById("chatbot-toggle");
+        if (toggleBtn) {
+          const badgeLabel = window.t("chatbot.badgeLabel");
+          if (badgeLabel && !badgeLabel.startsWith("chatbot.")) {
+            toggleBtn.setAttribute("aria-label", badgeLabel);
+            toggleBtn.setAttribute("title", badgeLabel);
           }
         }
       } catch (error) {

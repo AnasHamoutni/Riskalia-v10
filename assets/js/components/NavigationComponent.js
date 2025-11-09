@@ -55,8 +55,6 @@ class NavigationComponent {
                 <div
                   id="solutions-menu"
                   class="solutions-dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 z-50"
-                  hidden
-                  data-state="closed"
                   role="menu"
                   aria-labelledby="solutions-menu-button"
                 >
@@ -364,9 +362,7 @@ class NavigationComponent {
       });
     }
 
-    // Desktop Solutions dropdown with accessible interactions
-    this.closeSolutionsDropdown = null;
-
+    // Desktop Solutions dropdown interactions (hover, focus & click)
     setTimeout(() => {
       const solutionsDropdown = document.querySelector(".solutions-dropdown");
       const solutionsDropdownButton = solutionsDropdown?.querySelector(
@@ -375,100 +371,48 @@ class NavigationComponent {
       const solutionsDropdownMenu = solutionsDropdown?.querySelector(
         ".solutions-dropdown-menu"
       );
-      const dropdownArrow = solutionsDropdownButton?.querySelector(
-        ".dropdown-arrow"
-      );
 
       if (!solutionsDropdown || !solutionsDropdownButton || !solutionsDropdownMenu) {
         return;
       }
 
-      let leaveTimer = null;
-      let closeTimer = null;
-
-      const cancelTimers = () => {
-        if (leaveTimer) {
-          clearTimeout(leaveTimer);
-          leaveTimer = null;
-        }
-        if (closeTimer) {
-          clearTimeout(closeTimer);
-          closeTimer = null;
-        }
-      };
-
-      const commitHide = () => {
-        solutionsDropdownMenu.dataset.state = "closed";
-        solutionsDropdownMenu.hidden = true;
-      };
-
-      const showDropdown = () => {
-        cancelTimers();
-        if (!solutionsDropdownMenu.hidden && solutionsDropdownMenu.dataset.state === "open") {
-          return;
-        }
-
-        solutionsDropdownMenu.hidden = false;
-        solutionsDropdownMenu.removeAttribute("hidden");
-        solutionsDropdownMenu.dataset.state = "open";
-
+      const openDropdown = () => {
+        solutionsDropdown.classList.add("open");
         solutionsDropdownButton.setAttribute("aria-expanded", "true");
-        dropdownArrow?.classList.add("rotate-180");
       };
 
-      const hideDropdown = (immediate = false) => {
-        cancelTimers();
-
+      const closeDropdown = () => {
+        solutionsDropdown.classList.remove("open");
         solutionsDropdownButton.setAttribute("aria-expanded", "false");
-        dropdownArrow?.classList.remove("rotate-180");
-
-        if (immediate) {
-          commitHide();
-          return;
-        }
-
-        solutionsDropdownMenu.dataset.state = "closing";
-        closeTimer = window.setTimeout(() => {
-          if (solutionsDropdownMenu.dataset.state !== "open") {
-            commitHide();
-          }
-        }, 180);
-      };
-
-      const scheduleHide = () => {
-        cancelTimers();
-        leaveTimer = window.setTimeout(() => {
-          hideDropdown();
-        }, 120);
-      };
-
-      const handlePointerLeave = (event) => {
-        const relatedTarget = event.relatedTarget;
-        if (!relatedTarget || !solutionsDropdown.contains(relatedTarget)) {
-          scheduleHide();
-        }
       };
 
       const handleFocusOut = (event) => {
         const relatedTarget = event.relatedTarget;
         if (!relatedTarget || !solutionsDropdown.contains(relatedTarget)) {
-          scheduleHide();
+          closeDropdown();
         }
       };
 
-      // Pointer interactions
-      solutionsDropdown.addEventListener("pointerenter", showDropdown);
-      solutionsDropdown.addEventListener("pointerleave", handlePointerLeave);
-      solutionsDropdownMenu.addEventListener("pointerenter", showDropdown);
-      solutionsDropdownMenu.addEventListener("pointerleave", handlePointerLeave);
-
-      // Focus interactions
-      solutionsDropdownButton.addEventListener("focus", showDropdown);
+      solutionsDropdown.addEventListener("mouseenter", openDropdown);
+      solutionsDropdown.addEventListener("mouseleave", closeDropdown);
+      solutionsDropdownButton.addEventListener("focus", openDropdown);
       solutionsDropdownButton.addEventListener("blur", handleFocusOut);
-      solutionsDropdownMenu.addEventListener("focusin", showDropdown);
+      solutionsDropdownMenu.addEventListener("focusin", openDropdown);
       solutionsDropdownMenu.addEventListener("focusout", handleFocusOut);
 
-      // Keyboard support
+      solutionsDropdownButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        const expanded =
+          solutionsDropdownButton.getAttribute("aria-expanded") === "true";
+        if (expanded) {
+          closeDropdown();
+        } else {
+          openDropdown();
+          const firstItem = solutionsDropdownMenu.querySelector("a, button");
+          firstItem?.focus();
+        }
+      });
+
       solutionsDropdownButton.addEventListener("keydown", (event) => {
         if (
           event.key === "ArrowDown" ||
@@ -478,35 +422,22 @@ class NavigationComponent {
           event.key === "Spacebar"
         ) {
           event.preventDefault();
-          showDropdown();
+          openDropdown();
           const firstItem = solutionsDropdownMenu.querySelector("a, button");
           firstItem?.focus();
         } else if (event.key === "Escape") {
           event.preventDefault();
-          hideDropdown(true);
+          closeDropdown();
         }
       });
 
       solutionsDropdownMenu.addEventListener("keydown", (event) => {
         if (event.key === "Escape") {
           event.preventDefault();
-          hideDropdown(true);
+          closeDropdown();
           solutionsDropdownButton.focus();
         }
       });
-
-      // Click / tap toggle
-      solutionsDropdownButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        const expanded = solutionsDropdownButton.getAttribute("aria-expanded") === "true";
-        if (expanded) {
-          hideDropdown(true);
-        } else {
-          showDropdown();
-        }
-      });
-
-      this.closeSolutionsDropdown = hideDropdown;
     }, 50);
 
     // Desktop language dropdown
@@ -616,11 +547,17 @@ class NavigationComponent {
         langDropdownIcon?.classList.remove("rotate-180");
       }
 
-      if (
-        this.closeSolutionsDropdown &&
-        !e.target.closest(".solutions-dropdown")
-      ) {
-        this.closeSolutionsDropdown(true);
+      if (!e.target.closest(".solutions-dropdown")) {
+        const openDropdownEl = document.querySelector(
+          ".solutions-dropdown.open"
+        );
+        if (openDropdownEl) {
+          openDropdownEl.classList.remove("open");
+          const toggleButton = openDropdownEl.querySelector(
+            ".solutions-dropdown-btn"
+          );
+          toggleButton?.setAttribute("aria-expanded", "false");
+        }
       }
 
       // Close search results

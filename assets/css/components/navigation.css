@@ -152,16 +152,26 @@ header img {
   visibility: hidden;
   transform: translateY(0.5rem);
   transition: opacity 0.18s ease, transform 0.18s ease;
+  pointer-events: none;
 }
 
-.solutions-dropdown-menu[data-state="open"] {
+.solutions-dropdown.open .solutions-dropdown-menu,
+.solutions-dropdown:hover .solutions-dropdown-menu,
+.solutions-dropdown:focus-within .solutions-dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  pointer-events: auto;
 }
 
-.solutions-dropdown-menu[hidden] {
-  display: none;
+.solutions-dropdown .dropdown-arrow {
+  transition: transform 0.18s ease;
+}
+
+.solutions-dropdown.open .dropdown-arrow,
+.solutions-dropdown:hover .dropdown-arrow,
+.solutions-dropdown:focus-within .dropdown-arrow {
+  transform: rotate(180deg);
 }
 
 @media (prefers-reduced-motion: reduce) {
