@@ -46,7 +46,7 @@ window.I18N = {
       tabs: { corp: "Entreprises", retail: "Particuliers" },
       ui: {
         clear: "Effacer",
-        search: "Rechercher…",
+        search: "...",
         nores: "Aucun produit ne correspond à votre recherche.",
       },
       cta: {
@@ -3171,7 +3171,7 @@ footer: {
       tabs: { corp: "Businesses", retail: "Individuals" },
       ui: {
         clear: "Clear",
-        search: "Search…",
+        search: "...",
         nores: "No product matches your search.",
       },
       cta: {
@@ -6262,7 +6262,7 @@ footer: {
       tabs: { corp: "الشركات", retail: "الأفراد" },
       ui: {
         clear: "مسح",
-        search: "ابحث…",
+        search: "...",
         nores: "لا توجد منتجات مطابقة لبحثك.",
       },
       cta: {
