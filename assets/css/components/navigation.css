@@ -145,25 +145,22 @@ header img {
   overflow-y: auto;
 }
 
-/* Dropdown Menu Visibility - Ensure dropdown shows on hover */
-.group:hover .absolute {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: translateY(0) !important;
-  z-index: 1000;
-}
-
-/* Specific selector for Solutions dropdown */
-.group:hover > div.absolute {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: translateY(0) !important;
+/* Solutions Dropdown Visibility */
+.solutions-dropdown:hover .solutions-dropdown-menu,
+.solutions-dropdown-menu:hover {
   display: block !important;
 }
 
-/* Ensure group positioning works */
-.group {
-  position: relative;
+.solutions-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Language Dropdown Visibility - Keep existing behavior */
+.lang-dropdown-btn:hover + .lang-dropdown,
+.lang-dropdown:hover {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
 }
 
 /* RTL Support */

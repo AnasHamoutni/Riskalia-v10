@@ -39,14 +39,14 @@ class NavigationComponent {
               </a>
               
               <!-- Solutions Dropdown -->
-              <div class="relative group">
-                <button class="nav-link text-gray-700 hover:text-[var(--c3)] px-2 lg:px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center space-x-1 whitespace-nowrap">
+              <div class="relative solutions-dropdown">
+                <button class="nav-link solutions-dropdown-btn text-gray-700 hover:text-[var(--c3)] px-2 lg:px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center space-x-1 whitespace-nowrap">
                   <span data-i18n="nav.solutions">Solutions</span>
-                  <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 transition-transform duration-200 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
-                <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0">
+                <div class="solutions-dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 hidden z-50">
                   <div class="py-2">
                     <a href="/solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[var(--c3)] transition-colors duration-150" data-i18n="nav.assurance">
                       Assurance
@@ -87,7 +87,7 @@ class NavigationComponent {
                   <svg class="w-4 h-4 text-gray-400 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                   </svg>
-                  <input type="search" placeholder="Rechercher..." class="search-input bg-transparent border-none outline-none text-sm text-gray-700 placeholder-gray-400 w-16 xl:w-20 focus:w-24 xl:focus:w-28 transition-all duration-200" autocomplete="off">
+                  <input type="search" placeholder="" class="search-input bg-transparent border-none outline-none text-sm text-gray-700 placeholder-gray-400 w-16 xl:w-20 focus:w-24 xl:focus:w-28 transition-all duration-200" autocomplete="off">
                 </div>
                 <!-- Search Results Dropdown -->
                 <div class="search-results absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible transition-all duration-200 transform translate-y-1 z-50 max-w-sm">
