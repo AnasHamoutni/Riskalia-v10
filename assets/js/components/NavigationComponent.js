@@ -339,6 +339,47 @@ class NavigationComponent {
       });
     }
 
+    // Desktop Solutions dropdown hover
+    const solutionsDropdown = document.querySelector(".solutions-dropdown");
+    const solutionsDropdownMenu = document.querySelector(".solutions-dropdown-menu");
+    const dropdownArrow = document.querySelector(".dropdown-arrow");
+
+    if (solutionsDropdown && solutionsDropdownMenu) {
+      // Show dropdown on hover
+      solutionsDropdown.addEventListener("mouseenter", () => {
+        solutionsDropdownMenu.style.display = "block";
+        if (dropdownArrow) {
+          dropdownArrow.style.transform = "rotate(180deg)";
+        }
+      });
+
+      // Keep dropdown visible when hovering over the menu itself
+      solutionsDropdownMenu.addEventListener("mouseenter", () => {
+        solutionsDropdownMenu.style.display = "block";
+      });
+
+      // Hide dropdown when leaving both button and menu
+      solutionsDropdown.addEventListener("mouseleave", (e) => {
+        // Check if we're moving to the menu
+        if (!e.relatedTarget || !solutionsDropdownMenu.contains(e.relatedTarget)) {
+          solutionsDropdownMenu.style.display = "none";
+          if (dropdownArrow) {
+            dropdownArrow.style.transform = "rotate(0deg)";
+          }
+        }
+      });
+
+      solutionsDropdownMenu.addEventListener("mouseleave", (e) => {
+        // Check if we're moving back to the dropdown container
+        if (!e.relatedTarget || !solutionsDropdown.contains(e.relatedTarget)) {
+          solutionsDropdownMenu.style.display = "none";
+          if (dropdownArrow) {
+            dropdownArrow.style.transform = "rotate(0deg)";
+          }
+        }
+      });
+    }
+
     // Desktop language dropdown
     const langDropdownBtn = document.querySelector(".lang-dropdown-btn");
     const langDropdown = document.querySelector(".lang-dropdown");
