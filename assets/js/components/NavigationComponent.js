@@ -82,12 +82,12 @@ class NavigationComponent {
             <div class="hidden lg:flex items-center space-x-2 xl:space-x-3 flex-shrink-0">
 
               <!-- Search -->
-              <div class="relative search-wrapper">
-                <div class="search-container flex items-center bg-gray-50 rounded-full px-3 py-2 focus-within:bg-white focus-within:shadow-md focus-within:ring-2 focus-within:ring-[var(--c3)] focus-within:ring-opacity-20 transition-all duration-200">
-                  <svg class="w-4 h-4 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="relative search-wrapper flex-shrink-0">
+                <div class="search-container flex items-center bg-gray-50 rounded-full px-2 py-1.5 focus-within:bg-white focus-within:shadow-md focus-within:ring-2 focus-within:ring-[var(--c3)] focus-within:ring-opacity-20 transition-all duration-200">
+                  <svg class="w-4 h-4 text-gray-400 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                   </svg>
-                  <input type="search" placeholder="Rechercher..." class="search-input bg-transparent border-none outline-none text-sm text-gray-700 placeholder-gray-400 w-20 xl:w-28 focus:w-32 xl:focus:w-36 transition-all duration-200" autocomplete="off">
+                  <input type="search" placeholder="Rechercher..." class="search-input bg-transparent border-none outline-none text-sm text-gray-700 placeholder-gray-400 w-16 xl:w-20 focus:w-24 xl:focus:w-28 transition-all duration-200" autocomplete="off">
                 </div>
                 <!-- Search Results Dropdown -->
                 <div class="search-results absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible transition-all duration-200 transform translate-y-1 z-50 max-w-sm">
