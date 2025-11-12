@@ -654,6 +654,15 @@ footer: {
           title: "Benchmark",
           text: "Nous comparons vos programmes avec ceux du marché pour identifier les opportunités d'optimisation.",
         },
+        facultatives: {
+          title: "Facultatives ciblées pour la gestion de la couverture des risques complexes :",
+          subtitle: "Expertise technique. Marchés sélectifs.",
+          paragraph1: "Nous plaçons vos risques spécifiques — Property, RC, Énergie, Construction, Lignes financières, Transport — auprès de marchés notés A- et supérieur.",
+          paragraph2: "Chaque placement repose sur un dossier technique solide, une négociation précise des clauses contractuelles et un suivi rigoureux jusqu'à la confirmation de couverture.",
+          benefits: {
+            title: "Bénéfices clés :",
+          },
+        },
       },
       s3: {
         title: "Marchés",
@@ -700,10 +709,18 @@ footer: {
         },
       },
       s4: {
-        title: "Sinistres",
-        objective: {
-          title: "Objectif",
-          text: "Nous vous accompagnons dans la gestion des sinistres pour garantir un règlement rapide et équitable.",
+        title: "Une gestion transparente, des délais maîtrisés et une coordination fluide",
+        intro: "Réassureur – Assureur – Assuré : chaque détail est pensé pour accélérer la prise en charge de l'indemnité et renforcer la confiance.",
+        benefits: {
+          title: "Bénéfices clés :",
+          item1: "Support continu 24/7",
+          item2: "Processus de recouvrement fluide",
+          item3: "Documentation claire et indemnisation accélérée",
+        },
+        philosophy: {
+          title: "💡 Notre philosophie :",
+          text1: "De la souscription à l'indemnisation, une chaîne de valeur sans rupture.",
+          text2: "Think Risk, Think Riskalia.",
         },
       },
       s5: {
@@ -3793,6 +3810,15 @@ footer: {
           title: "Benchmark",
           text: "We compare your programs with market ones to identify optimization opportunities.",
         },
+        facultatives: {
+          title: "Targeted Facultative Reinsurance for Complex Risk Coverage:",
+          subtitle: "Technical Expertise. Selective Markets.",
+          paragraph1: "We place your specific risks — Property, Liability, Energy, Construction, Financial Lines, Transport — with A- rated and higher markets.",
+          paragraph2: "Each placement is based on a solid technical file, precise negotiation of contractual clauses, and rigorous follow-up until coverage confirmation.",
+          benefits: {
+            title: "Key Benefits:",
+          },
+        },
       },
       s3: {
         title: "Markets",
@@ -3837,10 +3863,18 @@ footer: {
         },
       },
       s4: {
-        title: "Claims",
-        objective: {
-          title: "Objective",
-          text: "We accompany you in claims management to guarantee fast and fair settlement.",
+        title: "Transparent Management, Controlled Timelines, and Smooth Coordination",
+        intro: "Reinsurer – Insurer – Insured: every detail is designed to accelerate claim handling and strengthen trust.",
+        benefits: {
+          title: "Key Benefits:",
+          item1: "24/7 continuous support",
+          item2: "Smooth recovery process",
+          item3: "Clear documentation and accelerated compensation",
+        },
+        philosophy: {
+          title: "💡 Our Philosophy:",
+          text1: "From underwriting to claims settlement, an unbroken value chain.",
+          text2: "Think Risk, Think Riskalia.",
         },
       },
       s5: {
@@ -6893,6 +6927,15 @@ footer: {
           title: "المعيار المرجعي",
           text: "نقارن برامجكم مع برامج السوق لتحديد فرص التحسين.",
         },
+        facultatives: {
+          title: "إعادة التأمين الاختيارية المستهدفة لتغطية المخاطر المعقدة:",
+          subtitle: "خبرة تقنية. أسواق انتقائية.",
+          paragraph1: "نضع مخاطركم المحددة — الممتلكات، المسؤولية، الطاقة، الإنشاءات، الخطوط المالية، النقل — لدى أسواق بتصنيف A- وما فوق.",
+          paragraph2: "يعتمد كل وضع على ملف تقني قوي، تفاوض دقيق على البنود التعاقدية، ومتابعة صارمة حتى تأكيد التغطية.",
+          benefits: {
+            title: "الفوائد الرئيسية:",
+          },
+        },
       },
       s3: {
         title: "الأسواق",
@@ -6933,10 +6976,18 @@ footer: {
         },
       },
       s4: {
-        title: "المطالبات",
-        objective: {
-          title: "الهدف",
-          text: "نرافقكم في إدارة المطالبات لضمان تسوية سريعة وعادلة.",
+        title: "إدارة شفافة، مواعيد محكومة، وتنسيق سلس",
+        intro: "معيد التأمين – شركة التأمين – المؤمن له: كل التفاصيل مصممة لتسريع التعويض وتعزيز الثقة.",
+        benefits: {
+          title: "الفوائد الرئيسية:",
+          item1: "دعم مستمر على مدار الساعة طوال أيام الأسبوع",
+          item2: "عملية استرداد سلسة",
+          item3: "توثيق واضح وتعويض سريع",
+        },
+        philosophy: {
+          title: "💡 فلسفتنا:",
+          text1: "من الاكتتاب إلى التعويض، سلسلة قيمة متواصلة.",
+          text2: "فكّر في المخاطر، فكّر في ريسكاليا.",
         },
       },
       s5: {
