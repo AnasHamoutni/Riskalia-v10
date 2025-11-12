@@ -2,39 +2,258 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=3.0,user-scalable=yes" />
-    <title>Blog & Actualités — Riskalia</title>
-    <meta name="description" content="Blog Riskalia : Articles de fond sur la réassurance, le droit de la réassurance, et les enjeux du marché de l'assurance." />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Riskalia — Blog & Actualités</title>
+    <meta
+      name="description"
+      content="Articles de fond sur la réassurance, l'assurance et la gestion des risques. Actualités réglementaires et insights du marché."
+    />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Component Styles -->
-    <link rel="stylesheet" href="assets/css/components/navigation.css" />
-    <link rel="stylesheet" href="assets/css/components/footer.css" />
-    <link rel="stylesheet" href="assets/css/components/chatbot.css" />
-    <link rel="stylesheet" href="assets/css/custom.css" />
-  </head>
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-  <body class="text-gray-800 overflow-x-hidden">
+    <!-- Navigation Component Styles -->
+    <link rel="stylesheet" href="assets/css/components/navigation.css" />
+
+    <!-- Footer Component Styles -->
+    <link rel="stylesheet" href="assets/css/components/footer.css" />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <style>
+      :root {
+        --c1: #005c73;
+        --c2: #00849b;
+        --c3: #00b0c8;
+        --cl: #fff;
+        --cm: #f6fafc;
+        --cd: #243238;
+      }
+
+      .blog-hero {
+        background: linear-gradient(135deg, var(--c1) 0%, var(--c2) 100%);
+      }
+
+      .article-card {
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 176, 200, 0.1);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .article-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 176, 200, 0.15);
+        border-color: var(--c3);
+      }
+
+      .article-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: #666;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+      }
+
+      .article-meta i {
+        color: var(--c3);
+      }
+
+      .read-more-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 10px 20px;
+        background: linear-gradient(135deg, var(--c3) 0%, var(--c2) 100%);
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-top: auto;
+      }
+
+      .read-more-btn:hover {
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(0, 176, 200, 0.3);
+      }
+
+      .news-item {
+        padding: 1rem 1.5rem;
+        border-left: 4px solid var(--c3);
+        background: linear-gradient(90deg, rgba(0, 176, 200, 0.05) 0%, transparent 100%);
+        margin-bottom: 1rem;
+        border-radius: 0 8px 8px 0;
+        transition: all 0.3s ease;
+      }
+
+      .news-item:hover {
+        background: linear-gradient(90deg, rgba(0, 176, 200, 0.1) 0%, transparent 100%);
+        transform: translateX(5px);
+      }
+
+      .section-title {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        color: var(--cd);
+      }
+
+      .article-excerpt {
+        flex-grow: 1;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 1.5rem;
+      }
+
+      .article-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: var(--cd);
+        margin-bottom: 1rem;
+        line-height: 1.4;
+      }
+
+      /* Modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        overflow-y: auto;
+      }
+
+      .modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 3rem;
+        border-radius: 16px;
+        max-width: 900px;
+        width: 100%;
+        position: relative;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #666;
+        transition: color 0.3s ease;
+      }
+
+      .modal-close:hover {
+        color: var(--c1);
+      }
+
+      .modal-article-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--cd);
+        margin-bottom: 1rem;
+        padding-right: 2rem;
+      }
+
+      .modal-article-meta {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid var(--cm);
+        color: #666;
+      }
+
+      .modal-article-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #444;
+      }
+
+      @media (max-width: 768px) {
+        .modal-content {
+          padding: 2rem 1.5rem;
+        }
+
+        .modal-article-title {
+          font-size: 1.5rem;
+        }
+
+        .modal-article-meta {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+      }
+    </style>
+
+    <noscript>
+      <style>
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body class="bg-white text-gray-800 overflow-x-hidden">
     <!-- Navigation Component Container -->
     <div id="navigation-container"></div>
 
     <!-- HERO SECTION -->
-    <section class="hero-bg min-h-[30vh] flex items-center text-white text-center relative pt-4 pb-12">
+    <section
+      class="blog-hero min-h-[35vh] flex items-center text-white text-center relative py-16"
+    >
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="floating-element absolute top-1/4 left-1/4 w-2 h-2 bg-white/20 rounded-full"></div>
+        <div class="floating-element absolute top-1/3 right-1/3 w-1 h-1 bg-white/30 rounded-full"></div>
+        <div class="floating-element absolute bottom-1/4 right-1/4 w-3 h-3 bg-white/10 rounded-full"></div>
+      </div>
+
       <div class="hero-content container mx-auto px-4 max-w-6xl relative z-10">
         <div class="space-y-6 px-4">
-          <h1 class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight" data-i18n="blog.hero.title">
+          <h1
+            class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+            data-i18n="blog.hero.title"
+          >
             Blog & Actualités
           </h1>
-          <p class="text-white/90 text-base sm:text-lg md:text-xl max-w-3xl mx-auto" data-i18n="blog.hero.subtitle">
-            Des articles à forte valeur ajoutée pour mieux comprendre les enjeux du marché
+          <p
+            class="text-white/90 text-base sm:text-lg md:text-xl max-w-3xl mx-auto"
+            data-i18n="blog.hero.subtitle"
+          >
+            Notre blog vous propose régulièrement des articles à forte valeur ajoutée pour mieux comprendre les enjeux du marché
           </p>
         </div>
       </div>
@@ -42,323 +261,168 @@
 
     <div class="section-wave" aria-hidden="true"></div>
 
-    <!-- BLOG ARTICLES SECTION -->
-    <section class="py-12 px-4 bg-slate-50">
-      <div class="container mx-auto max-w-6xl">
-        <!-- Section Header -->
-        <div class="mb-12 text-center">
-          <div class="inline-flex items-center justify-center mb-6">
-            <div class="relative">
-              <div class="absolute inset-0 bg-gradient-to-r from-[var(--c3)]/20 via-[var(--c2)]/20 to-[var(--c3)]/20 rounded-full blur-lg"></div>
-              <div class="relative backdrop-blur-sm border border-[var(--c3)]/20 rounded-full px-6 py-3 shadow-lg">
-                <div class="flex items-center gap-3">
-                  <div class="w-2 h-2 bg-[var(--c3)] rounded-full animate-pulse"></div>
-                  <span class="text-sm font-bold text-[var(--c1)] uppercase tracking-wider" data-i18n="blog.section.label">
-                    📘 Articles de fond
-                  </span>
-                  <div class="w-2 h-2 bg-[var(--c2)] rounded-full animate-pulse" style="animation-delay: 0.5s"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Articles Grid -->
-        <div class="space-y-8">
-
-          <!-- Article 1 -->
-          <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
-            <div class="p-6 md:p-8">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[var(--c3)] to-[var(--c2)] rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                  01
-                </div>
-                <div class="flex-1">
-                  <h2 class="text-2xl md:text-3xl font-bold text-[var(--c1)] mb-2" data-i18n="blog.article1.title">
-                    Réassurance : des racines antiques à l'architecture moderne du risque
-                  </h2>
-                </div>
-              </div>
-              <div class="prose prose-gray max-w-none">
-                <p class="text-gray-700 leading-relaxed text-justify" data-i18n="blog.article1.content">
-                  La réassurance, bien plus qu'un mécanisme financier, est une architecture invisible mais essentielle à la solidité de tout l'édifice assurantiel mondial. Son histoire puise ses racines bien avant l'émergence du droit anglo-saxon ou de l'assurance moderne, remontant jusqu'au Talmud de Babylone (586 av. J.-C.) où l'on retrouve déjà des prémices de répartition des pertes. L'objectif ? Mutualiser les risques pour éviter qu'un seul acteur ne s'effondre sous le poids d'un sinistre majeur. C'est dans les républiques maritimes italiennes du XIVe siècle que la réassurance facultative prend forme, notamment à Gênes où des pratiques proches de la cession de risque apparaissent dans les contrats maritimes. Le contrat entre Grillo, Benaira et Sacco (1370) en est une illustration fondatrice. Plus tard, le "Guidon de la Mer" (1665) et l'Ordonnance de Colbert (1681) viennent renforcer le cadre juridique français autour de la couverture maritime, sans toutefois codifier la réassurance. La liberté contractuelle devient dès lors une spécificité revendiquée de la réassurance. L'industrialisation, les incendies massifs (comme celui de Londres en 1666), et l'internationalisation des échanges renforcent la nécessité d'un second niveau de couverture. C'est ainsi qu'émergent des compagnies de réassurance structurées (Cologne Re, Gen Re…), marquant la naissance d'un secteur à part entière. La réassurance est donc née d'une double matrice : la nécessité pratique de lisser les pertes et un socle contractuel fondé sur l'usage, la coutume, et la confiance. Aujourd'hui encore, cette tension entre standardisation technique et liberté juridique originelle reste au cœur de sa gouvernance.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 2 -->
-          <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
-            <div class="p-6 md:p-8">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[var(--c2)] to-[var(--c1)] rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                  02
-                </div>
-                <div class="flex-1">
-                  <h2 class="text-2xl md:text-3xl font-bold text-[var(--c1)] mb-2" data-i18n="blog.article2.title">
-                    La réassurance facultative : entre art de la sélection et contrat sur mesure
-                  </h2>
-                </div>
-              </div>
-              <div class="prose prose-gray max-w-none">
-                <p class="text-gray-700 leading-relaxed text-justify" data-i18n="blog.article2.content">
-                  La réassurance facultative constitue une forme singulière de transfert du risque : elle ne s'applique qu'à un seul risque, sélectionné et analysé individuellement, contrairement aux Traités qui couvrent des portefeuilles entiers. Elle est donc fondamentalement un contrat sur mesure. Son utilité repose sur sa capacité à absorber les pics de risques, les expositions spécifiques ou les cas hors normes qui échappent à la standardisation. Le réassureur accepte ou non de couvrir un risque identifié, après avoir reçu toutes les informations de la part de la compagnie cédante. C'est ici qu'apparaît le rôle du courtier, véritable architecte de la rencontre entre besoin et capacité. Mais cette singularité comporte aussi des défis : asymétrie d'information, clauses complexes, standardisation issue du marché de Londres (Lloyd's) ou des géants comme Munich Re et Swiss Re. L'extrême bonne foi devient ici un pivot incontournable pour éviter la sélection adverse et garantir la transparence totale lors de la souscription. En résumé, la réassurance facultative est l'expression la plus contractuelle et la plus technique de la réassurance. Elle mobilise expertise, rigueur, et négociation. C'est une forme d'ingénierie juridique et financière au service de la résilience des assureurs, et donc, indirectement, de l'assuré final.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 3 -->
-          <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
-            <div class="p-6 md:p-8">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[var(--c1)] to-[var(--c3)] rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                  03
-                </div>
-                <div class="flex-1">
-                  <h2 class="text-2xl md:text-3xl font-bold text-[var(--c1)] mb-2" data-i18n="blog.article3.title">
-                    L'extrême bonne foi : mythe anglo-saxon ou principe universel ?
-                  </h2>
-                </div>
-              </div>
-              <div class="prose prose-gray max-w-none">
-                <p class="text-gray-700 leading-relaxed text-justify" data-i18n="blog.article3.content">
-                  Principe fondamental du droit des contrats de réassurance anglo-saxon, l'extrême bonne foi (utmost good faith) impose à l'assureur cédant une obligation renforcée de transparence et de communication. Contrairement à la simple 'bonne foi' du Code civil français, elle se manifeste ici dans une logique quasi unilatérale, imposant au cédant de tout révéler, sans rétention. Cette exigence est née de la pratique maritime, où la distance et l'incertitude rendaient nécessaire une confiance absolue entre l'assureur primaire et le réassureur. Aujourd'hui encore, malgré l'évolution technologique, cette notion reste un pilier dans les polices de réassurance facultative, bien que son application tende à s'amenuiser dans certains marchés. Dans un marché globalisé, l'information est devenue plus accessible et standardisée. Les réassureurs exigent désormais moins une confiance aveugle qu'un cadre contractuel clair. L'extrême bonne foi tend à se réduire à une simple garantie contre la réticence dolosive. Elle conserve néanmoins sa portée symbolique et juridique dans certains contentieux sensibles. Ainsi, ce principe n'est pas universel dans sa portée, mais reste un révélateur du rapport de force entre réassureur et réassuré. Il soulève une question centrale : la confiance peut-elle encore constituer une base juridique à l'heure de la standardisation mondiale ?
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 4 -->
-          <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
-            <div class="p-6 md:p-8">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[var(--c3)] to-[var(--c2)] rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                  04
-                </div>
-                <div class="flex-1">
-                  <h2 class="text-2xl md:text-3xl font-bold text-[var(--c1)] mb-2" data-i18n="blog.article4.title">
-                    Le partage de sort : quand le réassureur suit les pas de l'assureur
-                  </h2>
-                </div>
-              </div>
-              <div class="prose prose-gray max-w-none">
-                <p class="text-gray-700 leading-relaxed text-justify" data-i18n="blog.article4.content">
-                  Le 'partage de sort', ou clause 'follow the fortunes', engage le réassureur à suivre les décisions de sa cédante, dans la limite de la police d'assurance d'origine. Son rôle : garantir une cohérence contractuelle et financière entre les deux niveaux de couverture. Dans la pratique, cette clause renforce l'alignement des intérêts. Cependant, elle ne couvre pas les règlements commerciaux ou gracieux. Le réassureur se réserve le droit d'analyser les sinistres et d'en exclure ceux qui ne relèvent pas clairement de ses engagements contractuels. Des divergences apparaissent alors, notamment en cas de litiges. Certains réassureurs insèrent des clauses précisant la primauté de leurs propres termes ('liability agreement') sur les polices d'origine. En cas de contentieux, cette hiérarchie contractuelle génère des problématiques complexes : double juridiction, exéquatur, incohérence entre les contrats primaires et de réassurance. Le 'partage de sort' reste donc un principe de solidarité financière partielle, non absolue. Il incarne la volonté d'alignement sans renoncer au contrôle. Une tension permanente qui reflète le défi central de la réassurance facultative : concilier autonomie et interdépendance contractuelle.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 5 -->
-          <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
-            <div class="p-6 md:p-8">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[var(--c2)] to-[var(--c1)] rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                  05
-                </div>
-                <div class="flex-1">
-                  <h2 class="text-2xl md:text-3xl font-bold text-[var(--c1)] mb-2" data-i18n="blog.article5.title">
-                    Arbitrage & équité : pourquoi les contrats de réassurance s'éloignent des tribunaux
-                  </h2>
-                </div>
-              </div>
-              <div class="prose prose-gray max-w-none">
-                <p class="text-gray-700 leading-relaxed text-justify" data-i18n="blog.article5.content">
-                  Le recours à l'arbitrage en réassurance est une tradition ancienne. Hérité des usages du marché de Londres, ce mode de résolution repose sur l'amiable composition et la volonté des parties d'éviter les juges étatiques peu familiers des subtilités techniques du secteur. Historiquement, la réassurance s'est construite autour de normes professionnelles, de coutumes commerciales et d'une forme de souveraineté contractuelle. L'arbitre n'est pas nécessairement tenu de statuer selon la loi, mais selon les usages – principe hérité de l'equity anglo-saxon. De nombreux contrats intègrent aujourd'hui des clauses compromissoires standardisées. Des institutions spécialisées comme l'ARIAS ou le CEFAREA contribuent à professionnaliser ce processus, mais les défis persistent : conflits de lois, respect de l'ordre public, lenteurs d'exécution en cas d'exéquatur. Dans un contexte de complexité croissante, l'arbitrage demeure un outil précieux mais imparfait. Il soulève une interrogation : l'équité contractuelle peut-elle encore se passer d'un socle normatif solide ?
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 6 -->
-          <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
-            <div class="p-6 md:p-8">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[var(--c1)] to-[var(--c3)] rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                  06
-                </div>
-                <div class="flex-1">
-                  <h2 class="text-2xl md:text-3xl font-bold text-[var(--c1)] mb-2" data-i18n="blog.article6.title">
-                    Réassurance ou adhésion ? Les déséquilibres contractuels sous la loupe
-                  </h2>
-                </div>
-              </div>
-              <div class="prose prose-gray max-w-none">
-                <p class="text-gray-700 leading-relaxed text-justify" data-i18n="blog.article6.content">
-                  La réassurance est théoriquement un contrat de gré à gré, librement négocié entre parties averties. Pourtant, dans la pratique, surtout en matière facultative, nombre de clauses sont imposées par le réassureur via des modèles standardisés issus du marché londonien ou continental (LIRMA, Munich Re wording…). Ce déséquilibre contractuel s'exprime notamment dans les clauses de non-cumul, d'exclusions, ou encore dans les modalités de notification des sinistres. La cédante, bien que juridiquement libre, accepte souvent ces conditions faute d'alternatives compétitives. Cela pose la question du pouvoir réel de négociation du cédant, en particulier dans les pays émergents ou chez les petits assureurs. En cas de litige, la question de la 'volonté réelle' des parties revient en force. Le juge ou l'arbitre devra déterminer si le contrat a été réellement négocié ou s'il s'apparente à un contrat d'adhésion déguisé. Il est donc essentiel, pour les courtiers et juristes spécialisés, d'identifier les clauses critiques, de les expliquer, et parfois de proposer des wording alternatifs, notamment dans les projets multilatéraux ou financés par des bailleurs exigeants en matière de transparence et de gouvernance.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 7 -->
-          <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
-            <div class="p-6 md:p-8">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[var(--c3)] to-[var(--c2)] rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                  07
-                </div>
-                <div class="flex-1">
-                  <h2 class="text-2xl md:text-3xl font-bold text-[var(--c1)] mb-2" data-i18n="blog.article7.title">
-                    Réassurance et droit international privé : un vide normatif à combler ?
-                  </h2>
-                </div>
-              </div>
-              <div class="prose prose-gray max-w-none">
-                <p class="text-gray-700 leading-relaxed text-justify" data-i18n="blog.article7.content">
-                  Les contrats de réassurance sont souvent transfrontaliers, opposant un assureur cédant à un réassureur situé dans un autre pays. Or, la diversité des systèmes juridiques crée une incertitude sur le droit applicable et la juridiction compétente. Le Règlement Rome I, applicable dans l'UE, reconnaît la liberté contractuelle quant au choix de la loi applicable. Toutefois, en l'absence de clause claire, le juge devra déterminer la loi 'la plus étroitement liée'. En réassurance, ce lien est souvent ténu. S'ajoute le problème de l'exéquatur, lorsque la sentence ou la décision est rendue dans un pays tiers. Face à cela, une lex mercatoria réassurantielle émerge : pratiques usuelles, clauses-type, arbitrage institutionnel spécialisé. Cette uniformisation de fait pallie le manque de normes unifiées, mais soulève des enjeux de sécurité juridique et de reconnaissance. La création d'un cadre international spécifique, ou du moins la codification des usages professionnels à l'échelle OCDE ou IAIS, serait une avancée stratégique pour sécuriser les flux et attirer les investisseurs internationaux dans les pays à risque.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 8 -->
-          <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
-            <div class="p-6 md:p-8">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[var(--c2)] to-[var(--c1)] rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                  08
-                </div>
-                <div class="flex-1">
-                  <h2 class="text-2xl md:text-3xl font-bold text-[var(--c1)] mb-2" data-i18n="blog.article8.title">
-                    Le contrat « back to back » : entre autonomie du réassureur et risque de fragmentation
-                  </h2>
-                </div>
-              </div>
-              <div class="prose prose-gray max-w-none">
-                <p class="text-gray-700 leading-relaxed text-justify" data-i18n="blog.article8.content">
-                  Le principe 'as original' ou contrat back-to-back suppose que la réassurance reflète les termes du contrat d'assurance sous-jacent. En théorie, cela assure une parfaite continuité entre les deux niveaux de couverture. Mais en pratique, cette transposition est rarement totale. Le réassureur insère ses propres limites, exclusions ou modalités. Parfois, les contrats sont si divergents qu'en cas de sinistre majeur, l'assureur paie son client, mais ne peut se faire rembourser par son réassureur, faute de concordance des polices. Cela engendre une fragmentation de la couverture et un risque de 'fuite d'assurance'. Le courtier et le juriste doivent donc veiller à l'alignement des obligations, à la cohérence des définitions, et à la présence de clauses de liaison ('follow the settlements', 'follow the form'). Le contrat back-to-back, s'il est mal structuré, peut devenir source de contentieux, voire de réputation négative dans les grands programmes internationaux.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 9 -->
-          <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
-            <div class="p-6 md:p-8">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[var(--c1)] to-[var(--c3)] rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                  09
-                </div>
-                <div class="flex-1">
-                  <h2 class="text-2xl md:text-3xl font-bold text-[var(--c1)] mb-2" data-i18n="blog.article9.title">
-                    La souveraineté juridique à l'épreuve de la réassurance mondiale
-                  </h2>
-                </div>
-              </div>
-              <div class="prose prose-gray max-w-none">
-                <p class="text-gray-700 leading-relaxed text-justify" data-i18n="blog.article9.content">
-                  La réassurance mondiale met à l'épreuve la souveraineté juridique des États, notamment dans les économies émergentes. Les grands réassureurs imposent leurs propres règles contractuelles, souvent alignées sur les standards anglo-saxons, et conditionnent parfois leur engagement à la reconnaissance d'un droit ou d'une juridiction spécifique. Ce phénomène provoque un déséquilibre structurel, où les États se retrouvent dépendants d'acteurs globaux pour couvrir leurs assureurs locaux, en particulier dans les branches longues ou à sinistralité catastrophique. Certains pays ont tenté de réguler cette dépendance par la mise en place de mécanismes de rétrocession obligatoire vers une réassurance nationale (Maroc, Afrique du Sud), ou par la création de pools publics. Mais cette approche se heurte aux réalités du marché et à la recherche de solvabilité internationale imposée par les bailleurs. La souveraineté juridique ne peut être défendue que par le renforcement de l'expertise locale, la montée en gamme des wording nationaux, et la négociation contractuelle éclairée, appuyée par les courtiers spécialisés. C'est aussi l'un des rôles que peut jouer une structure comme Riskalia, à l'interface entre local et global.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 10 -->
-          <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
-            <div class="p-6 md:p-8">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[var(--c3)] to-[var(--c2)] rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                  10
-                </div>
-                <div class="flex-1">
-                  <h2 class="text-2xl md:text-3xl font-bold text-[var(--c1)] mb-2" data-i18n="blog.article10.title">
-                    Pour un droit de la réassurance : utopie ou nécessité ?
-                  </h2>
-                </div>
-              </div>
-              <div class="prose prose-gray max-w-none">
-                <p class="text-gray-700 leading-relaxed text-justify" data-i18n="blog.article10.content">
-                  La réassurance reste aujourd'hui une 'zone grise' du droit : ni complètement assurantielle, ni véritablement financière. Elle échappe souvent aux codes des assurances nationaux, et repose principalement sur la liberté contractuelle, les usages du marché et le recours à l'arbitrage. Or, dans un contexte de financiarisation croissante du risque (cat bonds, ILS, reinsurance sidecars), et face aux défis posés par les mégas-calamités climatiques, la question d'un cadre normatif clair et global se pose avec acuité. Les acteurs comme l'IAIS, l'OCDE ou la Banque Mondiale commencent à encourager l'encadrement des pratiques de réassurance, en lien avec les objectifs de développement durable (ODD), la gouvernance ESG, et la mobilisation du capital privé pour la résilience climatique. Un droit autonome de la réassurance permettrait de sécuriser les montages complexes, d'encourager la mutualisation solidaire et de crédibiliser les programmes d'assurance inclusive. Utopie pour certains, nécessité pour d'autres : le débat est lancé, et Riskalia entend y contribuer par son expertise juridique et opérationnelle.
-                </p>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA SECTION -->
-    <section class="py-8 px-4 bg-[var(--c1)] text-white">
-      <div class="container mx-auto max-w-4xl text-center">
-        <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4" data-i18n="cta.title">
-          Un besoin de couverture ?
+    <!-- ARTICLES SECTION -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-7xl">
+        <h2 class="section-title" data-i18n="blog.sections.articles">
+          📘 Articles de fond
         </h2>
-        <p class="text-base md:text-lg mb-4 md:mb-6 text-white/90" data-i18n="cta.subtitle">
-          Décrivez votre projet : nous répondons sous 24–48 h.
-        </p>
-        <div class="flex flex-row gap-3 justify-center items-center">
-          <a href="/contact.html" class="bg-gradient-to-r from-[var(--c3)] to-[var(--c2)] hover:from-[var(--c2)] hover:to-[var(--c1)] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-xl font-semibold text-xs sm:text-base no-underline hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl" data-i18n="cta.button1">
-            Obtenir un devis
-          </a>
-          <a href="/contact.html" class="bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 hover:border-white/50 text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-xl font-semibold text-xs sm:text-base no-underline hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl" data-i18n="cta.button2">
-            Contacter un conseiller
-          </a>
+
+        <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Articles will be rendered here by JavaScript -->
         </div>
       </div>
     </section>
+
+    <!-- NEWS SECTION -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="section-title" data-i18n="blog.sections.news">
+          📅 Actualités
+        </h2>
+
+        <div id="news-list" class="max-w-3xl">
+          <!-- News items will be rendered here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTICLE MODAL -->
+    <div id="article-modal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close" onclick="closeArticleModal()">&times;</span>
+        <h2 id="modal-article-title" class="modal-article-title"></h2>
+        <div id="modal-article-meta" class="modal-article-meta"></div>
+        <div id="modal-article-content" class="modal-article-content">
+          <p>Article content placeholder. In a full implementation, this would contain the complete article text.</p>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer Component Container -->
     <div id="footer-container"></div>
 
     <!-- Scripts -->
     <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/blog-articles-content.js"></script>
     <script src="assets/js/components/SearchComponent.js"></script>
     <script src="assets/js/components/NavigationComponent.js"></script>
     <script src="assets/js/components/FooterComponent.js"></script>
-    <script src="assets/js/components/ChatbotComponent.js"></script>
 
     <script>
+      // Modal functions
+      function openArticleModal(articleId) {
+        const lang = localStorage.getItem("riskalia_lang") || "fr";
+        const article = window.I18N[lang].blog.articles.find(a => a.id === articleId);
+
+        if (!article) return;
+
+        document.getElementById("modal-article-title").textContent = article.title;
+        document.getElementById("modal-article-meta").innerHTML = `
+          <span><i class="far fa-calendar"></i> ${article.date}</span>
+          <span><i class="far fa-clock"></i> ${article.readTime}</span>
+        `;
+
+        // Load the full article content from the dedicated content file
+        const fullContent = window.BLOG_ARTICLES_CONTENT?.[lang]?.[articleId] || `<p style="margin-bottom: 1.5rem; font-size: 1.15rem; color: #666;">${article.excerpt}</p>`;
+        document.getElementById("modal-article-content").innerHTML = fullContent;
+
+        document.getElementById("article-modal").classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeArticleModal() {
+        document.getElementById("article-modal").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+
+      // Close modal on outside click
+      document.getElementById("article-modal").addEventListener("click", function(e) {
+        if (e.target === this) {
+          closeArticleModal();
+        }
+      });
+
+      // Close modal on Escape key
+      document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape") {
+          closeArticleModal();
+        }
+      });
+
+      // Render articles and news
+      function renderBlogContent() {
+        const lang = localStorage.getItem("riskalia_lang") || "fr";
+        if (!window.I18N || !window.I18N[lang] || !window.I18N[lang].blog) return;
+
+        const blogData = window.I18N[lang].blog;
+        const articlesGrid = document.getElementById("articles-grid");
+        const newsList = document.getElementById("news-list");
+
+        // Render articles
+        if (blogData.articles && articlesGrid) {
+          articlesGrid.innerHTML = blogData.articles.map(article => `
+            <div class="article-card bg-white p-6 rounded-xl">
+              <h3 class="article-title">${article.title}</h3>
+              <div class="article-meta">
+                <span><i class="far fa-calendar"></i> ${article.date}</span>
+                <span><i class="far fa-clock"></i> ${article.readTime}</span>
+              </div>
+              <p class="article-excerpt">${article.excerpt}</p>
+              <a href="javascript:void(0)" onclick="openArticleModal('${article.id}')" class="read-more-btn">
+                <span data-i18n="blog.cta.readMore">${blogData.cta.readMore}</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          `).join('');
+        }
+
+        // Render news
+        if (blogData.news && blogData.news.items && newsList) {
+          newsList.innerHTML = blogData.news.items.map(newsItem => `
+            <div class="news-item">
+              <p class="font-semibold text-gray-800">${newsItem}</p>
+            </div>
+          `).join('');
+        }
+      }
+
       document.addEventListener("DOMContentLoaded", () => {
-        try {
-          /* Initialize Footer Component */
-          if (typeof FooterComponent !== "undefined" && !window.footerComponent) {
-            window.footerComponent = new FooterComponent();
-          }
+        // Apply i18n meta tags
+        if (window.I18N) {
+          const lang = localStorage.getItem("riskalia_lang") || "fr";
+          const meta = window.I18N[lang].blog.meta;
+          document.title = meta.title;
+          document.querySelector('meta[name="description"]').setAttribute("content", meta.desc);
+        }
 
-          /* Global Hook for External Lang Change */
-          window._onLangChanged = function () {
-            const currentLang = localStorage.getItem("riskalia_lang") || "fr";
-            window.navigationComponent?.updateLanguage?.(currentLang);
-            window.footerComponent?.updateTranslations?.();
-          };
+        // Initial render
+        renderBlogContent();
 
-          /* Language Switching Listener */
-          function setupLanguageListener() {
-            document.addEventListener("languageChanged", (e) => {
-              console.log("Language change event received:", e.detail.language);
-              window.lang = e.detail.language;
-              localStorage.setItem("riskalia_lang", window.lang);
+        // Listen for language changes
+        document.addEventListener("languageChanged", (e) => {
+          window.lang = e.detail.language;
+          localStorage.setItem("riskalia_lang", window.lang);
 
-              if (typeof window.applyTexts === "function") window.applyTexts();
-              window.navigationComponent?.updateTranslations?.();
-              window.footerComponent?.updateTranslations?.();
-              window._onLangChanged?.();
-            });
-          }
+          // Update meta tags
+          const meta = window.I18N[window.lang].blog.meta;
+          document.title = meta.title;
+          document.querySelector('meta[name="description"]').setAttribute("content", meta.desc);
 
-          /* Wait Until i18n + Footer Ready */
-          function waitForReady() {
-            if (window.I18N && window.footerComponent && typeof window.applyTexts === "function") {
-              console.log("✅ i18n and footer ready, applying translations...");
-              window.applyTexts();
-              window.footerComponent.updateTranslations?.();
-              window.navigationComponent?.updateTranslations?.();
-            } else {
-              setTimeout(waitForReady, 100);
-            }
-          }
+          // Apply translations
+          if (typeof window.applyTexts === "function") window.applyTexts();
 
-          /* Initialize Everything */
-          if (!window.I18N) throw new Error("I18N not loaded");
-          setupLanguageListener();
-          waitForReady();
+          // Update components
+          window.navigationComponent?.updateTranslations?.();
+          window.footerComponent?.updateTranslations?.();
 
-        } catch (err) {
-          console.error("Initialization error:", err);
-          document.documentElement.lang = "fr";
+          // Re-render blog content
+          renderBlogContent();
+        });
+
+        // Initialize components
+        if (typeof FooterComponent !== "undefined" && !window.footerComponent) {
+          window.footerComponent = new FooterComponent();
         }
       });
     </script>
