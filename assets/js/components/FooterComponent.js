@@ -57,6 +57,7 @@ getFooterHTML() {
               <li><a href="/climate.html" data-i18n="nav.climate" class="hover:text-white">Risques climatiques</a></li>
               <li><a href="/esg.html" data-i18n="nav.esg" class="hover:text-white">ESG</a></li>
               <li><a href="/services.html" data-i18n="nav.services" class="hover:text-white">Conseil & Stratégie</a></li>
+              <li><a href="/blog.html" data-i18n="nav.blog" class="hover:text-white">Blog</a></li>
             </ul>
           </div>
 
