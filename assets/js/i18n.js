@@ -2813,72 +2813,152 @@ footer: {
         {
           id: "reinsurance-history",
           title: "Réassurance : des racines antiques à l'architecture moderne du risque",
-          excerpt: "La réassurance puise ses racines jusqu'au Talmud de Babylone, évoluant des républiques maritimes italiennes vers un secteur structuré mondial.",
+          excerpt:
+            "Des usages antiques du Talmud aux compagnies modernes, la réassurance s’est imposée comme l’ossature invisible de l’assurance mondiale.",
           date: "2025-01-15",
-          readTime: "8 min"
+          readTime: "8 min",
+          content: [
+            "La réassurance, bien plus qu’un mécanisme financier, est l’architecture invisible qui consolide l’édifice assurantiel mondial.",
+            "Ses origines remontent au Talmud de Babylone (586 av. J.-C.), où les premières traces de répartition des pertes visaient déjà à mutualiser les chocs extrêmes.",
+            "Au XIVe siècle, les républiques maritimes italiennes, et notamment Gênes avec le contrat Grillo, Benaira et Sacco (1370), donnent forme à la réassurance facultative, bientôt relayée par le Guidon de la Mer (1665) et l’Ordonnance de Colbert (1681).",
+            "Avec l’industrialisation, les incendies massifs – comme celui de Londres en 1666 – et l’internationalisation des échanges, des compagnies dédiées (Cologne Re, Gen Re…) structurent un secteur autonome, tiraillé entre standardisation technique et liberté contractuelle héritée des usages.",
+            "La réassurance naît ainsi d’une double matrice : l’urgence de lisser les pertes et un socle juridique basé sur la confiance et la coutume – une tension qui continue de façonner sa gouvernance contemporaine."
+          ]
         },
         {
           id: "facultative-reinsurance",
           title: "La réassurance facultative : entre art de la sélection et contrat sur mesure",
-          excerpt: "Une forme singulière de transfert du risque qui ne s'applique qu'à un seul risque, sélectionné et analysé individuellement.",
+          excerpt:
+            "Contrat taillé sur mesure, la réassurance facultative absorbe les risques atypiques grâce à une sélection fine et une transparence sans faille.",
           date: "2025-01-12",
-          readTime: "6 min"
+          readTime: "6 min",
+          content: [
+            "La réassurance facultative repose sur la couverture d’un risque unique, étudié isolément, loin des traités qui mutualisent des portefeuilles entiers.",
+            "Elle agit comme un amortisseur pour les pics d’exposition, les cas hors normes ou les dossiers non standardisables.",
+            "Le réassureur se prononce après une analyse exhaustive des informations fournies par la cédante, souvent orchestrée par un courtier qui fait converger besoins et capacités.",
+            "Cette personnalisation intense entraîne des défis : asymétries d’information, wording complexes hérités du marché londonien ou des géants Munich Re et Swiss Re, et nécessité d’une « extrême bonne foi » pour éviter toute sélection adverse.",
+            "Plus que jamais, la réassurance facultative mobilise expertise technique, rigueur juridique et talent de négociation pour préserver la résilience des assureurs… et des assurés finaux."
+          ]
         },
         {
           id: "utmost-good-faith",
           title: "L'extrême bonne foi : mythe anglo-saxon ou principe universel ?",
-          excerpt: "Ce principe impose au cédant une obligation renforcée de transparence, né de la pratique maritime anglo-saxonne.",
+          excerpt:
+            "L’utmost good faith impose au cédant une transparence absolue héritée des usages maritimes, aujourd’hui questionnée par la standardisation mondiale.",
           date: "2025-01-10",
-          readTime: "7 min"
+          readTime: "7 min",
+          content: [
+            "Principe cardinal du droit anglo-saxon de la réassurance, l’« extrême bonne foi » impose au cédant de révéler l’intégralité des informations pertinentes au réassureur.",
+            "Bien plus exigeante que la simple bonne foi du Code civil, cette obligation unilatérale est née des contraintes de la navigation hauturière où la confiance absolue était vitale.",
+            "La globalisation et l’accès facilité à la donnée ont toutefois déplacé l’équilibre : les réassureurs privilégient désormais des cadres contractuels précis plutôt qu’une confiance aveugle.",
+            "Dans de nombreux marchés, l’utmost good faith s’apparente à une garantie renforcée contre la réticence dolosive, tout en conservant une portée symbolique et contentieuse forte.",
+            "La question demeure : à l’ère des wordings standardisés et des due diligences numériques, la confiance peut-elle encore constituer un socle juridique durable ?"
+          ]
         },
         {
           id: "follow-fortunes",
           title: "Le partage de sort : quand le réassureur suit les pas de l'assureur",
-          excerpt: "La clause 'follow the fortunes' engage le réassureur à suivre les décisions de sa cédante dans la limite de la police d'origine.",
+          excerpt:
+            "La clause « follow the fortunes » aligne réassureur et cédante, tout en laissant subsister un contrôle sur la qualification contractuelle des sinistres.",
           date: "2025-01-08",
-          readTime: "5 min"
+          readTime: "5 min",
+          content: [
+            "Le « partage de sort », ou clause follow the fortunes, oblige le réassureur à s’aligner sur les décisions indemnitaires de la cédante dans la limite des termes originels.",
+            "Cet alignement nourrit la solidarité financière et limite les divergences opérationnelles entre assurance primaire et réassurance.",
+            "La clause connaît toutefois des limites : elle n’englobe ni règlements commerciaux ni gestes gracieux, et laisse au réassureur un droit d’examen critique des sinistres.",
+            "L’insertion de liability agreements ou de wording autonomes peut inverser la hiérarchie contractuelle, générant des conflits de lois et des difficultés d’exécution.",
+            "Le partage de sort demeure donc un équilibre subtil entre confiance, contrôle et articulation des responsabilités."
+          ]
         },
         {
           id: "arbitration-equity",
           title: "Arbitrage & équité : pourquoi les contrats de réassurance s'éloignent des tribunaux",
-          excerpt: "L'arbitrage en réassurance repose sur l'amiable composition et évite les juges étatiques peu familiers des subtilités techniques.",
+          excerpt:
+            "Ancré dans les usages du marché de Londres, l’arbitrage privilégie l’amiable composition et l’expertise sectorielle pour régler les litiges de réassurance.",
           date: "2025-01-05",
-          readTime: "6 min"
+          readTime: "6 min",
+          content: [
+            "Le recours à l’arbitrage est une tradition séculaire en réassurance, héritée des pratiques du marché londonien et de l’equity anglo-saxon.",
+            "Il permet d’éviter les juridictions étatiques, peu familières des subtilités techniques et contractuelles propres au secteur.",
+            "Les clauses compromissoires standardisées et les institutions spécialisées telles qu’ARIAS ou CEFAREA professionnalisent ce mode de règlement.",
+            "Toutefois, les conflits de lois, le respect de l’ordre public ou encore l’exéquatur des sentences demeurent des défis récurrents.",
+            "L’arbitrage apparaît ainsi comme un outil précieux mais imparfait, qui interroge le besoin d’un socle normatif plus robuste pour l’équité contractuelle."
+          ]
         },
         {
           id: "contractual-imbalances",
           title: "Réassurance ou adhésion ? Les déséquilibres contractuels sous la loupe",
-          excerpt: "Bien que théoriquement de gré à gré, la réassurance comporte souvent des clauses imposées via des modèles standardisés.",
+          excerpt:
+            "Entre liberté théorique et wordings imposés, la réassurance facultative révèle des déséquilibres contractuels proches des contrats d’adhésion.",
           date: "2025-01-03",
-          readTime: "7 min"
+          readTime: "7 min",
+          content: [
+            "La réassurance est présentée comme un contrat de gré à gré entre professionnels avertis, mais la pratique montre une standardisation croissante imposée par les grands réassureurs.",
+            "Les clauses de non-cumul, d’exclusion ou de notification s’inspirent souvent de modèles LIRMA, de wordings Munich Re ou du marché de Londres.",
+            "Faute d’alternatives compétitives, les cédantes – notamment dans les pays émergents – acceptent ces conditions, au risque d’un déséquilibre structurel.",
+            "En cas de litige, la notion de volonté réelle est scrutée : l’arbitre doit trancher entre négociation authentique et contrat d’adhésion déguisé.",
+            "D’où l’importance, pour courtiers et juristes, d’identifier les clauses critiques, d’éduquer les parties et de proposer des wordings alternatifs lorsque la gouvernance l’exige."
+          ]
         },
         {
           id: "private-international-law",
           title: "Réassurance et droit international privé : un vide normatif à combler ?",
-          excerpt: "La diversité des systèmes juridiques crée une incertitude sur le droit applicable et la juridiction compétente.",
+          excerpt:
+            "Entre droit applicable incertain et exéquatur complexe, la réassurance transfrontalière mise sur une lex mercatoria en quête de reconnaissance.",
           date: "2024-12-28",
-          readTime: "8 min"
+          readTime: "8 min",
+          content: [
+            "Les contrats de réassurance sont fréquemment transfrontaliers, opposant des parties soumises à des systèmes juridiques distincts.",
+            "Le règlement Rome I consacre la liberté de choisir la loi applicable, mais en l’absence de clause, le juge recherche la loi la plus étroitement liée – exercice délicat en réassurance.",
+            "À cela s’ajoute la question de l’exéquatur lorsque la décision est rendue hors de la juridiction de la cédante, allongeant délais et incertitudes.",
+            "Pour pallier ce vide normatif, une lex mercatoria réassurantielle se développe : pratiques de marché, clauses types, arbitrage spécialisé.",
+            "Une codification internationale – via l’OCDE, l’IAIS ou d’autres forums – renforcerait la sécurité juridique et attirerait le capital vers les marchés à risque." 
+          ]
         },
         {
           id: "back-to-back",
           title: "Le contrat « back to back » : entre autonomie du réassureur et risque de fragmentation",
-          excerpt: "Le principe 'as original' suppose que la réassurance reflète les termes du contrat d'assurance sous-jacent.",
+          excerpt:
+            "Le principe « as original » promet une continuité parfaite, mais des divergences de wording peuvent créer des fuites de couverture.",
           date: "2024-12-25",
-          readTime: "6 min"
+          readTime: "6 min",
+          content: [
+            "Le contrat back to back, ou principe as original, vise à aligner la police de réassurance sur celle d’assurance primaire.",
+            "Dans la pratique, le réassureur ajoute souvent ses propres limites, exclusions ou modalités, créant des zones d’ombre.",
+            "En cas de sinistre majeur, l’assureur peut indemniser son assuré mais se heurter à un refus de remboursement faute de concordance contractuelle.",
+            "Les courtiers et juristes doivent donc veiller à la cohérence des définitions, à l’alignement des obligations et à l’intégration de clauses de liaison (follow the settlements, follow the form).",
+            "Mal négocié, le back to back devient source de contentieux et fragilise la réputation des programmes internationaux."
+          ]
         },
         {
           id: "legal-sovereignty",
           title: "La souveraineté juridique à l'épreuve de la réassurance mondiale",
-          excerpt: "Les grands réassureurs imposent leurs règles contractuelles, mettant à l'épreuve la souveraineté des États émergents.",
+          excerpt:
+            "Les standards imposés par les réassureurs globaux bousculent la souveraineté juridique des marchés émergents en quête de capacité.",
           date: "2024-12-22",
-          readTime: "7 min"
+          readTime: "7 min",
+          content: [
+            "La réassurance mondiale confronte les États à un dilemme : accéder à des capacités financières vitales tout en préservant leur souveraineté juridique.",
+            "Les grands réassureurs conditionnent parfois leur engagement à l’adoption d’un droit ou d’une juridiction spécifique, importée des standards anglo-saxons.",
+            "Pour contrebalancer cette dépendance, certains pays instaurent des rétrocessions obligatoires vers des entités nationales ou créent des pools publics.",
+            "Ces mécanismes se heurtent néanmoins aux exigences de solvabilité internationale et aux attentes des bailleurs de fonds.",
+            "Le renforcement des expertises locales, la montée en puissance de wordings nationaux et la négociation éclairée – appuyée par des courtiers comme Riskalia – deviennent des leviers essentiels."
+          ]
         },
         {
           id: "reinsurance-law",
           title: "Pour un droit de la réassurance : utopie ou nécessité ?",
-          excerpt: "La réassurance reste une 'zone grise' du droit, échappant aux codes nationaux et reposant sur la liberté contractuelle.",
+          excerpt:
+            "Face à la financiarisation des risques et aux mégas-calamités, la construction d’un droit autonome de la réassurance devient un débat central.",
           date: "2024-12-20",
-          readTime: "9 min"
+          readTime: "9 min",
+          content: [
+            "La réassurance reste aujourd’hui une zone grise : ni totalement assurantielle, ni complètement financière, largement gouvernée par la liberté contractuelle.",
+            "La montée des instruments alternatifs (cat bonds, ILS, sidecars) et des risques climatiques extrêmes renforce le besoin de normes claires.",
+            "Les institutions internationales – IAIS, OCDE, Banque mondiale – encouragent un encadrement aligné sur les ODD, l’ESG et la résilience climatique.",
+            "Un droit autonome sécuriserait les montages complexes, crédibiliserait l’assurance inclusive et encouragerait la mutualisation solidaire.",
+            "Utopie pour certains, nécessité pour d’autres : Riskalia entend contribuer à ce chantier par son expertise juridique et opérationnelle."
+          ]
         }
       ],
       news: {
@@ -5933,73 +6013,153 @@ footer: {
       articles: [
         {
           id: "reinsurance-history",
-          title: "Reinsurance: from ancient roots to modern risk architecture",
-          excerpt: "Reinsurance traces its roots back to the Babylonian Talmud, evolving from Italian maritime republics to a structured global industry.",
+          title: "Reinsurance: From Ancient Roots to the Modern Architecture of Risk",
+          excerpt:
+            "From the Babylonian Talmud to modern carriers, reinsurance has become the hidden framework supporting global insurance.",
           date: "2025-01-15",
-          readTime: "8 min"
+          readTime: "8 min",
+          content: [
+            "Reinsurance is far more than a financial mechanism; it is the invisible architecture that reinforces the global insurance edifice.",
+            "Its roots reach back to the Babylonian Talmud (586 BCE), where early arrangements for sharing losses already aimed to mutualise catastrophic shocks.",
+            "In the fourteenth century, the Italian maritime republics—especially Genoa with the foundational Grillo, Benaira & Sacco contract of 1370—shaped facultative reinsurance, later echoed in the Guidon de la Mer (1665) and Colbert’s Ordinance (1681).",
+            "Industrialisation, massive fires such as London’s in 1666, and burgeoning global trade spurred the emergence of dedicated carriers like Cologne Re and Gen Re, balancing technical standardisation with the contractual freedom inherited from custom.",
+            "Reinsurance was therefore born of a dual matrix: the practical need to smooth losses and a contractual foundation built on trust and usage—a tension that still defines its contemporary governance."
+          ]
         },
         {
           id: "facultative-reinsurance",
-          title: "Facultative reinsurance: between art of selection and bespoke contract",
-          excerpt: "A unique form of risk transfer that applies only to a single risk, individually selected and analyzed.",
+          title: "Facultative Reinsurance: Between the Art of Selection and Bespoke Contracting",
+          excerpt:
+            "A bespoke contract, facultative reinsurance absorbs atypical exposures through meticulous selection and uncompromising transparency.",
           date: "2025-01-12",
-          readTime: "6 min"
+          readTime: "6 min",
+          content: [
+            "Facultative reinsurance covers a single risk that is studied in isolation, far from treaties that mutualise entire portfolios.",
+            "It cushions peak exposures, exceptional cases, or non-standard risks that cannot be commoditised.",
+            "The reinsurer decides after receiving exhaustive information from the cedant—often structured by a broker who matches needs and capacity.",
+            "Such intense tailoring brings challenges: information asymmetry, complex clauses imported from the London market or giants like Munich Re and Swiss Re, and the imperative of utmost good faith to avoid adverse selection.",
+            "Today more than ever, facultative reinsurance mobilises technical expertise, legal rigour, and negotiation skills to protect insurer resilience and, ultimately, policyholders."
+          ]
         },
         {
           id: "utmost-good-faith",
-          title: "Utmost good faith: Anglo-Saxon myth or universal principle?",
-          excerpt: "This principle imposes an enhanced duty of transparency on the ceding company, born from Anglo-Saxon maritime practice.",
+          title: "Utmost Good Faith: Anglo-Saxon Myth or Universal Principle?",
+          excerpt:
+            "Utmost good faith demands absolute transparency from the cedant—a maritime legacy now challenged by global standardisation.",
           date: "2025-01-10",
-          readTime: "7 min"
+          readTime: "7 min",
+          content: [
+            "A cornerstone of Anglo-Saxon reinsurance law, utmost good faith obliges cedants to disclose every material fact to their reinsurer.",
+            "It goes far beyond the French civil law notion of good faith and was forged in an era of long-distance navigation where unwavering trust was essential.",
+            "Globalisation and easier access to data have shifted the balance, with reinsurers now favouring precise contractual frameworks over blind reliance.",
+            "In many markets, utmost good faith now functions as a reinforced safeguard against misrepresentation while retaining strong symbolic and legal weight.",
+            "The open question is whether trust can still serve as a legal foundation in an age of standardised wordings and digital due diligence."
+          ]
         },
         {
           id: "follow-fortunes",
-          title: "Follow the fortunes: when the reinsurer follows the insurer's footsteps",
-          excerpt: "The 'follow the fortunes' clause commits the reinsurer to follow its cedent's decisions within the limits of the original policy.",
+          title: "Follow the Fortunes: When the Reinsurer Shadows the Insurer",
+          excerpt:
+            "The follow-the-fortunes clause aligns reinsurers with cedants while preserving scrutiny over contractual scope.",
           date: "2025-01-08",
-          readTime: "5 min"
+          readTime: "5 min",
+          content: [
+            "The follow-the-fortunes clause requires reinsurers to mirror the cedant’s claims decisions within the bounds of the original policy.",
+            "It reinforces financial solidarity and curbs operational discrepancies between primary insurance and reinsurance.",
+            "Yet the clause has limits: it excludes commercial or ex gratia settlements and preserves the reinsurer’s right to review disputed losses.",
+            "Standalone liability agreements or bespoke wordings can upset contractual hierarchy, triggering conflicts of law and enforcement hurdles.",
+            "Follow the fortunes therefore remains a delicate balance between trust, control, and the division of responsibility."
+          ]
         },
         {
           id: "arbitration-equity",
-          title: "Arbitration & equity: why reinsurance contracts avoid courts",
-          excerpt: "Arbitration in reinsurance relies on amicable composition and avoids state judges unfamiliar with technical subtleties.",
+          title: "Arbitration & Equity: Why Reinsurance Contracts Shun the Courts",
+          excerpt:
+            "Rooted in London market custom, arbitration favours amiable composition and sector expertise to settle reinsurance disputes.",
           date: "2025-01-05",
-          readTime: "6 min"
+          readTime: "6 min",
+          content: [
+            "Arbitration has long been embedded in reinsurance practice, inherited from the London market and Anglo-Saxon equity.",
+            "It keeps disputes away from state courts that are often unfamiliar with the industry’s technical and contractual intricacies.",
+            "Standardised arbitration clauses and specialised bodies such as ARIAS or CEFAREA have professionalised the process.",
+            "Nonetheless, conflicts of law, public policy considerations, and the enforcement of awards continue to pose challenges.",
+            "Arbitration is thus a valuable yet imperfect tool, underscoring the need for a more robust normative framework to ensure contractual fairness."
+          ]
         },
         {
           id: "contractual-imbalances",
-          title: "Reinsurance or adhesion? Contractual imbalances under scrutiny",
-          excerpt: "Although theoretically negotiated at arm's length, reinsurance often involves clauses imposed via standardized models.",
+          title: "Reinsurance or Adhesion? Scrutinising Contractual Imbalances",
+          excerpt:
+            "Between theoretical freedom and imposed wordings, facultative reinsurance reveals imbalances akin to contracts of adhesion.",
           date: "2025-01-03",
-          readTime: "7 min"
+          readTime: "7 min",
+          content: [
+            "Reinsurance is portrayed as a freely negotiated agreement between informed professionals, yet practice shows an expanding standardisation driven by major reinsurers.",
+            "Non-accumulation, exclusion, or notification clauses often stem from LIRMA models, Munich Re wordings, or London market templates.",
+            "Lacking competitive alternatives, cedants—especially in emerging markets—accept these terms at the risk of structural imbalance.",
+            "In disputes, arbiters scrutinise genuine consent versus disguised adhesion contracts.",
+            "Brokers and legal experts must therefore flag critical clauses, educate stakeholders, and propose alternatives whenever governance demands it."
+          ]
         },
         {
           id: "private-international-law",
-          title: "Reinsurance and private international law: a regulatory void to fill?",
-          excerpt: "The diversity of legal systems creates uncertainty about applicable law and competent jurisdiction.",
+          title: "Reinsurance and Private International Law: A Normative Gap to Bridge?",
+          excerpt:
+            "With uncertain governing law and complex enforcement, cross-border reinsurance leans on a lex mercatoria seeking recognition.",
           date: "2024-12-28",
-          readTime: "8 min"
+          readTime: "8 min",
+          content: [
+            "Reinsurance agreements are often cross-border, bringing together parties subject to different legal systems.",
+            "Rome I allows parties to choose the applicable law, but absent a clause, courts look for the closest connection—a delicate exercise in reinsurance.",
+            "Enforcing judgments or awards rendered abroad adds delays and uncertainty.",
+            "To fill the gap, a reinsurance lex mercatoria has emerged through market practice, standard clauses, and specialised arbitration.",
+            "Codifying these usages at an international level—through the OECD, IAIS, or other fora—would strengthen legal certainty and attract capital to high-risk markets."
+          ]
         },
         {
           id: "back-to-back",
-          title: "The 'back to back' contract: between reinsurer autonomy and fragmentation risk",
-          excerpt: "The 'as original' principle assumes that reinsurance mirrors the terms of the underlying insurance contract.",
+          title: "Back-to-Back Contracts: Between Reinsurer Autonomy and Fragmented Coverage",
+          excerpt:
+            "The as-original principle promises seamless continuity, yet diverging wordings can produce coverage gaps.",
           date: "2024-12-25",
-          readTime: "6 min"
+          readTime: "6 min",
+          content: [
+            "A back-to-back contract seeks to align the reinsurance wording with the original insurance policy.",
+            "In practice, reinsurers insert their own limits, exclusions, or procedures, leaving blind spots.",
+            "When a major loss occurs, an insurer may compensate its client yet face denial of recovery due to divergent terms.",
+            "Brokers and counsel must therefore ensure consistent definitions, aligned obligations, and bridging clauses such as follow-the-settlements or follow-the-form.",
+            "Poorly structured, back-to-back arrangements become contentious and can erode confidence in global programmes."
+          ]
         },
         {
           id: "legal-sovereignty",
-          title: "Legal sovereignty tested by global reinsurance",
-          excerpt: "Major reinsurers impose their contractual rules, testing the sovereignty of emerging states.",
+          title: "Legal Sovereignty Tested by Global Reinsurance",
+          excerpt:
+            "Global reinsurers’ standards challenge the legal sovereignty of emerging markets seeking capacity.",
           date: "2024-12-22",
-          readTime: "7 min"
+          readTime: "7 min",
+          content: [
+            "Global reinsurance confronts states with a dilemma: secure vital capacity while safeguarding legal sovereignty.",
+            "Large reinsurers sometimes condition their support on the choice of specific governing law or jurisdiction, often aligned with Anglo-Saxon standards.",
+            "Some countries counterbalance this dependency through compulsory retrocession to national entities or by creating public pools.",
+            "These measures, however, collide with international solvency requirements and the expectations of multilateral lenders.",
+            "Building local expertise, strengthening domestic wordings, and negotiating with informed advisers such as Riskalia become critical levers."
+          ]
         },
         {
           id: "reinsurance-law",
-          title: "Toward a reinsurance law: utopia or necessity?",
-          excerpt: "Reinsurance remains a legal 'gray zone', escaping national codes and relying on contractual freedom.",
+          title: "Toward a Law of Reinsurance: Utopia or Necessity?",
+          excerpt:
+            "With risk securitisation and mega-catastrophes on the rise, crafting an autonomous body of reinsurance law is a pressing debate.",
           date: "2024-12-20",
-          readTime: "9 min"
+          readTime: "9 min",
+          content: [
+            "Reinsurance still occupies a legal grey zone—neither purely insurance nor entirely finance—and relies heavily on contractual freedom.",
+            "The expansion of alternative risk transfer (cat bonds, ILS, sidecars) and extreme climate threats heightens the demand for clear rules.",
+            "International bodies such as the IAIS, OECD, and World Bank now encourage frameworks aligned with ESG goals, sustainable development, and climate resilience.",
+            "A distinct legal corpus would secure complex structures, enhance inclusive insurance programmes, and promote solidarity-based mutualisation.",
+            "Utopia for some, necessity for others: Riskalia intends to contribute through its legal and operational expertise."
+          ]
         }
       ],
       news: {
@@ -8988,72 +9148,152 @@ footer: {
         {
           id: "reinsurance-history",
           title: "إعادة التأمين: من الجذور القديمة إلى الهندسة الحديثة للمخاطر",
-          excerpt: "تعود جذور إعادة التأمين إلى التلمود البابلي، متطورة من الجمهوريات البحرية الإيطالية إلى صناعة عالمية منظمة.",
+          excerpt:
+            "من التلمود البابلي إلى شركات اليوم، أصبحت إعادة التأمين الهيكل الخفي الذي يدعم صناعة التأمين العالمية.",
           date: "2025-01-15",
-          readTime: "8 دقائق"
+          readTime: "8 دقائق",
+          content: [
+            "إعادة التأمين ليست مجرد آلية مالية؛ بل هي البنية غير المرئية التي تعزز صلابة منظومة التأمين العالمية.",
+            "تعود جذورها إلى التلمود البابلي (586 قبل الميلاد)، حيث ظهرت أولى ترتيبات تقاسم الخسائر لتخفيف الصدمات الكارثية.",
+            "وفي القرن الرابع عشر، بلورت الجمهوريات البحرية الإيطالية، ولا سيما جنوة مع عقد غريلّو وبينايرا وساكو عام 1370، مفهوم إعادة التأمين الاختيارية، قبل أن تعيد صياغته مدونة البحر (1665) وأوامر كولبير (1681).",
+            "دفعت الثورة الصناعية والحرائق الكبرى مثل حريق لندن 1666 إلى ظهور شركات متخصصة ككولون ري وجن ري، موازنة بين التقييس التقني والحرية التعاقدية المستمدة من العرف.",
+            "لقد ولدت إعادة التأمين من ثنائية الحاجة العملية إلى تسوية الخسائر وقاعدة تعاقدية قائمة على الثقة والعادات، وهي معادلة لا تزال تؤطر حوكمتها حتى اليوم."
+          ]
         },
         {
           id: "facultative-reinsurance",
           title: "إعادة التأمين الاختيارية: بين فن الاختيار والعقد المخصص",
-          excerpt: "شكل فريد من نقل المخاطر ينطبق فقط على خطر واحد، يتم اختياره وتحليله بشكل فردي.",
+          excerpt:
+            "عقد مصمم على المقاس، تمتص إعادة التأمين الاختيارية المخاطر غير الاعتيادية عبر انتقاء دقيق وشفافية كاملة.",
           date: "2025-01-12",
-          readTime: "6 دقائق"
+          readTime: "6 دقائق",
+          content: [
+            "تعتمد إعادة التأمين الاختيارية على تغطية خطر منفرد يدرس بمعزل عن بقية المحفظة، بخلاف المعاهدات التي تدمج مجموعة من الأخطار.",
+            "تعمل كوسادة لقمم التعرض والحالات الخارجة عن المألوف التي يصعب توحيدها.",
+            "يتخذ معيد التأمين قراره بعد تلقي ملف كامل من الشركة المتنازلة، غالبًا بوساطة وسيط يجمع بين الحاجة والقدرة.",
+            "غير أن هذا التفصيل الشديد يولد تحديات: عدم تماثل المعلومات، وصياغات معقدة قادمة من سوق لندن أو من عمالقة مثل ميونيخ ري وسويس ري، والحاجة إلى حسن نية قصوى لتفادي الاختيار المعاكس.",
+            "ولهذا تبقى إعادة التأمين الاختيارية ممارسة تتطلب خبرة فنية صارمة، وانضباطًا قانونيًا، وقدرة تفاوضية تحمي متانة شركات التأمين والمؤمن لهم في النهاية."
+          ]
         },
         {
           id: "utmost-good-faith",
           title: "حسن النية القصوى: أسطورة أنجلوسكسونية أم مبدأ عالمي؟",
-          excerpt: "يفرض هذا المبدأ التزامًا معززًا بالشفافية على الشركة المتنازلة، ولد من الممارسة البحرية الأنجلوسكسونية.",
+          excerpt:
+            "يفرض مبدأ حسن النية القصوى شفافية مطلقة على المتنازل، وهو إرث بحري أصبح محل تساؤل مع التقييس العالمي.",
           date: "2025-01-10",
-          readTime: "7 دقائق"
+          readTime: "7 دقائق",
+          content: [
+            "يعد حسن النية القصوى حجر الزاوية في قانون إعادة التأمين الأنجلوسكسوني، إذ يفرض على الشركة المتنازلة الكشف عن كل معلومة جوهرية لمعيد التأمين.",
+            "يتجاوز ذلك بكثير مفهوم حسن النية في القانون المدني الفرنسي، وقد نشأ في زمن الملاحة البعيدة حيث كانت الثقة المطلقة شرطًا للبقاء.",
+            "إلا أن العولمة وسهولة الوصول إلى البيانات غيرت التوازن، فبات معيدو التأمين يفضلون الأطر التعاقدية الدقيقة على الثقة العمياء.",
+            "وفي أسواق كثيرة، تحول المبدأ إلى ضمانة مشددة ضد الكتمان التدليسي، مع احتفاظه بثقله الرمزي والقانوني.",
+            "ويبقى السؤال قائمًا: هل يمكن أن تظل الثقة أساسًا قانونيًا في عصر الصياغات الموحدة والتحقق الرقمي المستمر؟"
+          ]
         },
         {
           id: "follow-fortunes",
           title: "مشاركة المصير: عندما يتبع معيد التأمين خطوات المؤمن",
-          excerpt: "يلزم بند 'اتبع الحظوظ' معيد التأمين باتباع قرارات المتنازل في حدود الوثيقة الأصلية.",
+          excerpt:
+            "يوائم بند «اتبع الحظوظ» بين معيد التأمين والمتنازل، مع الإبقاء على رقابة حول نطاق الالتزام العقدي.",
           date: "2025-01-08",
-          readTime: "5 دقائق"
+          readTime: "5 دقائق",
+          content: [
+            "يلزم بند follow the fortunes معيد التأمين باتباع قرارات التعويض التي تتخذها الشركة المتنازلة ضمن حدود الوثيقة الأصلية.",
+            "يعزز ذلك التضامن المالي ويقلص الفوارق التشغيلية بين التأمين المباشر وإعادة التأمين.",
+            "لكن البند لا يشمل التسويات الودية أو التجارية، ويمنح معيد التأمين حق مراجعة المطالبات المشكوك فيها.",
+            "كما قد تؤدي الاتفاقات المستقلة أو الصياغات الخاصة إلى قلب هرمية العقود، ما يولد نزاعات قانونية وصعوبات في التنفيذ.",
+            "لذلك يبقى تقاسم المصير توازنًا دقيقًا بين الثقة والرقابة وتقسيم المسؤوليات."
+          ]
         },
         {
           id: "arbitration-equity",
           title: "التحكيم والإنصاف: لماذا تتجنب عقود إعادة التأمين المحاكم",
-          excerpt: "يعتمد التحكيم في إعادة التأمين على التسوية الودية ويتجنب قضاة الدولة غير المألوفين بالتفاصيل التقنية.",
+          excerpt:
+            "المتجذر في أعراف سوق لندن، يفضل التحكيم الحلول الودية والخبرة القطاعية لحل نزاعات إعادة التأمين.",
           date: "2025-01-05",
-          readTime: "6 دقائق"
+          readTime: "6 دقائق",
+          content: [
+            "يعد اللجوء إلى التحكيم تقليدًا عريقًا في إعادة التأمين، مستمدًا من سوق لندن ومن مفهوم الإنصاف الأنجلوسكسوني.",
+            "يسمح هذا الخيار بتجنب المحاكم الوطنية التي تفتقر غالبًا للخبرة التقنية الخاصة بالقطاع.",
+            "وتساهم بنود التحكيم الموحدة ومؤسسات متخصصة مثل ARIAS وCEFAREA في مأسسة هذا المسار.",
+            "مع ذلك ما تزال صعوبات تضارب القوانين واحترام النظام العام وتنفيذ الأحكام مطروحة بقوة.",
+            "وعليه يمثل التحكيم أداة ثمينة لكنها غير مكتملة، تثير الحاجة إلى إطار معياري أكثر صلابة لضمان العدالة التعاقدية."
+          ]
         },
         {
           id: "contractual-imbalances",
           title: "إعادة التأمين أم الانضمام؟ الاختلالات التعاقدية تحت المجهر",
-          excerpt: "على الرغم من أنها نظريًا يتم التفاوض عليها بحرية، غالبًا ما تتضمن إعادة التأمين بنودًا مفروضة عبر نماذج موحدة.",
+          excerpt:
+            "بين الحرية النظرية والصياغات المفروضة، تكشف إعادة التأمين الاختيارية اختلالات تعاقدية شبيهة بعقود الإذعان.",
           date: "2025-01-03",
-          readTime: "7 دقائق"
+          readTime: "7 دقائق",
+          content: [
+            "تقدَّم إعادة التأمين على أنها عقد تفاوضي بين مهنيين، غير أن الواقع يكشف اعتمادًا متزايدًا على نماذج يفرضها المعيدون الكبار.",
+            "فبنود منع التراكم والاستثناءات والإشعارات مستمدة كثيرًا من نماذج LIRMA أو صياغات ميونيخ ري وسوق لندن.",
+            "ولغياب بدائل تنافسية، تقبل كثير من الشركات المتنازلة، خصوصًا في الأسواق الناشئة، بهذه الشروط بما يحمله ذلك من اختلالات بنيوية.",
+            "وعند النزاع، يُفحص عنصر الإرادة الحقيقية للتمييز بين التفاوض الفعلي وعقود الإذعان المقنعة.",
+            "لذا يتعين على الوسطاء والحقوقيين تحديد البنود الحساسة وتوعية الأطراف واقتراح صياغات بديلة تضمن حوكمة سليمة."
+          ]
         },
         {
           id: "private-international-law",
           title: "إعادة التأمين والقانون الدولي الخاص: فراغ تنظيمي يجب ملؤه؟",
-          excerpt: "يخلق تنوع الأنظمة القانونية عدم يقين بشأن القانون الواجب التطبيق والولاية القضائية المختصة.",
+          excerpt:
+            "بين قانون واجب التطبيق غير الواضح وتعقيدات التنفيذ، تعوّل إعادة التأمين العابرة للحدود على عرف مهني يبحث عن اعتراف.",
           date: "2024-12-28",
-          readTime: "8 دقائق"
+          readTime: "8 دقائق",
+          content: [
+            "غالبًا ما تكون عقود إعادة التأمين عابرة للحدود وتجمع أطرافًا تخضع لأنظمة قانونية مختلفة.",
+            "يقرّ تنظيم روما الأول بحرية اختيار القانون الواجب التطبيق، لكن غياب بند صريح يدفع القاضي إلى البحث عن الصلة الأكثر وثوقًا، وهو اختبار صعب في إعادة التأمين.",
+            "يزداد الأمر تعقيدًا مع إجراءات الاعتراف والتنفيذ عندما تصدر الأحكام خارج دولة الشركة المتنازلة، ما يطيل الآجال ويزيد الغموض.",
+            "لمواجهة ذلك نشأت عرفًا مهنيًا خاصًا بإعادة التأمين: ممارسات سوقية وبنود نمطية وتحكيم متخصص.",
+            "إن تقنين هذه الأعراف على مستوى دولي، عبر منظمة التعاون والتنمية أو IAIS مثلًا، من شأنه تعزيز اليقين القانوني وجذب رؤوس الأموال إلى الأسواق عالية المخاطر."
+          ]
         },
         {
           id: "back-to-back",
-          title: "عقد 'ظهر لظهر': بين استقلالية معيد التأمين ومخاطر التجزئة",
-          excerpt: "يفترض مبدأ 'كما الأصل' أن إعادة التأمين تعكس شروط عقد التأمين الأساسي.",
+          title: "عقد "ظهر لظهر": بين استقلالية معيد التأمين ومخاطر التجزئة",
+          excerpt:
+            "يَعِد مبدأ «كما الأصل» باستمرارية تامة، لكن اختلاف الصياغات قد يخلق فجوات تغطية خطيرة.",
           date: "2024-12-25",
-          readTime: "6 دقائق"
+          readTime: "6 دقائق",
+          content: [
+            "يهدف عقد ظهر لظهر إلى مطابقة وثيقة إعادة التأمين مع وثيقة التأمين الأساسية.",
+            "لكن معيد التأمين غالبًا ما يضيف حدودًا أو استثناءات أو آليات خاصة به، ما يترك مناطق رمادية.",
+            "وفي حال وقوع خسارة جسيمة قد يدفع المؤمن لعميله لكنه يصطدم برفض التعويض من المعيد بسبب عدم التطابق.",
+            "لذلك يتعين على الوسطاء والحقوقيين ضمان اتساق التعاريف وتوافق الالتزامات وإدراج بنود وصل مثل follow the settlements وfollow the form.",
+            "فالعقد الضعيف البناء يتحول إلى مصدر نزاعات ويقوض سمعة البرامج الدولية."
+          ]
         },
         {
           id: "legal-sovereignty",
           title: "السيادة القانونية في مواجهة إعادة التأمين العالمية",
-          excerpt: "يفرض معيدو التأمين الكبار قواعدهم التعاقدية، مما يختبر سيادة الدول الناشئة.",
+          excerpt:
+            "تحد المعايير التي يفرضها المعيدون العالميون من السيادة القانونية للأسواق الناشئة الباحثة عن السعة.",
           date: "2024-12-22",
-          readTime: "7 دقائق"
+          readTime: "7 دقائق",
+          content: [
+            "تضع إعادة التأمين العالمية الدول أمام معادلة صعبة: تأمين السعات المالية مع الحفاظ على السيادة القانونية.",
+            "يشترط بعض المعيدين اعتماد قانون أو ولاية قضائية محددة تتماشى مع المعايير الأنجلوسكسونية قبل الالتزام.",
+            "للتخفيف من هذا الاعتماد، تلجأ بعض الدول إلى إلزامية إعادة الإسناد لمؤسسات وطنية أو إلى إنشاء مجمّعات عامة.",
+            "لكن هذه الآليات تصطدم بمتطلبات الملاءة الدولية وتوقعات الممولين متعددي الأطراف.",
+            "ويصبح بناء الخبرات المحلية وتطوير صياغات وطنية والتفاوض المدروس، بدعم وسطاء مثل ريسكاليا، أدوات جوهرية."
+          ]
         },
         {
           id: "reinsurance-law",
           title: "نحو قانون لإعادة التأمين: طوباوية أم ضرورة؟",
-          excerpt: "تبقى إعادة التأمين 'منطقة رمادية' قانونية، تهرب من القوانين الوطنية وتعتمد على الحرية التعاقدية.",
+          excerpt:
+            "مع تصاعد التوريق والمخاطر المتطرفة، يغدو بناء قانون مستقل لإعادة التأمين موضوعًا ملحًا.",
           date: "2024-12-20",
-          readTime: "9 دقائق"
+          readTime: "9 دقائق",
+          content: [
+            "لا تزال إعادة التأمين منطقة قانونية رمادية، ليست تأمينًا محضًا ولا تمويلًا صرفًا، وتعتمد بشكل كبير على حرية التعاقد.",
+            "يزداد الطلب على قواعد واضحة مع انتشار أدوات نقل المخاطر البديلة مثل السندات الكارثية وILS والصناديق الجانبية، ومع تصاعد المخاطر المناخية القصوى.",
+            "تشجع مؤسسات دولية كهيئة التأمين الدولية ومنظمة التعاون والتنمية والبنك الدولي على وضع أطر تتماشى مع أهداف التنمية المستدامة ومعايير الحوكمة البيئية والاجتماعية.",
+            "من شأن قانون مستقل أن يؤمن التركيبات المعقدة، ويعزز برامج التأمين الشامل، ويشجع على تضامن أوسع في تقاسم المخاطر.",
+            "بين من يراها طوباوية ومن يعدها ضرورة، تعتزم ريسكاليا الإسهام بخبرتها القانونية والعملية في هذا المسار."
+          ]
         }
       ],
       news: {
