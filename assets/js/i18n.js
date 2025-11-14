@@ -9637,6 +9637,36 @@ footer: {
   },
 };
 
+function __mergePageI18n(base, extra) {
+  if (!extra || typeof extra !== "object") return base;
+  Object.keys(extra).forEach((key) => {
+    const value = extra[key];
+    if (Array.isArray(value)) {
+      base[key] = value.slice();
+    } else if (value && typeof value === "object") {
+      if (!base[key] || typeof base[key] !== "object" || Array.isArray(base[key])) {
+        base[key] = {};
+      }
+      __mergePageI18n(base[key], value);
+    } else {
+      base[key] = value;
+    }
+  });
+  return base;
+}
+
+if (window.__PAGE_I18N && typeof window.__PAGE_I18N === "object") {
+  Object.keys(window.__PAGE_I18N).forEach((lng) => {
+    const extraPack = window.__PAGE_I18N[lng];
+    if (!extraPack || typeof extraPack !== "object") return;
+    const basePack = window.I18N?.[lng] && typeof window.I18N[lng] === "object"
+      ? window.I18N[lng]
+      : {};
+    window.I18N[lng] = __mergePageI18n(basePack, extraPack);
+  });
+  delete window.__PAGE_I18N;
+}
+
 /* Helpers */
 let lang = localStorage.getItem("riskalia_lang") || "fr";
 if (!["fr", "en", "ar"].includes(lang)) lang = "fr";
