@@ -322,13 +322,16 @@
           <span><i class="far fa-clock"></i> ${article.readTime}</span>
         `;
 
-        // In a real implementation, you would load the full article content here
-        document.getElementById("modal-article-content").innerHTML = `
-          <p style="margin-bottom: 1.5rem; font-size: 1.15rem; color: #666;">${article.excerpt}</p>
-          <p style="margin-bottom: 1.5rem;">This is where the full article content would appear. In a complete implementation, you would store the full article text in the i18n.js file or load it from a separate source.</p>
-          <p style="margin-bottom: 1.5rem;">The article would contain detailed analysis, expert insights, and comprehensive coverage of the topic.</p>
-          <p>For demonstration purposes, this is a placeholder. Each article would have its unique, complete content here.</p>
-        `;
+        const contentHtml = Array.isArray(article.content)
+          ? article.content
+              .map(
+                paragraph =>
+                  `<p style="margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.75; color: #555;">${paragraph}</p>`
+              )
+              .join("")
+          : `<p style="margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.75; color: #555;">${article.excerpt}</p>`;
+
+        document.getElementById("modal-article-content").innerHTML = contentHtml;
 
         document.getElementById("article-modal").classList.add("active");
         document.body.style.overflow = "hidden";
