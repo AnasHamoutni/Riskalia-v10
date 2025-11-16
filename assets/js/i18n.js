@@ -549,6 +549,9 @@ footer: {
     esg: "ESG",
     services: "Services de Conseil"
   },
+  labels: {
+    utility: "Utilité :",
+  },
 },
     reinsurance: {
       hero: {
@@ -611,6 +614,8 @@ footer: {
             example:
               "Exemple : un assureur garde 1M€ par sinistre et cède jusqu'à 4M€ pour optimiser son capital tout en gardant une exposition maîtrisée.",
           },
+          aligned:
+            '<strong class="text-gray-900">Rémunération alignée</strong> : participation aux bénéfices, sliding scale (si les résultats sont bons, vous en profitez).',
         },
         nonproportional: {
           title: "Non-proportionnels",
@@ -3272,11 +3277,14 @@ footer: {
       esg: "ESG",
       clientspace: "Client Space",
       blog: "Blog",
-      contact: "Contact",
-      faq: "FAQ",
-      legal: "Legal Notices",
-    },
-    hero: {
+    contact: "Contact",
+    faq: "FAQ",
+    legal: "Legal Notices",
+  },
+  labels: {
+    utility: "Utility:",
+  },
+  hero: {
       title: "Expertise that reassures",
       slogan: "We turn operational uncertainty into sustainable growth.",
       sub: "All-lines insurance broking · Reinsurance · Climate Risks · Risk Management Advisory",
@@ -6496,11 +6504,14 @@ footer: {
       esg: "الاستدامة",
       clientspace: "مساحة العميل",
       blog: "المدونة",
-      contact: "تواصل",
-      faq: "الأسئلة الشائعة",
-      legal: "الإشعارات القانونية",
-    },
-    hero: {
+    contact: "تواصل",
+    faq: "الأسئلة الشائعة",
+    legal: "الإشعارات القانونية",
+  },
+  labels: {
+    utility: "الفائدة:",
+  },
+  hero: {
       title: "خبرة تمنحك الاطمئنان",
       slogan: "نحوّل عدم اليقين التشغيلي إلى نمو مستدام.",
       sub: "وساطة شاملة · إعادة التأمين · مخاطر المناخ · إدارة المخاطر",
