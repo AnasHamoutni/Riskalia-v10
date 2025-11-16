@@ -2797,7 +2797,9 @@ footer: {
       cta: {
         login: "Se connecter",
         register: "Créer un compte",
-        contact: "Nous contacter"
+        contact: "Nous contacter",
+        title: "Accédez à votre espace",
+        subtitle: "Connectez-vous à votre compte ou créez-en un nouveau pour commencer"
       }
     },
     // Blog & News page
@@ -6024,7 +6026,9 @@ footer: {
       cta: {
         login: "Log In",
         register: "Create Account",
-        contact: "Contact Us"
+        contact: "Contact Us",
+        title: "Access your space",
+        subtitle: "Sign in to your account or create a new one to get started"
       }
     },
     // Blog & News page
@@ -9184,7 +9188,9 @@ footer: {
       cta: {
         login: "تسجيل الدخول",
         register: "إنشاء حساب",
-        contact: "اتصل بنا"
+        contact: "اتصل بنا",
+        title: "ادخل إلى مساحتك",
+        subtitle: "سجّل الدخول إلى حسابك أو أنشئ حساباً جديداً للبدء"
       }
     },
     // Blog & News page
